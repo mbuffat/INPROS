@@ -3,8 +3,18 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: CHAP1/COURS_INTRO
+defaults:
+  titlesonly: True
+
+parts:
+- caption: INPROS
+  numbered: True
+  chapters:
+  - file: CHAP1/COURS_INTRO
+  - file: CHAP2/COURS_ORDI
+- caption: Annexes
+  chapters:
+  - file: credits
 
 #- file: markdown
 #- file: notebooks

@@ -1,11 +1,11 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="fr">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Introduction à la programmation scientifique &#8212; INPROS INtroduction à la PROgrammation Scientifique en Python</title>
+    <title>1. Introduction &#8212; INPROS INtroduction à la PROgrammation Scientifique en Python</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -43,6 +43,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/translations.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -51,11 +52,14 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="2. Fonctionnement d’un ordinateur" href="../CHAP2/COURS_ORDI.html" />
     <link rel="prev" title="INPROS Introduction à la PROgrammation Scientifique" href="../intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="fr">
     
 
     <!-- Google Analytics -->
@@ -97,14 +101,32 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  INPROS
+ </span>
+</p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   <a href="#ici000">
-    Introduction à la programmation scientifique
-   </a>
-   <a id="ici000">
-   </a>
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP2/COURS_ORDI.html">
+   2. Fonctionnement d’un ordinateur
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Annexes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../credits.html">
+   Crédits
   </a>
  </li>
 </ul>
@@ -159,22 +181,6 @@ const thebe_selector_output = ".output, .cell_output"
 
             <!-- Source interaction buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Dépôt source"><i
-                    class="fab fa-github"></i>dépôt</button></a>
-        <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FCHAP1/COURS_INTRO.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Ouvrez un problème"><i class="fas fa-lightbulb"></i>signaler un problème</button></a>
-        
-    </div>
-</div>
-
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
@@ -183,23 +189,6 @@ const thebe_selector_output = ".output, .cell_output"
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/CHAP1/COURS_INTRO.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="lancement Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
 
         </div>
 
@@ -212,17 +201,93 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-href-sommaire-contenu-de-la-lecon-a-a-name-sommaire-a-a-href-http-localhost-8888-notebooks-plan-ipynb-lyonhpc-a">
-   <a href="#sommaire">
-    Contenu de la leçon
-   </a>
-   <a name="sommaire">
-   </a>
+  <a class="reference internal nav-link" href="#format-du-cours">
+   1.1. Format du cours
   </a>
-  <a href="http://localhost:8888/notebooks/Plan.ipynb">
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#que-peut-on-faire-avec-un-ordinateur">
+   1.2. Que peut-on faire avec un ordinateur ?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#utilite-d-un-ordinateur-en-science">
+   1.3. Utilité d’un ordinateur en Science?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modelisation-numerique">
+     1.3.1. Modélisation numérique
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#methode">
+     1.3.2. Méthode
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#programmation-sous-python">
+     1.3.3. Programmation sous Python
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#algorithme">
+   1.4. Algorithme
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-href-ici031-quelques-reperes-historiques-a-a-id-ici031-a">
+     1.4.1.
+     <a href="#ici031">
+      Quelques repères historiques
+     </a>
+     <a id="ici031">
+     </a>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-langage-de-programmation-scientifique">
+   1.5. Python langage de programmation scientifique
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#historique">
+     1.5.1. Historique
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#proprietes">
+     1.5.2. Propriétés
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#le-zen-de-python">
+     1.5.3. Le Zen de Python
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#traduction-de-cecile-trevian-et-bob-cordeau">
+     1.5.4. traduction de Cécile Trevian et Bob Cordeau
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objectifs-du-cours">
+   1.6. Objectifs du cours
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fin-de-la-lecon">
+   1.7. Fin de la leçon
   </a>
  </li>
 </ul>
+
             </nav>
         </div>
     </div>
@@ -231,7 +296,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1><a href="#ici000">Introduction à la programmation scientifique</a><a id="ici000" /></h1>
+                <h1>Introduction</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -242,17 +307,93 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-href-sommaire-contenu-de-la-lecon-a-a-name-sommaire-a-a-href-http-localhost-8888-notebooks-plan-ipynb-lyonhpc-a">
-   <a href="#sommaire">
-    Contenu de la leçon
-   </a>
-   <a name="sommaire">
-   </a>
+  <a class="reference internal nav-link" href="#format-du-cours">
+   1.1. Format du cours
   </a>
-  <a href="http://localhost:8888/notebooks/Plan.ipynb">
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#que-peut-on-faire-avec-un-ordinateur">
+   1.2. Que peut-on faire avec un ordinateur ?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#utilite-d-un-ordinateur-en-science">
+   1.3. Utilité d’un ordinateur en Science?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modelisation-numerique">
+     1.3.1. Modélisation numérique
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#methode">
+     1.3.2. Méthode
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#programmation-sous-python">
+     1.3.3. Programmation sous Python
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#algorithme">
+   1.4. Algorithme
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-href-ici031-quelques-reperes-historiques-a-a-id-ici031-a">
+     1.4.1.
+     <a href="#ici031">
+      Quelques repères historiques
+     </a>
+     <a id="ici031">
+     </a>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-langage-de-programmation-scientifique">
+   1.5. Python langage de programmation scientifique
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#historique">
+     1.5.1. Historique
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#proprietes">
+     1.5.2. Propriétés
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#le-zen-de-python">
+     1.5.3. Le Zen de Python
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#traduction-de-cecile-trevian-et-bob-cordeau">
+     1.5.4. traduction de Cécile Trevian et Bob Cordeau
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objectifs-du-cours">
+   1.6. Objectifs du cours
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fin-de-la-lecon">
+   1.7. Fin de la leçon
   </a>
  </li>
 </ul>
+
                         </nav>
                     </div>
                 </div>
@@ -260,46 +401,23 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="a-href-ici000-introduction-a-la-programmation-scientifique-a-a-id-ici000">
-<h1><a href="#ici000">Introduction à la programmation scientifique</a><a id="ici000" /><a class="headerlink" href="#a-href-ici000-introduction-a-la-programmation-scientifique-a-a-id-ici000" title="Permalink to this headline">¶</a></h1>
-<div class="cell docutils container">
+  <div class="tex2jax_ignore mathjax_ignore section" id="introduction">
+<h1><span class="section-number">1. </span>Introduction<a class="headerlink" href="#introduction" title="Lien permanent vers ce titre">¶</a></h1>
+<a class="reference internal image-reference" href="../_images/logo_trans.png"><img alt="LyonHPC" src="../_images/logo_trans.png" style="width: 180px;" /></a>
+<h1>Contenu du chapitre<span class="tocSkip"></span></h1>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Format-du-cours" data-toc-modified-id="Format-du-cours-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Format du cours</a></span></li><li><span><a href="#Que-peut-on-faire-avec-un-ordinateur-?" data-toc-modified-id="Que-peut-on-faire-avec-un-ordinateur-?-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Que peut-on faire avec un ordinateur ?</a></span></li><li><span><a href="#Utilité-d'un-ordinateur-en-Science?" data-toc-modified-id="Utilité-d'un-ordinateur-en-Science?-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Utilité d'un ordinateur en Science?</a></span><ul class="toc-item"><li><span><a href="#Modélisation-numérique" data-toc-modified-id="Modélisation-numérique-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Modélisation numérique</a></span></li><li><span><a href="#Méthode" data-toc-modified-id="Méthode-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Méthode</a></span></li><li><span><a href="#Programmation-sous-Python" data-toc-modified-id="Programmation-sous-Python-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>Programmation sous Python</a></span></li></ul></li><li><span><a href="#Algorithme" data-toc-modified-id="Algorithme-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Algorithme</a></span><ul class="toc-item"><li><span><a href="#Quelques-repères-historiques" data-toc-modified-id="Quelques-repères-historiques-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span><a href="#ici031" rel="nofollow">Quelques repères historiques</a><a id="ici031" rel="nofollow"></a></a></span></li></ul></li><li><span><a href="#Python-langage-de-programmation-scientifique" data-toc-modified-id="Python-langage-de-programmation-scientifique-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Python langage de programmation scientifique</a></span><ul class="toc-item"><li><span><a href="#Historique" data-toc-modified-id="Historique-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>Historique</a></span></li><li><span><a href="#Propriétés" data-toc-modified-id="Propriétés-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>Propriétés</a></span></li><li><span><a href="#Le-Zen-de-Python" data-toc-modified-id="Le-Zen-de-Python-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>Le Zen de Python</a></span></li><li><span><a href="#traduction-de-Cécile-Trevian-et-Bob-Cordeau" data-toc-modified-id="traduction-de-Cécile-Trevian-et-Bob-Cordeau-5.4"><span class="toc-item-num">5.4&nbsp;&nbsp;</span>traduction de Cécile Trevian et <a href="http://perso.limsi.fr/pointal/python:courspython3" rel="nofollow" target="_blank">Bob Cordeau</a></a></span></li></ul></li><li><span><a href="#Objectifs-du-cours" data-toc-modified-id="Objectifs-du-cours-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Objectifs du cours</a></span></li><li><span><a href="#Fin-de-la-leçon" data-toc-modified-id="Fin-de-la-leçon-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>Fin de la leçon</a></span></li></ul></div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="o">%</span><span class="k">autosave</span> 300
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span><span class="p">,</span><span class="n">display</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<script type="application/javascript">IPython.notebook.set_autosave_interval(300000)</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Autosaving every 300 seconds
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span><span class="p">,</span><span class="n">display</span><span class="p">,</span><span class="n">Markdown</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div style="width:600px; overflow:auto;">
-<center>
-<a href="#sommaire"><img style=" float:center; display:inline; width:180px;" src="Figures/logo_trans.png" alt="LyonHPC" /></a>
-<img style=" float:center; display:inline; width:180px;" src="Figures/python-logo.gif" alt="LyonHPC"/>
-</center>
-</div>
-<img src="Figures/histoireinfo.png" alt="histoire des ordinateurs" style="width:250px; float:center;"/><div class="section" id="a-href-sommaire-contenu-de-la-lecon-a-a-name-sommaire-a-a-href-http-localhost-8888-notebooks-plan-ipynb-lyonhpc-a">
-<h2><a href="#sommaire">Contenu de la leçon</a><a name="sommaire"/></a><a href="http://localhost:8888/notebooks/Plan.ipynb"><img alt="LyonHPC" src="../_images/logo_trans.png" /></a><a class="headerlink" href="#a-href-sommaire-contenu-de-la-lecon-a-a-name-sommaire-a-a-href-http-localhost-8888-notebooks-plan-ipynb-lyonhpc-a" title="Permalink to this headline">¶</a></h2>
-<h5>
-<ol class="simple">
-<li><p><a href="#format">Format du cours</a></p></li>
-<li><p><a href="#ordinateur">Que peut-on faire avec un ordinateur?</a></p></li>
-<li><p><a href="#utilite">Utilité d’un ordinateur en science?</a></p></li>
-<li><p><a href="#algorithme">L’algorithme: la base de la programmation</a></p></li>
-<li><p><a href="#python">Python comme langage de programmation</a></p></li>
-<li><p><a href="#objectifs">Objectifs du cours</a></p></li>
-</ol>
-</h5><p><a href="#sommaire"><img alt="../_images/go-home.png" src="../_images/go-home.png" /></a><a href="#format"><img alt="../_images/go-next.png" src="../_images/go-next.png" /> </a></p>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="a-href-format-format-du-cours-a-a-id-format-a">
-<h1><a href="#format">Format du cours</a> <a id="format"></a><a class="headerlink" href="#a-href-format-format-du-cours-a-a-id-format-a" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="format-du-cours">
+<h2><span class="section-number">1.1. </span>Format du cours<a class="headerlink" href="#format-du-cours" title="Lien permanent vers ce titre">¶</a></h2>
 <ul class="simple">
 <li><p>Utilise un document écrit interactif (<em>IPython notebook</em>)
 avec du texte, des diagrammes, des exemples de code
@@ -312,11 +430,30 @@ et des programmes interactifs</p>
 <li><p>La programmation s’apprend en pratiquant !!</p></li>
 <li><p>Cours basé sur des exemples</p></li>
 </ul>
-<img alt="../_images/exemples.png" src="../_images/exemples.png" />
-<p><a href="#sommaire"><img alt="../_images/go-home.png" src="../_images/go-home.png" /></a><a href="#ordinateur"><img alt="../_images/go-next.png" src="../_images/go-next.png" /> </a></p>
+<a class="reference internal image-reference" href="../_images/exemples.png"><img alt="../_images/exemples.png" src="../_images/exemples.png" style="width: 400px;" /></a>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;**Video du cours: introduction à la simulation scientifique**&quot;</span><span class="p">))</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;o-RdTDVbF3E&#39;</span><span class="p">)</span>
+</pre></div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="a-href-ordinateur-que-peut-on-faire-avec-un-ordinateur-a-a-id-ordinateur-a">
-<h1><a href="#ordinateur">Que peut-on faire avec un ordinateur ?</a> <a id="ordinateur"></a><a class="headerlink" href="#a-href-ordinateur-que-peut-on-faire-avec-un-ordinateur-a-a-id-ordinateur-a" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="cell_output docutils container">
+<p><strong>Video du cours: introduction à la simulation scientifique</strong></p>
+<div class="output text_html">
+<iframe
+    width="400"
+    height="300"
+    src="https://www.youtube.com/embed/o-RdTDVbF3E"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+</div>
+<div class="section" id="que-peut-on-faire-avec-un-ordinateur">
+<h2><span class="section-number">1.2. </span>Que peut-on faire avec un ordinateur ?<a class="headerlink" href="#que-peut-on-faire-avec-un-ordinateur" title="Lien permanent vers ce titre">¶</a></h2>
+<a class="reference internal image-reference" href="../_images/cloud_intro.png"><img alt="sommaire" src="../_images/cloud_intro.png" style="width: 350px;" /></a>
 <p><strong>Équation de base des ordinateurs (Nick Parlante)</strong></p>
 <blockquote>
 <div><p><strong>Ordinateur = <font color='red'>Puissance</font> + <font color='green'>Stupidité</font></strong></p>
@@ -327,51 +464,48 @@ un ordinateur peut traiter des masses de données en exécutant des milliards d�
 <li><p><font color='green'><strong>stupidité</strong>:</font> mais les opérations sont simples et mécaniques et l’ordinateur ne possède aucune capacité d’analyse.</p></li>
 <li><p><font color='blue'><strong>l’intelligence</strong>:</font> vient du programme, c’est à dire de l’être humain !</p></li>
 </ul>
-<p>“The effective exploitation of his powers of abstraction must be regarded as one of the most vital activities of a competent programmer” (Edsger W. Dijkstra)</p>
+<p>« <em>The effective exploitation of his powers of abstraction must be regarded as one of the most vital activities of a competent programmer</em> » (Edsger W. Dijkstra)</p>
 <p>Les ordinateurs sont cependant extrêmement utiles.
 Mais toute l’intelligence est dans le logiciel, d’où <em>l’importance de connaître les principes de la programmation</em> pour maîtriser l’outil informatique, particulièrement en science.</p>
 <p>Les ordinateurs actuels ne sont pas les ordinateurs <strong>HAL 9000</strong> (Heuristically programmed ALgorithmic computer), imaginés par de Stanley Kubrick dans <em>l’odyssée de l’espace</em></p>
-<center>
-<div style="width:600px; overflow:auto;">
-<img style=" float:left; display:inline; width:300px;" src="Figures/odysse1.jpeg" alt="odyssée de l'espace"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img style=" display:inline; width:240px;"src="Figures/odysse2.png" alt="odyssée de l'espace"/>
+<a class="reference internal image-reference" href="../_images/odysse1.jpeg"><img alt="odyssée de l'espace" src="../_images/odysse1.jpeg" style="width: 350px;" /></a>
+<a class="reference internal image-reference" href="../_images/odysse2.png"><img alt="odyssée de l'espace" src="../_images/odysse2.png" style="width: 300px;" /></a>
 </div>
-</center><p><a href="#sommaire"><img alt="../_images/go-home.png" src="../_images/go-home.png" /></a><a href="#utilite"><img alt="../_images/go-next.png" src="../_images/go-next.png" /> </a></p>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="a-href-utilite-utilite-d-un-ordinateur-en-science-a-a-id-utilite-a">
-<h1><a href="#utilite">Utilité d’un ordinateur en Science?</a> <a id="utilite"></a><a class="headerlink" href="#a-href-utilite-utilite-d-un-ordinateur-en-science-a-a-id-utilite-a" title="Permalink to this headline">¶</a></h1>
-<p>Un ordinateur exécute très rapidement des instructions élémentaires codées en binaire: $\approx 4*6000$ MIPS ou bogoMIPS (millions d’instruction par seconde) sur un ordinateur de bureau (Intel Core I5 4 coeurs). Et il les exécute de façon mécanique.</p>
+<div class="section" id="utilite-d-un-ordinateur-en-science">
+<h2><span class="section-number">1.3. </span>Utilité d’un ordinateur en Science?<a class="headerlink" href="#utilite-d-un-ordinateur-en-science" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Un ordinateur exécute très rapidement des instructions élémentaires codées en binaire: <span class="math notranslate nohighlight">\(\approx 4*6000\)</span> MIPS ou bogoMIPS (millions d’instruction par seconde) sur un ordinateur de bureau (Intel Core I5 4 coeurs). Et il les exécute de façon mécanique.</p>
 <p><strong>Question:</strong>  Comment peut-on utiliser un ordinateur pour simuler un problème physique ?</p>
 <p>Par exemple calculer le mouvement d’un pendule simple, puisque l’ordinateur ne connaît ni la mécanique, ni les équations, ni les méthodes de résolutions de ces équations !</p>
-<div class="section" id="a-href-ici011-modelisation-numerique-a-a-id-ici011">
-<h2><a href="#ici011">Modélisation numérique</a><a id="ici011" /><a class="headerlink" href="#a-href-ici011-modelisation-numerique-a-a-id-ici011" title="Permalink to this headline">¶</a></h2>
-<center><img src="Figures/programmation1.png" alt="Programmation" style="width:400px;"/></center>
-<p>###<a href="#ici012"><strong>méthode</strong></a><a id="ici012"></a>
-le scientifique imagine un algorithme pour résoudre le problème de façon mécanique, et le traduit ensuite dans un langage de programmation pour être exécuté par un ordinateur. Il peut ensuite faire l’étude paramétrique du problème comme avec une expérience.</p>
-<table>
-<tr>
- <td><img src="Figures/penduleschema.png" alt="Physique" style="width:200px;"/> 
- </td>
- <td style="vertical-align:top;"> 
- **Modèle mathématique** <br>
-<p>$$ m l \frac{d^2 \theta}{d t^2} = m g \sin(\theta) $$
-$$ Y = [ \theta, \frac{d \theta}{dt} ] $$<br />
-$$ Y_0=[\theta_0, 0]$$</p>
-<p>$$ \frac{d Y}{dt} = F(Y,t) $$</p>
- </td>
- <td style="vertical-align:top;">
-**Algorithme RK2** <br>
-<p>Y = Y0<br>
-Pour i de 1 a n<br>
-   Y1 = Y + 0.5 * dt *F(Y,t)<br>
-   Y = Y +  dt *F(Y1,t+dt/2)<br>
-   t=t+dt<br>
-Fin Pour<br></p>
- </td>
-</tr>
-</table></div>
-<div class="section" id="a-href-ici013-programmation-sous-python-a-a-id-ici013-a">
-<h2><a href="#ici013">programmation sous Python</a><a id="ici013"></a><a class="headerlink" href="#a-href-ici013-programmation-sous-python-a-a-id-ici013-a" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="modelisation-numerique">
+<h3><span class="section-number">1.3.1. </span>Modélisation numérique<a class="headerlink" href="#modelisation-numerique" title="Lien permanent vers ce titre">¶</a></h3>
+<a class="reference internal image-reference" href="../_images/programmation1.png"><img alt="Programmation" src="../_images/programmation1.png" style="width: 400px;" /></a>
+</div>
+<div class="section" id="methode">
+<h3><span class="section-number">1.3.2. </span>Méthode<a class="headerlink" href="#methode" title="Lien permanent vers ce titre">¶</a></h3>
+<p>le scientifique imagine un algorithme pour résoudre le problème de façon mécanique, et le traduit ensuite dans un langage de programmation pour être exécuté par un ordinateur. Il peut ensuite faire l’étude paramétrique du problème comme avec une expérience.</p>
+<p><strong>Problème physique</strong></p>
+<a class="reference internal image-reference" href="../_images/penduleschema.png"><img alt="Physique" src="../_images/penduleschema.png" style="width: 200px;" /></a>
+<p><strong>Modèle mathématique</strong></p>
+<div class="math notranslate nohighlight">
+\[ m l \frac{d^2 \theta}{d t^2} = m g \sin(\theta) \]</div>
+<div class="math notranslate nohighlight">
+\[ Y = [ \theta, \frac{d \theta}{dt} ] \]</div>
+<div class="math notranslate nohighlight">
+\[ Y_0=[\theta_0, 0]\]</div>
+<div class="math notranslate nohighlight">
+\[ \frac{d Y}{dt} = F(Y,t) \]</div>
+<p><strong>Algorithme RK2</strong> <br></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Y = Y0
+Pour i de 1 a n
+    Y1 = Y + 0.5 * dt *F(Y,t)
+    Y = Y +  dt *F(Y1,t+dt/2)
+    t=t+dt
+Fin Pour
+</pre></div>
+</div>
+</div>
+<div class="section" id="programmation-sous-python">
+<h3><span class="section-number">1.3.3. </span>Programmation sous Python<a class="headerlink" href="#programmation-sous-python" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -405,7 +539,7 @@ Fin Pour<br></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/COURS_INTRO_13_0.png" src="../_images/COURS_INTRO_13_0.png" />
+<img alt="../_images/COURS_INTRO_10_0.png" src="../_images/COURS_INTRO_10_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1100,26 +1234,21 @@ AAAlqXRvbwAAAB1kYXRhAAAAAQAAAABMYXZmNTguMjkuMTAw
   Your browser does not support the video tag.
 </video></div></div>
 </div>
-<p><a href="#sommaire"><img alt="../_images/go-home.png" src="../_images/go-home.png" /></a><a href="#algorithme"><img alt="../_images/go-next.png" src="../_images/go-next.png" /> </a></p>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="a-href-algorithme-algorithme-a-a-id-algorithme-a">
-<h1><a href="#algorithme">Algorithme</a> <a id="algorithme"></a><a class="headerlink" href="#a-href-algorithme-algorithme-a-a-id-algorithme-a" title="Permalink to this headline">¶</a></h1>
-<div style="width:600px; overflow:auto;">
-<center>
-<img style=" float:center; display:inline;width:150px;" src="Figures/Euclid_2.jpg" alt="Euclide"/>
-<img style=" float:center; display:inline;width:200px;" src="Figures/Euclide.png" alt="Algorithme"/> 
-<img style=" float:center; display:inline; width:80px;"
-src="Figures/al-khawarizmi.jpg" alt="al-Khwarizmi"/>
-</center>
-</div><p><em>Un algorithme est une suite finie et non ambigüe d’opérations ou d’instructions permettant de résoudre un problème</em>. Les algorithmes sont connus depuis l’antiquité (Euclide).</p>
+<div class="section" id="algorithme">
+<h2><span class="section-number">1.4. </span>Algorithme<a class="headerlink" href="#algorithme" title="Lien permanent vers ce titre">¶</a></h2>
+<a class="reference internal image-reference" href="../_images/Euclid_2.jpg"><img alt="Euclide" src="../_images/Euclid_2.jpg" style="width: 150px;" /></a>
+<a class="reference internal image-reference" href="../_images/Euclide.png"><img alt="Algorithme" src="../_images/Euclide.png" style="width: 200px;" /></a>
+<a class="reference internal image-reference" href="../_images/al-khawarizmi.jpg"><img alt="al-Khwarizmi" src="../_images/al-khawarizmi.jpg" style="width: 80px;" /></a>
+<p><em>Un algorithme est une suite finie et non ambigüe d’opérations ou d’instructions permettant de résoudre un problème</em>. Les algorithmes sont connus depuis l’antiquité (Euclide).</p>
 <p>Le mot <strong>algorithme</strong> vient du nom du mathématicien perse du 9ième siècle (AJC) <em>Abu Abdullah Muhammad ibn Musa al-Khwarizmi</em>. L’algorithmique correspond à la phase préparatoire avant une quelconque programmation. Elle permet de décrire un problème sous une forme que l’on peut ensuite programmer sur un ordinateur et ceci dans un langage naturel, indépendant d’un langage de programmation.</p>
 <blockquote>
 <div><p><strong>algorithme numérique</strong>  suite finie et non ambiguë d’opérations ou d’instructions sur des nombres permettant de résoudre un problème.</p>
 </div></blockquote>
 <p>Et il n’est pas nécessaire d’avoir un ordinateur pour exécuter un algorithme (machine de Turing inventé en 1936 avant l’ordinateur)!</p>
 <div class="section" id="a-href-ici031-quelques-reperes-historiques-a-a-id-ici031-a">
-<h2><a href="#ici031">Quelques repères historiques</a><a id="ici031"></a><a class="headerlink" href="#a-href-ici031-quelques-reperes-historiques-a-a-id-ici031-a" title="Permalink to this headline">¶</a></h2>
+<h3><span class="section-number">1.4.1. </span><a href="#ici031">Quelques repères historiques</a><a id="ici031"></a><a class="headerlink" href="#a-href-ici031-quelques-reperes-historiques-a-a-id-ici031-a" title="Lien permanent vers ce titre">¶</a></h3>
 <ul class="simple">
 <li><p>Boulier (12e siècle): 1er abaque (dans # civilisations)</p></li>
 <li><p>Pascaline (1642): 1ere machine à calculer mécanique</p></li>
@@ -1133,36 +1262,49 @@ src="Figures/al-khawarizmi.jpg" alt="al-Khwarizmi"/>
 <li><p>Micro-ordinateurs personnels : Apple (1976), IBM PC (1981)</p></li>
 <li><p>Loi de Moore (1965) : doublement de la puissance des ordinateurs tous les 18 mois</p></li>
 <li><p>Naissance du système Linux (Linus Torvalds 1991)</p></li>
-<li><p>Supercalculateur Curie (2012) $10^{10}$ fois plus puissant qu’un IBM PC de 1981</p></li>
+<li><p>Supercalculateur Curie (2012) <span class="math notranslate nohighlight">\(10^{10}\)</span> fois plus puissant qu’un IBM PC de 1981</p></li>
 </ul>
-<p><strong>Puissance de calcul de Curie</strong>  en 1s $\equiv 10^{15} flops $ (peta flops) $\approx$  calcul pendant 48h de la population du globe équipée de boulier</p>
-<center>
-<img src="Figures/histoireinfo.png" alt="histoire des ordinateurs" style="width:400px;"/>
-</center><p><a href="#sommaire"><img alt="../_images/go-home.png" src="../_images/go-home.png" /></a><a href="#python"><img alt="../_images/go-next.png" src="../_images/go-next.png" /> </a></p>
+<p><strong>Puissance de calcul de Curie</strong>  en 1s <span class="math notranslate nohighlight">\(\equiv 10^{15} flops \)</span> (peta flops) <span class="math notranslate nohighlight">\(\approx\)</span>  calcul pendant 48h de la population du globe équipée de boulier</p>
+<a class="reference internal image-reference" href="../_images/histoireinfo.png"><img alt="histoire des ordinateurs" src="../_images/histoireinfo.png" style="width: 500px;" /></a>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="a-href-python-python-langage-de-programmation-scientifique-a-a-id-python-a">
-<h1><a href="#python">Python langage de programmation scientifique</a> <a id="python"></a><a class="headerlink" href="#a-href-python-python-langage-de-programmation-scientifique-a-a-id-python-a" title="Permalink to this headline">¶</a></h1>
-<img alt="../_images/zen-of-python.png" src="../_images/zen-of-python.png" />
-<div class="section" id="a-href-ici041-historique-a-a-id-ici041-a">
-<h2><a href="#ici041">Historique</a><a id="ici041"></a><a class="headerlink" href="#a-href-ici041-historique-a-a-id-ici041-a" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="python-langage-de-programmation-scientifique">
+<h2><span class="section-number">1.5. </span>Python langage de programmation scientifique<a class="headerlink" href="#python-langage-de-programmation-scientifique" title="Lien permanent vers ce titre">¶</a></h2>
+<a class="reference internal image-reference" href="../_images/zen-of-python.png"><img alt="../_images/zen-of-python.png" src="../_images/zen-of-python.png" style="width: 150px;" /></a>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;**Video du cours: introduction au langage Python**&quot;</span><span class="p">))</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;OkIroRFkNxQ&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p><strong>Video du cours: introduction au langage Python</strong></p>
+<div class="output text_html">
+<iframe
+    width="400"
+    height="300"
+    src="https://www.youtube.com/embed/OkIroRFkNxQ"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+<div class="section" id="historique">
+<h3><span class="section-number">1.5.1. </span>Historique<a class="headerlink" href="#historique" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Créé en 1989 par Guido van Rossum</p>
 <ul class="simple">
 <li><p>« Benevolent Dictator For Life » (BDFL)</p></li>
 <li><p><strong>Gratuit, libre et multi-plateformes (portable)</strong></p></li>
 <li><p>Le nom provient de la série britannique</p></li>
-<li><p>«Monty Python’s Flying Circus» (voir [http://fr.wikipedia.org/wiki/Monty_Python])</p></li>
+<li><p>«Monty Python’s Flying Circus» (voir [<a class="reference external" href="http://fr.wikipedia.org/wiki/Monty_Python">http://fr.wikipedia.org/wiki/Monty_Python</a>])</p></li>
 </ul>
-<center>
-<div style="width:600px; overflow:auto;">
-<img style=" float:left; display:inline; width:200px;" src="Figures/ungood-guido-van-rossum.jpeg" alt="Guido_van_Rossum"/>
-<img style=" float:left; display:inline; width:200px;" src="Figures/python.png" alt="Python"/>
-<img style=" float:left; display:inline; width:150px;" src="Figures/Monty-python-flying-circus-theredlist.jpg" alt="Monty-python"/>
+<a class="reference internal image-reference" href="../_images/ungood-guido-van-rossum.jpeg"><img alt="Guido_van_Rossum" src="../_images/ungood-guido-van-rossum.jpeg" style="width: 200px;" /></a>
+<a class="reference internal image-reference" href="../_images/python.png"><img alt="Python" src="../_images/python.png" style="width: 200px;" /></a>
+<a class="reference internal image-reference" href="../_images/Monty-python-flying-circus-theredlist.jpg"><img alt="Monty-python" src="../_images/Monty-python-flying-circus-theredlist.jpg" style="width: 150px;" /></a>
 </div>
-</center>
-</div>
-<div class="section" id="a-href-ici042-proprietes-a-a-id-ici042-a">
-<h2><a href="#ici042">Propriétés</a><a id="ici042"></a><a class="headerlink" href="#a-href-ici042-proprietes-a-a-id-ici042-a" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="proprietes">
+<h3><span class="section-number">1.5.2. </span>Propriétés<a class="headerlink" href="#proprietes" title="Lien permanent vers ce titre">¶</a></h3>
 <ul class="simple">
 <li><p>Langage <strong>interprété</strong> (facile à utiliser)</p></li>
 <li><p><strong>Usage général</strong>: on peut tout faire</p>
@@ -1192,8 +1334,9 @@ src="Figures/al-khawarizmi.jpg" alt="al-Khwarizmi"/>
 </li>
 </ul>
 </div>
-<div class="section" id="a-href-ici045-le-zen-de-python-a-a-id-ici045-a">
-<h2><a href="#ici045">Le Zen de Python</a><a id="ici045"></a> <img alt="../_images/zen.png" src="../_images/zen.png" /><a class="headerlink" href="#a-href-ici045-le-zen-de-python-a-a-id-ici045-a" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="le-zen-de-python">
+<h3><span class="section-number">1.5.3. </span>Le Zen de Python<a class="headerlink" href="#le-zen-de-python" title="Lien permanent vers ce titre">¶</a></h3>
+<a class="reference internal image-reference" href="../_images/zen.png"><img alt="../_images/zen.png" src="../_images/zen.png" style="width: 100px;" /></a>
 <p>Voici 19 règles de programmation Python d’après le BDFL, que l’on trouve sur tout interpréteur python en tapant</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1229,7 +1372,7 @@ Namespaces are one honking great idea -- let&#39;s do more of those!
 </div>
 </div>
 <div class="section" id="traduction-de-cecile-trevian-et-bob-cordeau">
-<h2>traduction de Cécile Trevian et <a class="reference external" href="http://perso.limsi.fr/pointal/python:courspython3">Bob Cordeau</a><a class="headerlink" href="#traduction-de-cecile-trevian-et-bob-cordeau" title="Permalink to this headline">¶</a></h2>
+<h3><span class="section-number">1.5.4. </span>traduction de Cécile Trevian et <a class="reference external" href="http://perso.limsi.fr/pointal/python:courspython3">Bob Cordeau</a><a class="headerlink" href="#traduction-de-cecile-trevian-et-bob-cordeau" title="Lien permanent vers ce titre">¶</a></h3>
 <ol class="simple">
 <li><p>Préfère la beauté à la laideur,</p></li>
 </ol>
@@ -1251,11 +1394,10 @@ Namespaces are one honking great idea -- let&#39;s do more of those!
 <li><p>Si l’implémentation s’explique aisément, c’est peut-être une bonne idée.</p></li>
 <li><p>Les espaces de nommage! Sacrée bonne idée! Faisons plus de trucs comme ça.</p></li>
 </ul>
-<p><a href="#sommaire"><img alt="../_images/go-home.png" src="../_images/go-home.png" /></a><a href="#objectifs"><img alt="../_images/go-next.png" src="../_images/go-next.png" /> </a></p>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="a-href-objectifs-objectifs-du-cours-a-a-id-objectifs-a">
-<h1><a href="#objectifs">Objectifs du cours</a><a id="objectifs"></a><a class="headerlink" href="#a-href-objectifs-objectifs-du-cours-a-a-id-objectifs-a" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="objectifs-du-cours">
+<h2><span class="section-number">1.6. </span>Objectifs du cours<a class="headerlink" href="#objectifs-du-cours" title="Lien permanent vers ce titre">¶</a></h2>
 <ul class="simple">
 <li><p>A la fin de ce cours, vous serez capable d’écrire des programmes à partir d’algorithmes pour résoudre des problèmes scientifiques.
 <img alt="../_images/exemples.png" src="../_images/exemples.png" /></p></li>
@@ -1264,25 +1406,18 @@ Namespaces are one honking great idea -- let&#39;s do more of those!
 <li><p>Mais n’oubliez pas, la programmation, si elle peut être une science ou un art, peut aussi être <strong>ludique</strong>.</p></li>
 </ul>
 <blockquote>
-<div><p><em>“Most good programmers do programming not because they expect to get paid or get adulation by the public, but because it is fun to program”.</em></p>
+<div><p><em>« Most good programmers do programming not because they expect to get paid or get adulation by the public, but because it is fun to program ».</em></p>
 </div></blockquote>
 <p>Linus Torvalds (créateur de Linux)</p>
-<center>
-<div style="width:600px; overflow:auto;">
-<img style=" float:left; display:inline; width:200px;" src="Figures/LinuxFun.png" alt="Linux"/>&nbsp;&nbsp;&nbsp;&nbsp;
-<img style=" display:inline; width:100px;" src="Figures/linus.jpg" alt="Linux"/>&nbsp;&nbsp;&nbsp;&nbsp;
-<img style=" display:inline; width:180px;" src="Figures/steam_linux.png" alt="Linux"/>
+<a class="reference internal image-reference" href="../_images/LinuxFun.png"><img alt="Linux" src="../_images/LinuxFun.png" style="width: 200px;" /></a>
+<a class="reference internal image-reference" href="../_images/linus.jpg"><img alt="Linux" src="../_images/linus.jpg" style="width: 100px;" /></a>
+<a class="reference internal image-reference" href="../_images/steam_linux.png"><img alt="Linux" src="../_images/steam_linux.png" style="width: 180px;" /></a>
 </div>
-</center></div>
-<div class="tex2jax_ignore mathjax_ignore section" id="a-href-fin-fin-de-la-lecon-a-a-id-fin">
-<h1><a href="#fin">Fin de la leçon</a><a id="fin" /><a class="headerlink" href="#a-href-fin-fin-de-la-lecon-a-a-id-fin" title="Permalink to this headline">¶</a></h1>
-<div style="width:600px; overflow:auto;">
-<center>
-<img style=" float:center; display:inline; width:180px;" src="Figures/logo_trans.png" alt="LyonHPC" />
-<img style=" float:center; display:inline; width:200px;" src="Figures/python-logo.gif" alt="LyonHPC"/>
-</center>
+<div class="section" id="fin-de-la-lecon">
+<h2><span class="section-number">1.7. </span>Fin de la leçon<a class="headerlink" href="#fin-de-la-lecon" title="Lien permanent vers ce titre">¶</a></h2>
+<a class="reference internal image-reference" href="../_images/logo_trans.png"><img alt="LyonHPC" src="../_images/logo_trans.png" style="width: 180px;" /></a>
 </div>
-<img src="Figures/histoireinfo.png" alt="histoire des ordinateurs" style="width:240px;"/></div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -1309,12 +1444,19 @@ Namespaces are one honking great idea -- let&#39;s do more of those!
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../intro.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../intro.html" title="précédent page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-subtitle">précédent</p>
             <p class="prev-next-title">INPROS Introduction à la PROgrammation Scientifique</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="../CHAP2/COURS_ORDI.html" title="suivant page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">suivant</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Fonctionnement d’un ordinateur</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             

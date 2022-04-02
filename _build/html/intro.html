@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="fr">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -43,6 +43,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
+    <script src="_static/translations.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -52,10 +53,10 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Introduction à la programmation scientifique" href="CHAP1/COURS_INTRO.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="1. Introduction" href="CHAP1/COURS_INTRO.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="fr">
     
 
     <!-- Google Analytics -->
@@ -97,14 +98,32 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  INPROS
+ </span>
+</p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="CHAP1/COURS_INTRO.html">
-   <a href="#ici000">
-    Introduction à la programmation scientifique
-   </a>
-   <a id="ici000">
-   </a>
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="CHAP2/COURS_ORDI.html">
+   2. Fonctionnement d’un ordinateur
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Annexes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="credits.html">
+   Crédits
   </a>
  </li>
 </ul>
@@ -146,7 +165,10 @@ const thebe_selector_output = ".output, .cell_output"
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        
+        <a class="dropdown-buttons"
+            href="_sources/intro.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Télécharger le fichier notebook" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="_sources/intro.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Télécharger le fichier source" data-toggle="tooltip"
@@ -158,22 +180,6 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 
             <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Dépôt source"><i
-                    class="fab fa-github"></i>dépôt</button></a>
-        <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Ouvrez un problème"><i class="fas fa-lightbulb"></i>signaler un problème</button></a>
-        
-    </div>
-</div>
 
             <!-- Full screen (wrap in <a> to have style consistency -->
 
@@ -195,24 +201,31 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-de-presentation">
+   Vidéo de présentation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#descriptif">
-   descriptif:
+   Descriptif:
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#objectifs">
-   objectifs:
+   Objectifs:
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#contributeurs">
-   contributeurs:
+  <a class="reference internal nav-link" href="#video-d-introduction">
+   Video d’introduction
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#contenu">
-   contenu:
+   Contenu:
   </a>
+  <ul class="nav section-nav flex-column">
+  </ul>
  </li>
 </ul>
 
@@ -235,24 +248,31 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-de-presentation">
+   Vidéo de présentation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#descriptif">
-   descriptif:
+   Descriptif:
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#objectifs">
-   objectifs:
+   Objectifs:
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#contributeurs">
-   contributeurs:
+  <a class="reference internal nav-link" href="#video-d-introduction">
+   Video d’introduction
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#contenu">
-   contenu:
+   Contenu:
   </a>
+  <ul class="nav section-nav flex-column">
+  </ul>
  </li>
 </ul>
 
@@ -264,13 +284,35 @@ const thebe_selector_output = ".output, .cell_output"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="inpros-introduction-a-la-programmation-scientifique">
-<h1>INPROS Introduction à la PROgrammation Scientifique<a class="headerlink" href="#inpros-introduction-a-la-programmation-scientifique" title="Permalink to this headline">¶</a></h1>
+<h1>INPROS Introduction à la PROgrammation Scientifique<a class="headerlink" href="#inpros-introduction-a-la-programmation-scientifique" title="Lien permanent vers ce titre">¶</a></h1>
 <p>Ce cours utilise des outils web Jupyter notebook
 permettant aux apprenants d’apprendre la programmation scientifique sous Python
 avec un simple navigateur sans avoir à installer de logiciel.</p>
+<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.0/fr/"><img alt="Licence Creative Commons" src="_images/cc.png" /></a><br />Mise à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.0/fr/">Licence Creative Commons <br> Attribution - Pas d’Utilisation Commerciale - Partage dans les Mêmes Conditions 2.0 France</a>.</p>
+<div class="section" id="video-de-presentation">
+<h2>Vidéo de présentation<a class="headerlink" href="#video-de-presentation" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;x7rWe3yFEWE&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="400"
+    height="300"
+    src="https://www.youtube.com/embed/x7rWe3yFEWE"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+</div>
 <div class="section" id="descriptif">
-<h2>descriptif:<a class="headerlink" href="#descriptif" title="Permalink to this headline">¶</a></h2>
-<p>Initiation à la programmation scientifique pour la modélisation numérique en
+<h2>Descriptif:<a class="headerlink" href="#descriptif" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Ce cours est une Initiation à la programmation scientifique pour la modélisation numérique en
 sciences.  L’objectif est l’apprentissage d’une méthodologie de programmation
 scientifique, axé sur la pratique de la programmation sous Python. Il s’adresse
 à des étudiants scientifiques n’ayant pas ou peu de connaissances en
@@ -279,27 +321,45 @@ acquis une méthodologie, ainsi que la capacité à écrire des programmes simpl
 mais utiles pour  simuler ou analyser des problèmes scientifiques .</p>
 </div>
 <div class="section" id="objectifs">
-<h2>objectifs:<a class="headerlink" href="#objectifs" title="Permalink to this headline">¶</a></h2>
+<h2>Objectifs:<a class="headerlink" href="#objectifs" title="Lien permanent vers ce titre">¶</a></h2>
 <p>13 Leçons utilisant Ipython Notebook avec des videos. L’accés à un serveur Jupyter
 permet à l’étudiant sur son navigateur de tester  les programmes
 Python en parallèle du visionnement video du cours.</p>
 </div>
-<div class="section" id="contributeurs">
-<h2>contributeurs:<a class="headerlink" href="#contributeurs" title="Permalink to this headline">¶</a></h2>
-<p>Marc BUFFAT, Violaine Louvet, Michel Kern, Loic Gouarin, Laurence VIRY, Anne Cadiou</p>
+<div class="section" id="video-d-introduction">
+<h2>Video d’introduction<a class="headerlink" href="#video-d-introduction" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;O795I64W0Ck&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="400"
+    height="300"
+    src="https://www.youtube.com/embed/O795I64W0Ck"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
 </div>
 <div class="section" id="contenu">
-<h2>contenu:<a class="headerlink" href="#contenu" title="Permalink to this headline">¶</a></h2>
+<h2>Contenu:<a class="headerlink" href="#contenu" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">INPROS</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="CHAP1/COURS_INTRO.html"><a href="#ici000">Introduction à la programmation scientifique</a><a id="ici000" /></a></li>
-<li class="toctree-l1"><a class="reference internal" href="CHAP1/COURS_INTRO.html#a-href-format-format-du-cours-a-a-id-format-a"><a href="#format">Format du cours</a> <a id="format"></a></a></li>
-<li class="toctree-l1"><a class="reference internal" href="CHAP1/COURS_INTRO.html#a-href-ordinateur-que-peut-on-faire-avec-un-ordinateur-a-a-id-ordinateur-a"><a href="#ordinateur">Que peut-on faire avec un ordinateur ?</a> <a id="ordinateur"></a></a></li>
-<li class="toctree-l1"><a class="reference internal" href="CHAP1/COURS_INTRO.html#a-href-utilite-utilite-d-un-ordinateur-en-science-a-a-id-utilite-a"><a href="#utilite">Utilité d’un ordinateur en Science?</a> <a id="utilite"></a></a></li>
-<li class="toctree-l1"><a class="reference internal" href="CHAP1/COURS_INTRO.html#a-href-algorithme-algorithme-a-a-id-algorithme-a"><a href="#algorithme">Algorithme</a> <a id="algorithme"></a></a></li>
-<li class="toctree-l1"><a class="reference internal" href="CHAP1/COURS_INTRO.html#a-href-python-python-langage-de-programmation-scientifique-a-a-id-python-a"><a href="#python">Python langage de programmation scientifique</a> <a id="python"></a></a></li>
-<li class="toctree-l1"><a class="reference internal" href="CHAP1/COURS_INTRO.html#a-href-objectifs-objectifs-du-cours-a-a-id-objectifs-a"><a href="#objectifs">Objectifs du cours</a><a id="objectifs"></a></a></li>
-<li class="toctree-l1"><a class="reference internal" href="CHAP1/COURS_INTRO.html#a-href-fin-fin-de-la-lecon-a-a-id-fin"><a href="#fin">Fin de la leçon</a><a id="fin" /></a></li>
+<li class="toctree-l1"><a class="reference internal" href="CHAP1/COURS_INTRO.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CHAP2/COURS_ORDI.html">2. Fonctionnement d’un ordinateur</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Annexes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Crédits</a></li>
 </ul>
 </div>
 </div>
@@ -330,10 +390,10 @@ Python en parallèle du visionnement video du cours.</p>
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="CHAP1/COURS_INTRO.html" title="next page">
+    <a class='right-next' id="next-link" href="CHAP1/COURS_INTRO.html" title="suivant page">
     <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><a href="#ici000">Introduction à la programmation scientifique</a><a id="ici000" /></p>
+        <p class="prev-next-subtitle">suivant</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Introduction</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -12,6 +12,7 @@ parts:
   chapters:
   - file: CHAP1/COURS_INTRO
   - file: CHAP2/COURS_ORDI
+  - file: CHAP3/COURS_VAR
 - caption: Annexes
   chapters:
   - file: RAPPEL/COURS_RAPPEL

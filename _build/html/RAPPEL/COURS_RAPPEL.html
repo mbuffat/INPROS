@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rappels de mathématiques et de physique &#8212; INPROS INtroduction à la PROgrammation Scientifique en Python</title>
+    <title>Rappel de maths et physique &#8212; INPROS INtroduction à la PROgrammation Scientifique en Python</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -57,7 +57,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
     <link rel="next" title="Crédits" href="../credits.html" />
-    <link rel="prev" title="2. Fonctionnement d’un ordinateur" href="../CHAP2/COURS_ORDI.html" />
+    <link rel="prev" title="3. Variable et élements de base" href="../CHAP3/COURS_VAR.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="fr">
     
@@ -117,6 +117,11 @@ const thebe_selector_output = ".output, .cell_output"
    2. Fonctionnement d’un ordinateur
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP3/COURS_VAR.html">
+   3. Variable et élements de base
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -126,7 +131,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Rappels de mathématiques et de physique
+   Rappel de maths et physique
   </a>
  </li>
  <li class="toctree-l1">
@@ -222,7 +227,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#developpement-en-serie-de-taylor">
-     &gt;Développement en série de Taylor
+     Développement en série de Taylor
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -337,7 +342,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Rappels de mathématiques et de physique</h1>
+                <h1>Rappel de maths et physique</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -364,7 +369,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#developpement-en-serie-de-taylor">
-     &gt;Développement en série de Taylor
+     Développement en série de Taylor
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -478,12 +483,12 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="rappels-de-mathematiques-et-de-physique">
-<h1>Rappels de mathématiques et de physique<a class="headerlink" href="#rappels-de-mathematiques-et-de-physique" title="Lien permanent vers ce titre">¶</a></h1>
-<a class="reference internal image-reference" href="../_images/logo_trans2.png"><img alt="LyonHPC" src="../_images/logo_trans2.png" style="width: 180px;" /></a>
+  <div class="tex2jax_ignore mathjax_ignore section" id="rappel-de-maths-et-physique">
+<h1>Rappel de maths et physique<a class="headerlink" href="#rappel-de-maths-et-physique" title="Lien permanent vers ce titre">¶</a></h1>
+<a class="reference internal image-reference" href="../_images/logo_trans3.png"><img alt="LyonHPC" src="../_images/logo_trans3.png" style="width: 180px;" /></a>
 <a class="reference internal image-reference" href="../_images/cloud_rappel.png"><img alt="cloud" src="../_images/cloud_rappel.png" style="width: 400px;" /></a>
 <h1>Contenu du chapitre<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Rappels-de-mathématique" data-toc-modified-id="Rappels-de-mathématique-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Rappels de mathématique</a></span><ul class="toc-item"><li><span><a href="#Dérivée" data-toc-modified-id="Dérivée-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Dérivée</a></span></li><li><span><a href="#Intégrale" data-toc-modified-id="Intégrale-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Intégrale</a></span></li><li><span><a href="#>Développement-en-série-de-Taylor" data-toc-modified-id=">Développement-en-série-de-Taylor-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>&gt;Développement en série de Taylor</a></span></li><li><span><a href="#Exemple-(calcul-avec-sympy)" data-toc-modified-id="Exemple-(calcul-avec-sympy)-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Exemple (calcul avec sympy)</a></span></li></ul></li><li><span><a href="#Rappels-de-mécanique-newtonienne" data-toc-modified-id="Rappels-de-mécanique-newtonienne-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Rappels de mécanique newtonienne</a></span><ul class="toc-item"><li><span><a href="#Principe-fondamental-de-la-dynamique-(2ième-loi-de-Newton)" data-toc-modified-id="Principe-fondamental-de-la-dynamique-(2ième-loi-de-Newton)-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Principe fondamental de la dynamique (2ième loi de Newton)</a></span><ul class="toc-item"><li><span><a href="#exemple-d'équation-du-mouvement:" data-toc-modified-id="exemple-d'équation-du-mouvement:-2.1.1"><span class="toc-item-num">2.1.1&nbsp;&nbsp;</span>exemple d'équation du mouvement:</a></span></li><li><span><a href="#exemple-de-force-(gravitation)" data-toc-modified-id="exemple-de-force-(gravitation)-2.1.2"><span class="toc-item-num">2.1.2&nbsp;&nbsp;</span>exemple de force (gravitation)</a></span></li></ul></li><li><span><a href="#Travail,-Puissance" data-toc-modified-id="Travail,-Puissance-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Travail, Puissance</a></span></li><li><span><a href="#Conservation-de-l'énergie" data-toc-modified-id="Conservation-de-l'énergie-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>Conservation de l'énergie</a></span></li></ul></li><li><span><a href="#Exemple-1:-mouvement-balistique" data-toc-modified-id="Exemple-1:-mouvement-balistique-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Exemple 1: mouvement balistique</a></span><ul class="toc-item"><li><span><a href="#Équations-du-mouvement" data-toc-modified-id="Équations-du-mouvement-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Équations du mouvement</a></span></li><li><span><a href="#Trajectoire-,-vitesse-et-accélération" data-toc-modified-id="Trajectoire-,-vitesse-et-accélération-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Trajectoire , vitesse et accélération</a></span></li></ul></li><li><span><a href="#Exemple-2:-mouvement-d'un-satellite" data-toc-modified-id="Exemple-2:-mouvement-d'un-satellite-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Exemple 2: mouvement d'un satellite</a></span><ul class="toc-item"><li><span><a href="#Équation-du-mouvement" data-toc-modified-id="Équation-du-mouvement-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Équation du mouvement</a></span></li><li><span><a href="#Trajectoire,-vitesse-et-accélération" data-toc-modified-id="Trajectoire,-vitesse-et-accélération-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Trajectoire, vitesse et accélération</a></span></li></ul></li><li><span><a href="#Exemple-3:-Mouvement-du-pendule" data-toc-modified-id="Exemple-3:-Mouvement-du-pendule-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Exemple 3: Mouvement du pendule</a></span><ul class="toc-item"><li><span><a href="#Equation-du-mouvement" data-toc-modified-id="Equation-du-mouvement-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>Equation du mouvement</a></span></li><li><span><a href="#Conservation-de-l'énergie" data-toc-modified-id="Conservation-de-l'énergie-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>Conservation de l'énergie</a></span></li><li><span><a href="#Trajectoire,-vitesse-et-accélération" data-toc-modified-id="Trajectoire,-vitesse-et-accélération-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>Trajectoire, vitesse et accélération</a></span></li></ul></li><li><span><a href="#Fin-de-la-leçon" data-toc-modified-id="Fin-de-la-leçon-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Fin de la leçon</a></span></li></ul></div><div class="cell docutils container">
+<div class="toc"><ul class="toc-item"><li><span><a href="#Rappels-de-mathématique" data-toc-modified-id="Rappels-de-mathématique-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Rappels de mathématique</a></span><ul class="toc-item"><li><span><a href="#Dérivée" data-toc-modified-id="Dérivée-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Dérivée</a></span></li><li><span><a href="#Intégrale" data-toc-modified-id="Intégrale-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Intégrale</a></span></li><li><span><a href="#Développement-en-série-de-Taylor" data-toc-modified-id="Développement-en-série-de-Taylor-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Développement en série de Taylor</a></span></li><li><span><a href="#Exemple-(calcul-avec-sympy)" data-toc-modified-id="Exemple-(calcul-avec-sympy)-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Exemple (calcul avec sympy)</a></span></li></ul></li><li><span><a href="#Rappels-de-mécanique-newtonienne" data-toc-modified-id="Rappels-de-mécanique-newtonienne-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Rappels de mécanique newtonienne</a></span><ul class="toc-item"><li><span><a href="#Principe-fondamental-de-la-dynamique-(2ième-loi-de-Newton)" data-toc-modified-id="Principe-fondamental-de-la-dynamique-(2ième-loi-de-Newton)-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Principe fondamental de la dynamique (2ième loi de Newton)</a></span><ul class="toc-item"><li><span><a href="#exemple-d'équation-du-mouvement:" data-toc-modified-id="exemple-d'équation-du-mouvement:-2.1.1"><span class="toc-item-num">2.1.1&nbsp;&nbsp;</span>exemple d'équation du mouvement:</a></span></li><li><span><a href="#exemple-de-force-(gravitation)" data-toc-modified-id="exemple-de-force-(gravitation)-2.1.2"><span class="toc-item-num">2.1.2&nbsp;&nbsp;</span>exemple de force (gravitation)</a></span></li></ul></li><li><span><a href="#Travail,-Puissance" data-toc-modified-id="Travail,-Puissance-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Travail, Puissance</a></span></li><li><span><a href="#Conservation-de-l'énergie" data-toc-modified-id="Conservation-de-l'énergie-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>Conservation de l'énergie</a></span></li></ul></li><li><span><a href="#Exemple-1:-mouvement-balistique" data-toc-modified-id="Exemple-1:-mouvement-balistique-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Exemple 1: mouvement balistique</a></span><ul class="toc-item"><li><span><a href="#Équations-du-mouvement" data-toc-modified-id="Équations-du-mouvement-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Équations du mouvement</a></span></li><li><span><a href="#Trajectoire-,-vitesse-et-accélération" data-toc-modified-id="Trajectoire-,-vitesse-et-accélération-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Trajectoire , vitesse et accélération</a></span></li></ul></li><li><span><a href="#Exemple-2:-mouvement-d'un-satellite" data-toc-modified-id="Exemple-2:-mouvement-d'un-satellite-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Exemple 2: mouvement d'un satellite</a></span><ul class="toc-item"><li><span><a href="#Équation-du-mouvement" data-toc-modified-id="Équation-du-mouvement-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Équation du mouvement</a></span></li><li><span><a href="#Trajectoire,-vitesse-et-accélération" data-toc-modified-id="Trajectoire,-vitesse-et-accélération-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Trajectoire, vitesse et accélération</a></span></li></ul></li><li><span><a href="#Exemple-3:-Mouvement-du-pendule" data-toc-modified-id="Exemple-3:-Mouvement-du-pendule-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Exemple 3: Mouvement du pendule</a></span><ul class="toc-item"><li><span><a href="#Equation-du-mouvement" data-toc-modified-id="Equation-du-mouvement-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>Equation du mouvement</a></span></li><li><span><a href="#Conservation-de-l'énergie" data-toc-modified-id="Conservation-de-l'énergie-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>Conservation de l'énergie</a></span></li><li><span><a href="#Trajectoire,-vitesse-et-accélération" data-toc-modified-id="Trajectoire,-vitesse-et-accélération-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>Trajectoire, vitesse et accélération</a></span></li></ul></li><li><span><a href="#Fin-de-la-leçon" data-toc-modified-id="Fin-de-la-leçon-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Fin de la leçon</a></span></li></ul></div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -515,11 +520,13 @@ $<span class="math notranslate nohighlight">\( \frac{df}{dx}(x)=\lim_{\Delta x\r
 </div>
 <div class="section" id="integrale">
 <h3>Intégrale<a class="headerlink" href="#integrale" title="Lien permanent vers ce titre">¶</a></h3>
-<p>L’intégrale (au sens de Riemann) entre a et b d’une fonction <span class="math notranslate nohighlight">\(f(x)\)</span> est une mesure de l’aire sous la courbe:
-$<span class="math notranslate nohighlight">\( I = \int_a^b f(x)\,dx = \mbox{ aire du domaine sous la courbe }\)</span><span class="math notranslate nohighlight">\( 
-Cela permet de l'interpréter en terme de moyenne:
-\)</span><span class="math notranslate nohighlight">\( \int_a^b f(x)\,dx = \overline{f} \times (b-a) \)</span><span class="math notranslate nohighlight">\(
-avec \)</span>\overline{f}$ moyenne de f(x) entre a et b</p>
+<p>L’intégrale (au sens de Riemann) entre a et b d’une fonction <span class="math notranslate nohighlight">\(f(x)\)</span> est une mesure de l’aire sous la courbe:</p>
+<div class="math notranslate nohighlight">
+\[ I = \int_a^b f(x)\,dx = \mbox{ aire du domaine sous la courbe }\]</div>
+<p>Cela permet de l’interpréter en terme de moyenne:</p>
+<div class="math notranslate nohighlight">
+\[ \int_a^b f(x)\,dx = \overline{f} \times (b-a) \]</div>
+<p>avec <span class="math notranslate nohighlight">\(\overline{f}\)</span> moyenne de f(x) entre a et b</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">run</span> <span class="n">integrale</span><span class="o">.</span><span class="n">py</span>
@@ -532,7 +539,7 @@ avec \)</span>\overline{f}$ moyenne de f(x) entre a et b</p>
 </div>
 </div>
 <div class="section" id="developpement-en-serie-de-taylor">
-<h3>&gt;Développement en série de Taylor<a class="headerlink" href="#developpement-en-serie-de-taylor" title="Lien permanent vers ce titre">¶</a></h3>
+<h3>Développement en série de Taylor<a class="headerlink" href="#developpement-en-serie-de-taylor" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Soit <span class="math notranslate nohighlight">\(f(x)\)</span> une fonction régulière, on peut l’approcher par son développement en série de Taylor à l’ordre <span class="math notranslate nohighlight">\(n\)</span> au voisinage de <span class="math notranslate nohighlight">\(x=0\)</span> à partir des dérivées successives de <span class="math notranslate nohighlight">\(f(x)\)</span> en <span class="math notranslate nohighlight">\(x=0\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[ f(x) \approx f(0) + x \left(\frac{df}{dx}\right)(0) + \frac{x^2}{2!} \left(\frac{d^2f}{dx^2}\right)(0) + \frac{x^3}{3!} \left(\frac{d^3f}{dx^3}\right)(0) + ... + \frac{x^{n-1}}{(n-1)!} \left(\frac{d^{n-1}f}{dx^{n-1}}\right)(0) + \mathcal{O}(x^n)\]</div>
@@ -591,8 +598,8 @@ avec \)</span>\overline{f}$ moyenne de f(x) entre a et b</p>
 <div class="section" id="exemple-d-equation-du-mouvement">
 <h4>exemple d’équation du mouvement:<a class="headerlink" href="#exemple-d-equation-du-mouvement" title="Lien permanent vers ce titre">¶</a></h4>
 <p>pour un corps de masse <span class="math notranslate nohighlight">\(m\)</span> constante se déplaçant dans un plan, dont la position est donnée dans un référentiel cartésien par <span class="math notranslate nohighlight">\(P(x(t),y(t))\)</span>, cette loi conduit au système de deux équations différentielles d’ordre 2:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-22fc092a-da18-4ed2-b7b9-3b6781a6cfa5">
-<span class="eqno">(1)<a class="headerlink" href="#equation-22fc092a-da18-4ed2-b7b9-3b6781a6cfa5" title="Lien permanent vers cette équation">¶</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-782c437d-8ec9-46cc-a0a4-d0323afc22a0">
+<span class="eqno">(1)<a class="headerlink" href="#equation-782c437d-8ec9-46cc-a0a4-d0323afc22a0" title="Lien permanent vers cette équation">¶</a></span>\[\begin{eqnarray}
 m\frac{d^2 x}{dt^2} &amp;=&amp; \sum_i F_i^x \mbox{ avec }F_i^x \mbox{ composante de } \overrightarrow{F_i} \mbox{ suivant x}\\
 m\frac{d^2 y}{dt^2} &amp;=&amp; \sum_i F_i^y \mbox{ avec }F_i^y \mbox{ composante de } \overrightarrow{F_i} \mbox{ suivant y}
 \end{eqnarray}\]</div>
@@ -640,10 +647,11 @@ $<span class="math notranslate nohighlight">\(\delta W_j = 0 \mbox{ si }  \overr
 \[ \frac{d Ec}{dt} = \sum_i \overrightarrow{F_i}.\overrightarrow{v}
 \mbox{ avec } Ec=\frac{1}{2} m v^2 \mbox{ énergie cinétique}
 \]</div>
-<p>Si les forces appliquées sont conservatives ou ne travaillent pas, l’énergie totale <span class="math notranslate nohighlight">\(E_t\)</span>, somme de l’énergie cinétique <span class="math notranslate nohighlight">\(Ec\)</span> et l’énergie potentielle <span class="math notranslate nohighlight">\(U\)</span>, du système se conserve:
-$<span class="math notranslate nohighlight">\( 
+<p>Si les forces appliquées sont conservatives ou ne travaillent pas, l’énergie totale <span class="math notranslate nohighlight">\(E_t\)</span>, somme de l’énergie cinétique <span class="math notranslate nohighlight">\(Ec\)</span> et l’énergie potentielle <span class="math notranslate nohighlight">\(U\)</span>, du système se conserve:</p>
+<div class="math notranslate nohighlight">
+\[ 
 E_t = \frac{1}{2} m v^2 + \sum_j U_j = cste 
-\)</span>$</p>
+\]</div>
 </div>
 </div>
 <div class="section" id="exemple-1-mouvement-balistique">
@@ -664,14 +672,14 @@ E_t = \frac{1}{2} m v^2 + \sum_j U_j = cste
 </div>
 <div class="section" id="equations-du-mouvement">
 <h3>Équations du mouvement<a class="headerlink" href="#equations-du-mouvement" title="Lien permanent vers ce titre">¶</a></h3>
-<div class="amsmath math notranslate nohighlight" id="equation-84a1ccf7-fadb-4709-a27b-cc71086659ff">
-<span class="eqno">(2)<a class="headerlink" href="#equation-84a1ccf7-fadb-4709-a27b-cc71086659ff" title="Lien permanent vers cette équation">¶</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-16fe732d-d1e4-40ac-8180-d00afb6e5910">
+<span class="eqno">(2)<a class="headerlink" href="#equation-16fe732d-d1e4-40ac-8180-d00afb6e5910" title="Lien permanent vers cette équation">¶</a></span>\[\begin{eqnarray}
 m\frac{d^2 x}{dt^2} &amp;=  0   &amp;\mbox{ avec  } x(0)=x_0 , \frac{dx}{dt}(0)=u_0\\
 m\frac{d^2 z}{dt^2} &amp;= -m g &amp;\mbox{ avec  } z(0)=z_0 , \frac{dz}{dt}(0)=w_0
 \end{eqnarray}\]</div>
 <p>La solution est parabolique et s’écrit:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c2700330-011a-48cf-8805-0e2c897df03e">
-<span class="eqno">(3)<a class="headerlink" href="#equation-c2700330-011a-48cf-8805-0e2c897df03e" title="Lien permanent vers cette équation">¶</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-0d06f8b2-880c-4427-bb73-fe54c1d31ef3">
+<span class="eqno">(3)<a class="headerlink" href="#equation-0d06f8b2-880c-4427-bb73-fe54c1d31ef3" title="Lien permanent vers cette équation">¶</a></span>\[\begin{eqnarray}
 x(t) &amp;=&amp; x_0 + u_0 t \\
 z(t) &amp;=&amp; z_0 + w_0 t - \frac{1}{2} g t^2
 \end{eqnarray}\]</div>
@@ -695,7 +703,7 @@ z(t) &amp;=&amp; z_0 + w_0 t - \frac{1}{2} g t^2
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>trajectoire balistique U0= 10.0  alpha= 1.1780972450961724
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.animation.FuncAnimation at 0x7f31f8e65580&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.animation.FuncAnimation at 0x7f07ff97e160&gt;
 </pre></div>
 </div>
 <img alt="../_images/COURS_RAPPEL_18_2.png" src="../_images/COURS_RAPPEL_18_2.png" />
@@ -1347,12 +1355,15 @@ AAAAAAAALWlsc3QAAAAlqXRvbwAAAB1kYXRhAAAAAQAAAABMYXZmNTguMjkuMTAw
 <p>Soit <span class="math notranslate nohighlight">\(\overrightarrow{e_t}\)</span> le vecteur tangentiel, et  <span class="math notranslate nohighlight">\(\overrightarrow{e_n}\)</span> le vecteur normal à la trajectoire et dirigé vers la terre, la vitesse s’écrit en fonction de l’angle de rotation <span class="math notranslate nohighlight">\(\theta(t)\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[ \overrightarrow{v} = r \frac{ d\theta}{dt} \overrightarrow{e_t}\]</div>
-<p>et le principe fondamentale de la dynamique s’écrit:
-$<span class="math notranslate nohighlight">\( \frac{d}{dt}(m r \frac{ d\theta}{dt} \overrightarrow{e_t}) = m \frac{G M}{r^2} \overrightarrow{e_n}\)</span>$</p>
-<p>La solution est telle que la vitesse de rotation <span class="math notranslate nohighlight">\(\omega\)</span> est uniforme:
-$<span class="math notranslate nohighlight">\( \omega = \frac{d\theta}{dt} = \sqrt{\frac{G M}{r^3}} \)</span>$</p>
-<p>Dans ce cas l’énergie cinétique et l’énergie potentielle se conservent:
-$<span class="math notranslate nohighlight">\( Ec = \frac{1}{2} m v^2 = cste \)</span>$</p>
+<p>et le principe fondamentale de la dynamique s’écrit:</p>
+<div class="math notranslate nohighlight">
+\[ \frac{d}{dt}(m r \frac{ d\theta}{dt} \overrightarrow{e_t}) = m \frac{G M}{r^2} \overrightarrow{e_n}\]</div>
+<p>La solution est telle que la vitesse de rotation <span class="math notranslate nohighlight">\(\omega\)</span> est uniforme:</p>
+<div class="math notranslate nohighlight">
+\[ \omega = \frac{d\theta}{dt} = \sqrt{\frac{G M}{r^3}} \]</div>
+<p>Dans ce cas l’énergie cinétique et l’énergie potentielle se conservent:</p>
+<div class="math notranslate nohighlight">
+\[ Ec = \frac{1}{2} m v^2 = cste \]</div>
 </div>
 <div class="section" id="id1">
 <h3>Trajectoire, vitesse et accélération<a class="headerlink" href="#id1" title="Lien permanent vers ce titre">¶</a></h3>
@@ -1370,7 +1381,7 @@ $<span class="math notranslate nohighlight">\( Ec = \frac{1}{2} m v^2 = cste \)<
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>trajectoire d&#39;un satellite omega= 1.0  r= 1.0
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.animation.FuncAnimation at 0x7f31f8289f70&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.animation.FuncAnimation at 0x7f07fdd69af0&gt;
 </pre></div>
 </div>
 <img alt="../_images/COURS_RAPPEL_23_2.png" src="../_images/COURS_RAPPEL_23_2.png" />
@@ -2449,22 +2460,28 @@ $<span class="math notranslate nohighlight">\( \overrightarrow{OP} =
 <div class="section" id="id2">
 <h3>Equation du mouvement<a class="headerlink" href="#id2" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Soit <span class="math notranslate nohighlight">\(\overrightarrow{e_t}\)</span> le vecteur tangentiel, et  <span class="math notranslate nohighlight">\(\overrightarrow{e_n}\)</span> le vecteur normal, la vitesse du pendule
-s’écrit:
-$<span class="math notranslate nohighlight">\(\overrightarrow{v}=l\frac{d\theta}{dt}\overrightarrow{e_t}\)</span><span class="math notranslate nohighlight">\(
-Les forces exercées sur le pendule sont la gravité \)</span>- m g \overrightarrow{e_y}<span class="math notranslate nohighlight">\( et la tension dans le fil \)</span>T \overrightarrow{e_n}$</p>
-<p>Le principe fondamental de la dynamique s’écrit:
-$<span class="math notranslate nohighlight">\( \frac{d}{dt}(m l \frac{d\theta}{dt}\overrightarrow{e_t})= -m g \overrightarrow{e_y} + T \overrightarrow{e_n} \)</span><span class="math notranslate nohighlight">\(
-dont la projection suivant \)</span>\overrightarrow{e_t}<span class="math notranslate nohighlight">\( donne l'équation d'évolution de l'angle \)</span>\theta<span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\( m l \frac{d^2\theta}{dt^2} = - m g \sin\theta \)</span><span class="math notranslate nohighlight">\(
-qui s'écrit dans le cas de petites oscillations \)</span>\theta<span class="math notranslate nohighlight">\(:
-\)</span><span class="math notranslate nohighlight">\( \frac{d^2\theta}{dt^2} = -\omega^2 \theta \mbox{ avec } \omega=\sqrt{\frac{g}{l}}\)</span><span class="math notranslate nohighlight">\(
-et dont la solution est périodique de la forme:
-\)</span><span class="math notranslate nohighlight">\(\theta(t) = \theta_0\cos(\omega t + \phi_0)\)</span>$</p>
+s’écrit:</p>
+<div class="math notranslate nohighlight">
+\[\overrightarrow{v}=l\frac{d\theta}{dt}\overrightarrow{e_t}\]</div>
+<p>Les forces exercées sur le pendule sont la gravité <span class="math notranslate nohighlight">\(- m g \overrightarrow{e_y}\)</span> et la tension dans le fil <span class="math notranslate nohighlight">\(T \overrightarrow{e_n}\)</span></p>
+<p>Le principe fondamental de la dynamique s’écrit:</p>
+<div class="math notranslate nohighlight">
+\[ \frac{d}{dt}(m l \frac{d\theta}{dt}\overrightarrow{e_t})= -m g \overrightarrow{e_y} + T \overrightarrow{e_n} \]</div>
+<p>dont la projection suivant <span class="math notranslate nohighlight">\(\overrightarrow{e_t}\)</span> donne l’équation d’évolution de l’angle <span class="math notranslate nohighlight">\(\theta\)</span></p>
+<div class="math notranslate nohighlight">
+\[ m l \frac{d^2\theta}{dt^2} = - m g \sin\theta \]</div>
+<p>qui s’écrit dans le cas de petites oscillations <span class="math notranslate nohighlight">\(\theta\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[ \frac{d^2\theta}{dt^2} = -\omega^2 \theta \mbox{ avec } \omega=\sqrt{\frac{g}{l}}\]</div>
+<p>et dont la solution est périodique de la forme:</p>
+<div class="math notranslate nohighlight">
+\[\theta(t) = \theta_0\cos(\omega t + \phi_0)\]</div>
 </div>
 <div class="section" id="id3">
 <h3>Conservation de l’énergie<a class="headerlink" href="#id3" title="Lien permanent vers ce titre">¶</a></h3>
-<p>La tension dans le fil étant perpendiculaire à la vitesse, son travail est nul. La gravité découle d’un potentiel, et donc le système est conservatif
-$<span class="math notranslate nohighlight">\( E_t = \frac{1}{2} m v^2 + m g y = cste\)</span>$</p>
+<p>La tension dans le fil étant perpendiculaire à la vitesse, son travail est nul. La gravité découle d’un potentiel, et donc le système est conservatif</p>
+<div class="math notranslate nohighlight">
+\[ E_t = \frac{1}{2} m v^2 + m g y = cste\]</div>
 </div>
 <div class="section" id="id4">
 <h3>Trajectoire, vitesse et accélération<a class="headerlink" href="#id4" title="Lien permanent vers ce titre">¶</a></h3>
@@ -2479,7 +2496,7 @@ $<span class="math notranslate nohighlight">\( E_t = \frac{1}{2} m v^2 + m g y =
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.animation.FuncAnimation at 0x7f31e778fd60&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.animation.FuncAnimation at 0x7f07ee2cb940&gt;
 </pre></div>
 </div>
 <img alt="../_images/COURS_RAPPEL_28_1.png" src="../_images/COURS_RAPPEL_28_1.png" />
@@ -4019,11 +4036,11 @@ bHN0AAAAJal0b28AAAAdZGF0YQAAAAEAAAAATGF2ZjU4LjI5LjEwMA==
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../CHAP2/COURS_ORDI.html" title="précédent page">
+    <a class='left-prev' id="prev-link" href="../CHAP3/COURS_VAR.html" title="précédent page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">précédent</p>
-            <p class="prev-next-title"><span class="section-number">2. </span>Fonctionnement d’un ordinateur</p>
+            <p class="prev-next-title"><span class="section-number">3. </span>Variable et élements de base</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../credits.html" title="suivant page">

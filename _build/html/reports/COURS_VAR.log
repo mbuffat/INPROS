@@ -17,19 +17,13 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-from IPython.display import YouTubeVideo
-YouTubeVideo('x7rWe3yFEWE')
-
-```{important} Objectifs
-Ce cours comprends 13 Leçons utilisant Ipython Notebook avec des videos. 
-L'accés à un serveur Jupyter permet à l'étudiant sur son navigateur de tester  les programmes
-Python en parallèle du visionnement video du cours. 
+print("valeur ="  1)
 ------------------
 
-[0;36m  File [0;32m"<ipython-input-1-76379cb61a33>"[0;36m, line [0;32m4[0m
-[0;31m    ```{important} Objectifs[0m
-[0m    ^[0m
+[0;36m  File [0;32m"<ipython-input-6-4fc9e1c50a01>"[0;36m, line [0;32m1[0m
+[0;31m    print("valeur ="  1)[0m
+[0m                      ^[0m
 [0;31mSyntaxError[0m[0;31m:[0m invalid syntax
 
-SyntaxError: invalid syntax (<ipython-input-1-76379cb61a33>, line 4)
+SyntaxError: invalid syntax (<ipython-input-6-4fc9e1c50a01>, line 1)
 

@@ -14,6 +14,7 @@ parts:
   - file: CHAP2/COURS_ORDI
 - caption: Annexes
   chapters:
+  - file: RAPPEL/COURS_RAPPEL
   - file: credits
 
 #- file: markdown

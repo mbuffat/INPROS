@@ -208,6 +208,22 @@ const thebe_selector_output = ".output, .cell_output"
 
             <!-- Source interaction buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/mbuffat/INPROS"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Dépôt source"><i
+                    class="fab fa-github"></i>dépôt</button></a>
+        <a class="issues-button"
+            href="https://github.com/mbuffat/INPROS/issues/new?title=Issue%20on%20page%20%2FCHAP3/COURS_VAR.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Ouvrez un problème"><i class="fas fa-lightbulb"></i>signaler un problème</button></a>
+        
+    </div>
+</div>
+
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
@@ -646,14 +662,6 @@ res= 0.30000000000000004
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-18-6fdc615a9693&gt;&quot;</span><span class="gt">, line </span><span class="mi">2</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;valeur =&quot;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-    <span class="o">^</span>
-<span class="ne">IndentationError</span>: unexpected indent
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="a-href-ici012-exercice-1-a-a-id-ici012-a">
@@ -671,13 +679,6 @@ res= 0.30000000000000004
 <span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
-1 2
-1 2 3
 </pre></div>
 </div>
 </div>
@@ -707,17 +708,6 @@ res= 0.30000000000000004
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<p><strong>Video du cours: les variables en Python</strong></p>
-<div class="output text_html">
-<iframe
-    width="400"
-    height="300"
-    src="https://www.youtube.com/embed/mNsU270boC0"
-    frameborder="0"
-    allowfullscreen
-></iframe>
-</div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -725,12 +715,6 @@ res= 0.30000000000000004
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x = &quot;</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;maintenant x = &quot;</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x =  1
-maintenant x =  2
 </pre></div>
 </div>
 </div>
@@ -744,16 +728,6 @@ maintenant x =  2
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-<iframe
-    width="800"
-    height="300"
-    src="http://pythontutor.com/iframe-embed.html#code=x%3D1%0Ax%3Dx%2B1%0Ay%3D1.0%0As%3D%22un%22&cumulative=false&heapPrimitives=false&drawParentPointers=false&textReferences=false&showOnlyOutputs=false&py=2&curInstr=0&codeDivWidth=350&codeDivHeight=400"
-    frameborder="0"
-    allowfullscreen
-></iframe>
-</div></div>
 </div>
 </div>
 <div class="section" id="regles-d-utilisation-des-variables">
@@ -768,25 +742,12 @@ maintenant x =  2
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20.0
-</pre></div>
-</div>
-</div>
 </div>
 <p><strong>Attention</strong>: erreur dans le nom d’une variable</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ma</span> <span class="n">variable</span> <span class="o">=</span> <span class="mi">15</span>
 <span class="mi">1</span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-23-c3e989711734&gt;&quot;</span><span class="gt">, line </span><span class="mi">1</span>
-    <span class="n">ma</span> <span class="n">variable</span> <span class="o">=</span> <span class="mi">15</span>
-       <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
 </pre></div>
 </div>
 </div>
@@ -799,18 +760,6 @@ maintenant x =  2
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">z</span> <span class="o">=</span> <span class="n">Z</span> <span class="o">+</span> <span class="mi">1</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">24</span><span class="o">-</span><span class="mi">7844</span><span class="n">d14ee663</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">z</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">z</span> <span class="o">=</span> <span class="n">Z</span> <span class="o">+</span> <span class="mi">1</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;Z&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -829,13 +778,6 @@ maintenant x =  2
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x= 5.8  adresse  140134424538736  type  &lt;class &#39;float&#39;&gt;
-y= 1  adresse  9788960  type  &lt;class &#39;int&#39;&gt;
-s= mon &#39;texte&#39;  adresse  140133699336112  type  &lt;class &#39;str&#39;&gt;
-</pre></div>
-</div>
-</div>
 </div>
 <ul class="simple">
 <li><p><strong>Attention</strong> type de la variable = type expression</p></li>
@@ -849,12 +791,6 @@ s= mon &#39;texte&#39;  adresse  140133699336112  type  &lt;class &#39;str&#39;&
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 &lt;class &#39;int&#39;&gt;
-0.6666666666666666 &lt;class &#39;float&#39;&gt;
-</pre></div>
-</div>
-</div>
 </div>
 <ul class="simple">
 <li><p><strong>Attention</strong> le symbole = représente l’affectation, et non l’égalité mathématique.</p></li>
@@ -865,11 +801,6 @@ s= mon &#39;texte&#39;  adresse  140133699336112  type  &lt;class &#39;str&#39;&
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">2.</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mf">0.25</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x=&quot;</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x= 4.25
 </pre></div>
 </div>
 </div>
@@ -890,12 +821,6 @@ s= mon &#39;texte&#39;  adresse  140133699336112  type  &lt;class &#39;str&#39;&
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">12</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Table de multiplication de &quot;</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="p">,</span> <span class="mi">3</span><span class="o">*</span><span class="n">n</span><span class="p">,</span> <span class="mi">4</span><span class="o">*</span><span class="n">n</span><span class="p">,</span> <span class="mi">5</span><span class="o">*</span><span class="n">n</span><span class="p">,</span> <span class="mi">6</span><span class="o">*</span><span class="n">n</span><span class="p">,</span> <span class="mi">7</span><span class="o">*</span><span class="n">n</span><span class="p">,</span> <span class="mi">8</span><span class="o">*</span><span class="n">n</span><span class="p">,</span> <span class="mi">9</span><span class="o">*</span><span class="n">n</span><span class="p">,</span> <span class="mi">10</span><span class="o">*</span><span class="n">n</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Table de multiplication de  12
-12 24 36 48 60 72 84 96 108 120
 </pre></div>
 </div>
 </div>
@@ -933,28 +858,12 @@ s= mon &#39;texte&#39;  adresse  140133699336112  type  &lt;class &#39;str&#39;&
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<p><strong>Video du cours: fonctions mathématiques et liste</strong></p>
-<div class="output text_html">
-<iframe
-    width="400"
-    height="300"
-    src="https://www.youtube.com/embed/uxZtQA606oI"
-    frameborder="0"
-    allowfullscreen
-></iframe>
-</div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="n">x</span> <span class="o">=</span> <span class="mf">1.0</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.0 2.718281828459045 0.0 0.7615941559557649
 </pre></div>
 </div>
 </div>
@@ -974,11 +883,6 @@ s= mon &#39;texte&#39;  adresse  140133699336112  type  &lt;class &#39;str&#39;&
 <span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="p">))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="mf">2.</span><span class="p">))</span>
 <span class="n">y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="p">)))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="mf">2.</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="n">y2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.0 1.6268843330617109 1.6756527556108327
 </pre></div>
 </div>
 </div>
@@ -1021,15 +925,6 @@ L = range(n )</p></li>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;list&#39;&gt;
-&lt;class &#39;float&#39;&gt; &lt;class &#39;int&#39;&gt;
-[1.0, 2, 3, 4.0, &#39;cinq&#39;]
-[1.0, 8.0, 2, 3, 4.0, &#39;cinq&#39;]
-[1.0, 8.0, 2, 3, 4.0]
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -1050,13 +945,6 @@ dict[&#39;cle1&#39;]
 <span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;my&#39;</span><span class="p">,</span><span class="s1">&#39;name&#39;</span><span class="p">,</span><span class="s1">&#39;is&#39;</span><span class="p">,</span><span class="s1">&#39;nobody&#39;</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;phrase à traduire: &quot;</span><span class="p">,</span><span class="n">L</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;traduction       : &quot;</span><span class="p">,</span><span class="n">french</span><span class="p">[</span><span class="n">L</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span><span class="n">french</span><span class="p">[</span><span class="n">L</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span><span class="n">french</span><span class="p">[</span><span class="n">L</span><span class="p">[</span><span class="mi">2</span><span class="p">]],</span><span class="n">french</span><span class="p">[</span><span class="n">L</span><span class="p">[</span><span class="mi">3</span><span class="p">]])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>clés du dictionnaire  dict_keys([&#39;is&#39;, &#39;my&#39;, &#39;nobody&#39;, &#39;name&#39;, &#39; your&#39;])
-phrase à traduire:  [&#39;my&#39;, &#39;name&#39;, &#39;is&#39;, &#39;nobody&#39;]
-traduction       :  mon nom est personne
 </pre></div>
 </div>
 </div>

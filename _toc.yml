@@ -13,6 +13,9 @@ parts:
   - file: CHAP1/COURS_INTRO
   - file: CHAP2/COURS_ORDI
   - file: CHAP3/COURS_VAR
+  - file: CHAP4/COURS_LOOP
+    sections:
+    - file: CHAP4/EXERCICES_LOOP
 - caption: Annexes
   chapters:
   - file: RAPPEL/COURS_RAPPEL

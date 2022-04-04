@@ -17,13 +17,21 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-print("valeur ="  1)
+n=100
+h=1./n
+inside=0
+for i in range(n):
+    for j in range(n):
+        r2 = (i*h)**2 + (j*h)**2
+        if r2 <= 1.0 :
+            inside += 1
+print "approximation de Pi = ",4*inside,"/",n*n," ~ ",4.*inside/(n*n)
 ------------------
 
-[0;36m  File [0;32m"<ipython-input-8-4fc9e1c50a01>"[0;36m, line [0;32m1[0m
-[0;31m    print("valeur ="  1)[0m
-[0m                      ^[0m
+[0;36m  File [0;32m"<ipython-input-3-e6a5d390c68e>"[0;36m, line [0;32m9[0m
+[0;31m    print "approximation de Pi = ",4*inside,"/",n*n," ~ ",4.*inside/(n*n)[0m
+[0m          ^[0m
 [0;31mSyntaxError[0m[0;31m:[0m invalid syntax
 
-SyntaxError: invalid syntax (<ipython-input-8-4fc9e1c50a01>, line 1)
+SyntaxError: invalid syntax (<ipython-input-3-e6a5d390c68e>, line 9)
 

@@ -17,13 +17,17 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-print("valeur ="  1)
+a = 4
+if a > 5:
+    print("a est plus grand que 5")
+else
+print("a est plus petit ou egal a 5")
 ------------------
 
-[0;36m  File [0;32m"<ipython-input-8-4fc9e1c50a01>"[0;36m, line [0;32m1[0m
-[0;31m    print("valeur ="  1)[0m
-[0m                      ^[0m
+[0;36m  File [0;32m"<ipython-input-7-5162c46baa06>"[0;36m, line [0;32m4[0m
+[0;31m    else[0m
+[0m        ^[0m
 [0;31mSyntaxError[0m[0;31m:[0m invalid syntax
 
-SyntaxError: invalid syntax (<ipython-input-8-4fc9e1c50a01>, line 1)
+SyntaxError: invalid syntax (<ipython-input-7-5162c46baa06>, line 4)
 

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3. Variable et élements de base &#8212; INPROS INtroduction à la PROgrammation Scientifique en Python</title>
+    <title>3. Variable et éléments de base &#8212; INPROS INtroduction à la PROgrammation Scientifique en Python</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -56,7 +56,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
-    <link rel="next" title="Rappel de maths et physique" href="../RAPPEL/COURS_RAPPEL.html" />
+    <link rel="next" title="4. Structures de contrôle" href="../CHAP4/COURS_LOOP.html" />
     <link rel="prev" title="2. Fonctionnement d’un ordinateur" href="../CHAP2/COURS_ORDI.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="fr">
@@ -119,8 +119,25 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   3. Variable et élements de base
+   3. Variable et éléments de base
   </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../CHAP4/COURS_LOOP.html">
+   4. Structures de contrôle
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../CHAP4/EXERCICES_LOOP.html">
+     4.10. Exercices
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
@@ -330,7 +347,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Variable et élements de base</h1>
+                <h1>Variable et éléments de base</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -460,17 +477,37 @@ const thebe_selector_output = ".output, .cell_output"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="variable-et-elements-de-base">
-<h1><span class="section-number">3. </span>Variable et élements de base<a class="headerlink" href="#variable-et-elements-de-base" title="Lien permanent vers ce titre">¶</a></h1>
+<h1><span class="section-number">3. </span>Variable et éléments de base<a class="headerlink" href="#variable-et-elements-de-base" title="Lien permanent vers ce titre">¶</a></h1>
 <a class="reference internal image-reference" href="../_images/logo_trans2.png"><img alt="LyonHPC" src="../_images/logo_trans2.png" style="width: 180px;" /></a>
 <a class="reference internal image-reference" href="../_images/cloud_variable.png"><img alt="sommaire" src="../_images/cloud_variable.png" style="width: 300px;" /></a>
 <h1>Contenu du cours<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Premier-programme-Python" data-toc-modified-id="Premier-programme-Python-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Premier programme Python</a></span></li><li><span><a href="#Types-de-base" data-toc-modified-id="Types-de-base-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Types de base</a></span><ul class="toc-item"><li><span><a href="#Syntaxe" data-toc-modified-id="Syntaxe-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Syntaxe</a></span></li><li><span><a href="#Erreur-de-syntaxe" data-toc-modified-id="Erreur-de-syntaxe-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Erreur de syntaxe</a></span></li><li><span><a href="#Exercice-1" data-toc-modified-id="Exercice-1-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span><a href="#ici012" rel="nofollow">Exercice 1</a><a id="ici012" rel="nofollow"></a></a></span></li><li><span><a href="#Correction" data-toc-modified-id="Correction-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>Correction</a></span></li></ul></li><li><span><a href="#Notion-de-variable" data-toc-modified-id="Notion-de-variable-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Notion de variable</a></span><ul class="toc-item"><li><span><a href="#visualisation-de-l'exécution" data-toc-modified-id="visualisation-de-l'exécution-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>visualisation de l'exécution</a></span></li><li><span><a href="#règles-d'utilisation-des-variables" data-toc-modified-id="règles-d'utilisation-des-variables-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>règles d'utilisation des variables</a></span></li><li><span><a href="#Exercice-2" data-toc-modified-id="Exercice-2-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>Exercice 2</a></span></li><li><span><a href="#Correction-exercice" data-toc-modified-id="Correction-exercice-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>Correction exercice</a></span></li></ul></li><li><span><a href="#Fonctions-mathématiques" data-toc-modified-id="Fonctions-mathématiques-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Fonctions mathématiques</a></span><ul class="toc-item"><li><span><a href="#Exercise-3" data-toc-modified-id="Exercise-3-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Exercise 3</a></span></li><li><span><a href="#Solution" data-toc-modified-id="Solution-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Solution</a></span></li></ul></li><li><span><a href="#Les-listes" data-toc-modified-id="Les-listes-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Les listes</a></span><ul class="toc-item"><li><span><a href="#Exemples" data-toc-modified-id="Exemples-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>Exemples</a></span></li></ul></li><li><span><a href="#Les-dictionnaires" data-toc-modified-id="Les-dictionnaires-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Les dictionnaires</a></span><ul class="toc-item"><li><span><a href="#Exemple" data-toc-modified-id="Exemple-6.1"><span class="toc-item-num">6.1&nbsp;&nbsp;</span>Exemple</a></span></li></ul></li><li><span><a href="#Fin-de-la-leçon" data-toc-modified-id="Fin-de-la-leçon-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>Fin de la leçon</a></span></li></ul></div><div class="cell docutils container">
+<div class="toc"><ul class="toc-item"><li><span><a href="#Premier-programme-Python" data-toc-modified-id="Premier-programme-Python-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Premier programme Python</a></span></li><li><span><a href="#Types-de-base" data-toc-modified-id="Types-de-base-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Types de base</a></span><ul class="toc-item"><li><span><a href="#Syntaxe" data-toc-modified-id="Syntaxe-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Syntaxe</a></span></li><li><span><a href="#Erreur-de-syntaxe" data-toc-modified-id="Erreur-de-syntaxe-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Erreur de syntaxe</a></span></li><li><span><a href="#Exercice-1" data-toc-modified-id="Exercice-1-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span><a href="#ici012">Exercice 1</a><a id="ici012"></a></a></span></li><li><span><a href="#Correction" data-toc-modified-id="Correction-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>Correction</a></span></li></ul></li><li><span><a href="#Notion-de-variable" data-toc-modified-id="Notion-de-variable-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Notion de variable</a></span><ul class="toc-item"><li><span><a href="#visualisation-de-l'exécution" data-toc-modified-id="visualisation-de-l'exécution-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>visualisation de l'exécution</a></span></li><li><span><a href="#règles-d'utilisation-des-variables" data-toc-modified-id="règles-d'utilisation-des-variables-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>règles d'utilisation des variables</a></span></li><li><span><a href="#Exercice-2" data-toc-modified-id="Exercice-2-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>Exercice 2</a></span></li><li><span><a href="#Correction-exercice" data-toc-modified-id="Correction-exercice-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>Correction exercice</a></span></li></ul></li><li><span><a href="#Fonctions-mathématiques" data-toc-modified-id="Fonctions-mathématiques-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Fonctions mathématiques</a></span><ul class="toc-item"><li><span><a href="#Exercise-3" data-toc-modified-id="Exercise-3-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Exercise 3</a></span></li><li><span><a href="#Solution" data-toc-modified-id="Solution-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Solution</a></span></li></ul></li><li><span><a href="#Les-listes" data-toc-modified-id="Les-listes-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Les listes</a></span><ul class="toc-item"><li><span><a href="#Exemples" data-toc-modified-id="Exemples-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>Exemples</a></span></li></ul></li><li><span><a href="#Les-dictionnaires" data-toc-modified-id="Les-dictionnaires-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Les dictionnaires</a></span><ul class="toc-item"><li><span><a href="#Exemple" data-toc-modified-id="Exemple-6.1"><span class="toc-item-num">6.1&nbsp;&nbsp;</span>Exemple</a></span></li></ul></li><li><span><a href="#Fin-de-la-leçon" data-toc-modified-id="Fin-de-la-leçon-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>Fin de la leçon</a></span></li></ul></div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span><span class="p">,</span><span class="n">display</span><span class="p">,</span><span class="n">IFrame</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span><span class="p">,</span><span class="n">Markdown</span>
 </pre></div>
 </div>
 </div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;**Video du cours: Introduction**&quot;</span><span class="p">))</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;UrNZF0fAvIU&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p><strong>Video du cours: Introduction</strong></p>
+<div class="output text_html">
+<iframe
+    width="400"
+    height="300"
+    src="https://www.youtube.com/embed/UrNZF0fAvIU"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
 </div>
 <div class="section" id="premier-programme-python">
 <h2><span class="section-number">3.1. </span>Premier programme Python<a class="headerlink" href="#premier-programme-python" title="Lien permanent vers ce titre">¶</a></h2>
@@ -505,6 +542,25 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>les nombres réels avec un <strong>.</strong> pour dénoter la virgule</p></li>
 <li><p>les chaines de caractères, délimités par <strong>« </strong> ou <strong>“</strong></p></li>
 </ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;**Video du cours: type de base en Python**&quot;</span><span class="p">))</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;uCPXYS8dc9M&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p><strong>Video du cours: type de base en Python</strong></p>
+<div class="output text_html">
+<iframe
+    width="400"
+    height="300"
+    src="https://www.youtube.com/embed/uCPXYS8dc9M"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ceci est un entier =&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
@@ -574,7 +630,7 @@ res= 0.30000000000000004
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-6-4fc9e1c50a01&gt;&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-8-4fc9e1c50a01&gt;&quot;</span><span class="gt">, line </span><span class="mi">1</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;valeur =&quot;</span>  <span class="mi">1</span><span class="p">)</span>
                       <span class="o">^</span>
 <span class="ne">SyntaxError</span>: invalid syntax
@@ -591,7 +647,7 @@ res= 0.30000000000000004
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-28-6fdc615a9693&gt;&quot;</span><span class="gt">, line </span><span class="mi">2</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-18-6fdc615a9693&gt;&quot;</span><span class="gt">, line </span><span class="mi">2</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;valeur =&quot;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
     <span class="o">^</span>
 <span class="ne">IndentationError</span>: unexpected indent
@@ -644,6 +700,25 @@ res= 0.30000000000000004
 <li><p>la ligne précédente stocke la valeur 2 dans la variable a</p></li>
 <li><p>c’est une instruction d’affectation (et non d’égalité)</p></li>
 </ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;**Video du cours: les variables en Python**&quot;</span><span class="p">))</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;mNsU270boC0&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p><strong>Video du cours: les variables en Python</strong></p>
+<div class="output text_html">
+<iframe
+    width="400"
+    height="300"
+    src="https://www.youtube.com/embed/mNsU270boC0"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
@@ -708,7 +783,7 @@ maintenant x =  2
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-41-c3e989711734&gt;&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-23-c3e989711734&gt;&quot;</span><span class="gt">, line </span><span class="mi">1</span>
     <span class="n">ma</span> <span class="n">variable</span> <span class="o">=</span> <span class="mi">15</span>
        <span class="o">^</span>
 <span class="ne">SyntaxError</span>: invalid syntax
@@ -730,7 +805,7 @@ maintenant x =  2
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">42</span><span class="o">-</span><span class="mi">7844</span><span class="n">d14ee663</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">24</span><span class="o">-</span><span class="mi">7844</span><span class="n">d14ee663</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">z</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">z</span> <span class="o">=</span> <span class="n">Z</span> <span class="o">+</span> <span class="mi">1</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
@@ -755,9 +830,9 @@ maintenant x =  2
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x= 5.8  adresse  140097670912336  type  &lt;class &#39;float&#39;&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x= 5.8  adresse  140134424538736  type  &lt;class &#39;float&#39;&gt;
 y= 1  adresse  9788960  type  &lt;class &#39;int&#39;&gt;
-s= mon &#39;texte&#39;  adresse  140096936542896  type  &lt;class &#39;str&#39;&gt;
+s= mon &#39;texte&#39;  adresse  140133699336112  type  &lt;class &#39;str&#39;&gt;
 </pre></div>
 </div>
 </div>
@@ -853,6 +928,25 @@ s= mon &#39;texte&#39;  adresse  140096936542896  type  &lt;class &#39;str&#39;&
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;**Video du cours: fonctions mathématiques et liste**&quot;</span><span class="p">))</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;uxZtQA606oI&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p><strong>Video du cours: fonctions mathématiques et liste</strong></p>
+<div class="output text_html">
+<iframe
+    width="400"
+    height="300"
+    src="https://www.youtube.com/embed/uxZtQA606oI"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="n">x</span> <span class="o">=</span> <span class="mf">1.0</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
@@ -860,7 +954,7 @@ s= mon &#39;texte&#39;  adresse  140096936542896  type  &lt;class &#39;str&#39;&
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.0 2.71828182846 0.0 0.761594155956
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.0 2.718281828459045 0.0 0.7615941559557649
 </pre></div>
 </div>
 </div>
@@ -884,7 +978,7 @@ s= mon &#39;texte&#39;  adresse  140096936542896  type  &lt;class &#39;str&#39;&
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.0 1.62688433306 1.67565275561
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.0 1.6268843330617109 1.6756527556108327
 </pre></div>
 </div>
 </div>
@@ -960,7 +1054,7 @@ dict[&#39;cle1&#39;]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>clés du dictionnaire  dict_keys([&#39;is&#39;, &#39;nobody&#39;, &#39; your&#39;, &#39;my&#39;, &#39;name&#39;])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>clés du dictionnaire  dict_keys([&#39;is&#39;, &#39;my&#39;, &#39;nobody&#39;, &#39;name&#39;, &#39; your&#39;])
 phrase à traduire:  [&#39;my&#39;, &#39;name&#39;, &#39;is&#39;, &#39;nobody&#39;]
 traduction       :  mon nom est personne
 </pre></div>
@@ -1007,10 +1101,10 @@ traduction       :  mon nom est personne
             <p class="prev-next-title"><span class="section-number">2. </span>Fonctionnement d’un ordinateur</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../RAPPEL/COURS_RAPPEL.html" title="suivant page">
+    <a class='right-next' id="next-link" href="../CHAP4/COURS_LOOP.html" title="suivant page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">suivant</p>
-        <p class="prev-next-title">Rappel de maths et physique</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Structures de contrôle</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

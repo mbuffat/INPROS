@@ -22,8 +22,10 @@ par [Marc BUFFAT](https://perso.univ-lyon1.fr/marc.buffat)
 Ce cours regroupe des notebooks ipython, que j'ai développé pour mes enseignements 
 au [département mécanique](https://fst-mecanique.univ-lyon1.fr) 
 à [l'université Lyon 1](https://www.univ-lyon1.fr) depuis plus d'une dizaine d'années, et 
-que j'utilise pour apprendre aux étudiants les bases de la programmation scientifique.
-Ce cours utilise  une plateforme web [Jupyter notebooki](https://jupyte.org)  permettant d'apprendre la programmation scientifique sous Python
+que j'utilise pour apprendre à mes étudiants les bases de la programmation scientifique.
+
+Les notebooks ipython permettent l'utilisation d'une plateforme web [Jupyter notebooki](https://jupyte.org)
+pour apprendre la programmation scientifique sous Python
 avec un simple navigateur sans avoir à installer de logiciel. 
 
 ```{note}
@@ -43,8 +45,10 @@ acquis une méthodologie, ainsi que la capacité à écrire des programmes simpl
 mais utiles pour  simuler ou analyser des problèmes scientifiques.
 
 ```{warning}
-Les exemples traitées utilisent des notions de mathématiques et de mécanique du point de niveau terminale scientifique et première année de licence. Vous trouverez dans les annexes les rappels de mathématique et de mécanique pour pouvoir
-comprendre les exemples. 
+Les exemples traitées utilisent des notions de mathématiques et de physique 
+de niveau terminale scientifique et première année de licence. Vous
+trouverez dans les annexes les rappels de mathématique et de mécanique pour
+pouvoir comprendre les exemples. 
 
  - [](RAPPEL/COURS_RAPPEL)
 ```

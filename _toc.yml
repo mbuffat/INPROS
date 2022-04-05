@@ -16,6 +16,7 @@ parts:
   - file: CHAP4/COURS_LOOP
     sections:
     - file: CHAP4/EXERCICES_LOOP
+  - file: CHAP5/COURS_FONCTION
 - caption: Annexes
   chapters:
   - file: RAPPEL/COURS_RAPPEL

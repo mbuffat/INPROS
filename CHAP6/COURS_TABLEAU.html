@@ -1,0 +1,1997 @@
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>6. Les tableaux (vecteur, matrice) &#8212; INPROS INtroduction à la PROgrammation Scientifique en Python</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="canonical" href="https://perso.univ-lyon1.fr/marc.buffat/CHAP6/COURS_TABLEAU.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="6.8. Correction des exercices" href="EXERCICES_TABLEAU.html" />
+    <link rel="prev" title="5. Fonctions et procédures" href="../CHAP5/COURS_FONCTION.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="fr">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">INPROS INtroduction à la PROgrammation Scientifique en Python</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Rechercher dans ce livre ..." aria-label="Rechercher dans ce livre ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Introduction à la PROgrammation Scientifique
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  INPROS
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP1/COURS_INTRO.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP2/COURS_ORDI.html">
+   2. Fonctionnement d’un ordinateur
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP3/COURS_VAR.html">
+   3. Variable et éléments de base
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../CHAP4/COURS_LOOP.html">
+   4. Structures de contrôle
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../CHAP4/EXERCICES_LOOP.html">
+     4.10. Exercices
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP5/COURS_FONCTION.html">
+   5. Fonctions et procédures
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
+   6. Les tableaux (vecteur, matrice)
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="EXERCICES_TABLEAU.html">
+     6.8. Correction des exercices
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Annexes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../RAPPEL/COURS_RAPPEL.html">
+   Rappel de maths et physique
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../credits.html">
+   Crédits
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Crée par <a href="https://perso.univ-lyon1.fr/marc.buffat/">Marc BUFFAT</a><br> avec <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Basculer la navigation" aria-controls="site-navigation"
+                title="Basculer la navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Téléchargez cette page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/CHAP6/COURS_TABLEAU.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Télécharger le fichier source" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimer au format PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/mbuffat/INPROS"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Dépôt source"><i
+                    class="fab fa-github"></i>dépôt</button></a>
+        <a class="issues-button"
+            href="https://github.com/mbuffat/INPROS/issues/new?title=Issue%20on%20page%20%2FCHAP6/COURS_TABLEAU.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Ouvrez un problème"><i class="fas fa-lightbulb"></i>signaler un problème</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Mode plein écran"
+        title="Mode plein écran"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contenu
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tableau-1d">
+   6.1. Tableau 1D
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemple-point-dans-l-espace">
+     6.1.1. Exemple: point dans l’espace
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tableau-numerique-sous-python">
+     6.1.2. Tableau numérique sous Python
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualisation-de-l-execution">
+     6.1.3. visualisation de l’exécution
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#indice-d-un-tableau">
+     6.1.4. Indice d’un tableau
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#manipulation-de-tableaux-1d-en-python">
+     6.1.5. Manipulation de tableaux 1D en Python
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#creation-d-un-tableau">
+       6.1.5.1. création d’un tableau
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#tableaux-particuliers">
+       6.1.5.2. tableaux particuliers
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taille-et-element-d-un-tableau">
+       6.1.5.3. taille et élément d’un tableau
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#aliasing-et-copie-de-tableau">
+       6.1.5.4. aliasing et copie de tableau
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#boucle-sur-les-elements-d-un-tableau">
+       6.1.5.5. boucle sur les éléments d’un tableau
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exemples-et-exercises-d-utilisation-de-tableaux-1d">
+   6.2. Exemples et exercises d’utilisation de tableaux 1D
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemple-produit-scalaire">
+     6.2.1. Exemple: produit scalaire
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercices">
+     6.2.2. Exercices
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#test-de-colinearite-de-2-vecteurs">
+       6.2.2.1. Test de colinéarité de 2 vecteurs
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#normalisation-d-un-vecteur-x">
+       6.2.2.2. Normalisation d’un vecteur X
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tableau-2d">
+   6.3. Tableau 2D
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemple-matrice-de-rotation-dans-mathcal-r-2">
+     6.3.1. Exemple: matrice de rotation dans
+     <span class="math notranslate nohighlight">
+      \(\mathcal{R}^2\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matrices-en-python">
+     6.3.2. Matrices en Python
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#creation-de-tableaux-2d">
+       6.3.2.1. création de tableaux 2D
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taille-et-elements-d-un-tableau-2d">
+       6.3.2.2. taille et éléments d’un tableau 2D
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#equivalence-avec-les-tableaux-1d">
+       6.3.2.3. équivalence avec les tableaux 1D
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#copie-et-aliasing">
+       6.3.2.4. Copie et aliasing
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemple-produit-matrice-vecteur">
+     6.3.3. Exemple: produit matrice-vecteur
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     6.3.4. Exercices
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#produit-matrice-matrice">
+       6.3.4.1. Produit matrice-matrice
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#matrice-de-vandermonde">
+       6.3.4.2. Matrice de Vandermonde
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#boucle-en-python-sur-les-tableaux">
+   6.4. Boucle en Python sur les tableaux
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iterations-avec-un-indice">
+     6.4.1. itérations avec un indice
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iterations-sur-les-elements-val-d-un-tableau-tab-ou-d-une-liste">
+     6.4.2. itérations sur les éléments val d’un tableau Tab (ou d’une liste)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iterations-avec-indice-et-valeur-enumerate">
+     6.4.3. itérations avec indice et valeur (enumerate)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#boucle-avec-un-indice-decroissant-reversed">
+     6.4.4. boucle avec un indice décroissant (reversed)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exemple-permutation-circulaire-vers-la-droite">
+       6.4.4.1. exemple : permutation circulaire vers la droite
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#boucles-de-tres-grande-taille-xrange">
+     6.4.5. boucles de très grande taille: xrange
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notation-matricielle-a-la-matlab">
+   6.5. Notation matricielle (à la Matlab)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#efficacite-boucles-dans-la-bibliotheque-numpy">
+     6.5.1. Efficacité -&gt; boucles dans la bibliothéque numpy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#utilisez-les-fonctions-de-la-bibliotheque-numpy">
+     6.5.2. Utilisez les fonctions de la bibliothéque numpy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-href-ici085-aide-sur-les-fonctions-help-ou-tab-a-a-name-ici085-a">
+     6.5.3.
+     <a href="#ici085">
+      Aide sur les fonctions : help() ou TAB
+     </a>
+     <a name="ici085">
+     </a>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bibliographie">
+   6.6. Bibliographie
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fin-de-la-lecon">
+   6.7. Fin de la leçon
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Les tableaux (vecteur, matrice)</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contenu </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tableau-1d">
+   6.1. Tableau 1D
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemple-point-dans-l-espace">
+     6.1.1. Exemple: point dans l’espace
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tableau-numerique-sous-python">
+     6.1.2. Tableau numérique sous Python
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualisation-de-l-execution">
+     6.1.3. visualisation de l’exécution
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#indice-d-un-tableau">
+     6.1.4. Indice d’un tableau
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#manipulation-de-tableaux-1d-en-python">
+     6.1.5. Manipulation de tableaux 1D en Python
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#creation-d-un-tableau">
+       6.1.5.1. création d’un tableau
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#tableaux-particuliers">
+       6.1.5.2. tableaux particuliers
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taille-et-element-d-un-tableau">
+       6.1.5.3. taille et élément d’un tableau
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#aliasing-et-copie-de-tableau">
+       6.1.5.4. aliasing et copie de tableau
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#boucle-sur-les-elements-d-un-tableau">
+       6.1.5.5. boucle sur les éléments d’un tableau
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exemples-et-exercises-d-utilisation-de-tableaux-1d">
+   6.2. Exemples et exercises d’utilisation de tableaux 1D
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemple-produit-scalaire">
+     6.2.1. Exemple: produit scalaire
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercices">
+     6.2.2. Exercices
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#test-de-colinearite-de-2-vecteurs">
+       6.2.2.1. Test de colinéarité de 2 vecteurs
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#normalisation-d-un-vecteur-x">
+       6.2.2.2. Normalisation d’un vecteur X
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tableau-2d">
+   6.3. Tableau 2D
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemple-matrice-de-rotation-dans-mathcal-r-2">
+     6.3.1. Exemple: matrice de rotation dans
+     <span class="math notranslate nohighlight">
+      \(\mathcal{R}^2\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matrices-en-python">
+     6.3.2. Matrices en Python
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#creation-de-tableaux-2d">
+       6.3.2.1. création de tableaux 2D
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taille-et-elements-d-un-tableau-2d">
+       6.3.2.2. taille et éléments d’un tableau 2D
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#equivalence-avec-les-tableaux-1d">
+       6.3.2.3. équivalence avec les tableaux 1D
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#copie-et-aliasing">
+       6.3.2.4. Copie et aliasing
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemple-produit-matrice-vecteur">
+     6.3.3. Exemple: produit matrice-vecteur
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     6.3.4. Exercices
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#produit-matrice-matrice">
+       6.3.4.1. Produit matrice-matrice
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#matrice-de-vandermonde">
+       6.3.4.2. Matrice de Vandermonde
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#boucle-en-python-sur-les-tableaux">
+   6.4. Boucle en Python sur les tableaux
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iterations-avec-un-indice">
+     6.4.1. itérations avec un indice
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iterations-sur-les-elements-val-d-un-tableau-tab-ou-d-une-liste">
+     6.4.2. itérations sur les éléments val d’un tableau Tab (ou d’une liste)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iterations-avec-indice-et-valeur-enumerate">
+     6.4.3. itérations avec indice et valeur (enumerate)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#boucle-avec-un-indice-decroissant-reversed">
+     6.4.4. boucle avec un indice décroissant (reversed)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exemple-permutation-circulaire-vers-la-droite">
+       6.4.4.1. exemple : permutation circulaire vers la droite
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#boucles-de-tres-grande-taille-xrange">
+     6.4.5. boucles de très grande taille: xrange
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notation-matricielle-a-la-matlab">
+   6.5. Notation matricielle (à la Matlab)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#efficacite-boucles-dans-la-bibliotheque-numpy">
+     6.5.1. Efficacité -&gt; boucles dans la bibliothéque numpy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#utilisez-les-fonctions-de-la-bibliotheque-numpy">
+     6.5.2. Utilisez les fonctions de la bibliothéque numpy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-href-ici085-aide-sur-les-fonctions-help-ou-tab-a-a-name-ici085-a">
+     6.5.3.
+     <a href="#ici085">
+      Aide sur les fonctions : help() ou TAB
+     </a>
+     <a name="ici085">
+     </a>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bibliographie">
+   6.6. Bibliographie
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fin-de-la-lecon">
+   6.7. Fin de la leçon
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <a class="reference internal image-reference" href="../_images/logo_trans6.png"><img alt="LyonHPC" src="../_images/logo_trans6.png" style="width: 180px;" /></a>
+<a class="reference internal image-reference" href="../_images/python-logo5.gif"><img alt="LyonHPC" src="../_images/python-logo5.gif" style="width: 200px;" /></a>
+<div class="tex2jax_ignore mathjax_ignore section" id="les-tableaux-vecteur-matrice">
+<h1><span class="section-number">6. </span>Les tableaux (vecteur, matrice)<a class="headerlink" href="#les-tableaux-vecteur-matrice" title="Lien permanent vers ce titre">¶</a></h1>
+<a class="reference internal image-reference" href="../_images/numpy_array.png"><img alt="../_images/numpy_array.png" src="../_images/numpy_array.png" style="width: 300px;" /></a>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span><span class="p">,</span><span class="n">display</span><span class="p">,</span><span class="n">IFrame</span><span class="p">,</span><span class="n">Video</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span><span class="p">,</span><span class="n">Markdown</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;**Video du cours: Introduction**&quot;</span><span class="p">))</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;1Hq4vJBIGhg&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p><strong>Video du cours: Introduction</strong></p>
+<div class="output text_html">
+<iframe
+    width="400"
+    height="300"
+    src="https://www.youtube.com/embed/1Hq4vJBIGhg"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Astuce</p>
+<p>pour tester les programmes Python, vous pouvez vous connectez sur un serveur Jupyter, par exemple, pour
+les étudiants Lyon1 <a class="reference external" href="https://jupyter.mecanique.univ-lyon1.fr">https://jupyter.mecanique.univ-lyon1.fr</a></p>
+</div>
+<div class="section" id="tableau-1d">
+<h2><span class="section-number">6.1. </span>Tableau 1D<a class="headerlink" href="#tableau-1d" title="Lien permanent vers ce titre">¶</a></h2>
+<p>structure de données pour représenter un vecteur</p>
+<p><strong>tableau 1D</strong> : liste de n éléments du même type (entier ou réel)
+(n = dimension du tableau)</p>
+<ul class="simple">
+<li><p>en mathématique: <span class="math notranslate nohighlight">\(\mathbf{X} \in \mathcal{R}^n \)</span></p></li>
+<li><p>en algorithmique:  X tableau de n réels (contenant les composantes de X)</p></li>
+</ul>
+<p><strong>élément d’un tableau</strong> : X[i] <span class="math notranslate nohighlight">\(\equiv\mathbf{X}_{i+1}\)</span></p>
+<p><strong>attention</strong>  on compte à partir de 0, donc i varie de 0 à n-1</p>
+<div class="section" id="exemple-point-dans-l-espace">
+<h3><span class="section-number">6.1.1. </span>Exemple: point dans l’espace<a class="headerlink" href="#exemple-point-dans-l-espace" title="Lien permanent vers ce titre">¶</a></h3>
+<p>le point <strong>P</strong> dans l’espace <span class="math notranslate nohighlight">\(\mathcal{R}^3\)</span> de coordonnées cartesiennes:
+$<span class="math notranslate nohighlight">\( \mathbf{OP}=\left[\begin{array}{c}
+1.\\
+3.\\
+-0.5
+\end{array}\right]
+\)</span>$
+est représenté par un tableau de réels de dimension 3, tel que:</p>
+<p>P=[1.,3.,5.] (i.e. P[0]=1., P[1]=3.0, P[2]=5.0)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;**Video du cours:  Tableaux 1D**&quot;</span><span class="p">))</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;RMB83wVk8Wc&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p><strong>Video du cours:  Tableaux 1D</strong></p>
+<div class="output text_html">
+<iframe
+    width="400"
+    height="300"
+    src="https://www.youtube.com/embed/RMB83wVk8Wc"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Les vidéos utilisent un ancien interpréteur python 2.7, pour lequel <code class="docutils literal notranslate"><span class="pre">print</span></code> est un mot clé,
+soit <code class="docutils literal notranslate"><span class="pre">print</span> <span class="pre">'bonjour'</span></code>.
+Avec Python 3, <code class="docutils literal notranslate"><span class="pre">print</span></code> est une fonction et il faut donc utiliser des parenthèses,
+soit <code class="docutils literal notranslate"><span class="pre">print('bonjour')</span></code></p>
+</div>
+</div>
+<div class="section" id="tableau-numerique-sous-python">
+<h3><span class="section-number">6.1.2. </span>Tableau numérique sous Python<a class="headerlink" href="#tableau-numerique-sous-python" title="Lien permanent vers ce titre">¶</a></h3>
+<ul class="simple">
+<li><p>plusieurs structures de données possible (list, array, ..)</p></li>
+<li><p>mais on utilisera essentiellement la structure <strong>array</strong> de la bibliothéque <strong>numpy</strong></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">P</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">P</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">P</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">P</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">P</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">P</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1. 3. 5.]
+&lt;class &#39;numpy.ndarray&#39;&gt;
+3
+3.0
+&lt;class &#39;numpy.float64&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="visualisation-de-l-execution">
+<h3><span class="section-number">6.1.3. </span>visualisation de l’exécution<a class="headerlink" href="#visualisation-de-l-execution" title="Lien permanent vers ce titre">¶</a></h3>
+<p><strong>utilisation du site : <a class="reference external" href="http://pythontutor.com">http://pythontutor.com</a></strong></p>
+<p><em>vous pouvez copier l’exemple de code python sur le site pour l’exécuter</em></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>P = [1.,3.,5.]
+x = P[2]
+y = (P[0]+P[1]+P[2])/3
+z = P[3]
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;**Visualisation de l&#39;execution sur le site pythontutor**&quot;</span><span class="p">))</span>
+<span class="n">Video</span><span class="p">(</span><span class="s2">&quot;VIDEO_COURS/pythonlive_tab1.mp4&quot;</span><span class="p">,</span> <span class="n">embed</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p><strong>Visualisation de l'execution sur le site pythontutor</strong></p>
+<div class="output text_html"><video controls  width="700"  height="300">
+ <source src="data:None;base64,VIDEO_COURS/pythonlive_tab1.mp4" type="None">
+ Your browser does not support the video tag.
+ </video></div></div>
+</div>
+</div>
+<div class="section" id="indice-d-un-tableau">
+<h3><span class="section-number">6.1.4. </span>Indice d’un tableau<a class="headerlink" href="#indice-d-un-tableau" title="Lien permanent vers ce titre">¶</a></h3>
+<p><strong>attention</strong> pour un tableau de dimension n : indice <span class="math notranslate nohighlight">\(0 \le i \lt n\)</span></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>print(P[2])
+print(P[3])
+
+5.0
+---------------------------------------------------------------------------
+IndexError                                Traceback (most recent call last)
+&lt;ipython-input-6-53bfb96ce013&gt; in &lt;module&gt;
+      1 print(P[2])
+----&gt; 2 print(P[3])
+
+IndexError: index 3 is out of bounds for axis 0 with size 3
+</pre></div>
+</div>
+</div>
+<div class="section" id="manipulation-de-tableaux-1d-en-python">
+<h3><span class="section-number">6.1.5. </span>Manipulation de tableaux 1D en Python<a class="headerlink" href="#manipulation-de-tableaux-1d-en-python" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="section" id="creation-d-un-tableau">
+<h4><span class="section-number">6.1.5.1. </span>création d’un tableau<a class="headerlink" href="#creation-d-un-tableau" title="Lien permanent vers ce titre">¶</a></h4>
+<ul class="simple">
+<li><p>à partir d’une liste (entre [ ]):  ** array(liste) **</p></li>
+<li><p>dimension = nbre d’éléments de la liste</p></li>
+<li><p>type = type des éléments de la liste</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;**Video du cours: Manipulation des tableaux 1D**&quot;</span><span class="p">))</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;SsFtJ0uXTTM&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p><strong>Video du cours: Manipulation des tableaux 1D</strong></p>
+<div class="output text_html">
+<iframe
+    width="400"
+    height="300"
+    src="https://www.youtube.com/embed/SsFtJ0uXTTM"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Les vidéos utilisent un ancien interpréteur python 2.7, pour lequel <code class="docutils literal notranslate"><span class="pre">print</span></code> est un mot clé,
+soit <code class="docutils literal notranslate"><span class="pre">print</span> <span class="pre">'bonjour'</span></code>.
+Avec Python 3, <code class="docutils literal notranslate"><span class="pre">print</span></code> est une fonction et il faut donc utiliser des parenthèses,
+soit <code class="docutils literal notranslate"><span class="pre">print('bonjour')</span></code></p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Q</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">type</span><span class="p">(</span><span class="n">Q</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="n">I</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">I</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">type</span><span class="p">(</span><span class="n">I</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0 &lt;class &#39;numpy.float64&#39;&gt;
+1 &lt;class &#39;numpy.int64&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="tableaux-particuliers">
+<h4><span class="section-number">6.1.5.2. </span>tableaux particuliers<a class="headerlink" href="#tableaux-particuliers" title="Lien permanent vers ce titre">¶</a></h4>
+<ul class="simple">
+<li><p>tableau de  0.0 ou de 1.0 : <strong>zeros(n)</strong> ou <strong>ones(n)</strong>  ( n dimension)</p></li>
+<li><p>tableau de n valeurs non initialisées (attention !!!): <strong>empty(n)</strong></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0. 0. 0. 0. 0.]
+[1. 1. 1.]
+[1. 1. 1.]
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><a href="#ici011">tableau de liste de valeurs:</a><a name="ici011"></a> <strong>arange(debut, fin, pas)</strong></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">10.</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0 1 2 3 4 5 6 7 8 9]
+[0 1 2 3 4 5 6 7 8 9]
+[0.  1.5 3.  4.5 6.  7.5 9. ]
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><a href="#ici012">intervalle:</a><a name="ici012"></a> <strong>linspace(debut, fin, nbre d’éléments)</strong></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 0.  1.  2.  3.  4.  5.  6.  7.  8.  9. 10.]
+[ 0.  5. 10.]
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>valeurs aléatoires: <strong>random.rand(nbre)</strong></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.45640238 0.80213147 0.03880734 0.6532161  0.00455566]
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><a href="#ici013">liste de compréhension</a><a name="ici013"></a> <strong>[ exp for i in range(n) ]</strong></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">i</span><span class="o">*</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 0  1  4  9 16]
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>spécification du type des éléments du tableau: argument <strong>dtype</strong> (int,float,..)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">I</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">I</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">I</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0 0 0]
+&lt;class &#39;numpy.ndarray&#39;&gt; &lt;class &#39;numpy.int64&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="taille-et-element-d-un-tableau">
+<h4><span class="section-number">6.1.5.3. </span>taille et élément d’un tableau<a class="headerlink" href="#taille-et-element-d-un-tableau" title="Lien permanent vers ce titre">¶</a></h4>
+<ul class="simple">
+<li><p>nbre d’éléments du tableau X: <strong>X.size</strong> ou <strong>len(X)</strong></p></li>
+<li><p>taille du tableau X: <strong>X.shape</strong></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5 5 (5,)
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>accès aux éléments: premier <strong>X[0]</strong>  et dernier <strong>X[-1]</strong></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.  1.2 1.4 1.6 1.8]
+1.0 1.7999999999999998
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><a href="#ici017">sous-tableau:</a><a name="ici017"></a> <strong>X[deb:fin:pas]</strong></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="p">[:])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="p">[::</span><span class="mi">2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0 1 2 3 4 5 6 7 8 9]
+[1 2]
+[0 2 4 6 8]
+[1 2 3 4 5 6 7 8]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="aliasing-et-copie-de-tableau">
+<h4><span class="section-number">6.1.5.4. </span>aliasing et copie de tableau<a class="headerlink" href="#aliasing-et-copie-de-tableau" title="Lien permanent vers ce titre">¶</a></h4>
+<ul class="simple">
+<li><p>aliasing par défaut: <strong>Y=X</strong> ne crée pas un nouveau tableau mais un alias</p>
+<ul>
+<li><p>de même <strong>Y=X[:]</strong> (contrairement aux listes)</p></li>
+</ul>
+</li>
+<li><p>copie explicite: <strong>Y[:]=X[:]</strong></p>
+<ul>
+<li><p>ou ** Y = X.copy() **</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">Y</span><span class="o">=</span><span class="n">X</span>
+<span class="n">Z</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">Z</span><span class="p">[:]</span><span class="o">=</span><span class="n">X</span><span class="p">[:]</span>
+<span class="n">Y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">Z</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;X=&quot;</span><span class="p">,</span><span class="n">X</span><span class="p">,</span><span class="s2">&quot;Y=&quot;</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="s2">&quot;Z=&quot;</span><span class="p">,</span><span class="n">Z</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X= [1. 0.] Y= [1. 0.] Z= [2. 0.]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="boucle-sur-les-elements-d-un-tableau">
+<h4><span class="section-number">6.1.5.5. </span>boucle sur les éléments d’un tableau<a class="headerlink" href="#boucle-sur-les-elements-d-un-tableau" title="Lien permanent vers ce titre">¶</a></h4>
+<p>boucle for : <strong>for i in range(n):</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="o">*</span><span class="n">i</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 0.  1.  4.  9. 16.]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exemples-et-exercises-d-utilisation-de-tableaux-1d">
+<h2><span class="section-number">6.2. </span>Exemples et exercises d’utilisation de tableaux 1D<a class="headerlink" href="#exemples-et-exercises-d-utilisation-de-tableaux-1d" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;**Video du cours: Exemple d&#39;utilisation de tableaux**&quot;</span><span class="p">))</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;_tm7hOIVh2c&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p><strong>Video du cours: Exemple d'utilisation de tableaux</strong></p>
+<div class="output text_html">
+<iframe
+    width="400"
+    height="300"
+    src="https://www.youtube.com/embed/_tm7hOIVh2c"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Les vidéos utilisent un ancien interpréteur python 2.7, pour lequel <code class="docutils literal notranslate"><span class="pre">print</span></code> est un mot clé,
+soit <code class="docutils literal notranslate"><span class="pre">print</span> <span class="pre">'bonjour'</span></code>.
+Avec Python 3, <code class="docutils literal notranslate"><span class="pre">print</span></code> est une fonction et il faut donc utiliser des parenthèses,
+soit <code class="docutils literal notranslate"><span class="pre">print('bonjour')</span></code></p>
+</div>
+<div class="section" id="exemple-produit-scalaire">
+<h3><span class="section-number">6.2.1. </span>Exemple: produit scalaire<a class="headerlink" href="#exemple-produit-scalaire" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Calcul du produit scalaire <strong>scal</strong> de 2 vecteurs <strong>X,Y</strong>:</p>
+<div class="math notranslate nohighlight">
+\[ \mathbf{X}\in\mathcal{R}^n , \mathbf{Y}\in\mathcal{R}^n  \ \ scal =\sum_{i=1}^{n} X_i Y_i\]</div>
+<p>Remarque si X=Y <span class="math notranslate nohighlight">\(\rightarrow\)</span> norme</p>
+<div class="math notranslate nohighlight">
+\[ ||\mathbf{X}|| = \sqrt{\sum_{i=1}^{n} X_i^2}\]</div>
+<p><strong>Algorithme produit scalaire</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Algorithme ProdScal(X,Y)
+    n = dimension(X) (et Y)
+    scal=0
+    pour i de 0 a n-1
+        scal = scal + X[i]*Y[i]
+    fin pour
+    retour scal
+</pre></div>
+</div>
+<p><strong>Programme Python produit scalaire</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ProdScal</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; calcul le produit scalaire de 2 vecteurs &quot;&quot;&quot;</span>
+    <span class="n">n</span><span class="o">=</span><span class="n">X</span><span class="o">.</span><span class="n">size</span>
+    <span class="n">scal</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">scal</span> <span class="o">=</span> <span class="n">scal</span> <span class="o">+</span> <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">Y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">scal</span>
+<span class="c1">#</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;X =&quot;</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Y =&quot;</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;X.Y =&quot;</span><span class="p">,</span> <span class="n">ProdScal</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">),</span> <span class="s1">&#39; ou&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X = [0.07179482 0.72765789]
+Y = [0.90029969 0.57088432]
+X.Y = 0.4800453363174946  ou 0.4800453363174946
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exercices">
+<h3><span class="section-number">6.2.2. </span>Exercices<a class="headerlink" href="#exercices" title="Lien permanent vers ce titre">¶</a></h3>
+<ol class="simple">
+<li><p>Test de colinéarité de 2 vecteurs</p></li>
+<li><p>Normalisation d’un vecteur</p></li>
+</ol>
+<div class="section" id="test-de-colinearite-de-2-vecteurs">
+<h4><span class="section-number">6.2.2.1. </span>Test de colinéarité de 2 vecteurs<a class="headerlink" href="#test-de-colinearite-de-2-vecteurs" title="Lien permanent vers ce titre">¶</a></h4>
+<div class="math notranslate nohighlight">
+\[\mathbf{U} \in \mathcal{R}^n , \mathbf{V} \in \mathcal{R}^n \mbox{ si } \left|\mathbf{U}.\mathbf{V}\right| = \left\Vert\mathbf{U}\right\Vert \left\Vert\mathbf{V}\right\Vert \mbox{ alors } \mathbf{U} \mbox{ et } \mathbf{V} \mbox{ sont colinéaires} \]</div>
+<p>Ecrire une fonction qui teste la colinéarité</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    colineaire(U,V)
+</pre></div>
+</div>
+<p>Attention à la précision</p>
+</div>
+<div class="section" id="normalisation-d-un-vecteur-x">
+<h4><span class="section-number">6.2.2.2. </span>Normalisation d’un vecteur X<a class="headerlink" href="#normalisation-d-un-vecteur-x" title="Lien permanent vers ce titre">¶</a></h4>
+<div class="math notranslate nohighlight">
+\[\mathbf{U} \in \mathcal{R}^n \mbox{ calcul } \mathbf{U} \leftarrow \frac{\mathbf{U}}{\left\Vert\mathbf{U} \right\Vert}\]</div>
+<p>Ecrire une fonction python qui normalise un vecteur X</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Xn = normalisation(X)
+</pre></div>
+</div>
+<p>attention au cas X=0</p>
+</div>
+</div>
+</div>
+<div class="section" id="tableau-2d">
+<h2><span class="section-number">6.3. </span>Tableau 2D<a class="headerlink" href="#tableau-2d" title="Lien permanent vers ce titre">¶</a></h2>
+<p>structure de données pour représenter une matrice</p>
+<p><strong>tableau 2D</strong> : liste de <span class="math notranslate nohighlight">\(n*p\)</span> éléments du même type (entier ou réel)
+(n,p = dimensions de la matrice)</p>
+<ul class="simple">
+<li><p>en mathématique: <span class="math notranslate nohighlight">\(\mathbf{A} \in \mathcal{R}^{n,p} \)</span></p></li>
+<li><p>en algorithmique:  A tableau de <span class="math notranslate nohighlight">\(n*p\)</span> réels (contenant les composantes de A)</p></li>
+</ul>
+<p><strong>élément i,i du tableau</strong> : A[i,j] <span class="math notranslate nohighlight">\(\equiv\mathbf{A}_{i+1,j+1}\)</span></p>
+<p><strong>Attention</strong>  on compte à partir de 0, donc i varie de 0 à n-1 et j de 0 à p-1</p>
+<div class="section" id="exemple-matrice-de-rotation-dans-mathcal-r-2">
+<h3><span class="section-number">6.3.1. </span>Exemple: matrice de rotation dans <span class="math notranslate nohighlight">\(\mathcal{R}^2\)</span><a class="headerlink" href="#exemple-matrice-de-rotation-dans-mathcal-r-2" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Rotation <span class="math notranslate nohighlight">\(\theta\)</span> d’un repère :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \mathbf{R}=\left[\begin{array}{cc}
+\cos(\theta)&amp; -\sin(\theta)\\
+\sin(\theta)&amp; \cos(\theta)
+\end{array}\right]
+\end{split}\]</div>
+<p>représenté par un tableau de réels de dimension <span class="math notranslate nohighlight">\(2*2\)</span>, tel que:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>R=[[cos(theta),-sin(theta)],[sin(theta),cos(theta)]]
+</pre></div>
+</div>
+<p>(i.e. R[0,0]=cos(theta), R[0,1]=-sin(theta), R[1,0]=sin(theta), R[1,1]=cos(theta))</p>
+<p><strong>remarque</strong> theta est une variable contenant la valeur de l’angle</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;**Video du cours: tableaux en 2D**&quot;</span><span class="p">))</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;5Tl6KDelqKI&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p><strong>Video du cours: tableaux en 2D</strong></p>
+<div class="output text_html">
+<iframe
+    width="400"
+    height="300"
+    src="https://www.youtube.com/embed/5Tl6KDelqKI"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Les vidéos utilisent un ancien interpréteur python 2.7, pour lequel <code class="docutils literal notranslate"><span class="pre">print</span></code> est un mot clé,
+soit <code class="docutils literal notranslate"><span class="pre">print</span> <span class="pre">'bonjour'</span></code>.
+Avec Python 3, <code class="docutils literal notranslate"><span class="pre">print</span></code> est une fonction et il faut donc utiliser des parenthèses,
+soit <code class="docutils literal notranslate"><span class="pre">print('bonjour')</span></code></p>
+</div>
+</div>
+<div class="section" id="matrices-en-python">
+<h3><span class="section-number">6.3.2. </span>Matrices en Python<a class="headerlink" href="#matrices-en-python" title="Lien permanent vers ce titre">¶</a></h3>
+<p>bibliothèque numpy: <strong>array</strong>,  dimension couple (tuple) <strong>(n,p)</strong></p>
+<div class="section" id="creation-de-tableaux-2d">
+<h4><span class="section-number">6.3.2.1. </span>création de tableaux 2D<a class="headerlink" href="#creation-de-tableaux-2d" title="Lien permanent vers ce titre">¶</a></h4>
+<ul>
+<li><p>explicite</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  A = array([[1.,2.],[3.,4.]])
+</pre></div>
+</div>
+</li>
+<li><p>fonctions: <strong>zeros</strong>, <strong>ones</strong>,.. : identiques en 1D en remplaçant <strong>n</strong> par <strong>(n,p)</strong> (voir doc <strong>numpy</strong>)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">3</span>
+<span class="n">R</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)],</span>
+              <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">R</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">R</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">R</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 0.5       -0.8660254]
+ [ 0.8660254  0.5      ]]
+&lt;class &#39;numpy.ndarray&#39;&gt;
+4 (2, 2)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.</span><span class="p">,</span><span class="mf">2.</span><span class="p">],[</span><span class="mf">3.</span><span class="p">,</span><span class="mf">4.</span><span class="p">]])</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">6</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span><span class="n">Z</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2, 2) (3, 2) (2, 3)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="taille-et-elements-d-un-tableau-2d">
+<h4><span class="section-number">6.3.2.2. </span>taille et éléments d’un tableau 2D<a class="headerlink" href="#taille-et-elements-d-un-tableau-2d" title="Lien permanent vers ce titre">¶</a></h4>
+<ul class="simple">
+<li><p>nbre total d’éléments du tableau A: <strong>A.size</strong> ou <strong>len(A)</strong></p></li>
+<li><p>par dimension <strong>A.shape</strong></p></li>
+<li><p>élément: ** [i, j]** (à partir de 0)</p></li>
+<li><p>sous-matrices (convention identique en 1D)</p>
+<ul>
+<li><p>ligne i : <strong>A[i, :]</strong></p></li>
+<li><p>colonne j : <strong>A[:, j]</strong></p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A=</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">A</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">A11 =&quot;</span><span class="p">,</span><span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="p">,</span><span class="s2">&quot;dim A=&quot;</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">A</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;B=</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">B</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">B11 =&quot;</span><span class="p">,</span><span class="n">B</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="p">,</span><span class="s2">&quot;dim B=&quot;</span><span class="p">,</span> <span class="n">B</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;C=</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">C</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">C1 =&quot;</span><span class="p">,</span><span class="n">C</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;dim C=&quot;</span><span class="p">,</span><span class="n">C</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;B=</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">B</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;C=</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">C</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A=
+ [[1 2 3]
+ [4 5 6]] 
+A11 = 5 dim A= (2, 3)
+B=
+ [[1 2]
+ [4 5]] 
+B11 = 5 dim B= (2, 2)
+C=
+ [4 5 6] 
+C1 = 5 dim C= (3,)
+B=
+ [[1 2]
+ [4 0]]
+C=
+ [4 0 6]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="equivalence-avec-les-tableaux-1d">
+<h4><span class="section-number">6.3.2.3. </span>équivalence avec les tableaux 1D<a class="headerlink" href="#equivalence-avec-les-tableaux-1d" title="Lien permanent vers ce titre">¶</a></h4>
+<p><span class="math notranslate nohighlight">\(A\)</span> tableau 2D  (<strong>array</strong> 2D) <span class="math notranslate nohighlight">\(n*p\)</span> réels  <span class="math notranslate nohighlight">\(\equiv\)</span> <span class="math notranslate nohighlight">\(B\)</span> tableau 1D de même dimension globale <span class="math notranslate nohighlight">\(np\)</span></p>
+<p>les données sont identiques, seul l’accès est différent:</p>
+<p><strong>reshape(tableau,dimension)</strong> (attention aliasing !!)</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(B = A\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(A_{i,j}\)</span> pour <span class="math notranslate nohighlight">\(i=0,n-1\)</span> et <span class="math notranslate nohighlight">\(j=0,p-1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(B_k\)</span>  pour <span class="math notranslate nohighlight">\(k=0..np-1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(A_{i,j}\equiv B_k\)</span> avec <span class="math notranslate nohighlight">\(k=i*p+j\)</span> (stockage par ligne C/C++)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;**Video du cours: manipulation des tableaux 2D**&quot;</span><span class="p">))</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;I-JAdP7PzIs&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p><strong>Video du cours: manipulation des tableaux 2D</strong></p>
+<div class="output text_html">
+<iframe
+    width="400"
+    height="300"
+    src="https://www.youtube.com/embed/I-JAdP7PzIs"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Les vidéos utilisent un ancien interpréteur python 2.7, pour lequel <code class="docutils literal notranslate"><span class="pre">print</span></code> est un mot clé,
+soit <code class="docutils literal notranslate"><span class="pre">print</span> <span class="pre">'bonjour'</span></code>.
+Avec Python 3, <code class="docutils literal notranslate"><span class="pre">print</span></code> est une fonction et il faut donc utiliser des parenthèses,
+soit <code class="docutils literal notranslate"><span class="pre">print('bonjour')</span></code></p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">],</span> <span class="p">[</span><span class="mf">4.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">]])</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">A</span> <span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;dim A =&quot;</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span><span class="s2">&quot; A=</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">A</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;dim B =&quot;</span><span class="p">,</span> <span class="n">B</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span><span class="s2">&quot; B=</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">B</span><span class="p">)</span>
+<span class="n">B</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;B=</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">B</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A=</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">A</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;C=</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">C</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dim A = (2, 3)  A=
+ [[1. 2. 3.]
+ [4. 5. 6.]]
+dim B = (6,)  B=
+ [1. 2. 3. 4. 5. 6.]
+B=
+ [1. 2. 0. 4. 5. 6.]
+A=
+ [[1. 2. 0.]
+ [4. 5. 6.]]
+C=
+ [[1. 2.]
+ [0. 4.]
+ [5. 6.]]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="copie-et-aliasing">
+<h4><span class="section-number">6.3.2.4. </span>Copie et aliasing<a class="headerlink" href="#copie-et-aliasing" title="Lien permanent vers ce titre">¶</a></h4>
+<p><strong>aliasing</strong> = noms de variable différents, mais données partagées</p>
+<ul class="simple">
+<li><p>aliasing par défaut sous python: ** B=A **</p></li>
+<li><p>sinon copie explicite: <strong>C[:,:]=A[:,:]</strong></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">B</span><span class="o">=</span><span class="n">A</span>
+<span class="n">B</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mi">2</span>
+<span class="n">C</span><span class="o">=</span><span class="n">A</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">C</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A=&quot;</span><span class="p">,</span><span class="n">A</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">B=&quot;</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">C=&quot;</span><span class="p">,</span><span class="n">C</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A= [[2. 0.]
+ [0. 0.]] 
+B= [[2. 0.]
+ [0. 0.]] 
+C= [[3. 4.]
+ [0. 0.]]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exemple-produit-matrice-vecteur">
+<h3><span class="section-number">6.3.3. </span>Exemple: produit matrice-vecteur<a class="headerlink" href="#exemple-produit-matrice-vecteur" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Calcul du produit matriciel  <strong>Y=A X</strong>:</p>
+<div class="math notranslate nohighlight">
+\[ \mathbf{A}\in\mathcal{R}^n\times\mathcal{R}^p  , \mathbf{X}\in\mathcal{R}^p , \mathbf{Y}\in\mathcal{R}^n  \ \ Y_i =\sum_{j=1}^{p} A_{i,j} X_j\]</div>
+<p><strong>Algorithme produit matrice-vecteur Y = A X</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Algorithme MatVec(A,X)
+    n,p = dimension de A
+    Y = tableau(n)
+    pour i de 0 a n-1
+        Y[i]=0.
+        pour j de 0 a p-1
+            Y[i]=Y[i]+A[i,j]*X[j]
+        fin pour j
+    fin pour i
+    retour Y
+</pre></div>
+</div>
+<p><strong>Programme Python produit scalaire</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">MatVec</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">X</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; calcul le produit Y=A.X de A par X &quot;&quot;&quot;</span> 
+    <span class="n">n</span><span class="p">,</span><span class="n">p</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">S</span> <span class="o">=</span> <span class="mf">0.</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+            <span class="n">S</span> <span class="o">+=</span>  <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">*</span> <span class="n">X</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+        <span class="n">Y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">S</span>
+    <span class="k">return</span> <span class="n">Y</span>
+<span class="c1">#</span>
+<span class="n">n</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">p</span><span class="p">),</span> <span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A =</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">A</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;X =&quot;</span><span class="p">,</span><span class="n">X</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Y =&quot;</span><span class="p">,</span><span class="n">MatVec</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">X</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A =
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> [[0 1]
+ [2 3]
+ [4 5]]
+X = [0 1]
+Y = [1. 3. 5.]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h3><span class="section-number">6.3.4. </span>Exercices<a class="headerlink" href="#id1" title="Lien permanent vers ce titre">¶</a></h3>
+<ol class="simple">
+<li><p>Calcul du produit de 2 matrices</p></li>
+<li><p>Calcul de la matrice de Vandermonde d’ordre n</p></li>
+</ol>
+<div class="section" id="produit-matrice-matrice">
+<h4><span class="section-number">6.3.4.1. </span>Produit matrice-matrice<a class="headerlink" href="#produit-matrice-matrice" title="Lien permanent vers ce titre">¶</a></h4>
+<p><span class="math notranslate nohighlight">\(\mathbf{C} = \mathbf{A}\ \mathbf{B} \)</span> pour <span class="math notranslate nohighlight">\(\mathbf{A} \in \mathcal{R}^n\times\mathcal{R}^p\)</span> , <span class="math notranslate nohighlight">\(\mathbf{B} \in \mathcal{R}^p\times\mathcal{R}^q\)</span> et <span class="math notranslate nohighlight">\(\mathbf{C} \in \mathcal{R}^n\times\mathcal{R}^q\)</span></p>
+<div class="math notranslate nohighlight">
+\[ C_{i,j} = \sum_{k=1}^{p} A_{i,k} B_{k,j}\]</div>
+</div>
+<div class="section" id="matrice-de-vandermonde">
+<h4><span class="section-number">6.3.4.2. </span>Matrice de Vandermonde<a class="headerlink" href="#matrice-de-vandermonde" title="Lien permanent vers ce titre">¶</a></h4>
+<div class="math notranslate nohighlight">
+\[\begin{split} V = \left[ \begin{array}{ccccc}
+1 &amp; x_0 &amp; x_0^2 &amp; \ldots &amp; x_0^{n} \\
+1 &amp; x_1 &amp; x_1^2 &amp; \ldots &amp; x_1^{n}\\
+\ldots &amp; \ldots &amp; \ldots &amp; \ldots &amp; \ldots \\
+1 &amp; x_n &amp; x_n^2 &amp; \ldots &amp; x_n^{n}\\
+\end{array}
+\right]
+\end{split}\]</div>
+<p>Intervient dans le problème de la détermination du polynôme d’interpolation de degré <span class="math notranslate nohighlight">\(n\)</span> passant par <span class="math notranslate nohighlight">\(n+1\)</span> points <span class="math notranslate nohighlight">\(\{x_i,y_i\}_{i=0,n}\)</span></p>
+</div>
+</div>
+</div>
+<div class="section" id="boucle-en-python-sur-les-tableaux">
+<h2><span class="section-number">6.4. </span>Boucle en Python sur les tableaux<a class="headerlink" href="#boucle-en-python-sur-les-tableaux" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="iterations-avec-un-indice">
+<h3><span class="section-number">6.4.1. </span>itérations avec un indice<a class="headerlink" href="#iterations-avec-un-indice" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>for i in range(len(Tab)):
+</pre></div>
+</div>
+</div>
+<div class="section" id="iterations-sur-les-elements-val-d-un-tableau-tab-ou-d-une-liste">
+<h3><span class="section-number">6.4.2. </span>itérations sur les éléments val d’un tableau Tab (ou d’une liste)<a class="headerlink" href="#iterations-sur-les-elements-val-d-un-tableau-tab-ou-d-une-liste" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>for val in Tab:
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calcul du carré de la norme d&#39;un vecteur</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">norm2</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">X</span><span class="p">:</span>
+    <span class="n">norm2</span> <span class="o">=</span> <span class="n">norm2</span> <span class="o">+</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">norm2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>35.94299456642051
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="iterations-avec-indice-et-valeur-enumerate">
+<h3><span class="section-number">6.4.3. </span>itérations avec indice et valeur (enumerate)<a class="headerlink" href="#iterations-avec-indice-et-valeur-enumerate" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>for i,val in enumerate(Tab):
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># determination du max d&#39;un tableau</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">xmax</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">imax</span> <span class="o">=</span> <span class="mf">0.</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">xmax</span><span class="p">:</span>
+        <span class="n">xmax</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="n">imax</span> <span class="o">=</span> <span class="n">i</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;xmax =&quot;</span><span class="p">,</span> <span class="n">xmax</span><span class="p">,</span> <span class="s2">&quot; pour i =&quot;</span><span class="p">,</span> <span class="n">imax</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.14411918 0.70073605 0.68982614 0.64186036 0.19091856 0.66361109
+ 0.78277643 0.9313252  0.02934867 0.17450477]
+xmax = 0.9313252048354547  pour i = 7
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="boucle-avec-un-indice-decroissant-reversed">
+<h3><span class="section-number">6.4.4. </span>boucle avec un indice décroissant (reversed)<a class="headerlink" href="#boucle-avec-un-indice-decroissant-reversed" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>for i in reversed(range(n)):
+</pre></div>
+</div>
+<div class="section" id="exemple-permutation-circulaire-vers-la-droite">
+<h4><span class="section-number">6.4.4.1. </span>exemple : permutation circulaire vers la droite<a class="headerlink" href="#exemple-permutation-circulaire-vers-la-droite" title="Lien permanent vers ce titre">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># permutation des valeurs d&#39;un tableau vers la droite: X[i+1]=X[i]</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">last</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">X</span><span class="o">.</span><span class="n">size</span><span class="p">)):</span>
+    <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">last</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.42451342 0.53431578 0.29622205 0.64822275]
+[0.64822275 0.42451342 0.53431578 0.29622205]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="boucles-de-tres-grande-taille-xrange">
+<h3><span class="section-number">6.4.5. </span>boucles de très grande taille: xrange<a class="headerlink" href="#boucles-de-tres-grande-taille-xrange" title="Lien permanent vers ce titre">¶</a></h3>
+<p>pour des boucles de très grandes tailles (n &gt; 100 000) on peut utiliser</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>for i in xrange(n)
+</pre></div>
+</div>
+<p>au lieu de</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>for i in range(n)
+</pre></div>
+</div>
+<p><strong>Exercice:</strong> modifier l’algorithme pour effectuer une permutation circulaire vers la gauche</p>
+</div>
+</div>
+<div class="section" id="notation-matricielle-a-la-matlab">
+<h2><span class="section-number">6.5. </span>Notation matricielle (à la Matlab)<a class="headerlink" href="#notation-matricielle-a-la-matlab" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;**Video du cours: Notation matricielle avec Numpy**&quot;</span><span class="p">))</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;Zsd326timCw&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p><strong>Video du cours: Notation matricielle avec Numpy</strong></p>
+<div class="output text_html">
+<iframe
+    width="400"
+    height="300"
+    src="https://www.youtube.com/embed/Zsd326timCw"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Les vidéos utilisent un ancien interpréteur python 2.7, pour lequel <code class="docutils literal notranslate"><span class="pre">print</span></code> est un mot clé,
+soit <code class="docutils literal notranslate"><span class="pre">print</span> <span class="pre">'bonjour'</span></code>.
+Avec Python 3, <code class="docutils literal notranslate"><span class="pre">print</span></code> est une fonction et il faut donc utiliser des parenthèses,
+soit <code class="docutils literal notranslate"><span class="pre">print('bonjour')</span></code></p>
+</div>
+<div class="section" id="efficacite-boucles-dans-la-bibliotheque-numpy">
+<h3><span class="section-number">6.5.1. </span>Efficacité -&gt; boucles dans la bibliothéque numpy<a class="headerlink" href="#efficacite-boucles-dans-la-bibliotheque-numpy" title="Lien permanent vers ce titre">¶</a></h3>
+<ul class="simple">
+<li><p>opérations (terme à terme) sur les vecteurs +,-,*,/</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;X=&quot;</span><span class="p">,</span><span class="n">X</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Y=&quot;</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">XY=&quot;</span><span class="p">,</span><span class="n">X</span><span class="o">*</span><span class="n">Y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X= [0.0995507  0.97583235 0.75388774] 
+Y= [0.03626736 0.61246779 0.51050122] 
+XY= [0.00361044 0.59766589 0.38486062]
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>fonctions mathématiques (terme à terme)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.99504892 0.56047892 0.72903331]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="utilisez-les-fonctions-de-la-bibliotheque-numpy">
+<h3><span class="section-number">6.5.2. </span>Utilisez les fonctions de la bibliothéque numpy<a class="headerlink" href="#utilisez-les-fonctions-de-la-bibliotheque-numpy" title="Lien permanent vers ce titre">¶</a></h3>
+<ul class="simple">
+<li><p>opérations matricielle: fonction <strong>dot</strong></p></li>
+</ul>
+<p>produit scalaire, produit matrice-vecteur, produit matriciel
+$<span class="math notranslate nohighlight">\( C= dot(A,B)\ \rightarrow\  C_{ij} = \sum_{k} A_{ik} B_{kj}\)</span>$</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;X.Y=&quot;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;|X|=&quot;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">X</span><span class="p">)))</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A*X=&quot;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">X</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A*A=</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">A</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X.Y= 0.9861369442639945
+|X|= 1.2371361482630694
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A*X= [0.97985939 0.96589947 0.8011448 ]
+A*A=
+ [[0.67605678 0.88079233 0.52788459]
+ [0.63788943 1.17648063 0.49971845]
+ [0.54259412 0.47897846 0.42473287]]
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>produit tensoriel interne (somme sur la dernière dimension): fonction <strong>inner</strong>
+$<span class="math notranslate nohighlight">\( C= inner(A,B)\ \rightarrow\  C_{ij} = \sum_{k} A_{ik} B_{jk}\)</span>$</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;inner(X,Y)=&quot;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">inner</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;inner(A,X)=&quot;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">inner</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">X</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;inner(A,A)=</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">inner</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">A</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>inner(X,Y)= 0.9861369442639945
+inner(A,X)= [0.97985939 0.96589947 0.8011448 ]
+inner(A,A)=
+ [[0.78884599 0.79265694 0.60973129]
+ [0.79265694 1.0106186  0.45910477]
+ [0.60973129 0.45910477 0.58438321]]
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>produit tensoriel externe: fonction <strong>outer</strong></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[Z = outer(X,Y)\ \rightarrow\  Z_{ij} = X_i Y_j \]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;outer(X,X)=</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">X</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>outer(X,X)=
+ [[0.00991034 0.09714479 0.07505005]
+ [0.09714479 0.95224878 0.73566805]
+ [0.07505005 0.73566805 0.56834673]]
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>somme et produit : fonction <strong>sum</strong> et <strong>prod</strong></p></li>
+<li><p>ainsi que de nombreuses autres fonctions (inverse, déterminant, ..)</p></li>
+</ul>
+<p>voir la <strong>documentation numpy</strong>: <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference">http://docs.scipy.org/doc/numpy/reference</a></p>
+</div>
+<div class="section" id="a-href-ici085-aide-sur-les-fonctions-help-ou-tab-a-a-name-ici085-a">
+<h3><span class="section-number">6.5.3. </span><a href="#ici085">Aide sur les fonctions : help() ou TAB</a><a name="ici085"></a><a class="headerlink" href="#a-href-ici085-aide-sur-les-fonctions-help-ou-tab-a-a-name-ici085-a" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>help(fonction) ou fonction?
+</pre></div>
+</div>
+<p><strong>exemple</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>help(np.sum)       
+
+Help on function sum in module numpy:
+
+sum(a, axis=None, dtype=None, out=None, keepdims=&lt;no value&gt;, initial=&lt;no value&gt;, where=&lt;no value&gt;)
+    Sum of array elements over a given axis.
+
+    Parameters
+    ----------
+    a : array_like
+        Elements to sum.
+    axis : None or int or tuple of ints, optional
+        Axis or axes along which a sum is performed.  The default,
+        axis=None, will sum all of the elements of the input array.  If
+        axis is negative it counts from the last to the first axis.
+
+        .. versionadded:: 1.7.0
+
+        If axis is a tuple of ints, a sum is performed on all of the axes
+        specified in the tuple instead of a single axis or all the axes as
+        before.
+    dtype : dtype, optional
+        The type of the returned array and of the accumulator in which the
+        elements are summed.  The dtype of `a` is used by default unless `a`
+        has an integer dtype of less precision than the default platform
+        integer.  In that case, if `a` is signed then the platform integer
+        is used while if `a` is unsigned then an unsigned integer of the
+        same precision as the platform integer is used.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="bibliographie">
+<h2><span class="section-number">6.6. </span>Bibliographie<a class="headerlink" href="#bibliographie" title="Lien permanent vers ce titre">¶</a></h2>
+<ol class="simple">
+<li><p><a class="reference external" href="http://www.cs.utexas.edu/users/EWD/transcriptions/EWD08xx/EWD831.html"><strong>Why numbering should start at zero</strong></a></p></li>
+</ol>
+<p>transciption du célébre article de <a class="reference external" href="http://fr.wikipedia.org/wiki/Edsger_Dijkstra">Edsger W. Dijkstra</a>.</p>
+<ol class="simple">
+<li><p><strong>Numpy pour les utilisateurs de Matlab</strong></p></li>
+</ol>
+<p>ou comment traduire des programmes Matlab sous Python</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://wiki.scipy.org/NumPy_for_Matlab_Users">http://wiki.scipy.org/NumPy_for_Matlab_Users</a></p></li>
+</ul>
+</div>
+<div class="section" id="fin-de-la-lecon">
+<h2><span class="section-number">6.7. </span>Fin de la leçon<a class="headerlink" href="#fin-de-la-lecon" title="Lien permanent vers ce titre">¶</a></h2>
+<a class="reference internal image-reference" href="../_images/numpy_array.png"><img alt="../_images/numpy_array.png" src="../_images/numpy_array.png" style="width: 300px;" /></a>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./CHAP6"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../CHAP5/COURS_FONCTION.html" title="précédent page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">précédent</p>
+            <p class="prev-next-title"><span class="section-number">5. </span>Fonctions et procédures</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="EXERCICES_TABLEAU.html" title="suivant page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">suivant</p>
+        <p class="prev-next-title"><span class="section-number">6.8. </span>Correction des exercices</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      Par Marc BUFFAT, dpt mécanique, Lyon 1<br/>
+    
+        &copy; droits d'auteur 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

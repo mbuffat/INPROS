@@ -1,0 +1,1876 @@
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5. Fonctions et procédures &#8212; INPROS INtroduction à la PROgrammation Scientifique en Python</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="canonical" href="https://perso.univ-lyon1.fr/marc.buffat/CHAP5/COURS_FONCTION.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="6. Les tableaux (vecteur, matrice)" href="../CHAP6/COURS_TABLEAU.html" />
+    <link rel="prev" title="4.10. Exercices" href="../CHAP4/EXERCICES_LOOP.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="fr">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">INPROS INtroduction à la PROgrammation Scientifique en Python</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Rechercher dans ce livre ..." aria-label="Rechercher dans ce livre ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Introduction à la PROgrammation Scientifique
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  INPROS
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP1/COURS_INTRO.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP2/COURS_ORDI.html">
+   2. Fonctionnement d’un ordinateur
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP3/COURS_VAR.html">
+   3. Variable et éléments de base
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../CHAP4/COURS_LOOP.html">
+   4. Structures de contrôle
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../CHAP4/EXERCICES_LOOP.html">
+     4.10. Exercices
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   5. Fonctions et procédures
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../CHAP6/COURS_TABLEAU.html">
+   6. Les tableaux (vecteur, matrice)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../CHAP6/EXERCICES_TABLEAU.html">
+     6.8. Correction des exercices
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Annexes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../RAPPEL/COURS_RAPPEL.html">
+   Rappel de maths et physique
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../credits.html">
+   Crédits
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Crée par <a href="https://perso.univ-lyon1.fr/marc.buffat/">Marc BUFFAT</a><br> avec <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Basculer la navigation" aria-controls="site-navigation"
+                title="Basculer la navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Téléchargez cette page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/CHAP5/COURS_FONCTION.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Télécharger le fichier source" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimer au format PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/mbuffat/INPROS"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Dépôt source"><i
+                    class="fab fa-github"></i>dépôt</button></a>
+        <a class="issues-button"
+            href="https://github.com/mbuffat/INPROS/issues/new?title=Issue%20on%20page%20%2FCHAP5/COURS_FONCTION.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Ouvrez un problème"><i class="fas fa-lightbulb"></i>signaler un problème</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Mode plein écran"
+        title="Mode plein écran"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contenu
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#procedure-et-fonction">
+   5.1. Procédure et fonction
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#procedure">
+     5.1.1. Procédure
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fonction-en-python">
+     5.1.2. Fonction en Python
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#passage-des-arguments">
+     5.1.3. Passage des arguments
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     5.1.4. Passage des arguments
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exemples-de-procedures-et-de-fonctions">
+   5.2. Exemples de procédures et de fonctions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#algorithme-d-euclide-calcul-du-pgcd-de-2-entiers">
+     5.2.1. Algorithme d’Euclide: calcul du PGCD de 2 entiers
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#programme-python">
+       5.2.1.1. Programme Python
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#algorithme-calcul-de-la-somme-d-une-serie">
+     5.2.2. Algorithme: calcul de la somme d’une série
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       5.2.2.1. Programme Python
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parametres-optionnels-d-une-fonction">
+   5.3. Paramètres optionnels d’une fonction
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemple-algorithme-de-heron-calcul-de-sqrt-x">
+     5.3.1. Exemple: algorithme de Héron (calcul de
+     <span class="math notranslate nohighlight">
+      \(\sqrt{x}\)
+     </span>
+     )
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#algorithme">
+       5.3.1.1. Algorithme
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       5.3.1.2. Programme Python
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fonction-lambda">
+   5.4. Fonction Lambda
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#methodes-classes-et-fonctions-de-bibliotheque">
+   5.5. Méthodes, classes et fonctions de bibliothèque
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#definition">
+     5.5.1. Définition
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#syntaxe-d-utilisation-d-une-methode-sous-python">
+     5.5.2. Syntaxe d’utilisation d’une méthode sous Python
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemple-en-python">
+     5.5.3. Exemple en Python
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aide-sous-ipython">
+     5.5.4. Aide sous Ipython
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fonctions-d-une-bibliotheque">
+     5.5.5. Fonctions d’une bibliothéque
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#programmation-structuree">
+   5.6. Programmation structurée
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analyse-algorithmique-top-down-design">
+     5.6.1. Analyse algorithmique « Top-Down design »
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#principes-de-l-analyse-top-down">
+     5.6.2. Principes de l’analyse top down
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#programmation-botton-up-programming">
+     5.6.3. Programmation « Botton-up programming »
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exemple-simuler-l-alunissage-de-neil-amstrong-apollo-11">
+   5.7. Exemple: simuler l’alunissage de Neil Amstrong (Apollo 11)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jeu-lunar-lander">
+     5.7.1. jeu « Lunar Lander »
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#modele-physique">
+       5.7.1.1. modèle physique:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#modele-mathematique">
+       5.7.1.2. modèle mathématique:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cas-particuliers">
+       5.7.1.3. cas particuliers
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#algorithme-analyse-top-down">
+     5.7.2. Algorithme: analyse top-down
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#probleme-global">
+       5.7.2.1. problème global
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sous-probleme-lecture-cde">
+       5.7.2.2. sous-probleme Lecture_cde
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sous-probleme-vitessealtitude">
+       5.7.2.3. sous-problème VitesseAltitude
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sous-probleme-alunissage">
+       5.7.2.4. sous-probleme Alunissage
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#programmation-python-bottom-up">
+     5.7.3. Programmation Python bottom up
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#fonction-lecture-cde">
+       5.7.3.1. Fonction Lecture_Cde
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#fonction-vitessealtitude">
+       5.7.3.2. Fonction VitesseAltitude
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#fonction-alunissage">
+       5.7.3.3. Fonction Alunissage
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#programme-principal">
+       5.7.3.4. Programme principal
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-simulation-d-un-lancer-de-balle">
+   5.8. Exercice: simulation d’un lancer de balle
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     5.8.1. Modèle physique:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     5.8.2. Modèle mathématique:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#objectif-du-programme">
+     5.8.3. Objectif du programme
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bibliographie">
+   5.9. Bibliographie
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fin-de-la-lecon">
+   5.10. Fin de la leçon
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Fonctions et procédures</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contenu </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#procedure-et-fonction">
+   5.1. Procédure et fonction
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#procedure">
+     5.1.1. Procédure
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fonction-en-python">
+     5.1.2. Fonction en Python
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#passage-des-arguments">
+     5.1.3. Passage des arguments
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     5.1.4. Passage des arguments
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exemples-de-procedures-et-de-fonctions">
+   5.2. Exemples de procédures et de fonctions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#algorithme-d-euclide-calcul-du-pgcd-de-2-entiers">
+     5.2.1. Algorithme d’Euclide: calcul du PGCD de 2 entiers
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#programme-python">
+       5.2.1.1. Programme Python
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#algorithme-calcul-de-la-somme-d-une-serie">
+     5.2.2. Algorithme: calcul de la somme d’une série
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       5.2.2.1. Programme Python
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parametres-optionnels-d-une-fonction">
+   5.3. Paramètres optionnels d’une fonction
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemple-algorithme-de-heron-calcul-de-sqrt-x">
+     5.3.1. Exemple: algorithme de Héron (calcul de
+     <span class="math notranslate nohighlight">
+      \(\sqrt{x}\)
+     </span>
+     )
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#algorithme">
+       5.3.1.1. Algorithme
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       5.3.1.2. Programme Python
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fonction-lambda">
+   5.4. Fonction Lambda
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#methodes-classes-et-fonctions-de-bibliotheque">
+   5.5. Méthodes, classes et fonctions de bibliothèque
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#definition">
+     5.5.1. Définition
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#syntaxe-d-utilisation-d-une-methode-sous-python">
+     5.5.2. Syntaxe d’utilisation d’une méthode sous Python
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemple-en-python">
+     5.5.3. Exemple en Python
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aide-sous-ipython">
+     5.5.4. Aide sous Ipython
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fonctions-d-une-bibliotheque">
+     5.5.5. Fonctions d’une bibliothéque
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#programmation-structuree">
+   5.6. Programmation structurée
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analyse-algorithmique-top-down-design">
+     5.6.1. Analyse algorithmique « Top-Down design »
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#principes-de-l-analyse-top-down">
+     5.6.2. Principes de l’analyse top down
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#programmation-botton-up-programming">
+     5.6.3. Programmation « Botton-up programming »
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exemple-simuler-l-alunissage-de-neil-amstrong-apollo-11">
+   5.7. Exemple: simuler l’alunissage de Neil Amstrong (Apollo 11)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jeu-lunar-lander">
+     5.7.1. jeu « Lunar Lander »
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#modele-physique">
+       5.7.1.1. modèle physique:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#modele-mathematique">
+       5.7.1.2. modèle mathématique:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cas-particuliers">
+       5.7.1.3. cas particuliers
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#algorithme-analyse-top-down">
+     5.7.2. Algorithme: analyse top-down
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#probleme-global">
+       5.7.2.1. problème global
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sous-probleme-lecture-cde">
+       5.7.2.2. sous-probleme Lecture_cde
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sous-probleme-vitessealtitude">
+       5.7.2.3. sous-problème VitesseAltitude
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sous-probleme-alunissage">
+       5.7.2.4. sous-probleme Alunissage
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#programmation-python-bottom-up">
+     5.7.3. Programmation Python bottom up
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#fonction-lecture-cde">
+       5.7.3.1. Fonction Lecture_Cde
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#fonction-vitessealtitude">
+       5.7.3.2. Fonction VitesseAltitude
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#fonction-alunissage">
+       5.7.3.3. Fonction Alunissage
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#programme-principal">
+       5.7.3.4. Programme principal
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-simulation-d-un-lancer-de-balle">
+   5.8. Exercice: simulation d’un lancer de balle
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     5.8.1. Modèle physique:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     5.8.2. Modèle mathématique:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#objectif-du-programme">
+     5.8.3. Objectif du programme
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bibliographie">
+   5.9. Bibliographie
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fin-de-la-lecon">
+   5.10. Fin de la leçon
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <a class="reference internal image-reference" href="../_images/logo_trans5.png"><img alt="LyonHPC" src="../_images/logo_trans5.png" style="width: 180px;" /></a>
+<a class="reference internal image-reference" href="../_images/python-logo4.gif"><img alt="LyonHPC" src="../_images/python-logo4.gif" style="width: 200px;" /></a>
+<div class="tex2jax_ignore mathjax_ignore section" id="fonctions-et-procedures">
+<h1><span class="section-number">5. </span>Fonctions et procédures<a class="headerlink" href="#fonctions-et-procedures" title="Lien permanent vers ce titre">¶</a></h1>
+<a class="reference internal image-reference" href="../_images/cloud_fonction.png"><img alt="cloud" src="../_images/cloud_fonction.png" style="width: 300px;" /></a>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span><span class="p">,</span><span class="n">display</span><span class="p">,</span><span class="n">IFrame</span><span class="p">,</span><span class="n">Video</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span><span class="p">,</span><span class="n">Markdown</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;**Video du cours: Introduction**&quot;</span><span class="p">))</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;Q_yFr7sdyc0&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p><strong>Video du cours: Introduction</strong></p>
+<div class="output text_html">
+<iframe
+    width="400"
+    height="300"
+    src="https://www.youtube.com/embed/Q_yFr7sdyc0"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Astuce</p>
+<p>pour tester les programmes Python, vous pouvez vous connectez sur un serveur Jupyter, par exemple, pour
+les étudiants Lyon1 <a class="reference external" href="https://jupyter.mecanique.univ-lyon1.fr">https://jupyter.mecanique.univ-lyon1.fr</a></p>
+</div>
+<div class="section" id="procedure-et-fonction">
+<h2><span class="section-number">5.1. </span>Procédure et fonction<a class="headerlink" href="#procedure-et-fonction" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="procedure">
+<h3><span class="section-number">5.1.1. </span>Procédure<a class="headerlink" href="#procedure" title="Lien permanent vers ce titre">¶</a></h3>
+<p><strong>procédure</strong>: algorithme avec des paramètres d’entrée (données) et des paramètres de sortie (résultat)</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Algorithme MaFonction(liste de paramètres)
+    variables locales
+    instructions
+    retour (liste de valeurs)
+
+# utilisation
+val = MaFonction(param1,param2,..)
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;**Video du cours: procédure et fonction**&quot;</span><span class="p">))</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;CAsiebHnHAs&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p><strong>Video du cours: procédure et fonction</strong></p>
+<div class="output text_html">
+<iframe
+    width="400"
+    height="300"
+    src="https://www.youtube.com/embed/CAsiebHnHAs"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+</div>
+<div class="section" id="fonction-en-python">
+<h3><span class="section-number">5.1.2. </span>Fonction en Python<a class="headerlink" href="#fonction-en-python" title="Lien permanent vers ce titre">¶</a></h3>
+<p><strong>implémentation d’une procédure</strong> = <strong>function</strong> (C, Python) , subroutine (Fortran)</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># définition
+def MaFonction(liste arguments):
+    instructions
+    ....
+    return (liste de valeurs)
+# utilisation
+(val1, val2, ..) = MaFonction(arg1, arg2, ...) 
+</pre></div>
+</div>
+</div>
+<div class="section" id="passage-des-arguments">
+<h3><span class="section-number">5.1.3. </span>Passage des arguments<a class="headerlink" href="#passage-des-arguments" title="Lien permanent vers ce titre">¶</a></h3>
+<p>on affecte aux arguments de la fonction la valeur des paramètres d’appel:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>def MaFonction(a1, a2, a3):
+    ....
+    return (v1, v2)
+    
+(V1, V2) = MaFonction(A1, A2, A3)
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>lors de l’appel, on a a1=A1 a2=A2 a3=A3</p></li>
+<li><p>valeur de retour = liste</p>
+<ul>
+<li><p>lors du retour, V1=v1, V2=v2</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Exemple Python</strong></p>
+<p><strong>utilisation du site : <a class="reference external" href="http://pythontutor.com">http://pythontutor.com</a></strong></p>
+<p><em>vous pouvez copier l’exemple de code python sur le site pour l’exécuter</em></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    # definition
+    def MaFonc(a1,a2,a3):
+        v1 = a1 + a3
+        v2 = a2 + a3
+        return v1,v2
+    # utilisation
+    A1 = 1.0
+    V1,V2 = mafonc(A1,a.2,4*A1)
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;**Visualisation de l&#39;execution sur le site pythontutor**&quot;</span><span class="p">))</span>
+<span class="n">Video</span><span class="p">(</span><span class="s2">&quot;VIDEO_COURS/pythonlive_fonc1.mp4&quot;</span><span class="p">,</span> <span class="n">embed</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p><strong>Visualisation de l'execution sur le site pythontutor</strong></p>
+<div class="output text_html"><video controls  width="700"  height="300">
+ <source src="data:None;base64,VIDEO_COURS/pythonlive_fonc1.mp4" type="None">
+ Your browser does not support the video tag.
+ </video></div></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h3><span class="section-number">5.1.4. </span>Passage des arguments<a class="headerlink" href="#id1" title="Lien permanent vers ce titre">¶</a></h3>
+<ul class="simple">
+<li><p>pour les variables scalaires: valeur = valeur de la variable</p>
+<ul>
+<li><p>la variable n’est donc pas modifiée</p></li>
+</ul>
+</li>
+<li><p>pour les listes et tableaux: valeur = adresse des données</p>
+<ul>
+<li><p>on peut donc modifier la valeur d’une liste ou tableau en argument</p></li>
+<li><p>mais à condition de ne pas faire de réaffectation</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Exemple Initialisation de liste (tableau) : version 1</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># definition
+def InitTab(X):
+    X[:] = [0,0,0]
+    n = len(X)
+    for i in range(n):
+        X[i] = i*i
+    return
+# utilisation
+Z = [1,1,1]
+InitTab(Z)
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;**Video du cours: arguments d&#39;une fonction**&quot;</span><span class="p">))</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;I0uizg3B6LU&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p><strong>Video du cours: arguments d'une fonction</strong></p>
+<div class="output text_html">
+<iframe
+    width="400"
+    height="300"
+    src="https://www.youtube.com/embed/I0uizg3B6LU"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;**Visualisation de l&#39;execution sur le site pythontutor**&quot;</span><span class="p">))</span>
+<span class="n">Video</span><span class="p">(</span><span class="s2">&quot;VIDEO_COURS/pythonlive_fonc2.mp4&quot;</span><span class="p">,</span> <span class="n">embed</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p><strong>Visualisation de l'execution sur le site pythontutor</strong></p>
+<div class="output text_html"><video controls  width="700"  height="300">
+ <source src="data:None;base64,VIDEO_COURS/pythonlive_fonc2.mp4" type="None">
+ Your browser does not support the video tag.
+ </video></div></div>
+</div>
+<p><strong>Initialisation de liste (tableau): version 2</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># definition
+def InitTab(X):
+    X = [0,0,0]
+    n = len(X)
+    for i in range(n):
+        X[i] = i*i
+    return
+# utilisation
+Z = [1,1,1]
+InitTab(Z)
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;**Visualisation de l&#39;execution sur le site pythontutor**&quot;</span><span class="p">))</span>
+<span class="n">Video</span><span class="p">(</span><span class="s2">&quot;VIDEO_COURS/pythonlive_fonc3.mp4&quot;</span><span class="p">,</span> <span class="n">embed</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p><strong>Visualisation de l'execution sur le site pythontutor</strong></p>
+<div class="output text_html"><video controls  width="700"  height="300">
+ <source src="data:None;base64,VIDEO_COURS/pythonlive_fonc3.mp4" type="None">
+ Your browser does not support the video tag.
+ </video></div></div>
+</div>
+<div class="admonition-questions admonition">
+<p class="admonition-title">Questions ?</p>
+<ul class="simple">
+<li><p>comparer la valeur de Z après l’appel de la fonction <code class="docutils literal notranslate"><span class="pre">InitTab</span></code> !</p></li>
+<li><p>à quoi correspond la variable X dans la fonction <code class="docutils literal notranslate"><span class="pre">InitTab</span></code></p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="exemples-de-procedures-et-de-fonctions">
+<h2><span class="section-number">5.2. </span>Exemples de procédures et de fonctions<a class="headerlink" href="#exemples-de-procedures-et-de-fonctions" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;**Video du cours: exemple de procédure et fonction**&quot;</span><span class="p">))</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;1RWcWyOF2g8&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p><strong>Video du cours: exemple de procédure et fonction</strong></p>
+<div class="output text_html">
+<iframe
+    width="400"
+    height="300"
+    src="https://www.youtube.com/embed/1RWcWyOF2g8"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Les vidéos utilisent un ancien interpréteur python 2.7, pour lequel <code class="docutils literal notranslate"><span class="pre">print</span></code> est un mot clé,
+soit <code class="docutils literal notranslate"><span class="pre">print</span> <span class="pre">'bonjour'</span></code>.
+Avec Python 3, <code class="docutils literal notranslate"><span class="pre">print</span></code> est une fonction et il faut donc utiliser des parenthèses,
+soit <code class="docutils literal notranslate"><span class="pre">print('bonjour')</span></code></p>
+</div>
+<div class="section" id="algorithme-d-euclide-calcul-du-pgcd-de-2-entiers">
+<h3><span class="section-number">5.2.1. </span>Algorithme d’Euclide: calcul du PGCD de 2 entiers<a class="headerlink" href="#algorithme-d-euclide-calcul-du-pgcd-de-2-entiers" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Calcul du PGCD
+# paramètres d&#39;entrée: 2 entiers positifs a et b
+# en sortie: PGCD de a et b
+#
+Algorithme PGCD(a,b)
+    tant que a # b 
+        si a&gt;b alors a = a-b 
+        sinon b = b - a 
+    retour a
+#
+</pre></div>
+</div>
+<div class="section" id="programme-python">
+<h4><span class="section-number">5.2.1.1. </span>Programme Python<a class="headerlink" href="#programme-python" title="Lien permanent vers ce titre">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">PGCD</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">    Calcul du PGCD de a et b (entiers positifs) </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">while</span> <span class="n">a</span> <span class="o">!=</span> <span class="n">b</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span> 
+            <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
+        <span class="k">else</span><span class="p">:</span>   
+            <span class="n">b</span> <span class="o">=</span> <span class="n">b</span> <span class="o">-</span> <span class="n">a</span>
+    <span class="k">return</span> <span class="n">a</span>
+<span class="c1"># utilisation</span>
+<span class="n">a0</span><span class="p">,</span> <span class="n">b0</span> <span class="o">=</span> <span class="mi">15623532</span><span class="p">,</span> <span class="mi">252568</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">PGCD</span><span class="p">(</span><span class="n">a0</span><span class="p">,</span> <span class="n">b0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PGCD de &quot;</span><span class="p">,</span> <span class="n">a0</span><span class="p">,</span> <span class="n">b0</span><span class="p">,</span> <span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PGCD de  15623532 252568 = 4
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="algorithme-calcul-de-la-somme-d-une-serie">
+<h3><span class="section-number">5.2.2. </span>Algorithme: calcul de la somme d’une série<a class="headerlink" href="#algorithme-calcul-de-la-somme-d-une-serie" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="math notranslate nohighlight">
+\[ S_n = \sum_{i=1}^n \frac{1}{i^2} \mbox{ et } \lim_{n\rightarrow\infty} S_n = \frac{\pi^2}{6}\]</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># calcul de la somme Sn et de l&#39;Écart par rapport à la limite
+# entrée: n entier   sortie: somme, écart par rapport à limite
+Algorithme Somme(n)
+    S=0.
+    pour i de 1 a n
+        S = S + 1./i**2
+    err = S - (pi**2/6.)
+    retour S,err
+</pre></div>
+</div>
+<div class="section" id="id2">
+<h4><span class="section-number">5.2.2.1. </span>Programme Python<a class="headerlink" href="#id2" title="Lien permanent vers ce titre">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># fonction Python</span>
+<span class="k">def</span> <span class="nf">Somme</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">    Calcul de la somme de la série 1/i**2  pour i de 0 a n </span>
+<span class="sd">    en sortie: somme et écart par rapport à la limite</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">S</span><span class="o">=</span><span class="mf">0.</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">S</span> <span class="o">=</span> <span class="n">S</span> <span class="o">+</span> <span class="mf">1.</span> <span class="o">/</span> <span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">ecart</span> <span class="o">=</span> <span class="n">S</span> <span class="o">-</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mf">6.</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">S</span><span class="p">,</span> <span class="n">ecart</span>
+<span class="c1">#</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">S</span><span class="p">,</span> <span class="n">err</span> <span class="o">=</span> <span class="n">Somme</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;somme=&quot;</span><span class="p">,</span><span class="n">S</span><span class="p">,</span><span class="s2">&quot; erreur=&quot;</span><span class="p">,</span><span class="n">err</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Somme</span><span class="p">(</span><span class="mi">1000</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Somme</span><span class="p">(</span><span class="mi">10000</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>somme= 1.6349839001848923  erreur= -0.009950166663334148
+(1.6439345666815615, -0.0009995001666649461)
+(1.6448340718480652, -9.999500016122376e-05)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="parametres-optionnels-d-une-fonction">
+<h2><span class="section-number">5.3. </span>Paramètres optionnels d’une fonction<a class="headerlink" href="#parametres-optionnels-d-une-fonction" title="Lien permanent vers ce titre">¶</a></h2>
+<ul>
+<li><p>En Python possibilité de définir des paramètres optionnels avec une valeur par défaut</p></li>
+<li><p>Nommage des paramètres (ordre indifférent)</p></li>
+<li><p>Très utilisés dans les fonctions des bibliothèques</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  # Déclaration
+  def MaFonction(par, par1=valdef1, par2=valdef2)
+
+  # Appel
+  MaFonction(val)
+  MaFonction(val, par1=val1)
+  MaFonction(val, par2=val2, par1=val1)
+</pre></div>
+</div>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;**Video du cours: paramètres optionnels**&quot;</span><span class="p">))</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;fUDdLOxc2c0&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p><strong>Video du cours: paramètres optionnels</strong></p>
+<div class="output text_html">
+<iframe
+    width="400"
+    height="300"
+    src="https://www.youtube.com/embed/fUDdLOxc2c0"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Les vidéos utilisent un ancien interpréteur python 2.7, pour lequel <code class="docutils literal notranslate"><span class="pre">print</span></code> est un mot clé,
+soit <code class="docutils literal notranslate"><span class="pre">print</span> <span class="pre">'bonjour'</span></code>.
+Avec Python 3, <code class="docutils literal notranslate"><span class="pre">print</span></code> est une fonction et il faut donc utiliser des parenthèses,
+soit <code class="docutils literal notranslate"><span class="pre">print('bonjour')</span></code></p>
+</div>
+<div class="section" id="exemple-algorithme-de-heron-calcul-de-sqrt-x">
+<h3><span class="section-number">5.3.1. </span>Exemple: algorithme de Héron (calcul de <span class="math notranslate nohighlight">\(\sqrt{x}\)</span>)<a class="headerlink" href="#exemple-algorithme-de-heron-calcul-de-sqrt-x" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Pour calculer une approximation <span class="math notranslate nohighlight">\(u\)</span> de <span class="math notranslate nohighlight">\(\sqrt{a}\)</span>, on note que si <span class="math notranslate nohighlight">\(u\approx\sqrt(a)\)</span> alors <span class="math notranslate nohighlight">\(a/u\approx\sqrt(a)\)</span> et donc  <span class="math notranslate nohighlight">\(\frac{u + a/u}{2}\)</span>  est sans doute une meilleur approximation de <span class="math notranslate nohighlight">\(\sqrt{a}\)</span>.<br />
+On peut vérifier que cette méthode babylonienne est en fait un cas particulier de la méthode de Newton pour calculer la racine de <span class="math notranslate nohighlight">\(f(x)=u^2-a\)</span></p>
+<div class="section" id="algorithme">
+<h4><span class="section-number">5.3.1.1. </span>Algorithme<a class="headerlink" href="#algorithme" title="Lien permanent vers ce titre">¶</a></h4>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  Algorithme Heron(a)
+      u = a/2
+      eps = 1.e-6
+      tant que |u**2 - a| &gt; eps
+          u = (u + a/u)/2
+      fin tantque
+      retour u
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h4><span class="section-number">5.3.1.2. </span>Programme Python<a class="headerlink" href="#id3" title="Lien permanent vers ce titre">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="k">def</span> <span class="nf">Heron</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">1e-03</span><span class="p">,</span> <span class="n">itmax</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">    calcul une approximation de sqrt(a) avec une precision eps</span>
+<span class="sd">    et une nombre maxi d&#39;iterations itmax &quot;&quot;&quot;</span>
+    <span class="n">u</span> <span class="o">=</span> <span class="n">a</span><span class="o">/</span><span class="mf">2.</span>
+    <span class="n">it</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="nb">abs</span><span class="p">(</span><span class="n">u</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">eps</span><span class="p">:</span>
+        <span class="n">u</span>  <span class="o">=</span> <span class="p">(</span><span class="n">u</span> <span class="o">+</span> <span class="n">a</span><span class="o">/</span><span class="n">u</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.</span>
+        <span class="n">it</span> <span class="o">=</span> <span class="n">it</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">it</span> <span class="o">&gt;</span> <span class="n">itmax</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Attention nbre maxi d&#39;iterations atteint&quot;</span><span class="p">,</span> <span class="n">it</span><span class="p">)</span>
+            <span class="k">break</span>
+    <span class="k">return</span> <span class="n">u</span><span class="p">,</span> <span class="n">it</span>
+<span class="c1"># utilisation</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">200.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;sqrt(200) ~&quot;</span><span class="p">,</span><span class="n">Heron</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a 10^-8  pres sqrt(200) ~&quot;</span><span class="p">,</span><span class="n">Heron</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="mf">1.e-08</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a 10^-13 pres sqrt(200) ~&quot;</span><span class="p">,</span><span class="n">Heron</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">1.e-13</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a 10^-14 pres sqrt(200) ~&quot;</span><span class="p">,</span><span class="n">Heron</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">1.e-14</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a 10^-14 pres sqrt(200) ~&quot;</span><span class="p">,</span><span class="n">Heron</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">itmax</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">1.e-14</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;valeur avec numpy &quot;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sqrt(200) ~ (14.142135968022693, 6)
+a 10^-8  pres sqrt(200) ~ (14.142135623730955, 7)
+a 10^-13 pres sqrt(200) ~ (14.142135623730951, 8)
+Attention nbre maxi d&#39;iterations atteint 101
+a 10^-14 pres sqrt(200) ~ (14.142135623730951, 101)
+Attention nbre maxi d&#39;iterations atteint 201
+a 10^-14 pres sqrt(200) ~ (14.142135623730951, 201)
+valeur avec numpy  14.142135623730951
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="fonction-lambda">
+<h2><span class="section-number">5.4. </span>Fonction Lambda<a class="headerlink" href="#fonction-lambda" title="Lien permanent vers ce titre">¶</a></h2>
+<ul>
+<li><p>permet de définir des mini-fonctions (à la Lisp)</p></li>
+<li><p>utile pour des fonctions simples (mais pas obligatoire!!)</p></li>
+<li><p><strong>définition</strong> fonction F(args)  où args est la liste des arguments</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  F = lambda args : expression(args)
+</pre></div>
+</div>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">F</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">F</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">G</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">F</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">G</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5403023058681398
+1.5403023058681398
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="methodes-classes-et-fonctions-de-bibliotheque">
+<h2><span class="section-number">5.5. </span>Méthodes, classes et fonctions de bibliothèque<a class="headerlink" href="#methodes-classes-et-fonctions-de-bibliotheque" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="definition">
+<h3><span class="section-number">5.5.1. </span>Définition<a class="headerlink" href="#definition" title="Lien permanent vers ce titre">¶</a></h3>
+<p><strong>classe</strong> = type de structure de données définissant des données + fonctions pour manipuler ces données</p>
+<p><strong>méthode</strong> = fonction associée à une classe pour manipuler les données de la classe</p>
+<p><strong>objet</strong> = instance de classe = variable  [données + méthodes]</p>
+<p>sous Python toute variable (list, string, real, int) est un objet et possède des méthodes (p.e pour l’afficher)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;**Video du cours: notion de classes et méthodes**&quot;</span><span class="p">))</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;N6TLygH5p4c&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p><strong>Video du cours: notion de classes et méthodes</strong></p>
+<div class="output text_html">
+<iframe
+    width="400"
+    height="300"
+    src="https://www.youtube.com/embed/N6TLygH5p4c"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Les vidéos utilisent un ancien interpréteur python 2.7, pour lequel <code class="docutils literal notranslate"><span class="pre">print</span></code> est un mot clé,
+soit <code class="docutils literal notranslate"><span class="pre">print</span> <span class="pre">'bonjour'</span></code>.
+Avec Python 3, <code class="docutils literal notranslate"><span class="pre">print</span></code> est une fonction et il faut donc utiliser des parenthèses,
+soit <code class="docutils literal notranslate"><span class="pre">print('bonjour')</span></code></p>
+</div>
+</div>
+<div class="section" id="syntaxe-d-utilisation-d-une-methode-sous-python">
+<h3><span class="section-number">5.5.2. </span>Syntaxe d’utilisation d’une méthode sous Python<a class="headerlink" href="#syntaxe-d-utilisation-d-une-methode-sous-python" title="Lien permanent vers ce titre">¶</a></h3>
+<p>pour un objet A avec un methode func1</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>A.func1(arg1,arg2,...)
+</pre></div>
+</div>
+<p>équivalent à</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>func1(A,arg1,arg2,..)
+</pre></div>
+</div>
+</div>
+<div class="section" id="exemple-en-python">
+<h3><span class="section-number">5.5.3. </span>Exemple en Python<a class="headerlink" href="#exemple-en-python" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S</span><span class="o">=</span><span class="s2">&quot;mon nom&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">S</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+<span class="n">L</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">L</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+<span class="n">X</span><span class="o">=</span><span class="mf">3.14157</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">as_integer_ratio</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MON NOM
+[3, 2, 1]
+(7074186740679165, 2251799813685248)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="aide-sous-ipython">
+<h3><span class="section-number">5.5.4. </span>Aide sous Ipython<a class="headerlink" href="#aide-sous-ipython" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Sous Ipython, pour avoir la liste des méthodes associées à un objet A</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>A. &lt;tab&gt;   # liste des methodes
+A.meth?    # aide sur la methode meth
+</pre></div>
+</div>
+<p><strong>exemple</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>np.abs?
+</pre></div>
+</div>
+<p>renvoie</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Call signature:  np.abs(*args, **kwargs)
+Type:            ufunc
+String form:     &lt;ufunc &#39;absolute&#39;&gt;
+File:            /usr/local/lib/python3.8/dist-packages/numpy/__init__.py
+Docstring:      
+absolute(x, /, out=None, *, where=True, casting=&#39;same_kind&#39;, order=&#39;K&#39;, dtype=None, subok=True[, signature, extobj])
+
+Calculate the absolute value element-wise.
+
+``np.abs`` is a shorthand for this function.
+
+Parameters
+----------
+x : array_like
+    Input array.
+out : ndarray, None, or tuple of ndarray and None, optional
+    A location into which the result is stored. If provided, it must have
+    a shape that the inputs broadcast to. If not provided or None,
+    a freshly-allocated array is returned. A tuple (possible only as a
+    keyword argument) must have length equal to the number of outputs.
+where : array_like, optional
+    This condition is broadcast over the input. At locations where the
+    condition is True, the `out` array will be set to the ufunc result.
+    Elsewhere, the `out` array will retain its original value.
+    Note that if an uninitialized `out` array is created via the default
+    ``out=None``, locations within it where the condition is False will
+    remain uninitialized.
+**kwargs
+    For other keyword-only arguments, see the
+    :ref:`ufunc docs &lt;ufuncs.kwargs&gt;`.
+
+Returns
+-------
+absolute : ndarray
+    An ndarray containing the absolute value of
+    each element in `x`.  For complex input, ``a + ib``, the
+    absolute value is :math:`\sqrt{ a^2 + b^2 }`.
+    This is a scalar if `x` is a scalar.
+</pre></div>
+</div>
+</div>
+<div class="section" id="fonctions-d-une-bibliotheque">
+<h3><span class="section-number">5.5.5. </span>Fonctions d’une bibliothéque<a class="headerlink" href="#fonctions-d-une-bibliotheque" title="Lien permanent vers ce titre">¶</a></h3>
+<p>espace de nom = nom de la bibliothéque bibli</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>import bibli
+</pre></div>
+</div>
+<p>nom de la fonction func dans la bibliothéque</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>bibli.func
+bibli.sous_bibli.func
+</pre></div>
+</div>
+<p>simplification du nommage</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>import bibli as bib
+import bibli.sous_bibli as sbib
+</pre></div>
+</div>
+<p>importation d’une fonction</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>from bibli import func
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">tanh</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tanh</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.7320508075688772
+0.7615941559557649
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="programmation-structuree">
+<h2><span class="section-number">5.6. </span>Programmation structurée<a class="headerlink" href="#programmation-structuree" title="Lien permanent vers ce titre">¶</a></h2>
+<p><strong>principe:</strong> <em>« Divide and Conquer »</em></p>
+<p>découpage du problème en une suite de problèmes plus simples</p>
+<div class="section" id="analyse-algorithmique-top-down-design">
+<h3><span class="section-number">5.6.1. </span>Analyse algorithmique « Top-Down design »<a class="headerlink" href="#analyse-algorithmique-top-down-design" title="Lien permanent vers ce titre">¶</a></h3>
+<a class="reference internal image-reference" href="../_images/analyse_topdown.png"><img alt="Analyse" src="../_images/analyse_topdown.png" style="width: 500px;" /></a>
+</div>
+<div class="section" id="principes-de-l-analyse-top-down">
+<h3><span class="section-number">5.6.2. </span>Principes de l’analyse top down<a class="headerlink" href="#principes-de-l-analyse-top-down" title="Lien permanent vers ce titre">¶</a></h3>
+<ul class="simple">
+<li><p>on découpe le problème en une série de sous-problèmes plus simples (si possible indépendant)</p></li>
+<li><p>on spécifie ce qui doit résolu dans chacun des sous-problèmes sans forcément dire comment</p></li>
+<li><p>puis on itère au niveau des sous problèmes.</p></li>
+</ul>
+</div>
+<div class="section" id="programmation-botton-up-programming">
+<h3><span class="section-number">5.6.3. </span>Programmation « Botton-up programming »<a class="headerlink" href="#programmation-botton-up-programming" title="Lien permanent vers ce titre">¶</a></h3>
+<ul class="simple">
+<li><p>on part des sous-problèmes élémentaires que l’on programme sous forme de fonctions (ou procédures)</p></li>
+<li><p>on valide les fonctions</p></li>
+<li><p>puis on réitère en remontant dans l’arbre jusqu’au programme principal</p></li>
+</ul>
+<p><strong>règles</strong> réutiliser les fonctions déjà écrites et validées (bibliothèques): <em>principe du moindre effort !</em></p>
+</div>
+</div>
+<div class="section" id="exemple-simuler-l-alunissage-de-neil-amstrong-apollo-11">
+<h2><span class="section-number">5.7. </span>Exemple: simuler l’alunissage de Neil Amstrong (Apollo 11)<a class="headerlink" href="#exemple-simuler-l-alunissage-de-neil-amstrong-apollo-11" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li><p>basé sur une simulation d’alunissage du module lunaire écrit en basic en 1969, puis popularisé en 1979 sur ATARI (Lunar Lander).</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/Moon_Lander_v2.png"><img alt="Moon Lander" src="../_images/Moon_Lander_v2.png" style="width: 300px;" /></a>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;**Video du cours: Programmation structurée sur un exemple &#39;Lunar Lander&#39;**&quot;</span><span class="p">))</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;7QGM_BtCxRE&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p><strong>Video du cours: Programmation structurée sur un exemple 'Lunar Lander'</strong></p>
+<div class="output text_html">
+<iframe
+    width="400"
+    height="300"
+    src="https://www.youtube.com/embed/7QGM_BtCxRE"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Les vidéos utilisent un ancien interpréteur python 2.7, pour lequel <code class="docutils literal notranslate"><span class="pre">print</span></code> est un mot clé,
+soit <code class="docutils literal notranslate"><span class="pre">print</span> <span class="pre">'bonjour'</span></code>.
+Avec Python 3, <code class="docutils literal notranslate"><span class="pre">print</span></code> est une fonction et il faut donc utiliser des parenthèses,
+soit <code class="docutils literal notranslate"><span class="pre">print('bonjour')</span></code></p>
+</div>
+<div class="section" id="jeu-lunar-lander">
+<h3><span class="section-number">5.7.1. </span>jeu « Lunar Lander »<a class="headerlink" href="#jeu-lunar-lander" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Poser le module lunaire (LEM) sur la lune en arrivant avec une vitesse quasiment nulle. Pour cela on dispose de rétro-fusées permettant de ralentir la chute du LEM.</p>
+<ul class="simple">
+<li><p>On contrôle manuellement ces rétro-fusées en sélectionnant une poussée (de 0 à 9), correspondant à l’éjection de carburant avec un débit <span class="math notranslate nohighlight">\(Qe\)</span> variable et une vitesse <span class="math notranslate nohighlight">\(Ue\)</span> fixe.</p></li>
+<li><p>Mais on dispose d’une quantité limitée de carburant que l’on doit utiliser avec modération pour pouvoir atterrir en douceur.</p></li>
+</ul>
+<div class="section" id="modele-physique">
+<h4><span class="section-number">5.7.1.1. </span>modèle physique:<a class="headerlink" href="#modele-physique" title="Lien permanent vers ce titre">¶</a></h4>
+<p>Le LEM, de masse initiale <span class="math notranslate nohighlight">\(M0\)</span>, est soumis à la gravité <span class="math notranslate nohighlight">\(g\)</span> de la lune et à la poussée des rétro-fusées, correspondant à l’éjection d’un débit de fuel <span class="math notranslate nohighlight">\(Qe\)</span> à un vitesse <span class="math notranslate nohighlight">\(Ve\)</span> .</p>
+<img alt="LEM" src="../_images/LEM.png" />
+</div>
+<div class="section" id="modele-mathematique">
+<h4><span class="section-number">5.7.1.2. </span>modèle mathématique:<a class="headerlink" href="#modele-mathematique" title="Lien permanent vers ce titre">¶</a></h4>
+<p>Equation du mouvement:</p>
+<div class="math notranslate nohighlight">
+\[ \frac{d^2 Z}{dt^2} = -g + \frac{Qe*Ue}{M0-Qe*t}\]</div>
+<p>en intégrant sur la durée d’une commande <span class="math notranslate nohighlight">\(T\)</span> <span class="math notranslate nohighlight">\(\rightarrow\)</span> vitesse <span class="math notranslate nohighlight">\(V\)</span></p>
+<div class="math notranslate nohighlight">
+\[ V = V0 + g*T + Ue * \ln{(1 - \frac{Qe*T}{M0})} \]</div>
+<p>La masse du LEM <span class="math notranslate nohighlight">\(M\)</span> diminue</p>
+<div class="math notranslate nohighlight">
+\[M = M0 -Qe*T\]</div>
+<p>Approximation par DL car <span class="math notranslate nohighlight">\(X=\frac{Qe*T}{M0} \ll 1\)</span></p>
+<div class="math notranslate nohighlight">
+\[ V = V0 + g*T - Ue*(X + \frac{X^2}{2} + \frac{X^3}{3}  + \frac{X^4}{4} + \frac{X^5}{5})\]</div>
+<p>d’où l’altitude <span class="math notranslate nohighlight">\(Z\)</span></p>
+<div class="math notranslate nohighlight">
+\[ Z = Z0 - V0*T - g \frac{T^2}{2} + Ue*T*(\frac{X}{2} + \frac{X^2}{6} + \frac{X^3}{12}  + \frac{X^4}{20} + \frac{X^5}{30})\]</div>
+<p>expression utilisée dans les premiers programmes en BASIC.</p>
+</div>
+<div class="section" id="cas-particuliers">
+<h4><span class="section-number">5.7.1.3. </span>cas particuliers<a class="headerlink" href="#cas-particuliers" title="Lien permanent vers ce titre">¶</a></h4>
+<ol class="simple">
+<li><p>Si le fuel est épuisé (<span class="math notranslate nohighlight">\(Qe=0\)</span>), le LEM atteins la surface lunaire au bout d’un temps <span class="math notranslate nohighlight">\(T\)</span> solution de l’équation du 2nd degré:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[ 0 = Z0 - V0*T -g \frac{T^2}{2}\]</div>
+<p>soit <span class="math notranslate nohighlight">\(T = (-V0 + \sqrt{V0^2 + 2 g Z0})/g\)</span></p>
+<ol>
+<li><p>Près de la surface,  <span class="math notranslate nohighlight">\(T\)</span> trop grand <span class="math notranslate nohighlight">\(\rightarrow\)</span> prédiction <span class="math notranslate nohighlight">\(Z0 &lt; 0\)</span></p>
+<ul>
+<li><p>calcul  <span class="math notranslate nohighlight">\(T\)</span> donnant l’altitude <span class="math notranslate nohighlight">\(Z=0\)</span>, solution d’une équation du 6ième degré.</p></li>
+<li><p>calcul par approximations successives en utilisant un DL de <span class="math notranslate nohighlight">\(Z(t)\)</span></p>
+<ol class="simple">
+<li><p>estimation <span class="math notranslate nohighlight">\(T0\)</span> de <span class="math notranslate nohighlight">\(T\)</span></p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[ T0 = \frac{-V0 + \sqrt{V0^2 + 2 (g-\frac{Ue*Qe}{M0}) Z0}}{g-\frac{Ue*Qe}{M0}} \]</div>
+<ol class="simple">
+<li><p>recalcule <span class="math notranslate nohighlight">\(V0\)</span> et <span class="math notranslate nohighlight">\(Z0\)</span>, puis recommence.</p></li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="algorithme-analyse-top-down">
+<h3><span class="section-number">5.7.2. </span>Algorithme: analyse top-down<a class="headerlink" href="#algorithme-analyse-top-down" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="section" id="probleme-global">
+<h4><span class="section-number">5.7.2.1. </span>problème global<a class="headerlink" href="#probleme-global" title="Lien permanent vers ce titre">¶</a></h4>
+<a class="reference internal image-reference" href="../_images/Algorithme1.png"><img alt="Algorithme" src="../_images/Algorithme1.png" style="width: 450px;" /></a>
+</div>
+<div class="section" id="sous-probleme-lecture-cde">
+<h4><span class="section-number">5.7.2.2. </span>sous-probleme Lecture_cde<a class="headerlink" href="#sous-probleme-lecture-cde" title="Lien permanent vers ce titre">¶</a></h4>
+<a class="reference internal image-reference" href="../_images/Algorithme2.png"><img alt="Algorithme" src="../_images/Algorithme2.png" style="width: 450px;" /></a>
+</div>
+<div class="section" id="sous-probleme-vitessealtitude">
+<h4><span class="section-number">5.7.2.3. </span>sous-problème VitesseAltitude<a class="headerlink" href="#sous-probleme-vitessealtitude" title="Lien permanent vers ce titre">¶</a></h4>
+<p>applications des formules mathématiques de l’analyse précédente</p>
+<div class="math notranslate nohighlight">
+\[ V = V0 + g*T - Ue*(X + \frac{X^2}{2} + \frac{X^3}{3}  + \frac{X^4}{4} + \frac{X^5}{5})\]</div>
+<div class="math notranslate nohighlight">
+\[ Z = Z0 - V0*T - g \frac{T^2}{2} + Ue*T*(\frac{X}{2} + \frac{X^2}{6} + \frac{X^3}{12}  + \frac{X^4}{20} + \frac{X^5}{30})\]</div>
+</div>
+<div class="section" id="sous-probleme-alunissage">
+<h4><span class="section-number">5.7.2.4. </span>sous-probleme Alunissage<a class="headerlink" href="#sous-probleme-alunissage" title="Lien permanent vers ce titre">¶</a></h4>
+<a class="reference internal image-reference" href="../_images/Algorithme3.png"><img alt="Algorithme" src="../_images/Algorithme3.png" style="width: 450px;" /></a>
+</div>
+</div>
+<div class="section" id="programmation-python-bottom-up">
+<h3><span class="section-number">5.7.3. </span>Programmation Python bottom up<a class="headerlink" href="#programmation-python-bottom-up" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="section" id="fonction-lecture-cde">
+<h4><span class="section-number">5.7.3.1. </span>Fonction Lecture_Cde<a class="headerlink" href="#fonction-lecture-cde" title="Lien permanent vers ce titre">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">sample</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="c1"># constantes en unité SI (kg/m/s)</span>
+<span class="n">g</span>  <span class="o">=</span> <span class="mf">1.6</span>     <span class="c1"># gravité</span>
+<span class="n">Ue</span> <span class="o">=</span> <span class="mf">2900.</span>   <span class="c1"># vitesse d&#39;ejection</span>
+<span class="c1"># </span>
+<span class="k">def</span> <span class="nf">Lecture_Cde</span><span class="p">(</span><span class="n">Me</span><span class="p">,</span><span class="n">dt</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; lecture de la commande (poussée) avec test carburant &quot;&quot;&quot;</span>
+    <span class="n">T</span><span class="o">=</span><span class="n">dt</span>
+    <span class="k">if</span> <span class="n">Me</span><span class="o">&gt;</span><span class="mi">0</span> <span class="p">:</span>
+        <span class="c1"># lecture poussee</span>
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="c1"># lecture clavier</span>
+            <span class="c1"># ch = input(&quot;Entrez la valeur de la poussée (0-9) (en 10eme kg/s) = &quot;)[0]</span>
+            <span class="c1"># lecture aleatoire</span>
+            <span class="n">ch</span> <span class="o">=</span> <span class="n">sample</span><span class="p">([</span><span class="s1">&#39;0&#39;</span><span class="p">,</span><span class="s1">&#39;1&#39;</span><span class="p">,</span><span class="s1">&#39;2&#39;</span><span class="p">,</span><span class="s1">&#39;3&#39;</span><span class="p">,</span><span class="s1">&#39;4&#39;</span><span class="p">,</span><span class="s1">&#39;5&#39;</span><span class="p">,</span><span class="s1">&#39;6&#39;</span><span class="p">,</span><span class="s1">&#39;7&#39;</span><span class="p">,</span><span class="s1">&#39;8&#39;</span><span class="p">,</span><span class="s1">&#39;9&#39;</span><span class="p">],</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="c1">#</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">ch</span><span class="o">&gt;=</span><span class="s1">&#39;0&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">ch</span><span class="o">&lt;=</span><span class="s1">&#39;9&#39;</span><span class="p">)</span> <span class="p">:</span>
+                <span class="n">Qe</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span><span class="o">*</span><span class="mi">10</span> <span class="c1"># pousse en kg/s</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">ch</span><span class="o">==</span><span class="s1">&#39;Q&#39;</span><span class="p">)</span> <span class="p">:</span> <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Erreur: entrer un chiffre entre 0 et 9 &quot;</span><span class="p">)</span>
+        <span class="c1"># test si reserve de fuel suffisante</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">Me</span><span class="o">-</span><span class="n">Qe</span><span class="o">*</span><span class="n">T</span><span class="p">)</span><span class="o">&lt;</span><span class="mi">0</span> <span class="p">:</span>
+            <span class="c1"># temps restant d&#39;utilisation du fuel</span>
+            <span class="n">T</span> <span class="o">=</span> <span class="n">Me</span><span class="o">/</span><span class="n">Qe</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Plus de fuel &quot;</span><span class="p">)</span>
+        <span class="n">Qe</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="c1"># calcul du temps T pour parcourir Z0 (alunissage)</span>
+        <span class="n">T</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">V0</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">V0</span><span class="o">*</span><span class="n">V0</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">g</span><span class="o">*</span><span class="n">Z0</span><span class="p">))</span> <span class="o">/</span> <span class="n">g</span>
+    <span class="k">return</span> <span class="n">Qe</span><span class="p">,</span><span class="n">T</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="fonction-vitessealtitude">
+<h4><span class="section-number">5.7.3.2. </span>Fonction VitesseAltitude<a class="headerlink" href="#fonction-vitessealtitude" title="Lien permanent vers ce titre">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">VitesseAltitude</span><span class="p">(</span><span class="n">v0</span><span class="p">,</span><span class="n">Z0</span><span class="p">,</span><span class="n">X</span><span class="p">,</span><span class="n">T</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; calcul de la nvlle vitesse en fonction de la vitesse init V0</span>
+<span class="sd">        un débit sans dimension X=Qe*T/M0 de fuel, pendant un temps T</span>
+<span class="sd">        ainsi que de la nouvelle altitude du LEM</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">global</span> <span class="n">g</span><span class="p">,</span><span class="n">Ue</span>
+    <span class="n">V</span> <span class="o">=</span> <span class="n">V0</span> <span class="o">+</span> <span class="n">g</span><span class="o">*</span><span class="n">T</span> <span class="o">-</span> <span class="n">Ue</span><span class="o">*</span><span class="p">(</span><span class="n">X</span> <span class="o">+</span> <span class="n">X</span><span class="o">*</span><span class="n">X</span><span class="o">/</span><span class="mf">2.</span> <span class="o">+</span> <span class="n">X</span><span class="o">**</span><span class="mi">3</span><span class="o">/</span><span class="mf">3.</span> <span class="o">+</span> <span class="n">X</span><span class="o">**</span><span class="mi">4</span><span class="o">/</span><span class="mf">4.</span> <span class="o">+</span> <span class="n">X</span><span class="o">**</span><span class="mi">5</span><span class="o">/</span><span class="mf">5.</span><span class="p">)</span>
+    <span class="n">Z</span> <span class="o">=</span> <span class="n">Z0</span> <span class="o">-</span> <span class="n">V0</span><span class="o">*</span><span class="n">T</span> <span class="o">-</span> <span class="n">g</span><span class="o">*</span><span class="n">T</span><span class="o">*</span><span class="n">T</span><span class="o">/</span><span class="mf">2.</span> <span class="o">+</span> <span class="n">Ue</span><span class="o">*</span><span class="n">T</span><span class="o">*</span><span class="p">(</span><span class="n">X</span><span class="o">/</span><span class="mf">2.</span> <span class="o">+</span> <span class="n">X</span><span class="o">*</span><span class="n">X</span><span class="o">/</span><span class="mf">6.</span> <span class="o">+</span> <span class="n">X</span><span class="o">**</span><span class="mi">3</span><span class="o">/</span><span class="mf">12.</span> <span class="o">+</span> <span class="n">X</span><span class="o">**</span><span class="mi">4</span><span class="o">/</span><span class="mf">20.</span> <span class="o">+</span> <span class="n">X</span><span class="o">**</span><span class="mi">5</span><span class="o">/</span><span class="mf">30.</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">V</span><span class="p">,</span><span class="n">Z</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="fonction-alunissage">
+<h4><span class="section-number">5.7.3.3. </span>Fonction Alunissage<a class="headerlink" href="#fonction-alunissage" title="Lien permanent vers ce titre">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Alunissage</span><span class="p">(</span><span class="n">V0</span><span class="p">,</span><span class="n">Z0</span><span class="p">,</span><span class="n">M0</span><span class="p">,</span><span class="n">Qe</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; calcul etat a Z=0 a partir d&#39;une CI V0,Z0,M0 et une poussée Qe &quot;&quot;&quot;</span>
+    <span class="k">global</span> <span class="n">g</span><span class="p">,</span><span class="n">Ue</span>
+    <span class="c1"># calcul du temps T pour alunissage par approximation successive</span>
+    <span class="n">T0</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Z0</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">1.e-2</span><span class="p">:</span>
+            <span class="n">T</span><span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">V0</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">V0</span><span class="o">*</span><span class="n">V0</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">g</span><span class="o">-</span><span class="n">Ue</span><span class="o">*</span><span class="n">Qe</span><span class="o">/</span><span class="n">M0</span><span class="p">)</span><span class="o">*</span><span class="n">Z0</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="n">g</span><span class="o">-</span><span class="n">Ue</span><span class="o">*</span><span class="n">Qe</span><span class="o">/</span><span class="n">M0</span><span class="p">)</span>
+            <span class="n">V0</span><span class="p">,</span><span class="n">Z0</span> <span class="o">=</span> <span class="n">VitesseAltitude</span><span class="p">(</span><span class="n">V0</span><span class="p">,</span><span class="n">Z0</span><span class="p">,</span><span class="n">Qe</span><span class="o">*</span><span class="n">T</span><span class="o">/</span><span class="n">M0</span><span class="p">,</span><span class="n">T</span><span class="p">)</span>
+            <span class="n">T0</span> <span class="o">=</span> <span class="n">T0</span><span class="o">+</span> <span class="n">T</span>
+    <span class="k">return</span> <span class="n">V0</span><span class="p">,</span><span class="n">Z0</span><span class="p">,</span><span class="n">T0</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="programme-principal">
+<h4><span class="section-number">5.7.3.4. </span>Programme principal<a class="headerlink" href="#programme-principal" title="Lien permanent vers ce titre">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># conditions initiales</span>
+<span class="n">Z0</span> <span class="o">=</span> <span class="mf">190000.</span> <span class="c1"># position</span>
+<span class="n">V0</span> <span class="o">=</span> <span class="mf">1580.</span>   <span class="c1"># et vitesse</span>
+<span class="n">M0</span> <span class="o">=</span> <span class="mf">15000.</span>  <span class="c1"># masse initiale du LEM</span>
+<span class="n">Me</span> <span class="o">=</span> <span class="mf">8000.</span>   <span class="c1"># dont une masse de fuel</span>
+<span class="n">t</span>  <span class="o">=</span> <span class="mf">0.</span>      <span class="c1"># temps simulation</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="mf">10.</span>     <span class="c1"># pas en temps entre chaque commande</span>
+<span class="c1">#</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Simulation alunissage&quot;</span><span class="p">)</span>
+<span class="k">while</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Z0</span><span class="p">)</span><span class="o">&gt;</span><span class="mf">1.e-2</span> <span class="p">:</span>
+    <span class="n">Qe</span><span class="p">,</span><span class="n">T</span> <span class="o">=</span> <span class="n">Lecture_Cde</span><span class="p">(</span><span class="n">Me</span><span class="p">,</span><span class="n">dt</span><span class="p">)</span>
+    <span class="c1"># calcul de la nouvelle position du LEM</span>
+    <span class="n">V1</span><span class="p">,</span><span class="n">Z1</span> <span class="o">=</span> <span class="n">VitesseAltitude</span><span class="p">(</span><span class="n">V0</span><span class="p">,</span><span class="n">Z0</span><span class="p">,</span><span class="n">Qe</span><span class="o">*</span><span class="n">T</span><span class="o">/</span><span class="n">M0</span><span class="p">,</span><span class="n">T</span><span class="p">)</span>
+    <span class="c1"># test si alunnissage</span>
+    <span class="k">if</span> <span class="n">Z1</span> <span class="o">&lt;</span> <span class="mf">1.e-2</span> <span class="p">:</span>
+        <span class="n">V1</span><span class="p">,</span><span class="n">Z1</span><span class="p">,</span><span class="n">T</span> <span class="o">=</span> <span class="n">Alunissage</span><span class="p">(</span><span class="n">V0</span><span class="p">,</span><span class="n">Z0</span><span class="p">,</span><span class="n">M0</span><span class="p">,</span><span class="n">Qe</span><span class="p">)</span>
+    <span class="c1"># mise a jour de la position du LEM</span>
+    <span class="n">Z0</span> <span class="o">=</span> <span class="n">Z1</span><span class="p">;</span>      <span class="n">V0</span> <span class="o">=</span> <span class="n">V1</span>
+    <span class="n">Me</span> <span class="o">=</span> <span class="n">Me</span><span class="o">-</span><span class="n">Qe</span><span class="o">*</span><span class="n">T</span><span class="p">;</span> <span class="n">M0</span> <span class="o">=</span> <span class="n">M0</span><span class="o">-</span><span class="n">Qe</span><span class="o">*</span><span class="n">T</span>
+    <span class="n">t</span>  <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="n">T</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;t=&quot;</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">t</span><span class="p">),</span><span class="s2">&quot;s Z=&quot;</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">Z0</span><span class="p">),</span><span class="s2">&quot;m V=&quot;</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">V0</span><span class="p">),</span><span class="s2">&quot;m/s fuel=&quot;</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">Me</span><span class="p">),</span><span class="s2">&quot;kg&quot;</span><span class="p">)</span>
+<span class="c1"># fin simulation</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Alunissage avec une vitesse &quot;</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">V0</span><span class="p">),</span><span class="s2">&quot; m/s&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">V0</span><span class="o">&lt;=</span><span class="mf">0.5</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Alunissage parfait&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">V0</span><span class="o">&lt;=</span><span class="mf">5.</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bon alunissage, mais perfectible&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">V0</span><span class="o">&lt;=</span><span class="mf">27.</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Accident à l&#39;alunissage. Attendez les secours en esperant que vous avez assez d&#39;oxygene !!!&quot;</span><span class="p">)</span>
+<span class="k">else</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Crash fatal: aucun survivant&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Simulation alunissage
+t= 10 s Z= 174411 m V= 1537 m/s fuel= 7700 kg
+t= 20 s Z= 159761 m V= 1391 m/s fuel= 6900 kg
+t= 30 s Z= 146405 m V= 1279 m/s fuel= 6300 kg
+t= 40 s Z= 133643 m V= 1273 m/s fuel= 6200 kg
+t= 50 s Z= 121386 m V= 1177 m/s fuel= 5700 kg
+t= 60 s Z= 109763 m V= 1147 m/s fuel= 5500 kg
+t= 70 s Z= 98679 m V= 1068 m/s fuel= 5100 kg
+t= 80 s Z= 88517 m V= 962 m/s fuel= 4600 kg
+t= 90 s Z= 79967 m V= 744 m/s fuel= 3700 kg
+t= 100 s Z= 72992 m V= 649 m/s fuel= 3300 kg
+t= 110 s Z= 66413 m V= 665 m/s fuel= 3300 kg
+t= 120 s Z= 60101 m V= 596 m/s fuel= 3000 kg
+t= 130 s Z= 55099 m V= 401 m/s fuel= 2300 kg
+t= 140 s Z= 52453 m V= 122 m/s fuel= 1400 kg
+t= 150 s Z= 52391 m V= -113 m/s fuel= 700 kg
+t= 160 s Z= 54809 m V= -374 m/s fuel= 0 kg
+Plus de fuel 
+t= 744 s Z= 0 m V= 561 m/s fuel= 0 kg
+Alunissage avec une vitesse  561  m/s
+Crash fatal: aucun survivant
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exercice-simulation-d-un-lancer-de-balle">
+<h2><span class="section-number">5.8. </span>Exercice: simulation d’un lancer de balle<a class="headerlink" href="#exercice-simulation-d-un-lancer-de-balle" title="Lien permanent vers ce titre">¶</a></h2>
+<p>ou comment programmer le célébre jeux Candy Crush !</p>
+<a class="reference internal image-reference" href="../_images/angry-birds.jpg"><img alt="Angry-Birds" src="../_images/angry-birds.jpg" style="width: 300px;" /></a>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;**Video du cours: Exercice &#39;Lancer de balle&#39;**&quot;</span><span class="p">))</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;QazORncfuIM&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p><strong>Video du cours: Exercice 'Lancer de balle'</strong></p>
+<div class="output text_html">
+<iframe
+    width="400"
+    height="300"
+    src="https://www.youtube.com/embed/QazORncfuIM"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+<div class="section" id="id4">
+<h3><span class="section-number">5.8.1. </span>Modèle physique:<a class="headerlink" href="#id4" title="Lien permanent vers ce titre">¶</a></h3>
+<img alt="Algorithme" src="../_images/lancer_balle.png" />
+</div>
+<div class="section" id="id5">
+<h3><span class="section-number">5.8.2. </span>Modèle mathématique:<a class="headerlink" href="#id5" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Ce modèle admet une solution analytique simple pour la position <span class="math notranslate nohighlight">\(x_0\)</span></p>
+<div class="math notranslate nohighlight">
+\[ x_0 = \frac{ 2 V_0^2 \sin{\alpha} \cos{\alpha}}{g} \]</div>
+</div>
+<div class="section" id="objectif-du-programme">
+<h3><span class="section-number">5.8.3. </span>Objectif du programme<a class="headerlink" href="#objectif-du-programme" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Écrire un programme Python qui simule le jeux angry birds en mode texte. On pose un bloc à une distance <span class="math notranslate nohighlight">\(L\)</span> du joueur, qui doit envoyer une balle pour le démolir (i.e. atteindre <span class="math notranslate nohighlight">\(L\)</span> avec une précision donnée).</p>
+<p>Le joueur choisit 2 paramètres à valeurs discrètes:</p>
+<ul class="simple">
+<li><p>l’angle <span class="math notranslate nohighlight">\(\alpha\)</span> (de 1 à 8 pour un angle de 10 à 45 degré par pas de 5)</p></li>
+<li><p>la vitesse initiale <span class="math notranslate nohighlight">\(V_0\)</span> (de 1 à 5 par pas 1).</p></li>
+</ul>
+<p>Le joueur a 3 essais, et pour chaque essai, le programme indique la distance atteinte par la balle par rapport au bloc visé.</p>
+</div>
+</div>
+<div class="section" id="bibliographie">
+<h2><span class="section-number">5.9. </span>Bibliographie<a class="headerlink" href="#bibliographie" title="Lien permanent vers ce titre">¶</a></h2>
+<ol>
+<li><p>Programme originel « Lunar Lander » en Basic sur ATARI:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://atariarchives.org/basicgames/showpage.php?page=106">« Lunar Lander basic programme »</a></p></li>
+</ul>
+</li>
+<li><p>Les classes sous Python</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://fr.wikibooks.org/wiki/Apprendre_%C3%A0_programmer_avec_Python/Classes,_objets,_attributs">« Classes sous Python »</a>,<br></p></li>
+</ul>
+<p>chapitre du livre « Apprendre à programmer avec Python »</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://inforef.be/swi/python.htm">« Apprendre à programmer avec Python »</a> de Gérard Swinnen</p></li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="fin-de-la-lecon">
+<h2><span class="section-number">5.10. </span>Fin de la leçon<a class="headerlink" href="#fin-de-la-lecon" title="Lien permanent vers ce titre">¶</a></h2>
+<a class="reference internal image-reference" href="../_images/cloud_fonction.png"><img alt="cloud" src="../_images/cloud_fonction.png" style="width: 300px;" /></a>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./CHAP5"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../CHAP4/EXERCICES_LOOP.html" title="précédent page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">précédent</p>
+            <p class="prev-next-title"><span class="section-number">4.10. </span>Exercices</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../CHAP6/COURS_TABLEAU.html" title="suivant page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">suivant</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Les tableaux (vecteur, matrice)</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      Par Marc BUFFAT, dpt mécanique, Lyon 1<br/>
+    
+        &copy; droits d'auteur 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,1182 @@
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2. Fonctionnement d’un ordinateur &#8212; INPROS INtroduction à la PROgrammation Scientifique en Python</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="canonical" href="https://perso.univ-lyon1.fr/marc.buffat/CHAP2/COURS_ORDI.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="3. Variable et éléments de base" href="../CHAP3/COURS_VAR.html" />
+    <link rel="prev" title="1. Introduction" href="../CHAP1/COURS_INTRO.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="fr">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">INPROS INtroduction à la PROgrammation Scientifique en Python</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Rechercher dans ce livre ..." aria-label="Rechercher dans ce livre ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Introduction à la PROgrammation Scientifique
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  INPROS
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP1/COURS_INTRO.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   2. Fonctionnement d’un ordinateur
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP3/COURS_VAR.html">
+   3. Variable et éléments de base
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../CHAP4/COURS_LOOP.html">
+   4. Structures de contrôle
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../CHAP4/EXERCICES_LOOP.html">
+     4.10. Exercices
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP5/COURS_FONCTION.html">
+   5. Fonctions et procédures
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../CHAP6/COURS_TABLEAU.html">
+   6. Les tableaux (vecteur, matrice)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../CHAP6/EXERCICES_TABLEAU.html">
+     6.8. Correction des exercices
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Annexes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../RAPPEL/COURS_RAPPEL.html">
+   Rappel de maths et physique
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../credits.html">
+   Crédits
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Crée par <a href="https://perso.univ-lyon1.fr/marc.buffat/">Marc BUFFAT</a><br> avec <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Basculer la navigation" aria-controls="site-navigation"
+                title="Basculer la navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Téléchargez cette page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/CHAP2/COURS_ORDI.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Télécharger le fichier source" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimer au format PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/mbuffat/INPROS"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Dépôt source"><i
+                    class="fab fa-github"></i>dépôt</button></a>
+        <a class="issues-button"
+            href="https://github.com/mbuffat/INPROS/issues/new?title=Issue%20on%20page%20%2FCHAP2/COURS_ORDI.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Ouvrez un problème"><i class="fas fa-lightbulb"></i>signaler un problème</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Mode plein écran"
+        title="Mode plein écran"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contenu
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   2.1. Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#architecture-materielle">
+   2.2. Architecture matérielle
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#constituants-elementaires">
+     2.2.1. Constituants élémentaires
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loi-de-moore">
+     2.2.2. Loi de Moore
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#un-ordinateur-vu-de-l-interieur">
+   2.3. Un ordinateur vu de l’intérieur
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#carte-mere">
+     2.3.1. Carte mère
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#processeur-cpu-cerveau-ou-coeur-de-la-machine">
+     2.3.2. Processeur, CPU, cerveau ou coeur de la machine
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#memoire-vive-ram-memoire-temporaire">
+     2.3.3. Mémoire vive, RAM, mémoire temporaire
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stockage-persistant">
+     2.3.4. Stockage persistant
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bus-de-communication">
+     2.3.5. Bus de communication
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#carte-graphique">
+     2.3.6. Carte graphique
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reseau">
+     2.3.7. Réseau
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nombre-binaire">
+   2.4. Nombre binaire
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#le-codage-binaire">
+     2.4.1. Le codage binaire
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quelques-ordres-de-grandeur">
+     2.4.2. Quelques ordres de grandeur
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#representation-des-nombres">
+     2.4.3. Représentation des nombres
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#performances-et-evolutions-des-ordinateurs">
+   2.5. Performances et évolutions des ordinateurs
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#caracteristiques-des-processeurs">
+     2.5.1. Caractéristiques des processeurs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#evolutions-attendues-comment-faire-des-machines-encore-plus-puissantes">
+     2.5.2. Evolutions attendues : comment faire des machines encore plus puissantes ?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-href-limitations-principales-limitations-a">
+     2.5.3.
+     <a href="#limitations">
+      Principales limitations
+     </a>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#les-orientations-les-plus-probables">
+     2.5.4. Les orientations les plus probables
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#impacts-de-l-architecture-sur-la-programmation">
+     2.5.5. Impacts de l’architecture sur la programmation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#langages-de-programmation">
+   2.6. Langages de programmation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#le-langage-machine">
+     2.6.1. Le langage machine
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#du-langage-humain-au-langage-machine">
+     2.6.2. Du langage « humain » au langage machine
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#langage-assembleur">
+     2.6.3. Langage assembleur
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compilateur">
+     2.6.4. Compilateur
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#langages-compiles-langages-interpretes">
+     2.6.5. Langages compilés, langages interprétés
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-href-langprog-langages-de-programmation-scientifique-a">
+   2.7.
+   <a href="#langprog">
+    Langages de programmation scientifique
+   </a>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#langages-compiles">
+     2.7.1. Langages compilés
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#langages-interpretes">
+     2.7.2. langages interprétés
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#et-le-systeme-d-exploitation-dans-tout-ca">
+     2.7.3. Et le système d’exploitation dans tout ça ?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fin-de-la-lecon">
+   2.8. Fin de la leçon
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Fonctionnement d’un ordinateur</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contenu </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   2.1. Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#architecture-materielle">
+   2.2. Architecture matérielle
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#constituants-elementaires">
+     2.2.1. Constituants élémentaires
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loi-de-moore">
+     2.2.2. Loi de Moore
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#un-ordinateur-vu-de-l-interieur">
+   2.3. Un ordinateur vu de l’intérieur
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#carte-mere">
+     2.3.1. Carte mère
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#processeur-cpu-cerveau-ou-coeur-de-la-machine">
+     2.3.2. Processeur, CPU, cerveau ou coeur de la machine
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#memoire-vive-ram-memoire-temporaire">
+     2.3.3. Mémoire vive, RAM, mémoire temporaire
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stockage-persistant">
+     2.3.4. Stockage persistant
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bus-de-communication">
+     2.3.5. Bus de communication
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#carte-graphique">
+     2.3.6. Carte graphique
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reseau">
+     2.3.7. Réseau
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nombre-binaire">
+   2.4. Nombre binaire
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#le-codage-binaire">
+     2.4.1. Le codage binaire
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quelques-ordres-de-grandeur">
+     2.4.2. Quelques ordres de grandeur
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#representation-des-nombres">
+     2.4.3. Représentation des nombres
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#performances-et-evolutions-des-ordinateurs">
+   2.5. Performances et évolutions des ordinateurs
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#caracteristiques-des-processeurs">
+     2.5.1. Caractéristiques des processeurs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#evolutions-attendues-comment-faire-des-machines-encore-plus-puissantes">
+     2.5.2. Evolutions attendues : comment faire des machines encore plus puissantes ?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-href-limitations-principales-limitations-a">
+     2.5.3.
+     <a href="#limitations">
+      Principales limitations
+     </a>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#les-orientations-les-plus-probables">
+     2.5.4. Les orientations les plus probables
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#impacts-de-l-architecture-sur-la-programmation">
+     2.5.5. Impacts de l’architecture sur la programmation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#langages-de-programmation">
+   2.6. Langages de programmation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#le-langage-machine">
+     2.6.1. Le langage machine
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#du-langage-humain-au-langage-machine">
+     2.6.2. Du langage « humain » au langage machine
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#langage-assembleur">
+     2.6.3. Langage assembleur
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compilateur">
+     2.6.4. Compilateur
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#langages-compiles-langages-interpretes">
+     2.6.5. Langages compilés, langages interprétés
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-href-langprog-langages-de-programmation-scientifique-a">
+   2.7.
+   <a href="#langprog">
+    Langages de programmation scientifique
+   </a>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#langages-compiles">
+     2.7.1. Langages compilés
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#langages-interpretes">
+     2.7.2. langages interprétés
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#et-le-systeme-d-exploitation-dans-tout-ca">
+     2.7.3. Et le système d’exploitation dans tout ça ?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fin-de-la-lecon">
+   2.8. Fin de la leçon
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <a class="reference internal image-reference" href="../_images/logo_trans1.png"><img alt="LyonHPC" src="../_images/logo_trans1.png" style="width: 180px;" /></a>
+<a class="reference internal image-reference" href="../_images/python-logo2.gif"><img alt="LyonHPC" src="../_images/python-logo2.gif" style="width: 200px;" /></a>
+<div class="tex2jax_ignore mathjax_ignore section" id="fonctionnement-d-un-ordinateur">
+<h1><span class="section-number">2. </span>Fonctionnement d’un ordinateur<a class="headerlink" href="#fonctionnement-d-un-ordinateur" title="Lien permanent vers ce titre">¶</a></h1>
+<a class="reference internal image-reference" href="../_images/cloud_ordi.png"><img alt="sommaire" src="../_images/cloud_ordi.png" style="width: 400px;" /></a>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span><span class="p">,</span><span class="n">display</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="introduction">
+<h2><span class="section-number">2.1. </span>Introduction<a class="headerlink" href="#introduction" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Comment des composants matériels reliés entre eux arrivent-ils à afficher une vidéo, simuler un feu de forêt et permettre à des gens de communiquer d’un bout à l’autre de la terre ?</p>
+<p>Un ordinateur est capable d’exécuter très rapidement et très mécaniquement des instructions extrêmement simples :</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1+2
+2&lt;10
+...
+</pre></div>
+</div>
+<p>C’est le programmeur qui, à partir d’un problème donné, va le traduire sous une forme <em>compréhensible</em> par l’ordinateur. L’objectif de cette partie du cours est de comprendre le fonctionnement de l’ordinateur pour mieux appréhender le comportement des programmes.</p>
+</div>
+<div class="section" id="architecture-materielle">
+<h2><span class="section-number">2.2. </span>Architecture matérielle<a class="headerlink" href="#architecture-materielle" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="constituants-elementaires">
+<h3><span class="section-number">2.2.1. </span>Constituants élémentaires<a class="headerlink" href="#constituants-elementaires" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Tous les ordinateurs sont construits à base de circuits électroniques, qui sont eux même constitués de transistors.</p>
+<center>
+<img src="Figures/transistors.jpg" alt="Exemples de transistors" style="width:200px;"/>
+</center>
+</div>
+<div class="section" id="loi-de-moore">
+<h3><span class="section-number">2.2.2. </span>Loi de Moore<a class="headerlink" href="#loi-de-moore" title="Lien permanent vers ce titre">¶</a></h3>
+<ul class="simple">
+<li><p>Exprimée par Gordon Moore en 1965</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/GMoore.jpg"><img alt="Gordon Moore" src="../_images/GMoore.jpg" style="width: 200px;" /></a>
+<ul class="simple">
+<li><p>Tous les 18 / 24 mois, le nombre de transistors sur une puce double.</p></li>
+<li><p>Davantage une observation / prédiction qu’une loi.</p></li>
+<li><p>Elle semble continuer à se vérifier.</p></li>
+<li><p>C’est une loi exponentielle : si on double 10 fois, on multiplie par 1000 !</p></li>
+<li><p>A coût constant, la capacité des matériels électronique augmente. Il suffit de penser à la taille mémoire des clés USB.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/Loi_de_Moore.png"><img alt="Loi de Moore" src="../_images/Loi_de_Moore.png" style="width: 600px;" /></a>
+</div>
+</div>
+<div class="section" id="un-ordinateur-vu-de-l-interieur">
+<h2><span class="section-number">2.3. </span>Un ordinateur vu de l’intérieur<a class="headerlink" href="#un-ordinateur-vu-de-l-interieur" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Un ordinateur est un être complexe. Mais il n’a formellement besoin que de deux choses pour calculer : de la mémoire et d’un processeur.</p>
+<a class="reference internal image-reference" href="../_images/1procmem.png"><img alt="Processeur et Mémoire" src="../_images/1procmem.png" style="width: 400px;" /></a>
+<p>Les données se déplacent : elles transitent de la mémoire vers le processeur et inversement. Le chemin emprunté est appelé le bus.</p>
+<p>Voyons cela plus en détails.</p>
+<a class="reference internal image-reference" href="../_images/ordi_exterieur.jpg"><img alt="Ordinateur vu de l'extérieur" src="../_images/ordi_exterieur.jpg" style="width: 100px;" /></a>
+<div class="section" id="carte-mere">
+<h3><span class="section-number">2.3.1. </span>Carte mère<a class="headerlink" href="#carte-mere" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Elément essentiel de l’ordinateur, elle permet la connexion de tous les constituants de la machine.</p>
+<a class="reference internal image-reference" href="../_images/ordi_interieur.jpg"><img alt="Ordinateur vu de l'intérieur" src="../_images/ordi_interieur.jpg" style="width: 200px;" /></a>
+</div>
+<div class="section" id="processeur-cpu-cerveau-ou-coeur-de-la-machine">
+<h3><span class="section-number">2.3.2. </span>Processeur, CPU, cerveau ou coeur de la machine<a class="headerlink" href="#processeur-cpu-cerveau-ou-coeur-de-la-machine" title="Lien permanent vers ce titre">¶</a></h3>
+<p>C’est le composant de l’ordinateur qui exécute les instructions machine des programmes informatiques.
+Un processeur est constitué :</p>
+<ul class="simple">
+<li><p>d’une horloge qui rythme le processeur,</p></li>
+<li><p>d’unités arithmétiques et logiques en charge des calculs élémentaires et des tests,</p></li>
+<li><p>de registres mémoire et de mémoire cache qui permettent au processeur d’accéder très rapidement aux données à traiter,</p></li>
+<li><p>d’unités  de contrôle qui permettent de synchroniser les différents éléments du processeur,</p></li>
+<li><p>d’unités d’entrée-sortie en charge de la communication avec la mémoire.</p></li>
+</ul>
+<p>Dans la réalité, les processeurs actuels sont extrêmement plus complexes mais ces principaux éléments suffisent à en comprendre le fonctionnement général.</p>
+<a class="reference internal image-reference" href="../_images/proc.jpg"><img alt="Processeur" src="../_images/proc.jpg" style="width: 200px;" /></a>
+</div>
+<div class="section" id="memoire-vive-ram-memoire-temporaire">
+<h3><span class="section-number">2.3.3. </span>Mémoire vive, RAM, mémoire temporaire<a class="headerlink" href="#memoire-vive-ram-memoire-temporaire" title="Lien permanent vers ce titre">¶</a></h3>
+<p>RAM = Random Access Memory</p>
+<p>C’est un stockage temporaire, non persistant (volatile) : lorsqu’un programme s’arrête, l’espace mémoire dont il s’est servi est vidé.</p>
+<a class="reference internal image-reference" href="../_images/ram.jpg"><img alt="RAM" src="../_images/ram.jpg" style="width: 200px;" /></a>
+<p>L’accès par le processeur aux données en RAM est beaucoup plus lent que l’accès aux données dans les mémoires caches ou les registres, mais beaucoup plus rapide que l’accès aux données stockées sur disque par exemple.</p>
+<a class="reference internal image-reference" href="../_images/erreur_excel.jpg"><img alt="Perte des données en RAM" src="../_images/erreur_excel.jpg" style="width: 300px;" /></a>
+</div>
+<div class="section" id="stockage-persistant">
+<h3><span class="section-number">2.3.4. </span>Stockage persistant<a class="headerlink" href="#stockage-persistant" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Il existe plusieurs types de stockage persistant : les disques durs, les flash disk (clés USB, SD Card …) … qui correspondent à des technologies différentes.
+Mais le principe reste le même : lorsque l’ordinateur est éteint, les données perdurent sur le support.</p>
+<p>Ce type de stockage est organisé grâce à un système de fichiers qui permet de stocker les informations à travers des fichiers et des répertoires. Il offre à l’utilisateur une vue abstraite sur ses données et permet de les localiser à partir d’un chemin d’accès.</p>
+<a class="reference internal image-reference" href="../_images/dd_interieur.jpg"><img alt="Disque dur" src="../_images/dd_interieur.jpg" style="width: 200px;" /></a>
+</div>
+<div class="section" id="bus-de-communication">
+<h3><span class="section-number">2.3.5. </span>Bus de communication<a class="headerlink" href="#bus-de-communication" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Un bus informatique est un système de communication entre les composants d’un ordinateur. C’est un ensemble de liaisons physiques (câbles, pistes de circuits imprimés, etc.) pouvant être exploitées en commun par plusieurs éléments matériels afin de communiquer :</p>
+<ul class="simple">
+<li><p>communication entre le processeur et la RAM</p></li>
+<li><p>communication entre le processeur et la carte graphique</p></li>
+<li><p>communication vers l’extérieur à travers un réseau …</p></li>
+</ul>
+</div>
+<div class="section" id="carte-graphique">
+<h3><span class="section-number">2.3.6. </span>Carte graphique<a class="headerlink" href="#carte-graphique" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Une carte graphique ou carte vidéo est une carte d’extension dont le rôle est de produire une image affichable sur un écran.
+Les cartes grapĥiques actuelles, en raison de leur importante capacité de calcul, peuvent aussi être utilisées en complément du processeur pour traiter des données (autres que les calculs spécifiques à l’affichage).</p>
+</div>
+<div class="section" id="reseau">
+<h3><span class="section-number">2.3.7. </span>Réseau<a class="headerlink" href="#reseau" title="Lien permanent vers ce titre">¶</a></h3>
+<p>L’interface réseau assure le lien entre l’ordinateur et un ensemble d’autres équipements connectés sur le même réseau.
+Différents médias de transmission peuvent être utilisés : filaire, WIFI, …</p>
+</div>
+</div>
+<div class="section" id="nombre-binaire">
+<h2><span class="section-number">2.4. </span>Nombre binaire<a class="headerlink" href="#nombre-binaire" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Les transistors ne savent gérer que deux états stables liés à des tensions électriques.
+Ils comptent en binaire à partir de <strong>bits</strong> (<strong>bi</strong>nary digi<strong>t</strong>) qui ne peuvent donc prendre que les valeurs 0 ou 1.</p>
+<p>Le bit est la plus petite unité de stockage informatique.</p>
+<div class="section" id="le-codage-binaire">
+<h3><span class="section-number">2.4.1. </span>Le codage binaire<a class="headerlink" href="#le-codage-binaire" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Un calcul informatique n’est donc qu’une suite d’opérations sur des paquets de 0 et de 1. Mais comment traduire une information plus complexe comme un chiffre ou une lettre afin de la rendre compréhensible et traitable par un ordinateur qui ne comprend que les 0 et les 1 ?</p>
+<p>Pour bien appréhender cette problématique, commençons par énumérer le nombre de motifs différents représentables par plusieurs bits.</p>
+<table style="width:600px">
+<tr>
+  <td>Nombre de bits</td>
+  <td>Motifs</td> 
+  <td>Nombre de motifs</td>
+</tr>
+<tr>
+  <td>1 bit</td>
+  <td>0 1</td> 
+  <td>2</td>
+</tr>
+<tr>
+  <td>2 bits</td>
+  <td>00 01 10 11</td> 
+  <td>4</td>
+</tr>
+<tr>
+  <td>3 bits</td>
+  <td>000 001 010 011 100 101 110 111</td> 
+  <td>8</td>
+</tr>
+<tr>
+  <td>n bits</td>
+  <td> ... </td> 
+  <td>2^n</td>
+</tr>
+</table>
+<p>Avec n bits, on représente donc 2^n motifs.</p>
+<p>En informatique, on utilise les Bytes ou les octets.</p>
+<p><strong>1 byte = 1 octet = 8 bits</strong></p>
+<p>Avec 1 octet, on a donc 256 possibilités : on peut représenter les nombres de 0 à 255.
+L’ordinateur ne calcule jamais sur 1 bit à la fois, mais sur un ou plusieurs octets.</p>
+</div>
+<div class="section" id="quelques-ordres-de-grandeur">
+<h3><span class="section-number">2.4.2. </span>Quelques ordres de grandeur<a class="headerlink" href="#quelques-ordres-de-grandeur" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Les valeurs de stockage (tailles des disques durs, des fichiers, de la mémoire …) vont s’exprimer en Bytes ou en octets.</p>
+<p>Les valeurs concernant les vitesses de transmissions (entre le processeur et la mémoire, pour télécharger un fichier depuis internet …) sont le plus souvent exprimées en bits (quelque fois en octets) par seconde.</p>
+<p>Voici quelques exemples d’ordres de grandeurs :</p>
+<ul class="simple">
+<li><p>KB (KiloBytes) ou Ko (Kilooctets)</p>
+<ul>
+<li><p>1 Ko = 1 000 octets</p></li>
+<li><p>Le code source d’un programme fait en général de l’ordre de quelques ko</p></li>
+</ul>
+</li>
+<li><p>MB (MégaBytes) ou Mo (Mégaoctets)</p>
+<ul>
+<li><p>1 Mo = 1 000 Ko = 1 000 000 octets</p></li>
+<li><p>Une image codée en 24 bits/pixel (donc 3 octets/pixels) d’une résolution de 10 Mégapixels aura un poids de 30 Mo (avant toute compression)</p></li>
+</ul>
+</li>
+<li><p>GB (GigaBytes) ou Go (Gigaoctets)</p>
+<ul>
+<li><p>1 Go = 1 000 Mo = 10^9 octets</p></li>
+<li><p>Une matrice de taille 50 000 x 50 000 nombres décimaux (flottants) codés sur 64 bits donc 8 octets prendra 50 000 x 50 000 x 8 = 20 Go en mémoire</p></li>
+</ul>
+</li>
+<li><p>TB (TéraBytes) ou To (Téraoctets)</p>
+<ul>
+<li><p>1 To = 1 000 Go = 10^12 octets</p></li>
+<li><p>Le LHC (Large Hadron Collider, grand accélérateur de particules du CERN) produit tous les ans 15 Pétaoctets de données, soit 15 000 To.</p></li>
+</ul>
+</li>
+</ul>
+<p>On peut également regarder les tailles de différents types de fichiers : fichier vidéo, fichier word, code exécutable, code source et image.</p>
+<img alt="Exemples de taille de fichiers" src="../_images/taille_fichier.png" />
+</div>
+<div class="section" id="representation-des-nombres">
+<h3><span class="section-number">2.4.3. </span>Représentation des nombres<a class="headerlink" href="#representation-des-nombres" title="Lien permanent vers ce titre">¶</a></h3>
+<p>On a vu que le codage binaire permettait de représenter de l’information sous une forme compréhensible par un ordinateur.
+Toutes les données sont stockées sous forme binaire de tailles différentes.
+Ainsi, le codage des entiers s’effectue usuellement sur 4 octets donc jusqu’à une valeur maximale de 2^(4*8) - 1</p>
+<p>En simulation numérique, on manipule des nombres à virgule (réels) sur lesquels on effectue diverses opérations. Or, l’ordinateur ne peut stocker que des nombres finis en mémoire. Les nombres à virgule flottante utilisés par les machines sont donc des approximations des nombres réels.</p>
+<p>Sans entrer dans les détails, ils sont représentés sous la forme :</p>
+<div class="math notranslate nohighlight">
+\[x = s . m . b^e\]</div>
+<p>où</p>
+<ul class="simple">
+<li><p>s est le signe de x</p></li>
+<li><p>m est la mantisse</p></li>
+<li><p>b est la base (usuellement 2 ou 10)</p></li>
+<li><p>e est l’exposant</p></li>
+</ul>
+<p>Les points suivants illustrent ce qu’il faut retenir de la problématique des nombres flottants :</p>
+<ul class="simple">
+<li><p>Leur précision est limitée, ce qui se traduit par des arrondis qui peuvent s’accumuler de façon gênante. En particulier, la soustraction de deux nombres très proches peut provoquer une grande perte de précision relative si le résultat n’est pas représentable exactement en machine.</p></li>
+<li><p>Une plage d’exposants limitée, pouvant donner lieux à des « overflows » (lorsque le résultat d’une opération est plus grand que la plus grande valeur représentable) et à des « underflows » (lorsqu’un résultat est plus petit, en valeur absolue, que le plus petit flottant normalisé positif), puis à des résultats n’ayant plus aucun sens.</p></li>
+<li><p>Les calculs en virgule flottante, contrairement aux calculs sur les réels, ne sont pas associatifs. Par exemple, dans un calcul en flottants (selon la norme IEEE) double précision, (2^60+1)-2^60 ne donne pas 1, mais 0 (en arrondi au plus près). La raison est que 2^60+1 n’est pas représentable exactement et est arrondi à 2^60.</p></li>
+<li><p>En arithmétique flottante (norme IEEE), un calcul peut aboutir à des valeurs qui ne correspondent pas à des nombres réels :</p>
+<ul>
+<li><p>NaN (« not a number »), qui sera par exemple le résultat de la tentative de division flottante de zéro par zéro, ou de la racine carrée d’un nombre strictement négatif. Les NaN se propagent : la plupart des opérations faisant intervenir un NaN donnent NaN (des exceptions sont possibles, comme NaN puissance 0, qui peut donner 1).</p></li>
+<li><p>Un infini positif et un infini négatif, qui sont par exemple le résultat d’un « overflow » en arrondi au plus près.</p></li>
+</ul>
+</li>
+</ul>
+<p>Quelques exemples de calcul sur un ordinateur avec des erreurs d’arrondis</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exemple de la soustraction</span>
+<span class="mf">5.555e-02</span> <span class="o">-</span> <span class="mf">5.554e-02</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0000000000003062e-05
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="nb">pow</span>
+<span class="n">op1</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">60</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">op2</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">60</span><span class="p">)</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">op1</span> <span class="o">-</span> <span class="n">op2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+<span class="n">res2</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">60</span><span class="p">)</span> <span class="o">-</span> <span class="nb">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">60</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0
+1.0
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="performances-et-evolutions-des-ordinateurs">
+<h2><span class="section-number">2.5. </span>Performances et évolutions des ordinateurs<a class="headerlink" href="#performances-et-evolutions-des-ordinateurs" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="caracteristiques-des-processeurs">
+<h3><span class="section-number">2.5.1. </span>Caractéristiques des processeurs<a class="headerlink" href="#caracteristiques-des-processeurs" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Un processeur actuel comporte plusieurs milliards de transistors.
+Le processeur travaille en <strong>cycles</strong>, et le nombre de cyles par seconde est caractérisé par sa <strong>fréquence</strong>, exprimée en Hertz :</p>
+<center> 1 cycle en 1 seconde = 1 Hz</center>
+<p>Pour évaluer la performance théorique maximale d’un processeur (puissance crête), on évalue généralement le nombre d’opérations flottantes qu’il est capable d’effectuer par seconde : <strong>FLOPS (FLoating point Operations Per Second)</strong>.</p>
+<p>La plupart des processeurs actuels incluent une ou plusieurs unité de calcul en virgule flottante.</p>
+<p><strong>Exemple sur un processeur Intel Sandybridge</strong></p>
+<table width="0%" border="0" align="center">
+  <tr>
+    <td>Pour évaluer la performance crête d'un processeur de type Intel SandyBridge, on considère ses caractéristiques suivantes :
+    <ul>
+    <li> la <em>fréquence d'un coeur</em> : 3.2GHz
+    <li> le <em>nombre de coeurs</em> : 6
+    <li> les <em>registres vectoriels</em> (c'est à dire le nombre de données flottantes pouvant être traitées simultanément) : 16 en simple précision (c'est à dire quand les flottants sont stockés sur 32 bits), 8 en double précision (c'est à dire quand les flottants sont stockés sur 64 bits)
+    </ul>
+    La performance crête d'un processeur de ce type sera donc : <br>
+    <center> 6 x 3.2 x 16 = 307.2 GFLOPS </center>
+    </td>
+  </tr>
+</table>
+<p>D’un point de vue pratique, la puissance d’une machine dépend
+de <strong>l’ensemble de ses composants</strong> : fréquence du processeur,
+accès mémoire, vitesse des bus, complexité de l’architecture …
+mais aussi charge de la machine, système d’exploitation … On est
+souvent loin de la puissance théorique …</p>
+</div>
+<div class="section" id="evolutions-attendues-comment-faire-des-machines-encore-plus-puissantes">
+<h3><span class="section-number">2.5.2. </span>Evolutions attendues : comment faire des machines encore plus puissantes ?<a class="headerlink" href="#evolutions-attendues-comment-faire-des-machines-encore-plus-puissantes" title="Lien permanent vers ce titre">¶</a></h3>
+<p>L’augmentation du nombre de transistors sur une puce est possible grâce à la miniaturisation des transistors. Mais ce ne sera évidemment pas possible indéfiniment !
+Les transistors actuels sont gravés à 22 nm (nanomètres) soit la taille de quelques dizaines d’atomes. Il faudra donc rapidement trouver une alternative.</p>
+<p>Si on regarde un peu en arrière :</p>
+<a class="reference internal image-reference" href="../_images/supercomputing.jpg"><img alt="evolution" src="../_images/supercomputing.jpg" style="width: 400px;" /></a>
+<table width="0%" border="0" align="center">
+<tr><td> <font color="red"> Année</font>     </td> 
+    <td> <font color="red"> Puissance</font> </td>
+<tr><td> 1997 </td> <td> Teraflops </td> </tr> 
+<tr><td> 2008 </td> <td> Petaflops </td> </tr> 
+<tr><td> 2020 </td> <td> Exaflops  </td> </tr> 
+</table>
+<p>Cette prédiction suppose que les calculateurs soient de plus en plus rapide, mais comment y arriver ?</p>
+</div>
+<div class="section" id="a-href-limitations-principales-limitations-a">
+<h3><span class="section-number">2.5.3. </span><a href="#limitations">Principales limitations</a><a class="headerlink" href="#a-href-limitations-principales-limitations-a" title="Lien permanent vers ce titre">¶</a></h3>
+<ul>
+<li> La <b>consommation électrique</b> augmente de façon exponentielle en fonction de la fréquence d’horloge : 
+<center> P ~ f^3 </center>
+avec P : puissance (Watt) et f : fréquence.
+Mais pas que !! Tous les éléments sont consommateurs : mémoires, carte mère, alimentation inefficace ...
+<li> La <b>dissipation thermique</b> est directement liée à la puissance consommée : plus on augmente la fréquence, plus la dissipation thermique est importante. Il faut donc refroidir, tant au niveau des chips, qu'au niveau de l’infrastructure globale.
+<li>
+La <b>finesse de gravure</b> des transistors atteint actuellement 22 nm. Feuille de route Intel : 4 nm en 2022. Plus de transistors donc plus de coeurs, et moins de dissipation thermique (plus c’est petit moins ça dissipe). Mais des défis technologiques pour les fondeurs et des technologies de plus en plus coûteuses ! Jusqu’à quand ? 
+</ul>
+</div>
+<div class="section" id="les-orientations-les-plus-probables">
+<h3><span class="section-number">2.5.4. </span>Les orientations les plus probables<a class="headerlink" href="#les-orientations-les-plus-probables" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Les orientations qui se dessinent aujourd’hui semblent être :</p>
+<ul class="simple">
+<li><p>des processeurs dont la fréquence stagne voir diminue,</p></li>
+<li><p>de plus en plus de coeurs par processeur,</p></li>
+<li><p>une augmentation de la mémoire très limitée,</p></li>
+<li><p>l’utilisation de cartes accélératrices en complément ou en remplacement de processeurs plus traditionnels : GPU (cartes graphiques, Graphical Processing Unit), carte many-core (comme les Xeon Phi de la gamme Intel).</p></li>
+</ul>
+</div>
+<div class="section" id="impacts-de-l-architecture-sur-la-programmation">
+<h3><span class="section-number">2.5.5. </span>Impacts de l’architecture sur la programmation<a class="headerlink" href="#impacts-de-l-architecture-sur-la-programmation" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Il est important de connaître le fonctionnement d’un ordinateur pour adapter les méthodes numériques, les algorithmes et la programmation à l’architecture et comprendre le comportement d’un code.</p>
+<p>On ne programmera pas de la même façon un ordinateur doté d’un processeur mono-coeur à haute fréquence qu’un serveur quadri-processeurs dotés de 8 coeurs chacun, de fréquence assez faible, boosté par une carte accélératrice :</p>
+<ul class="simple">
+<li><p>les vitesses de traitement ne sont pas les mêmes,</p></li>
+<li><p>l’accès à la mémoire ne se fait pas de la même façon,.</p></li>
+<li><p>l’exploitation de tous les coeurs suppose une programmation complètement différente</p></li>
+</ul>
+<p>Et les évolutions actuelles des architectures ne laissent rien présager de simple pour les années à venir !</p>
+</div>
+</div>
+<div class="section" id="langages-de-programmation">
+<h2><span class="section-number">2.6. </span>Langages de programmation<a class="headerlink" href="#langages-de-programmation" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="le-langage-machine">
+<h3><span class="section-number">2.6.1. </span>Le langage machine<a class="headerlink" href="#le-langage-machine" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Le langage machine est la suite de bits qui est interprétée par le processeur exécutant un programme informatique. C’est le seul langage qu’un processeur puisse traiter. Il est composé d’instructions et de données codées en binaire.</p>
+<p>Ainsi, au niveau matériel de l’ordinateur, le <strong>jeu d’instructions</strong>, composé des instructions machines, constitue l’ensemble des opérations élémentaires qu’un programme peut demander à un processeur de traiter.
+Ces instructions machines permettent d’effectuer des opérations élémentaires (addition, ET logique …) ou plus complexes (division, …), mais aussi de manipuler les données (stockage dans les registres du processeur …).</p>
+<p>Chaque type de processeur possède son propre jeu d’instructions : un exécutable en code machine ne peut donc s’exécuter que sur la machine pour laquelle il a été préparé.</p>
+<p>Le jeu d’instructions le plus courant sur les processeurs actuels est le jeu d’instructions x86. Il a subi de nombreux ajouts au fur et à mesure des années et de l’évolution des processeurs, avec notamment les instructions de type vectorielles SSE et AVX (possibilité de traiter en même temps plusieurs instructions de même type sur des données différentes).</p>
+</div>
+<div class="section" id="du-langage-humain-au-langage-machine">
+<h3><span class="section-number">2.6.2. </span>Du langage « humain » au langage machine<a class="headerlink" href="#du-langage-humain-au-langage-machine" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Le langage machine est donc :</p>
+<ul class="simple">
+<li><p>totalement incompréhensible par les humains,</p></li>
+<li><p>spécifique au type de processeur sur lequel on travaille.</p></li>
+</ul>
+<p>Pour remédier à ces spécificités, il faut donc pouvoir passer d’un langage humainement compréhensible à une exécution machine.</p>
+</div>
+<div class="section" id="langage-assembleur">
+<h3><span class="section-number">2.6.3. </span>Langage assembleur<a class="headerlink" href="#langage-assembleur" title="Lien permanent vers ce titre">¶</a></h3>
+<p>L’assembleur est un langage informatique très proche du langage machine mais il reste compréhensible pour des développeurs. Toutefois, sa très grande proximité avec le langage machine rend les programmes étroitement dépendant du type de processeur utilisé. Les programmes écrits en assembleur ne sont donc pas portables.</p>
+<p><strong>Exemple</strong></p>
+<p>Un processeur de la famille x86 reconnaît une instruction du type</p>
+<p><code class="docutils literal notranslate"><span class="pre">10110000</span> <span class="pre">01100001</span></code></p>
+<p>En langage assembleur, cette instruction est représentée par un équivalent plus facile à comprendre pour le programmeur :</p>
+<p><code class="docutils literal notranslate"><span class="pre">movb</span> <span class="pre">0x61,%al</span></code></p>
+<p>avec la correspondance :</p>
+<table>
+    <tr> <td>10110000 <td> `movb %al` </tr>
+    <tr> <td>01100001 <td> `0x61` </tr>
+</table>
+<p>Ce qui signifie :  » écrire le nombre 97 (la valeur est donnée en hexadécimal : 61 (base 16) = 97 (base 10)) dans le registre AL « .</p>
+<p>Très bien, mais cette instruction reste incompréhensible pour le processeur qui, rappelons le, ne sait traiter que des 0 et des 1 !!
+Pour cela, on fait appel à un traducteur : <strong>le compilateur</strong>.</p>
+</div>
+<div class="section" id="compilateur">
+<h3><span class="section-number">2.6.4. </span>Compilateur<a class="headerlink" href="#compilateur" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Un compilateur est un programme informatique qui transforme un code source écrit dans un langage de programmation (le langage source) en un autre langage informatique (le langage cible).</p>
+<a class="reference internal image-reference" href="../_images/compilo.gif"><img alt="compilateur" src="../_images/compilo.gif" style="width: 400px;" /></a>
+</div>
+<div class="section" id="langages-compiles-langages-interpretes">
+<h3><span class="section-number">2.6.5. </span>Langages compilés, langages interprétés<a class="headerlink" href="#langages-compiles-langages-interpretes" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Un langage est dit <strong>compilé</strong> quand l’optention du code exécutable requiert un compilateur. De la même manière, un langage <strong>interprété</strong> requiert un interprète.</p>
+<p>La différence principale entre compilé et interprété est la suivante : là où le compilateur traduit une bonne fois pour toute un code source en un fichier indépendant exécutable (donc utilisant du code machine), l’interprète est nécessaire à chaque avancement des lignes du programme interprété, pour traduire au fur et à mesure et à la volée le code source en code machine.</p>
+<p>L’interpréteur traduit donc le code source ligne par ligne là où le compilateur traduit l’ensemble du code source une fois pour toute. Cela permet au compilateur de réaliser un certain nombre d’optimisation et en général, les programmes compilés sont plus rapides à l’exécution que les programmes interprétés.</p>
+</div>
+</div>
+<div class="section" id="a-href-langprog-langages-de-programmation-scientifique-a">
+<h2><span class="section-number">2.7. </span><a href="#langprog">Langages de programmation scientifique</a><a class="headerlink" href="#a-href-langprog-langages-de-programmation-scientifique-a" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Quels sont les langages qui sont couramment utilisés en programmation scientifique ?</p>
+<p>Comme vous l’avez compris, il n’est pas question de programmer en assembleur et encore moins en langage machine.
+D’une façon générale, les programmes développés en informatique scientifique doivent être :</p>
+<ul class="simple">
+<li><p>efficaces,</p></li>
+<li><p>portables,</p></li>
+<li><p>lisibles,</p></li>
+<li><p>maintenables,</p></li>
+<li><p>évolutifs,</p></li>
+<li><p>ré-utilisables …</p></li>
+</ul>
+<p>Il est donc nécessaire d’utiliser les langages de haut niveau nécessitant compilateur ou interpréteur.</p>
+<div class="section" id="langages-compiles">
+<h3><span class="section-number">2.7.1. </span>Langages compilés<a class="headerlink" href="#langages-compiles" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Les langages compilés que l’on retrouve le plus souvent dans le domaine de la programmation scientifique sont :</p>
+<ul class="simple">
+<li><p>le Fortran</p></li>
+<li><p>le C</p></li>
+<li><p>le C++</p></li>
+</ul>
+</div>
+<div class="section" id="langages-interpretes">
+<h3><span class="section-number">2.7.2. </span>langages interprétés<a class="headerlink" href="#langages-interpretes" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Les langages interprétés utilisés le plus fréquemment en programmation scientifique sont :</p>
+<ul class="simple">
+<li><p>Python</p></li>
+</ul>
+<p>A noter que tous ces langages, si ils ont une syntaxe différente, utilisent les mêmes concepts en ce qui concerne les types des données, les instructions et structures de contrôle …
+Ils sont également inter-opérables c’est-à-dire que l’on peut en général, dans un code écrit avec un langage X, intégrer l’appel d’une fonction développée dans un langage Y.</p>
+<p>On peut aussi inclure dans la catégorie des langages interprétés des outils comme matlab, scilab, R.</p>
+<p><strong>Exemple</strong></p>
+<p>Une petite comparaison de la syntaxe de ces différents langages sur un exemple de boucle tout simple.</p>
+<p><strong>FORTRAN</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>do i = 1,n
+    if (a(i) &gt; 0.)
+        b(i) = 2.*c(i)
+    else
+        b(i) = c(i) - 1.
+    end if
+end do
+</pre></div>
+</div>
+<p><strong>C</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>for (int i = 0 ; i &lt; n ; ++i) {
+    if (a[i] &gt; 0.)
+        b[i] = 2.*c[i];
+    else
+        b[i] = c[i] - 1.;
+ }
+</pre></div>
+</div>
+<p><strong>Python</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>for i in range(a.size):
+    if a[i] &gt; 0.:
+        b[i] = 2.*c[i]
+    else:
+        b[i] = c[i] - 1.
+</pre></div>
+</div>
+<p>On peut constater que les syntaxes sont relativement proches.</p>
+</div>
+<div class="section" id="et-le-systeme-d-exploitation-dans-tout-ca">
+<h3><span class="section-number">2.7.3. </span>Et le système d’exploitation dans tout ça ?<a class="headerlink" href="#et-le-systeme-d-exploitation-dans-tout-ca" title="Lien permanent vers ce titre">¶</a></h3>
+<a class="reference internal image-reference" href="../_images/linux.jpg"><img alt="linux" src="../_images/linux.jpg" style="width: 100px;" /></a>
+<a class="reference internal image-reference" href="../_images/windows.jpg"><img alt="windows" src="../_images/windows.jpg" style="width: 100px;" /></a>
+<a class="reference internal image-reference" href="../_images/apple.jpg"><img alt="apple" src="../_images/apple.jpg" style="width: 100px;" /></a>
+<p>Pour qu’un ordinateur soit capable de faire fonctionner un programme informatique, la machine doit être en mesure d’effectuer un certain nombre d’opérations préparatoires afin d’assurer les échanges entre le processeur, la mémoire, et les ressources physiques (périphériques : disques, réseau …).</p>
+<p>Le système d’exploitation (Operating System), est chargé d’assurer la liaison entre les ressources matérielles, l’utilisateur et les applications. Ainsi lorsqu’un programme désire accéder à une ressource matérielle, il ne lui est pas nécessaire d’envoyer des informations spécifiques au périphérique, il lui suffit d’envoyer les informations au système d’exploitation, qui se charge de les transmettre au périphérique concerné via son pilote. En l’absence de pilotes il faudrait que chaque programme reconnaisse et prenne en compte la communication avec chaque type de périphérique !</p>
+<p>Le système d’exploitation a aussi pour rôle de gérer le partage des ressources lorsque plusieurs programmes utilisent simultanément la machine.</p>
+<p>Les systèmes d’exploitation les plus couramment utilisés en informatique scientifiques sont basés sur des noyaux Unix/Linux.</p>
+</div>
+</div>
+<div class="section" id="fin-de-la-lecon">
+<h2><span class="section-number">2.8. </span>Fin de la leçon<a class="headerlink" href="#fin-de-la-lecon" title="Lien permanent vers ce titre">¶</a></h2>
+<a class="reference internal image-reference" href="../_images/cloud_ordi.png"><img alt="ordinateur" src="../_images/cloud_ordi.png" style="width: 280px;" /></a>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./CHAP2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../CHAP1/COURS_INTRO.html" title="précédent page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">précédent</p>
+            <p class="prev-next-title"><span class="section-number">1. </span>Introduction</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../CHAP3/COURS_VAR.html" title="suivant page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">suivant</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Variable et éléments de base</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      Par Marc BUFFAT, dpt mécanique, Lyon 1<br/>
+    
+        &copy; droits d'auteur 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

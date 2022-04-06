@@ -19,14 +19,16 @@ Introduction à la PROgrammation Scientifique
 par [Marc BUFFAT](https://perso.univ-lyon1.fr/marc.buffat)
 
 
-Ce cours regroupe des notebooks ipython, que j'ai développé pour mes enseignements 
+Ce cours regroupe des notebooks IPython, développé pour mes enseignements 
 au [département mécanique](https://fst-mecanique.univ-lyon1.fr) 
 à [l'université Lyon 1](https://www.univ-lyon1.fr) depuis plus d'une dizaine d'années, et 
-que j'utilise pour apprendre à mes étudiants les bases de la programmation scientifique.
+que utilisé pour apprendre aux étudiants les bases de la programmation scientifique avec Python.
 
-Les notebooks ipython permettent l'utilisation d'une plateforme web [Jupyter notebooki](https://jupyte.org)
+
+Les notebooks ipython permettent l'utilisation d'une plateforme web [Jupyter notebook](https://jupyter.org)
 pour apprendre la programmation scientifique sous Python
-avec un simple navigateur sans avoir à installer de logiciel. 
+avec un simple navigateur sans avoir à installer de logiciel. Ils contiennent aussi de petites vidéos explicatives
+pour aider à mieux comprendre le cours.
 
 ```{note}
 Vous trouverez aussi sur mon site professionnel 

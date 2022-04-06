@@ -3,6 +3,7 @@
 
 title: INPROS INtroduction à la PROgrammation Scientifique en Python 
 author: Marc BUFFAT, dpt mécanique, Lyon 1
+copyright: "2022"
 logo: logo.png
 
 # Force re-execution of notebooks on each build.
@@ -37,7 +38,9 @@ repository:
 html:
   use_issues_button: true 
   use_repository_button: true
-
+  home_page_in_navbar  : true
+  baseurl : https://perso.univ-lyon1.fr/marc.buffat
+  extra_navbar: Crée par <a href="https://perso.univ-lyon1.fr/marc.buffat/">Marc BUFFAT</a><br> avec <a href="https://jupyterbook.org">Jupyter Book</a>
 # sphinx
 sphinx:
   config:

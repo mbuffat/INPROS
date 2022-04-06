@@ -54,10 +54,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="canonical" href="https://perso.univ-lyon1.fr/marc.buffat/RAPPEL/COURS_RAPPEL.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
     <link rel="next" title="Crédits" href="../credits.html" />
-    <link rel="prev" title="5. Fonctions et procédures" href="../CHAP5/COURS_FONCTION.html" />
+    <link rel="prev" title="6.7. Correction des exercices" href="../CHAP6/EXERCICES_TABLEAU.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="fr">
     
@@ -144,6 +145,23 @@ const thebe_selector_output = ".output, .cell_output"
    5. Fonctions et procédures
   </a>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../CHAP6/COURS_TABLEAU.html">
+   6. Les tableaux (vecteur, matrice)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../CHAP6/EXERCICES_TABLEAU.html">
+     6.7. Correction des exercices
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -167,7 +185,7 @@ const thebe_selector_output = ".output, .cell_output"
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+  Crée par <a href="https://perso.univ-lyon1.fr/marc.buffat/">Marc BUFFAT</a><br> avec <a href="https://jupyterbook.org">Jupyter Book</a>
 </div>
 
 </div>
@@ -521,12 +539,12 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="rappel-de-maths-et-physique">
+  <a class="reference internal image-reference" href="../_images/logo_trans5.png"><img alt="LyonHPC" src="../_images/logo_trans5.png" style="width: 180px;" /></a>
+<a class="reference internal image-reference" href="../_images/python-logo6.gif"><img alt="LyonHPC" src="../_images/python-logo6.gif" style="width: 200px;" /></a>
+<div class="tex2jax_ignore mathjax_ignore section" id="rappel-de-maths-et-physique">
 <h1>Rappel de maths et physique<a class="headerlink" href="#rappel-de-maths-et-physique" title="Lien permanent vers ce titre">¶</a></h1>
-<a class="reference internal image-reference" href="../_images/logo_trans5.png"><img alt="LyonHPC" src="../_images/logo_trans5.png" style="width: 180px;" /></a>
 <a class="reference internal image-reference" href="../_images/cloud_rappel.png"><img alt="cloud" src="../_images/cloud_rappel.png" style="width: 400px;" /></a>
-<h1>Contenu du chapitre<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Rappels-de-mathématique" data-toc-modified-id="Rappels-de-mathématique-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Rappels de mathématique</a></span><ul class="toc-item"><li><span><a href="#Dérivée" data-toc-modified-id="Dérivée-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Dérivée</a></span></li><li><span><a href="#Intégrale" data-toc-modified-id="Intégrale-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Intégrale</a></span></li><li><span><a href="#Développement-en-série-de-Taylor" data-toc-modified-id="Développement-en-série-de-Taylor-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Développement en série de Taylor</a></span></li><li><span><a href="#Exemple-(calcul-avec-sympy)" data-toc-modified-id="Exemple-(calcul-avec-sympy)-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Exemple (calcul avec sympy)</a></span></li></ul></li><li><span><a href="#Rappels-de-mécanique-newtonienne" data-toc-modified-id="Rappels-de-mécanique-newtonienne-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Rappels de mécanique newtonienne</a></span><ul class="toc-item"><li><span><a href="#Principe-fondamental-de-la-dynamique-(2ième-loi-de-Newton)" data-toc-modified-id="Principe-fondamental-de-la-dynamique-(2ième-loi-de-Newton)-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Principe fondamental de la dynamique (2ième loi de Newton)</a></span><ul class="toc-item"><li><span><a href="#exemple-d'équation-du-mouvement:" data-toc-modified-id="exemple-d'équation-du-mouvement:-2.1.1"><span class="toc-item-num">2.1.1&nbsp;&nbsp;</span>exemple d'équation du mouvement:</a></span></li><li><span><a href="#exemple-de-force-(gravitation)" data-toc-modified-id="exemple-de-force-(gravitation)-2.1.2"><span class="toc-item-num">2.1.2&nbsp;&nbsp;</span>exemple de force (gravitation)</a></span></li></ul></li><li><span><a href="#Travail,-Puissance" data-toc-modified-id="Travail,-Puissance-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Travail, Puissance</a></span></li><li><span><a href="#Conservation-de-l'énergie" data-toc-modified-id="Conservation-de-l'énergie-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>Conservation de l'énergie</a></span></li></ul></li><li><span><a href="#Exemple-1:-mouvement-balistique" data-toc-modified-id="Exemple-1:-mouvement-balistique-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Exemple 1: mouvement balistique</a></span><ul class="toc-item"><li><span><a href="#Équations-du-mouvement" data-toc-modified-id="Équations-du-mouvement-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Équations du mouvement</a></span></li><li><span><a href="#Trajectoire-,-vitesse-et-accélération" data-toc-modified-id="Trajectoire-,-vitesse-et-accélération-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Trajectoire , vitesse et accélération</a></span></li></ul></li><li><span><a href="#Exemple-2:-mouvement-d'un-satellite" data-toc-modified-id="Exemple-2:-mouvement-d'un-satellite-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Exemple 2: mouvement d'un satellite</a></span><ul class="toc-item"><li><span><a href="#Équation-du-mouvement" data-toc-modified-id="Équation-du-mouvement-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Équation du mouvement</a></span></li><li><span><a href="#Trajectoire,-vitesse-et-accélération" data-toc-modified-id="Trajectoire,-vitesse-et-accélération-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Trajectoire, vitesse et accélération</a></span></li></ul></li><li><span><a href="#Exemple-3:-Mouvement-du-pendule" data-toc-modified-id="Exemple-3:-Mouvement-du-pendule-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Exemple 3: Mouvement du pendule</a></span><ul class="toc-item"><li><span><a href="#Equation-du-mouvement" data-toc-modified-id="Equation-du-mouvement-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>Equation du mouvement</a></span></li><li><span><a href="#Conservation-de-l'énergie" data-toc-modified-id="Conservation-de-l'énergie-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>Conservation de l'énergie</a></span></li><li><span><a href="#Trajectoire,-vitesse-et-accélération" data-toc-modified-id="Trajectoire,-vitesse-et-accélération-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>Trajectoire, vitesse et accélération</a></span></li></ul></li><li><span><a href="#Fin-de-la-leçon" data-toc-modified-id="Fin-de-la-leçon-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Fin de la leçon</a></span></li></ul></div><div class="cell docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -561,7 +579,7 @@ $<span class="math notranslate nohighlight">\( \frac{df}{dx}(x)=\lim_{\Delta x\r
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Font family [&#39;xkcd&#39;, &#39;xkcd Script&#39;, &#39;Humor Sans&#39;, &#39;Comic Sans MS&#39;, &#39;StayPuft&#39;] not found. Falling back to DejaVu Sans.
 </pre></div>
 </div>
-<img alt="../_images/COURS_RAPPEL_5_3.png" src="../_images/COURS_RAPPEL_5_3.png" />
+<img alt="../_images/COURS_RAPPEL_4_3.png" src="../_images/COURS_RAPPEL_4_3.png" />
 </div>
 </div>
 </div>
@@ -581,7 +599,7 @@ $<span class="math notranslate nohighlight">\( \frac{df}{dx}(x)=\lim_{\Delta x\r
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/COURS_RAPPEL_7_0.png" src="../_images/COURS_RAPPEL_7_0.png" />
+<img alt="../_images/COURS_RAPPEL_6_0.png" src="../_images/COURS_RAPPEL_6_0.png" />
 </div>
 </div>
 </div>
@@ -615,20 +633,20 @@ $<span class="math notranslate nohighlight">\( \frac{df}{dx}(x)=\lim_{\Delta x\r
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pour la fonction f(x)
 </pre></div>
 </div>
-<img alt="../_images/COURS_RAPPEL_10_1.png" src="../_images/COURS_RAPPEL_10_1.png" />
+<img alt="../_images/COURS_RAPPEL_9_1.png" src="../_images/COURS_RAPPEL_9_1.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dvt en série à l&#39;ordre 2 au voisinage de x=0
 </pre></div>
 </div>
-<img alt="../_images/COURS_RAPPEL_10_3.png" src="../_images/COURS_RAPPEL_10_3.png" />
+<img alt="../_images/COURS_RAPPEL_9_3.png" src="../_images/COURS_RAPPEL_9_3.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dvt en série à l&#39;ordre 3 au voisinage de x=0
 </pre></div>
 </div>
-<img alt="../_images/COURS_RAPPEL_10_5.png" src="../_images/COURS_RAPPEL_10_5.png" />
+<img alt="../_images/COURS_RAPPEL_9_5.png" src="../_images/COURS_RAPPEL_9_5.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dvt en série à l&#39;ordre 5 au voisinage de x=0
 </pre></div>
 </div>
-<img alt="../_images/COURS_RAPPEL_10_7.png" src="../_images/COURS_RAPPEL_10_7.png" />
-<img alt="../_images/COURS_RAPPEL_10_8.png" src="../_images/COURS_RAPPEL_10_8.png" />
+<img alt="../_images/COURS_RAPPEL_9_7.png" src="../_images/COURS_RAPPEL_9_7.png" />
+<img alt="../_images/COURS_RAPPEL_9_8.png" src="../_images/COURS_RAPPEL_9_8.png" />
 </div>
 </div>
 </div>
@@ -645,8 +663,8 @@ $<span class="math notranslate nohighlight">\( \frac{df}{dx}(x)=\lim_{\Delta x\r
 <div class="section" id="exemple-d-equation-du-mouvement">
 <h4>exemple d’équation du mouvement:<a class="headerlink" href="#exemple-d-equation-du-mouvement" title="Lien permanent vers ce titre">¶</a></h4>
 <p>pour un corps de masse <span class="math notranslate nohighlight">\(m\)</span> constante se déplaçant dans un plan, dont la position est donnée dans un référentiel cartésien par <span class="math notranslate nohighlight">\(P(x(t),y(t))\)</span>, cette loi conduit au système de deux équations différentielles d’ordre 2:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5566b439-3747-46fd-b51c-437b2e5ef082">
-<span class="eqno">(1)<a class="headerlink" href="#equation-5566b439-3747-46fd-b51c-437b2e5ef082" title="Lien permanent vers cette équation">¶</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-8ab05592-7976-4abc-a92f-d9bd4b1d0275">
+<span class="eqno">(1)<a class="headerlink" href="#equation-8ab05592-7976-4abc-a92f-d9bd4b1d0275" title="Lien permanent vers cette équation">¶</a></span>\[\begin{eqnarray}
 m\frac{d^2 x}{dt^2} &amp;=&amp; \sum_i F_i^x \mbox{ avec }F_i^x \mbox{ composante de } \overrightarrow{F_i} \mbox{ suivant x}\\
 m\frac{d^2 y}{dt^2} &amp;=&amp; \sum_i F_i^y \mbox{ avec }F_i^y \mbox{ composante de } \overrightarrow{F_i} \mbox{ suivant y}
 \end{eqnarray}\]</div>
@@ -717,7 +735,7 @@ E_t = \frac{1}{2} m v^2 + \sum_j U_j = cste
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Font family [&#39;xkcd&#39;, &#39;xkcd Script&#39;, &#39;Humor Sans&#39;, &#39;Comic Sans MS&#39;, &#39;StayPuft&#39;] not found. Falling back to DejaVu Sans.
 </pre></div>
 </div>
-<img alt="../_images/COURS_RAPPEL_16_2.png" src="../_images/COURS_RAPPEL_16_2.png" />
+<img alt="../_images/COURS_RAPPEL_15_2.png" src="../_images/COURS_RAPPEL_15_2.png" />
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 432x288 with 0 Axes&gt;
 </pre></div>
 </div>
@@ -725,14 +743,14 @@ E_t = \frac{1}{2} m v^2 + \sum_j U_j = cste
 </div>
 <div class="section" id="equations-du-mouvement">
 <h3>Équations du mouvement<a class="headerlink" href="#equations-du-mouvement" title="Lien permanent vers ce titre">¶</a></h3>
-<div class="amsmath math notranslate nohighlight" id="equation-a1bda1b4-be52-4930-86e9-5b0d31abf5a7">
-<span class="eqno">(2)<a class="headerlink" href="#equation-a1bda1b4-be52-4930-86e9-5b0d31abf5a7" title="Lien permanent vers cette équation">¶</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-e37ff92e-6c1c-43eb-83be-8dd75d9fe0d8">
+<span class="eqno">(2)<a class="headerlink" href="#equation-e37ff92e-6c1c-43eb-83be-8dd75d9fe0d8" title="Lien permanent vers cette équation">¶</a></span>\[\begin{eqnarray}
 m\frac{d^2 x}{dt^2} &amp;=  0   &amp;\mbox{ avec  } x(0)=x_0 , \frac{dx}{dt}(0)=u_0\\
 m\frac{d^2 z}{dt^2} &amp;= -m g &amp;\mbox{ avec  } z(0)=z_0 , \frac{dz}{dt}(0)=w_0
 \end{eqnarray}\]</div>
 <p>La solution est parabolique et s’écrit:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-16fe81b9-1bc4-49cd-bc20-8e7fe7d2a6b3">
-<span class="eqno">(3)<a class="headerlink" href="#equation-16fe81b9-1bc4-49cd-bc20-8e7fe7d2a6b3" title="Lien permanent vers cette équation">¶</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-10a1c9be-e302-4704-8e7b-5578b239de80">
+<span class="eqno">(3)<a class="headerlink" href="#equation-10a1c9be-e302-4704-8e7b-5578b239de80" title="Lien permanent vers cette équation">¶</a></span>\[\begin{eqnarray}
 x(t) &amp;=&amp; x_0 + u_0 t \\
 z(t) &amp;=&amp; z_0 + w_0 t - \frac{1}{2} g t^2
 \end{eqnarray}\]</div>
@@ -756,10 +774,10 @@ z(t) &amp;=&amp; z_0 + w_0 t - \frac{1}{2} g t^2
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>trajectoire balistique U0= 10.0  alpha= 1.1780972450961724
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.animation.FuncAnimation at 0x7ff6b437ec10&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.animation.FuncAnimation at 0x7f9c2d47f640&gt;
 </pre></div>
 </div>
-<img alt="../_images/COURS_RAPPEL_18_2.png" src="../_images/COURS_RAPPEL_18_2.png" />
+<img alt="../_images/COURS_RAPPEL_17_2.png" src="../_images/COURS_RAPPEL_17_2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1397,7 +1415,7 @@ AAAAAAAALWlsc3QAAAAlqXRvbwAAAB1kYXRhAAAAAQAAAABMYXZmNTguMjkuMTAw
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/COURS_RAPPEL_21_0.png" src="../_images/COURS_RAPPEL_21_0.png" />
+<img alt="../_images/COURS_RAPPEL_20_0.png" src="../_images/COURS_RAPPEL_20_0.png" />
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 432x288 with 0 Axes&gt;
 </pre></div>
 </div>
@@ -1434,10 +1452,10 @@ AAAAAAAALWlsc3QAAAAlqXRvbwAAAB1kYXRhAAAAAQAAAABMYXZmNTguMjkuMTAw
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>trajectoire d&#39;un satellite omega= 1.0  r= 1.0
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.animation.FuncAnimation at 0x7ff6b42e9280&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.animation.FuncAnimation at 0x7f9c27706670&gt;
 </pre></div>
 </div>
-<img alt="../_images/COURS_RAPPEL_23_2.png" src="../_images/COURS_RAPPEL_23_2.png" />
+<img alt="../_images/COURS_RAPPEL_22_2.png" src="../_images/COURS_RAPPEL_22_2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2504,7 +2522,7 @@ $<span class="math notranslate nohighlight">\( \overrightarrow{OP} =
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/COURS_RAPPEL_26_0.png" src="../_images/COURS_RAPPEL_26_0.png" />
+<img alt="../_images/COURS_RAPPEL_25_0.png" src="../_images/COURS_RAPPEL_25_0.png" />
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 432x288 with 0 Axes&gt;
 </pre></div>
 </div>
@@ -2549,10 +2567,10 @@ s’écrit:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.animation.FuncAnimation at 0x7ff69e5aa160&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.animation.FuncAnimation at 0x7f9c163643a0&gt;
 </pre></div>
 </div>
-<img alt="../_images/COURS_RAPPEL_28_1.png" src="../_images/COURS_RAPPEL_28_1.png" />
+<img alt="../_images/COURS_RAPPEL_27_1.png" src="../_images/COURS_RAPPEL_27_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -4089,11 +4107,11 @@ bHN0AAAAJal0b28AAAAdZGF0YQAAAAEAAAAATGF2ZjU4LjI5LjEwMA==
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../CHAP5/COURS_FONCTION.html" title="précédent page">
+    <a class='left-prev' id="prev-link" href="../CHAP6/EXERCICES_TABLEAU.html" title="précédent page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">précédent</p>
-            <p class="prev-next-title"><span class="section-number">5. </span>Fonctions et procédures</p>
+            <p class="prev-next-title"><span class="section-number">6.7. </span>Correction des exercices</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../credits.html" title="suivant page">
@@ -4112,7 +4130,7 @@ bHN0AAAAJal0b28AAAAdZGF0YQAAAAEAAAAATGF2ZjU4LjI5LjEwMA==
     
       Par Marc BUFFAT, dpt mécanique, Lyon 1<br/>
     
-        &copy; droits d'auteur 2021.<br/>
+        &copy; droits d'auteur 2022.<br/>
   </p>
 </footer>
 </main>

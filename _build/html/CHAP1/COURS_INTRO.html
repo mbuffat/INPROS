@@ -54,6 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="canonical" href="https://perso.univ-lyon1.fr/marc.buffat/CHAP1/COURS_INTRO.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
     <link rel="next" title="2. Fonctionnement d’un ordinateur" href="../CHAP2/COURS_ORDI.html" />
@@ -144,6 +145,23 @@ const thebe_selector_output = ".output, .cell_output"
    5. Fonctions et procédures
   </a>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../CHAP6/COURS_TABLEAU.html">
+   6. Les tableaux (vecteur, matrice)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../CHAP6/EXERCICES_TABLEAU.html">
+     6.7. Correction des exercices
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -167,7 +185,7 @@ const thebe_selector_output = ".output, .cell_output"
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+  Crée par <a href="https://perso.univ-lyon1.fr/marc.buffat/">Marc BUFFAT</a><br> avec <a href="https://jupyterbook.org">Jupyter Book</a>
 </div>
 
 </div>
@@ -450,11 +468,11 @@ const thebe_selector_output = ".output, .cell_output"
               <div>
                 
   <a class="reference internal image-reference" href="../_images/logo_trans.png"><img alt="LyonHPC" src="../_images/logo_trans.png" style="width: 180px;" /></a>
+<a class="reference internal image-reference" href="../_images/python-logo1.gif"><img alt="LyonHPC" src="../_images/python-logo1.gif" style="width: 200px;" /></a>
 <div class="tex2jax_ignore mathjax_ignore section" id="introduction">
 <h1><span class="section-number">1. </span>Introduction<a class="headerlink" href="#introduction" title="Lien permanent vers ce titre">¶</a></h1>
 <a class="reference internal image-reference" href="../_images/cloud_intro.png"><img alt="sommaire" src="../_images/cloud_intro.png" style="width: 300px;" /></a>
-<h1>Contenu du chapitre<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Format-du-cours" data-toc-modified-id="Format-du-cours-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Format du cours</a></span></li><li><span><a href="#Que-peut-on-faire-avec-un-ordinateur-?" data-toc-modified-id="Que-peut-on-faire-avec-un-ordinateur-?-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Que peut-on faire avec un ordinateur ?</a></span></li><li><span><a href="#Utilité-d'un-ordinateur-en-Science?" data-toc-modified-id="Utilité-d'un-ordinateur-en-Science?-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Utilité d'un ordinateur en Science?</a></span><ul class="toc-item"><li><span><a href="#Modélisation-numérique" data-toc-modified-id="Modélisation-numérique-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Modélisation numérique</a></span></li><li><span><a href="#Méthode" data-toc-modified-id="Méthode-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Méthode</a></span></li><li><span><a href="#Programmation-sous-Python" data-toc-modified-id="Programmation-sous-Python-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>Programmation sous Python</a></span></li></ul></li><li><span><a href="#Algorithme" data-toc-modified-id="Algorithme-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Algorithme</a></span><ul class="toc-item"><li><span><a href="#Quelques-repères-historiques" data-toc-modified-id="Quelques-repères-historiques-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span><a href="#ici031">Quelques repères historiques</a><a id="ici031"></a></a></span></li></ul></li><li><span><a href="#Python-langage-de-programmation-scientifique" data-toc-modified-id="Python-langage-de-programmation-scientifique-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Python langage de programmation scientifique</a></span><ul class="toc-item"><li><span><a href="#Historique" data-toc-modified-id="Historique-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>Historique</a></span></li><li><span><a href="#Propriétés" data-toc-modified-id="Propriétés-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>Propriétés</a></span></li><li><span><a href="#Le-Zen-de-Python" data-toc-modified-id="Le-Zen-de-Python-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>Le Zen de Python</a></span></li><li><span><a href="#traduction-de-Cécile-Trevian-et-Bob-Cordeau" data-toc-modified-id="traduction-de-Cécile-Trevian-et-Bob-Cordeau-5.4"><span class="toc-item-num">5.4&nbsp;&nbsp;</span>traduction de Cécile Trevian et <a href="http://perso.limsi.fr/pointal/python:courspython3" target="_blank">Bob Cordeau</a></a></span></li></ul></li><li><span><a href="#Objectifs-du-cours" data-toc-modified-id="Objectifs-du-cours-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Objectifs du cours</a></span></li><li><span><a href="#Fin-de-la-leçon" data-toc-modified-id="Fin-de-la-leçon-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>Fin de la leçon</a></span></li></ul></div><div class="cell docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -516,8 +534,8 @@ un ordinateur peut traiter des masses de données en exécutant des milliards d�
 <p>Les ordinateurs sont cependant extrêmement utiles.
 Mais toute l’intelligence est dans le logiciel, d’où <em>l’importance de connaître les principes de la programmation</em> pour maîtriser l’outil informatique, particulièrement en science.</p>
 <p>Les ordinateurs actuels ne sont pas les ordinateurs <strong>HAL 9000</strong> (Heuristically programmed ALgorithmic computer), imaginés par de Stanley Kubrick dans <em>l’odyssée de l’espace</em></p>
-<a class="reference internal image-reference" href="../_images/odysse1.jpeg"><img alt="odyssée de l'espace" src="../_images/odysse1.jpeg" style="width: 350px;" /></a>
-<a class="reference internal image-reference" href="../_images/odysse2.png"><img alt="odyssée de l'espace" src="../_images/odysse2.png" style="width: 300px;" /></a>
+<a class="reference internal image-reference" href="../_images/odysse1.jpeg"><img alt="odyssée de l'espace" src="../_images/odysse1.jpeg" style="width: 250px;" /></a>
+<a class="reference internal image-reference" href="../_images/odysse2.png"><img alt="odyssée de l'espace" src="../_images/odysse2.png" style="width: 200px;" /></a>
 </div>
 <div class="section" id="utilite-d-un-ordinateur-en-science">
 <h2><span class="section-number">1.3. </span>Utilité d’un ordinateur en Science?<a class="headerlink" href="#utilite-d-un-ordinateur-en-science" title="Lien permanent vers ce titre">¶</a></h2>
@@ -587,7 +605,7 @@ Fin Pour
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/COURS_INTRO_10_0.png" src="../_images/COURS_INTRO_10_0.png" />
+<img alt="../_images/COURS_INTRO_9_0.png" src="../_images/COURS_INTRO_9_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1515,7 +1533,7 @@ Namespaces are one honking great idea -- let&#39;s do more of those!
     
       Par Marc BUFFAT, dpt mécanique, Lyon 1<br/>
     
-        &copy; droits d'auteur 2021.<br/>
+        &copy; droits d'auteur 2022.<br/>
   </p>
 </footer>
 </main>

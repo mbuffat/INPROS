@@ -17,6 +17,10 @@ parts:
     sections:
     - file: CHAP4/EXERCICES_LOOP
   - file: CHAP5/COURS_FONCTION
+  - file: CHAP6/COURS_TABLEAU
+    sections:
+    - file: CHAP6/EXERCICES_TABLEAU
+
 - caption: Annexes
   chapters:
   - file: RAPPEL/COURS_RAPPEL

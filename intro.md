@@ -22,7 +22,9 @@ par [Marc BUFFAT](https://perso.univ-lyon1.fr/marc.buffat)
 Ce cours regroupe des notebooks IPython, développé pour mes enseignements 
 au [département mécanique](https://fst-mecanique.univ-lyon1.fr) 
 à [l'université Lyon 1](https://www.univ-lyon1.fr) depuis plus d'une dizaine d'années, et 
-que utilisé pour apprendre aux étudiants les bases de la programmation scientifique avec Python.
+que j'utilise pour apprendre aux étudiants les bases de la programmation scientifique avec Python.
+De courtes vidéos sont incluses dans les notebooks, pour aider à une meilleur compréhension du cours, ainsi que
+de nombreux exemples applicatifs en particulier dans le domaine de la mécanique.
 
 
 Les notebooks ipython permettent l'utilisation d'une plateforme web [Jupyter notebook](https://jupyter.org)

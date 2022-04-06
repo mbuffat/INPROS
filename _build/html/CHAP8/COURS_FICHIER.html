@@ -1,0 +1,1161 @@
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>8. Gestion de fichiers et E/S &#8212; INPROS INtroduction à la PROgrammation Scientifique en Python</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="canonical" href="https://perso.univ-lyon1.fr/marc.buffat/CHAP8/COURS_FICHIER.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="Rappel de maths et physique" href="../RAPPEL/COURS_RAPPEL.html" />
+    <link rel="prev" title="7. Tracé avec matplotlib" href="../CHAP7/COURS_PLOT.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="fr">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">INPROS INtroduction à la PROgrammation Scientifique en Python</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Rechercher dans ce livre ..." aria-label="Rechercher dans ce livre ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Introduction à la PROgrammation Scientifique
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  INPROS
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP1/COURS_INTRO.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP2/COURS_ORDI.html">
+   2. Fonctionnement d’un ordinateur
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP3/COURS_VAR.html">
+   3. Variable et éléments de base
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../CHAP4/COURS_LOOP.html">
+   4. Structures de contrôle
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../CHAP4/EXERCICES_LOOP.html">
+     4.10. Exercices
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP5/COURS_FONCTION.html">
+   5. Fonctions et procédures
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../CHAP6/COURS_TABLEAU.html">
+   6. Les tableaux (vecteur, matrice)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../CHAP6/EXERCICES_TABLEAU.html">
+     6.8. Correction des exercices
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP7/COURS_PLOT.html">
+   7. Tracé avec matplotlib
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   8. Gestion de fichiers et E/S
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Annexes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../RAPPEL/COURS_RAPPEL.html">
+   Rappel de maths et physique
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../credits.html">
+   Crédits
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Crée par <a href="https://perso.univ-lyon1.fr/marc.buffat/">Marc BUFFAT</a><br> avec <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Basculer la navigation" aria-controls="site-navigation"
+                title="Basculer la navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Téléchargez cette page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/CHAP8/COURS_FICHIER.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Télécharger le fichier source" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimer au format PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/mbuffat/INPROS"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Dépôt source"><i
+                    class="fab fa-github"></i>dépôt</button></a>
+        <a class="issues-button"
+            href="https://github.com/mbuffat/INPROS/issues/new?title=Issue%20on%20page%20%2FCHAP8/COURS_FICHIER.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Ouvrez un problème"><i class="fas fa-lightbulb"></i>signaler un problème</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Mode plein écran"
+        title="Mode plein écran"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contenu
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fichier-informatique">
+   8.1. Fichier informatique
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fichier-de-programme-ou-script-sous-python">
+   8.2. Fichier de programme (ou script) sous Python
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemple-trace-de-courbes-de-lissajous">
+     8.2.1. Exemple: trace de courbes de Lissajous
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#fichier-lissajous-py">
+       8.2.1.1. fichier lissajous.py
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#execution-du-programme">
+       8.2.1.2. exécution du programme
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#utilisation-en-tant-que-module-ou-librairie">
+       8.2.1.3. utilisation en tant que module (ou librairie)
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fichier-de-donnees-sous-python">
+   8.3. Fichier de données sous Python
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fonction-de-lecture-ecriture">
+     8.3.1. fonction de lecture/écriture
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemple-ecriture-de-donnees">
+     8.3.2. Exemple: écriture de données
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#programme-python">
+       8.3.2.1. Programme Python
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemple-lecture-de-donnees">
+     8.3.3. Exemple: lecture de données
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lecture-d-un-fichier-ligne-par-ligne">
+     8.3.4. Lecture d’un fichier ligne par ligne
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ecriture-format-csv">
+     8.3.5. Ecriture format CSV
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#entree-sortie-en-python">
+   8.4. Entrée Sortie en python
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lecture-au-clavier">
+     8.4.1. Lecture au clavier
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ecriture-avec-formatage-mise-en-forme">
+     8.4.2. Écriture avec formatage (mise en forme)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#format-avec-python-3">
+     8.4.3. format avec python 3
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reference">
+   8.5. Référence
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#programme-python-lissajous">
+     8.5.1. Programme Python Lissajous
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fin-de-la-lecon">
+   8.6. FIN de la leçon
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Gestion de fichiers et E/S</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contenu </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fichier-informatique">
+   8.1. Fichier informatique
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fichier-de-programme-ou-script-sous-python">
+   8.2. Fichier de programme (ou script) sous Python
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemple-trace-de-courbes-de-lissajous">
+     8.2.1. Exemple: trace de courbes de Lissajous
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#fichier-lissajous-py">
+       8.2.1.1. fichier lissajous.py
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#execution-du-programme">
+       8.2.1.2. exécution du programme
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#utilisation-en-tant-que-module-ou-librairie">
+       8.2.1.3. utilisation en tant que module (ou librairie)
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fichier-de-donnees-sous-python">
+   8.3. Fichier de données sous Python
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fonction-de-lecture-ecriture">
+     8.3.1. fonction de lecture/écriture
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemple-ecriture-de-donnees">
+     8.3.2. Exemple: écriture de données
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#programme-python">
+       8.3.2.1. Programme Python
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemple-lecture-de-donnees">
+     8.3.3. Exemple: lecture de données
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lecture-d-un-fichier-ligne-par-ligne">
+     8.3.4. Lecture d’un fichier ligne par ligne
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ecriture-format-csv">
+     8.3.5. Ecriture format CSV
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#entree-sortie-en-python">
+   8.4. Entrée Sortie en python
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lecture-au-clavier">
+     8.4.1. Lecture au clavier
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ecriture-avec-formatage-mise-en-forme">
+     8.4.2. Écriture avec formatage (mise en forme)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#format-avec-python-3">
+     8.4.3. format avec python 3
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reference">
+   8.5. Référence
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#programme-python-lissajous">
+     8.5.1. Programme Python Lissajous
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fin-de-la-lecon">
+   8.6. FIN de la leçon
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <a class="reference internal image-reference" href="../_images/logo_trans8.png"><img alt="LyonHPC" src="../_images/logo_trans8.png" style="width: 180px;" /></a>
+<a class="reference internal image-reference" href="../_images/python-logo8.gif"><img alt="LyonHPC" src="../_images/python-logo8.gif" style="width: 200px;" /></a>
+<div class="tex2jax_ignore mathjax_ignore section" id="gestion-de-fichiers-et-e-s">
+<h1><span class="section-number">8. </span>Gestion de fichiers et E/S<a class="headerlink" href="#gestion-de-fichiers-et-e-s" title="Lien permanent vers ce titre">¶</a></h1>
+<a class="reference internal image-reference" href="../_images/python_file.png"><img alt="../_images/python_file.png" src="../_images/python_file.png" style="width: 300px;" /></a>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span><span class="p">,</span><span class="n">display</span><span class="p">,</span><span class="n">IFrame</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span><span class="p">,</span><span class="n">Markdown</span><span class="p">,</span><span class="n">Video</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="fichier-informatique">
+<h2><span class="section-number">8.1. </span>Fichier informatique<a class="headerlink" href="#fichier-informatique" title="Lien permanent vers ce titre">¶</a></h2>
+<p><strong>définition (Wikipédia)</strong>
+un fichier informatique est  une collection d’informations numériques (séquences d’octets) réunies sous un même nom, enregistrées sur un support de stockage tel qu’un disque dur, un CD-ROM, une clé USB …</p>
+<p>En vue de faciliter leur organisation, les fichiers sont disposés dans des systèmes de fichiers qui permettent de placer les fichiers dans des emplacements appelés répertoires ou dossiers eux-mêmes organisés selon le même principe de manière à former une hiérarchie arborescente</p>
+<p>Sur le système de l’ordinateur, un fichier est repéré par son nom avec éventuellement une extension et le répertoire dans lequel il se trouve.</p>
+<p>En calcul scientifique, on considère 2 types principaux de fichiers:</p>
+<ul class="simple">
+<li><p>des fichiers de <strong>programmes</strong> qui contiennent un code informatique exécutable par l’ordinateur, sous 2 formes principales:</p>
+<ul>
+<li><p>fichiers <strong>exécutables</strong> qui contiennent un code binaire directement exécutable par le processeur (extension <strong>.exe</strong> sous windows). Ces programmes ne sont pas modifiables et sont propre à l’ordinateur utilisé (programmes commerciaux ou propriétaires)</p></li>
+<li><p>fichiers <strong>sources</strong> qui contiennent le code source du programme dans un langage de programmation (extension <strong>.py</strong> pour les programmes Python). Ces programmes peuvent être modifiés et être exécuter sur n’importe quel ordinateur.</p></li>
+</ul>
+</li>
+<li><p>des fichiers de <strong>données</strong> qui contiennent des données (data) crées et manipulées par les programmes, sous 2 formes principales:</p>
+<ul>
+<li><p>des fichiers <strong>binaires</strong> qui contiennent l’information brute, utilisant le codage de l’ordinateur (le plus efficace pour le stockage)</p></li>
+<li><p>des fichiers <strong>textes</strong> qui contiennent les données écrites sous forme de lignes de texte (format le plus simple à manipuler)</p></li>
+</ul>
+</li>
+</ul>
+<p>Dans la suite on ne considérera que les fichiers programmes Python (extension .py) et des fichiers de données textes (extension .dat).</p>
+<p>Pour éviter des problèmes de compatibilités entre systèmes informatiques, on choisira des noms de fichiers sans caractères accentués, sans espace ni caractéres spéciaux (autre que <strong>.</strong> ou <strong>_</strong> ou <strong>-</strong> )</p>
+</div>
+<div class="section" id="fichier-de-programme-ou-script-sous-python">
+<h2><span class="section-number">8.2. </span>Fichier de programme (ou script) sous Python<a class="headerlink" href="#fichier-de-programme-ou-script-sous-python" title="Lien permanent vers ce titre">¶</a></h2>
+<p>un fichier contenant un programme Python a par convention une extension <strong>.py</strong>. Un simple éditeur de texte (notepad sous Windows) suffit pour créer et modifier un programme Python</p>
+<ul class="simple">
+<li><p><strong>gedit</strong> <a class="reference external" href="http://wiki.gnome.org/Apps/Gedit">« voir le site gedit »</a> un éditeur simple et efficace</p></li>
+<li><p><strong>vim</strong> et variante <a class="reference external" href="http://wiki.python.org/moin/Vim">« soir le site vim »</a> un éditeur de référence pour les programmeurs</p></li>
+<li><p><strong>spyder</strong> <a class="reference external" href="http://pythonhosted.org/spyder/">« voir le site spyder »</a> un environnement de développement Python à la matlab pour les applications scientifiques. <em>Sous Spyder, on utilisera plutôt la console Ipython pour exécuter les programmes, que la console par défaut qui utilise des conventions matlab différentes d’un interpréteur Python classique</em>.</p></li>
+</ul>
+<div class="section" id="exemple-trace-de-courbes-de-lissajous">
+<h3><span class="section-number">8.2.1. </span>Exemple: trace de courbes de Lissajous<a class="headerlink" href="#exemple-trace-de-courbes-de-lissajous" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Une courbe de Lissajous (d’après le physicien français <a class="reference external" href="http://fr.wikipedia.org/wiki/Jules_Lissajous%5D">« Jules Antoine Lissajous »</a>) est une courbe paramétrique du plan dont les composantes sont des fonctions périodiques du paramètre (en générale le temps en physique, et que l’on peut observer avec un oscilloscope).</p>
+<p>Le programme Python suivant <strong><a class="reference external" href="http://lissajous.py">lissajous.py</a></strong> trace les courbes de Lissajous suivantes</p>
+<div class="amsmath math notranslate nohighlight" id="equation-7b96cc05-fc74-49d0-88d7-5a2cb9578551">
+<span class="eqno">(8.1)<a class="headerlink" href="#equation-7b96cc05-fc74-49d0-88d7-5a2cb9578551" title="Lien permanent vers cette équation">¶</a></span>\[\begin{eqnarray} 
+x(t) &amp;=&amp;  \sin{(\frac{2\pi}{p} t)}\\
+y(t) &amp;=&amp;  \sin{(\frac{2\pi}{q} t + \phi)}
+\end{eqnarray}\]</div>
+<p>Le rapport <span class="math notranslate nohighlight">\(n=\frac{p}{q}\)</span> est le paramètre de la courbe et <span class="math notranslate nohighlight">\(\phi\)</span> le déphassage. Le temps <span class="math notranslate nohighlight">\(T\)</span> de parcours de la courbe est le plus petit commun multiple de <span class="math notranslate nohighlight">\(p\)</span> et <span class="math notranslate nohighlight">\(q\)</span>:
+$<span class="math notranslate nohighlight">\(T=pcm(p,q)=\frac{pq}{pgcd(p,q)}\)</span>$</p>
+<div class="section" id="fichier-lissajous-py">
+<h4><span class="section-number">8.2.1.1. </span>fichier <a class="reference external" href="http://lissajous.py">lissajous.py</a><a class="headerlink" href="#fichier-lissajous-py" title="Lien permanent vers ce titre">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span> --err /dev/null
+ls -al lissajous.py
+cat lissajous.py
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-rwxrwxr-x 1 buffat buffat 1659 janv. 27  2018 lissajous.py
+#! /usr/bin/env python
+# -*- coding: utf-8 -*-
+&quot;&quot;&quot;
+    tracer de courbe de Lissajous
+    d&#39;après https://sites.google.com/site/sdcoding/python/physics-with-python
+    @author: marc buffat
+&quot;&quot;&quot;
+import numpy as np
+import matplotlib.pyplot as plt
+
+def pgcd(a, b):
+    &quot;&quot;&quot;calcul du pgcd de a et b par l&#39;algorithme d&#39;Euclide.&quot;&quot;&quot;
+    while b:
+        a, b = b, a % b
+    return a
+
+def lcm(a, b):
+    &quot;&quot;&quot;calcul du plus petit commun multiple.&quot;&quot;&quot;
+    return a * b // pgcd(a, b)
+
+def Lissajous(p,q,phi,N):
+    &quot;&quot;&quot; calcul de N points d&#39;une courbe de Lissajous&quot;&quot;&quot;
+    omega1 = 2*np.pi/p
+    omega2 = 2*np.pi/q
+    # temps d&#39;étude
+    T = p*q/pgcd(p,q)
+    t = np.linspace(0., T, N)
+    # equations parametriques
+    x = np.sin(omega1*t)
+    y = np.sin(omega2*t+phi)
+    return t,x,y
+
+def LissajousFigure(p,q,phi):
+    &quot;&quot;&quot; trace de courbe de lissajous
+        p,q : parametres entiers des courbes x(t),y(t)
+        phi: déphasage
+    &quot;&quot;&quot;
+    # pulsation des 2 courbes
+    om1 = 2*np.pi/p
+    om2 = 2*np.pi/q
+    # temps d&#39;étude
+    T = lcm(p,q)
+    t = np.arange(0., T, T/1000.0)
+    # equations parametriques
+    x = np.sin(om1*t)
+    y = np.sin(om2*t+phi)
+    # tracer
+    plt.plot(x, y, linewidth=2)
+    plt.title(&quot;p=%d q=%d&quot;%(p,q))
+    plt.xlabel(&quot;x(t)&quot;)
+    plt.ylabel(&quot;y(t)&quot;)
+    plt.axis([-1.,1.,-1.,1.])
+    plt.axis(&#39;equal&#39;)
+    return
+# programme principal du module
+if __name__ == &quot;__main__&quot;:
+    # tracer de 3 courbes de Lissajous
+    plt.figure(figsize=(12,6))
+    plt.subplot(131)
+    LissajousFigure(1,2,np.pi/2)
+    plt.subplot(132)
+    LissajousFigure(3,2,np.pi/2)
+    plt.subplot(133)
+    LissajousFigure(5,4,np.pi/2)
+    plt.savefig(&#39;lissajous.png&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="execution-du-programme">
+<h4><span class="section-number">8.2.1.2. </span>exécution du programme<a class="headerlink" href="#execution-du-programme" title="Lien permanent vers ce titre">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span> --err /dev/null
+echo &quot;execution avec interpreteur python&quot;
+python lissajous.py
+ls -al lissajous.png
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>execution avec interpreteur python
+-rw-rw-r-- 1 buffat buffat 66833 avril  6 23:08 lissajous.png
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span> --err /dev/null
+echo &quot;execution automatique&quot;
+chmod +x lissajous.py
+./lissajous.py
+ls -al lissajous.png
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>execution automatique
+-rw-rw-r-- 1 buffat buffat 66833 avril  6 23:08 lissajous.png
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># execution dans une cellule</span>
+<span class="o">%</span><span class="k">run</span> lissajous.py
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="utilisation-en-tant-que-module-ou-librairie">
+<h4><span class="section-number">8.2.1.3. </span>utilisation en tant que module (ou librairie)<a class="headerlink" href="#utilisation-en-tant-que-module-ou-librairie" title="Lien permanent vers ce titre">¶</a></h4>
+<p><strong>module</strong>  fichier contenant des fonctions et des définitions en python (bibliothèque)</p>
+<p><strong>nom du module</strong> nom du fichier sans l’extension .py</p>
+<p><strong>utilisation</strong> du module mon_module.py</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>import mon_module
+import mon_module as mn
+from mom_module import ma_fonction
+from mon_module import *
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">lissajous</span> <span class="kn">import</span> <span class="n">pgcd</span><span class="p">,</span><span class="n">LissajousFigure</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pgcd</span><span class="p">(</span><span class="mi">21</span><span class="p">,</span><span class="mi">9</span><span class="p">))</span>
+<span class="n">LissajousFigure</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>rem</strong> si votre bibliothèque n’est pas dans le répertoire courant, il faudra
+alors spécifier son chemin d’accès (path) (voir documentation Python)</p>
+</div>
+</div>
+</div>
+<div class="section" id="fichier-de-donnees-sous-python">
+<h2><span class="section-number">8.3. </span>Fichier de données sous Python<a class="headerlink" href="#fichier-de-donnees-sous-python" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Comme dans la pluspart des langages informatiques, lire ou écrire dans un fichier, on va associer à un fichier (à son nom) une variable informatique de type <strong>file</strong>, qui posséde des fonctions (ou méthodes) permettant de lire ou écrire des données dans le fichier.</p>
+<div class="section" id="fonction-de-lecture-ecriture">
+<h3><span class="section-number">8.3.1. </span>fonction de lecture/écriture<a class="headerlink" href="#fonction-de-lecture-ecriture" title="Lien permanent vers ce titre">¶</a></h3>
+<ul class="simple">
+<li><p>ouverture d’un fichier <em>mon_fichier.dat</em> en lecture:
+f=open(« nom_fichier.dat »,”r”)</p></li>
+<li><p>ou en écriture:
+f=open(« nom_fichier.dat »,”w”)</p></li>
+<li><p>lecture / ecriture (caractères)
+f.read(n) ou f.readline()
+f.write(chaine)</p></li>
+<li><p>lecture / écriture de tableaux (numpy)
+A=loadtxt(file (ou nom de fichier))
+savetxt(file (ou nom de fichier), A)</p></li>
+<li><p>fermeture du fichier
+f.close()</p></li>
+</ul>
+</div>
+<div class="section" id="exemple-ecriture-de-donnees">
+<h3><span class="section-number">8.3.2. </span>Exemple: écriture de données<a class="headerlink" href="#exemple-ecriture-de-donnees" title="Lien permanent vers ce titre">¶</a></h3>
+<p>écriture sur fichiers de <span class="math notranslate nohighlight">\(n\)</span>  points d’une courbe de Lissajous avec le format suivant</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># ligne de commentaire
+# n
+t0 x0 y0
+.......
+ti xi yi
+.......
+tn-1 xn-1 yn-1
+</pre></div>
+</div>
+<div class="section" id="programme-python">
+<h4><span class="section-number">8.3.2.1. </span>Programme Python<a class="headerlink" href="#programme-python" title="Lien permanent vers ce titre">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">lissajous</span> <span class="kn">import</span> <span class="n">Lissajous</span>
+<span class="c1"># calcul des points</span>
+<span class="n">p</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">q</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span> 
+<span class="n">N</span><span class="o">=</span><span class="mi">50</span>
+<span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">Lissajous</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">q</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
+<span class="c1"># mise sur fichier</span>
+<span class="n">F</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;lissajous.dat&quot;</span><span class="p">,</span><span class="s2">&quot;wb&quot;</span><span class="p">)</span>
+<span class="n">F</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;# courbe de lissajous avec p=</span><span class="si">%d</span><span class="s2"> q=</span><span class="si">%d</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">q</span><span class="p">)))</span>
+<span class="n">F</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;# </span><span class="si">%d</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">N</span><span class="p">)))</span>
+<span class="n">np</span><span class="o">.</span><span class="n">savetxt</span><span class="p">(</span><span class="n">F</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">([</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">]))</span>
+<span class="n">F</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span> --err /dev/null
+ls -al lissajous.dat
+cat lissajous.dat
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-rw-rw-r-- 1 buffat buffat 3839 avril  6 23:16 lissajous.dat
+# courbe de lissajous avec p=1 q=2
+# 50
+0.000000000000000000e+00 0.000000000000000000e+00 1.000000000000000000e+00
+4.081632653061224164e-02 2.536545839095073474e-01 9.917900138232461638e-01
+8.163265306122448328e-02 4.907175520039378513e-01 9.672948630390294511e-01
+1.224489795918367319e-01 6.956825506034863826e-01 9.269167573460217469e-01
+1.632653061224489666e-01 8.551427630053460849e-01 8.713187041233895203e-01
+2.040816326530612013e-01 9.586678530366605777e-01 8.014136218679566159e-01
+2.448979591836734637e-01 9.994862162006878936e-01 7.183493500977276014e-01
+2.857142857142856984e-01 9.749279121818236193e-01 6.234898018587335944e-01
+3.265306122448979331e-01 8.865993063730001067e-01 5.183925683105251592e-01
+3.673469387755101678e-01 7.402779970753157190e-01 4.047833431223940570e-01
+4.081632653061224025e-01 5.455349012105490392e-01 2.845275866310327251e-01
+4.489795918367346372e-01 3.151082180236212671e-01 1.595998950333795963e-01
+4.897959183673469274e-01 6.407021998071323055e-02 3.205157757165516541e-02
+5.306122448979591066e-01 -1.911586287013718743e-01 -9.602302590768126145e-02
+5.714285714285713969e-01 -4.338837391175580094e-01 -2.225209339563142819e-01
+6.122448979591835760e-01 -6.482283953077878635e-01 -3.453650544213070495e-01
+6.530612244897958663e-01 -8.201722545969556410e-01 -4.625382902408350372e-01
+6.938775510204081565e-01 -9.384684220497602203e-01 -5.721166601221693293e-01
+7.346938775510203357e-01 -9.953791129491981193e-01 -6.723008902613164528e-01
+7.755102040816326259e-01 -9.871817834144501758e-01 -7.614459583691344235e-01
+8.163265306122448051e-01 -9.144126230158128310e-01 -8.380881048918403797e-01
+8.571428571428570953e-01 -7.818314824680299147e-01 -9.009688679024190350e-01
+8.979591836734692745e-01 -5.981105304912169851e-01 -9.490557470106684157e-01
+9.387755102040815647e-01 -3.752670048793745883e-01 -9.815591569910653291e-01
+9.795918367346938549e-01 -1.278771616845066350e-01 -9.979453927503363353e-01
+1.020408163265306145e+00 1.278771616845061354e-01 -9.979453927503363353e-01
+1.061224489795918213e+00 3.752670048793733115e-01 -9.815591569910655512e-01
+1.102040816326530503e+00 5.981105304912150977e-01 -9.490557470106688598e-01
+1.142857142857142794e+00 7.818314824680295816e-01 -9.009688679024192570e-01
+1.183673469387755084e+00 9.144126230158122759e-01 -8.380881048918410459e-01
+1.224489795918367152e+00 9.871817834144499537e-01 -7.614459583691352007e-01
+1.265306122448979442e+00 9.953791129491983414e-01 -6.723008902613174520e-01
+1.306122448979591733e+00 9.384684220497606644e-01 -5.721166601221699954e-01
+1.346938775510204023e+00 8.201722545969559741e-01 -4.625382902408353702e-01
+1.387755102040816313e+00 6.482283953077891958e-01 -3.453650544213082152e-01
+1.428571428571428381e+00 4.338837391175600633e-01 -2.225209339563155031e-01
+1.469387755102040671e+00 1.911586287013736507e-01 -9.602302590768251045e-02
+1.510204081632652962e+00 -6.407021998071230073e-02 3.205157757165480459e-02
+1.551020408163265252e+00 -3.151082180236208230e-01 1.595998950333792354e-01
+1.591836734693877320e+00 -5.455349012105463746e-01 2.845275866310311152e-01
+1.632653061224489610e+00 -7.402779970753142758e-01 4.047833431223928913e-01
+1.673469387755101900e+00 -8.865993063729995516e-01 5.183925683105244930e-01
+1.714285714285714191e+00 -9.749279121818235083e-01 6.234898018587333723e-01
+1.755102040816326481e+00 -9.994862162006878936e-01 7.183493500977270463e-01
+1.795918367346938549e+00 -9.586678530366613549e-01 8.014136218679558388e-01
+1.836734693877550839e+00 -8.551427630053470841e-01 8.713187041233888541e-01
+1.877551020408163129e+00 -6.956825506034870488e-01 9.269167573460215248e-01
+1.918367346938775420e+00 -4.907175520039380734e-01 9.672948630390293401e-01
+1.959183673469387710e+00 -2.536545839095085686e-01 9.917900138232460527e-01
+2.000000000000000000e+00 -4.898587196589412829e-16 1.000000000000000000e+00
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exemple-lecture-de-donnees">
+<h3><span class="section-number">8.3.3. </span>Exemple: lecture de données<a class="headerlink" href="#exemple-lecture-de-donnees" title="Lien permanent vers ce titre">¶</a></h3>
+<p>lecture des données précédentes et tracer de la courbe</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">A</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s2">&quot;lissajous.dat&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;lecture des données taille=&quot;</span><span class="p">,</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">x</span><span class="o">=</span><span class="n">A</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">y</span><span class="o">=</span><span class="n">A</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span>
+<span class="c1"># tracer</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>lecture des données taille= (50, 3)
+</pre></div>
+</div>
+<img alt="../_images/COURS_FICHIER_19_1.png" src="../_images/COURS_FICHIER_19_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="lecture-d-un-fichier-ligne-par-ligne">
+<h3><span class="section-number">8.3.4. </span>Lecture d’un fichier ligne par ligne<a class="headerlink" href="#lecture-d-un-fichier-ligne-par-ligne" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">F</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;lissajous.dat&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="n">nlines</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">nval</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">F</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;#&quot;</span> <span class="p">:</span>
+        <span class="n">nval</span> <span class="o">=</span> <span class="n">nval</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">nlines</span> <span class="o">=</span> <span class="n">nlines</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">F</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;nbre de lignes lues =&quot;</span><span class="p">,</span><span class="n">nlines</span><span class="p">,</span><span class="s2">&quot; nbre de valeurs =&quot;</span><span class="p">,</span><span class="n">nval</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nbre de lignes lues = 52  nbre de valeurs = 50
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ecriture-format-csv">
+<h3><span class="section-number">8.3.5. </span>Ecriture format CSV<a class="headerlink" href="#ecriture-format-csv" title="Lien permanent vers ce titre">¶</a></h3>
+<p>le format CSV (Comma-Separated Values) permet de partagé les données avec un tableur (localc, excel). Il suffit de délimiter les données avec une “<strong>,</strong>”.</p>
+<p><strong>Attention:</strong> <em>pour un tableur francisé, il faut lire le fichier avec l’option langue=US pour une conversion correcte des nombres réels. Python (comme beaucoup de langage informatique) utilise le point (cad la convention anglo-saxonne) et non la virgule pour représenter un nombre réel</em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">savetxt</span><span class="p">(</span><span class="s2">&quot;lissajous.csv&quot;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">([</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">]),</span><span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span> --err /dev/null
+ls -al lissajous.csv
+cat lissajous.csv
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-rw-rw-r-- 1 buffat buffat 3799 avril  6 23:16 lissajous.csv
+0.000000000000000000e+00,0.000000000000000000e+00,1.000000000000000000e+00
+4.081632653061224164e-02,2.536545839095073474e-01,9.917900138232461638e-01
+8.163265306122448328e-02,4.907175520039378513e-01,9.672948630390294511e-01
+1.224489795918367319e-01,6.956825506034863826e-01,9.269167573460217469e-01
+1.632653061224489666e-01,8.551427630053460849e-01,8.713187041233895203e-01
+2.040816326530612013e-01,9.586678530366605777e-01,8.014136218679566159e-01
+2.448979591836734637e-01,9.994862162006878936e-01,7.183493500977276014e-01
+2.857142857142856984e-01,9.749279121818236193e-01,6.234898018587335944e-01
+3.265306122448979331e-01,8.865993063730001067e-01,5.183925683105251592e-01
+3.673469387755101678e-01,7.402779970753157190e-01,4.047833431223940570e-01
+4.081632653061224025e-01,5.455349012105490392e-01,2.845275866310327251e-01
+4.489795918367346372e-01,3.151082180236212671e-01,1.595998950333795963e-01
+4.897959183673469274e-01,6.407021998071323055e-02,3.205157757165516541e-02
+5.306122448979591066e-01,-1.911586287013718743e-01,-9.602302590768126145e-02
+5.714285714285713969e-01,-4.338837391175580094e-01,-2.225209339563142819e-01
+6.122448979591835760e-01,-6.482283953077878635e-01,-3.453650544213070495e-01
+6.530612244897958663e-01,-8.201722545969556410e-01,-4.625382902408350372e-01
+6.938775510204081565e-01,-9.384684220497602203e-01,-5.721166601221693293e-01
+7.346938775510203357e-01,-9.953791129491981193e-01,-6.723008902613164528e-01
+7.755102040816326259e-01,-9.871817834144501758e-01,-7.614459583691344235e-01
+8.163265306122448051e-01,-9.144126230158128310e-01,-8.380881048918403797e-01
+8.571428571428570953e-01,-7.818314824680299147e-01,-9.009688679024190350e-01
+8.979591836734692745e-01,-5.981105304912169851e-01,-9.490557470106684157e-01
+9.387755102040815647e-01,-3.752670048793745883e-01,-9.815591569910653291e-01
+9.795918367346938549e-01,-1.278771616845066350e-01,-9.979453927503363353e-01
+1.020408163265306145e+00,1.278771616845061354e-01,-9.979453927503363353e-01
+1.061224489795918213e+00,3.752670048793733115e-01,-9.815591569910655512e-01
+1.102040816326530503e+00,5.981105304912150977e-01,-9.490557470106688598e-01
+1.142857142857142794e+00,7.818314824680295816e-01,-9.009688679024192570e-01
+1.183673469387755084e+00,9.144126230158122759e-01,-8.380881048918410459e-01
+1.224489795918367152e+00,9.871817834144499537e-01,-7.614459583691352007e-01
+1.265306122448979442e+00,9.953791129491983414e-01,-6.723008902613174520e-01
+1.306122448979591733e+00,9.384684220497606644e-01,-5.721166601221699954e-01
+1.346938775510204023e+00,8.201722545969559741e-01,-4.625382902408353702e-01
+1.387755102040816313e+00,6.482283953077891958e-01,-3.453650544213082152e-01
+1.428571428571428381e+00,4.338837391175600633e-01,-2.225209339563155031e-01
+1.469387755102040671e+00,1.911586287013736507e-01,-9.602302590768251045e-02
+1.510204081632652962e+00,-6.407021998071230073e-02,3.205157757165480459e-02
+1.551020408163265252e+00,-3.151082180236208230e-01,1.595998950333792354e-01
+1.591836734693877320e+00,-5.455349012105463746e-01,2.845275866310311152e-01
+1.632653061224489610e+00,-7.402779970753142758e-01,4.047833431223928913e-01
+1.673469387755101900e+00,-8.865993063729995516e-01,5.183925683105244930e-01
+1.714285714285714191e+00,-9.749279121818235083e-01,6.234898018587333723e-01
+1.755102040816326481e+00,-9.994862162006878936e-01,7.183493500977270463e-01
+1.795918367346938549e+00,-9.586678530366613549e-01,8.014136218679558388e-01
+1.836734693877550839e+00,-8.551427630053470841e-01,8.713187041233888541e-01
+1.877551020408163129e+00,-6.956825506034870488e-01,9.269167573460215248e-01
+1.918367346938775420e+00,-4.907175520039380734e-01,9.672948630390293401e-01
+1.959183673469387710e+00,-2.536545839095085686e-01,9.917900138232460527e-01
+2.000000000000000000e+00,-4.898587196589412829e-16,1.000000000000000000e+00
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="entree-sortie-en-python">
+<h2><span class="section-number">8.4. </span>Entrée Sortie en python<a class="headerlink" href="#entree-sortie-en-python" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="lecture-au-clavier">
+<h3><span class="section-number">8.4.1. </span>Lecture au clavier<a class="headerlink" href="#lecture-au-clavier" title="Lien permanent vers ce titre">¶</a></h3>
+<p>lecture au clavier <strong>input</strong> d’une valeur sans conversion</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>val = input(&quot;message&quot;)
+</pre></div>
+</div>
+<p>ensuite on doit faire une conversion</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>val = int(input(&quot;entier =&quot;))
+print(val,type(val))
+chaine = input(&quot;chaine =&quot;)
+print(chaine,type(chaine))
+
+entier =1
+1 &lt;class &#39;int&#39;&gt;
+chaine =1
+1 &lt;class &#39;str&#39;&gt;    
+</pre></div>
+</div>
+</div>
+<div class="section" id="ecriture-avec-formatage-mise-en-forme">
+<h3><span class="section-number">8.4.2. </span>Écriture avec formatage (mise en forme)<a class="headerlink" href="#ecriture-avec-formatage-mise-en-forme" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>print(format%(val1,val2,..)
+</pre></div>
+</div>
+<p><strong>format</strong> est une chaîne de caractères contenant des champs <strong>%[n][t]</strong></p>
+<ul class="simple">
+<li><p>n = entier optionnel spécifiant la largueur (en colonnes) du champ</p></li>
+<li><p>t  spécifie le type du champ: <strong>d</strong>=entier (décimal), <strong>f</strong>=réel (float) , <strong>e</strong>=réel avec exposant, <strong>g</strong>=réel (format général),  <strong>s</strong>=chaîne (string)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span><span class="o">=</span><span class="mi">1425</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;i=</span><span class="si">%d</span><span class="s2"> i=</span><span class="si">%8d</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="p">))</span>
+<span class="n">x</span><span class="o">=</span><span class="mf">3242.627</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x=</span><span class="si">%15f</span><span class="s2"> x=</span><span class="si">%12.4e</span><span class="s2"> x=</span><span class="si">%g</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
+<span class="n">ch</span><span class="o">=</span><span class="s2">&quot;chaine&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ch1=</span><span class="si">%s</span><span class="s2"> ch2=</span><span class="si">%8s</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">ch</span><span class="p">,</span><span class="n">ch</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>i=1425 i=    1425
+x=    3242.627000 x=  3.2426e+03 x=3242.63
+ch1=chaine ch2=  chaine
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="format-avec-python-3">
+<h3><span class="section-number">8.4.3. </span>format avec python 3<a class="headerlink" href="#format-avec-python-3" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>string.format(var1,var2,..)
+</pre></div>
+</div>
+<p>où string est une chaine avec des {} pour spécifier la position des variables</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;i=</span><span class="si">{}</span><span class="s2">  x=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>i=1425  x=3242.627
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="reference">
+<h2><span class="section-number">8.5. </span>Référence<a class="headerlink" href="#reference" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="programme-python-lissajous">
+<h3><span class="section-number">8.5.1. </span>Programme Python Lissajous<a class="headerlink" href="#programme-python-lissajous" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">pgcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;calcul du pgcd de a et b par l&#39;algorithme d&#39;Euclide.&quot;&quot;&quot;</span>
+    <span class="k">while</span> <span class="n">b</span><span class="p">:</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span>
+    <span class="k">return</span> <span class="n">a</span>
+
+<span class="k">def</span> <span class="nf">Lissajous</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">q</span><span class="p">,</span><span class="n">phi</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; calcul de N points d&#39;une courbe de Lissajous&quot;&quot;&quot;</span>
+    <span class="n">omega1</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">p</span>
+    <span class="n">omega2</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">q</span>
+    <span class="c1"># temps d&#39;étude</span>
+    <span class="n">T</span> <span class="o">=</span> <span class="n">p</span><span class="o">*</span><span class="n">q</span><span class="o">/</span><span class="n">pgcd</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">q</span><span class="p">)</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+    <span class="c1"># equations parametriques</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">omega1</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">omega2</span><span class="o">*</span><span class="n">t</span><span class="o">+</span><span class="n">phi</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="fin-de-la-lecon">
+<h2><span class="section-number">8.6. </span>FIN de la leçon<a class="headerlink" href="#fin-de-la-lecon" title="Lien permanent vers ce titre">¶</a></h2>
+<a class="reference internal image-reference" href="../_images/python_file.png"><img alt="../_images/python_file.png" src="../_images/python_file.png" style="width: 300px;" /></a>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./CHAP8"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../CHAP7/COURS_PLOT.html" title="précédent page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">précédent</p>
+            <p class="prev-next-title"><span class="section-number">7. </span>Tracé avec matplotlib</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../RAPPEL/COURS_RAPPEL.html" title="suivant page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">suivant</p>
+        <p class="prev-next-title">Rappel de maths et physique</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      Par Marc BUFFAT, dpt mécanique, Lyon 1<br/>
+    
+        &copy; droits d'auteur 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

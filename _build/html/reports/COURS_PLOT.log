@@ -17,16 +17,18 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-print(P[2])
-print(P[3])
+```{attention} 
+Les vidéos utilisent un ancien interpréteur python 2.7, pour lequel `print` est un mot clé, 
+soit `print 'bonjour'`.
+Avec Python 3, `print` est une fonction et il faut donc utiliser des parenthèses, 
+soit `print('bonjour')` 
+```
 ------------------
 
-[0;31m---------------------------------------------------------------------------[0m
-[0;31mIndexError[0m                                Traceback (most recent call last)
-[0;32m<ipython-input-4-53bfb96ce013>[0m in [0;36m<module>[0;34m[0m
-[1;32m      1[0m [0mprint[0m[0;34m([0m[0mP[0m[0;34m[[0m[0;36m2[0m[0;34m][0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0;32m----> 2[0;31m [0mprint[0m[0;34m([0m[0mP[0m[0;34m[[0m[0;36m3[0m[0;34m][0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m
-[0;31mIndexError[0m: index 3 is out of bounds for axis 0 with size 3
-IndexError: index 3 is out of bounds for axis 0 with size 3
+[0;36m  File [0;32m"<ipython-input-7-d75cbc3a0e29>"[0;36m, line [0;32m1[0m
+[0;31m    ```{attention}[0m
+[0m    ^[0m
+[0;31mSyntaxError[0m[0;31m:[0m invalid syntax
+
+SyntaxError: invalid syntax (<ipython-input-7-d75cbc3a0e29>, line 1)
 

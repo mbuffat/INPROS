@@ -20,6 +20,8 @@ parts:
   - file: CHAP6/COURS_TABLEAU
     sections:
     - file: CHAP6/EXERCICES_TABLEAU
+  - file: CHAP7/COURS_PLOT
+  - file: CHAP8/COURS_FICHIER
 
 - caption: Annexes
   chapters:

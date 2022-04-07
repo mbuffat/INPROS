@@ -162,6 +162,48 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP7/COURS_PLOT.html">
+   7. Tracé avec matplotlib
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP8/COURS_FICHIER.html">
+   8. Gestion de fichiers et E/S
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../CHAP9/Precision.html">
+   9. Précision et validation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../CHAP9/Exercices_precision.html">
+     9.8. Exercices
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP10/COURS_ALGORITHME.html">
+   10. Algorithmes numériques
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP11/Efficiency.html">
+   11. Efficacité / complexité
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP12/debugging.html">
+   13. Recherche d’erreurs
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -751,8 +793,8 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <a class="reference internal image-reference" href="../_images/logo_trans5.png"><img alt="LyonHPC" src="../_images/logo_trans5.png" style="width: 180px;" /></a>
-<a class="reference internal image-reference" href="../_images/python-logo5.gif"><img alt="LyonHPC" src="../_images/python-logo5.gif" style="width: 200px;" /></a>
+  <a class="reference internal image-reference" href="../_images/logo_trans8.png"><img alt="LyonHPC" src="../_images/logo_trans8.png" style="width: 180px;" /></a>
+<a class="reference internal image-reference" href="../_images/python-logo8.gif"><img alt="LyonHPC" src="../_images/python-logo8.gif" style="width: 200px;" /></a>
 <div class="tex2jax_ignore mathjax_ignore section" id="les-tableaux-vecteur-matrice">
 <h1><span class="section-number">6. </span>Les tableaux (vecteur, matrice)<a class="headerlink" href="#les-tableaux-vecteur-matrice" title="Lien permanent vers ce titre">¶</a></h1>
 <a class="reference internal image-reference" href="../_images/numpy_array.png"><img alt="../_images/numpy_array.png" src="../_images/numpy_array.png" style="width: 300px;" /></a>
@@ -1033,7 +1075,7 @@ soit <code class="docutils literal notranslate"><span class="pre">print('bonjour
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.7979317  0.81533001 0.67138261 0.505863   0.22865062]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.2153373  0.65010156 0.80453828 0.95709781 0.1940736 ]
 </pre></div>
 </div>
 </div>
@@ -1255,9 +1297,9 @@ soit <code class="docutils literal notranslate"><span class="pre">print('bonjour
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X = [0.63113866 0.31915219]
-Y = [0.69741968 0.57366226]
-X.Y = 0.6232540877460996  ou 0.6232540877460996
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X = [0.23450095 0.78466008]
+Y = [0.87079942 0.64988368]
+X.Y = 0.7141410670690657  ou 0.7141410670690657
 </pre></div>
 </div>
 </div>
@@ -1650,7 +1692,7 @@ Y = [1. 3. 5.]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>38.08482398299373
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>32.14140192305627
 </pre></div>
 </div>
 </div>
@@ -1677,9 +1719,9 @@ Y = [1. 3. 5.]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.67831507 0.18144581 0.10557498 0.78576373 0.11019018 0.16689737
- 0.99338179 0.15697054 0.68297757 0.72328357]
-xmax = 0.9933817941743437  pour i = 6
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.16744075 0.52218211 0.60308052 0.86664339 0.6390745  0.56859025
+ 0.50637324 0.40886888 0.33409992 0.09125825]
+xmax = 0.8666433893770404  pour i = 3
 </pre></div>
 </div>
 </div>
@@ -1706,8 +1748,8 @@ xmax = 0.9933817941743437  pour i = 6
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.50635817 0.23635824 0.85797697 0.34481597]
-[0.34481597 0.50635817 0.23635824 0.85797697]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.53550489 0.46650487 0.935889   0.15609534]
+[0.15609534 0.53550489 0.46650487 0.935889  ]
 </pre></div>
 </div>
 </div>
@@ -1769,9 +1811,9 @@ soit <code class="docutils literal notranslate"><span class="pre">print('bonjour
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X= [0.8437634  0.44768526 0.83969613] 
-Y= [0.65456914 0.09138055 0.66915115] 
-XY= [0.55230148 0.04090973 0.56188363]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X= [0.12788027 0.19945283 0.58398838] 
+Y= [0.97750412 0.41028548 0.22824819] 
+XY= [0.12500349 0.0818326  0.13329429]
 </pre></div>
 </div>
 </div>
@@ -1786,7 +1828,7 @@ XY= [0.55230148 0.04090973 0.56188363]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.66465572 0.90145152 0.66768907]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.99183446 0.98017514 0.83427027]
 </pre></div>
 </div>
 </div>
@@ -1810,13 +1852,15 @@ $<span class="math notranslate nohighlight">\( C= dot(A,B)\ \rightarrow\  C_{ij}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X.Y= 1.1550948406048223
-|X|= 1.2717894324774504
-A*X= [0.96874263 0.9798378  0.86223422]
-A*A=
- [[0.21414396 0.66828903 0.94021545]
- [0.23628637 0.76657767 0.98672429]
- [0.16407161 0.56156026 0.83098398]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X.Y= 0.34013038464307055
+|X|= 0.6302199821483996
+A*X= [0.46759503 0.23348327 0.69378104]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A*A=
+ [[0.30496364 0.7290066  0.74883983]
+ [0.43028571 0.71670245 0.36181311]
+ [0.60086777 1.31607113 0.96194635]]
 </pre></div>
 </div>
 </div>
@@ -1834,12 +1878,12 @@ $<span class="math notranslate nohighlight">\( C= inner(A,B)\ \rightarrow\  C_{i
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>inner(X,Y)= 1.1550948406048223
-inner(A,X)= [0.96874263 0.9798378  0.86223422]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>inner(X,Y)= 0.34013038464307055
+inner(A,X)= [0.46759503 0.23348327 0.69378104]
 inner(A,A)=
- [[1.00338258 0.77932717 0.85286924]
- [0.77932717 0.76973066 0.65264266]
- [0.85286924 0.65264266 0.73296653]]
+ [[0.55514123 0.27833682 0.80673222]
+ [0.27833682 0.77969849 0.73912888]
+ [0.80673222 0.73912888 1.41300598]]
 </pre></div>
 </div>
 </div>
@@ -1857,9 +1901,9 @@ inner(A,A)=
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>outer(X,X)=
- [[0.71193667 0.37774044 0.70850486]
- [0.37774044 0.20042209 0.37591958]
- [0.70850486 0.37591958 0.7050896 ]]
+ [[0.01635336 0.02550608 0.07468059]
+ [0.02550608 0.03978143 0.11647814]
+ [0.07468059 0.11647814 0.34104243]]
 </pre></div>
 </div>
 </div>

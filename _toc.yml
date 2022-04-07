@@ -22,6 +22,12 @@ parts:
     - file: CHAP6/EXERCICES_TABLEAU
   - file: CHAP7/COURS_PLOT
   - file: CHAP8/COURS_FICHIER
+  - file: CHAP9/Precision
+    sections:
+    - file: CHAP9/Exercices_precision
+  - file: CHAP10/COURS_ALGORITHME
+  - file: CHAP11/Efficiency
+  - file: CHAP12/debugging
 
 - caption: Annexes
   chapters:

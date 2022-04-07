@@ -10,7 +10,10 @@ logo: logo.png
 # See https://jupyterbook.org/content/execute.html
 execute:
   execute_notebooks: force
+#  exclude_patterns:
+#    - '*~'
 
+only_build_toc_files: true
 # Define the name of the latex output file for PDF builds
 latex:
   latex_documents:

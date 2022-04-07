@@ -167,6 +167,43 @@ const thebe_selector_output = ".output, .cell_output"
    7. Tracé avec matplotlib
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP8/COURS_FICHIER.html">
+   8. Gestion de fichiers et E/S
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../CHAP9/Precision.html">
+   9. Précision et validation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../CHAP9/Exercices_precision.html">
+     9.8. Exercices
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP10/COURS_ALGORITHME.html">
+   10. Algorithmes numériques
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP11/Efficiency.html">
+   11. Efficacité / complexité
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP12/debugging.html">
+   13. Recherche d’erreurs
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -520,8 +557,8 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <a class="reference internal image-reference" href="../_images/logo_trans2.png"><img alt="LyonHPC" src="../_images/logo_trans2.png" style="width: 180px;" /></a>
-<a class="reference internal image-reference" href="../_images/python-logo2.gif"><img alt="LyonHPC" src="../_images/python-logo2.gif" style="width: 200px;" /></a>
+  <a class="reference internal image-reference" href="../_images/logo_trans5.png"><img alt="LyonHPC" src="../_images/logo_trans5.png" style="width: 180px;" /></a>
+<a class="reference internal image-reference" href="../_images/python-logo5.gif"><img alt="LyonHPC" src="../_images/python-logo5.gif" style="width: 200px;" /></a>
 <div class="tex2jax_ignore mathjax_ignore section" id="variable-et-elements-de-base">
 <h1><span class="section-number">3. </span>Variable et éléments de base<a class="headerlink" href="#variable-et-elements-de-base" title="Lien permanent vers ce titre">¶</a></h1>
 <a class="reference internal image-reference" href="../_images/cloud_variable.png"><img alt="sommaire" src="../_images/cloud_variable.png" style="width: 300px;" /></a>
@@ -866,9 +903,12 @@ NameError: name &#39;Z&#39; is not defined
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x= 5.8  adresse  140468638452848  type  &lt;class &#39;float&#39;&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x=
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 5.8  adresse  139873389817008  type  &lt;class &#39;float&#39;&gt;
 y= 1  adresse  9788960  type  &lt;class &#39;int&#39;&gt;
-s= mon &#39;texte&#39;  adresse  140468638516208  type  &lt;class &#39;str&#39;&gt;
+s= mon &#39;texte&#39;  adresse  139873389868080  type  &lt;class &#39;str&#39;&gt;
 </pre></div>
 </div>
 </div>
@@ -997,7 +1037,10 @@ soit <code class="docutils literal notranslate"><span class="pre">print('bonjour
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.0 2.718281828459045 0.0 0.7615941559557649
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.0 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.718281828459045 0.0 0.7615941559557649
 </pre></div>
 </div>
 </div>

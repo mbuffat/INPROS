@@ -57,7 +57,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="canonical" href="https://perso.univ-lyon1.fr/marc.buffat/CHAP8/COURS_FICHIER.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
-    <link rel="next" title="Rappel de maths et physique" href="../RAPPEL/COURS_RAPPEL.html" />
+    <link rel="next" title="9. Précision et validation" href="../CHAP9/Precision.html" />
     <link rel="prev" title="7. Tracé avec matplotlib" href="../CHAP7/COURS_PLOT.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="fr">
@@ -170,6 +170,38 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    8. Gestion de fichiers et E/S
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../CHAP9/Precision.html">
+   9. Précision et validation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../CHAP9/Exercices_precision.html">
+     9.8. Exercices
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP10/COURS_ALGORITHME.html">
+   10. Algorithmes numériques
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP11/Efficiency.html">
+   11. Efficacité / complexité
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP12/debugging.html">
+   13. Recherche d’erreurs
   </a>
  </li>
 </ul>
@@ -529,8 +561,8 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <a class="reference internal image-reference" href="../_images/logo_trans8.png"><img alt="LyonHPC" src="../_images/logo_trans8.png" style="width: 180px;" /></a>
-<a class="reference internal image-reference" href="../_images/python-logo8.gif"><img alt="LyonHPC" src="../_images/python-logo8.gif" style="width: 200px;" /></a>
+  <a class="reference internal image-reference" href="../_images/logo_trans10.png"><img alt="LyonHPC" src="../_images/logo_trans10.png" style="width: 180px;" /></a>
+<a class="reference internal image-reference" href="../_images/python-logo10.gif"><img alt="LyonHPC" src="../_images/python-logo10.gif" style="width: 200px;" /></a>
 <div class="tex2jax_ignore mathjax_ignore section" id="gestion-de-fichiers-et-e-s">
 <h1><span class="section-number">8. </span>Gestion de fichiers et E/S<a class="headerlink" href="#gestion-de-fichiers-et-e-s" title="Lien permanent vers ce titre">¶</a></h1>
 <a class="reference internal image-reference" href="../_images/python_file.png"><img alt="../_images/python_file.png" src="../_images/python_file.png" style="width: 300px;" /></a>
@@ -580,8 +612,8 @@ un fichier informatique est  une collection d’informations numériques (séque
 <h3><span class="section-number">8.2.1. </span>Exemple: trace de courbes de Lissajous<a class="headerlink" href="#exemple-trace-de-courbes-de-lissajous" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Une courbe de Lissajous (d’après le physicien français <a class="reference external" href="http://fr.wikipedia.org/wiki/Jules_Lissajous%5D">« Jules Antoine Lissajous »</a>) est une courbe paramétrique du plan dont les composantes sont des fonctions périodiques du paramètre (en générale le temps en physique, et que l’on peut observer avec un oscilloscope).</p>
 <p>Le programme Python suivant <strong><a class="reference external" href="http://lissajous.py">lissajous.py</a></strong> trace les courbes de Lissajous suivantes</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7b96cc05-fc74-49d0-88d7-5a2cb9578551">
-<span class="eqno">(8.1)<a class="headerlink" href="#equation-7b96cc05-fc74-49d0-88d7-5a2cb9578551" title="Lien permanent vers cette équation">¶</a></span>\[\begin{eqnarray} 
+<div class="amsmath math notranslate nohighlight" id="equation-d3db8daa-64cb-4b85-aea0-598b642fc9ea">
+<span class="eqno">(8.1)<a class="headerlink" href="#equation-d3db8daa-64cb-4b85-aea0-598b642fc9ea" title="Lien permanent vers cette équation">¶</a></span>\[\begin{eqnarray} 
 x(t) &amp;=&amp;  \sin{(\frac{2\pi}{p} t)}\\
 y(t) &amp;=&amp;  \sin{(\frac{2\pi}{q} t + \phi)}
 \end{eqnarray}\]</div>
@@ -682,7 +714,7 @@ ls -al lissajous.png
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>execution avec interpreteur python
--rw-rw-r-- 1 buffat buffat 66833 avril  6 23:08 lissajous.png
+-rw-rw-r-- 1 buffat buffat 66833 avril  7 21:50 lissajous.png
 </pre></div>
 </div>
 </div>
@@ -699,7 +731,7 @@ ls -al lissajous.png
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>execution automatique
--rw-rw-r-- 1 buffat buffat 66833 avril  6 23:08 lissajous.png
+-rw-rw-r-- 1 buffat buffat 66833 avril  7 21:50 lissajous.png
 </pre></div>
 </div>
 </div>
@@ -805,7 +837,7 @@ cat lissajous.dat
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-rw-rw-r-- 1 buffat buffat 3839 avril  6 23:16 lissajous.dat
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-rw-rw-r-- 1 buffat buffat 3839 avril  7 22:04 lissajous.dat
 # courbe de lissajous avec p=1 q=2
 # 50
 0.000000000000000000e+00 0.000000000000000000e+00 1.000000000000000000e+00
@@ -933,7 +965,7 @@ cat lissajous.csv
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-rw-rw-r-- 1 buffat buffat 3799 avril  6 23:16 lissajous.csv
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-rw-rw-r-- 1 buffat buffat 3799 avril  7 22:04 lissajous.csv
 0.000000000000000000e+00,0.000000000000000000e+00,1.000000000000000000e+00
 4.081632653061224164e-02,2.536545839095073474e-01,9.917900138232461638e-01
 8.163265306122448328e-02,4.907175520039378513e-01,9.672948630390294511e-01
@@ -1130,10 +1162,10 @@ ch1=chaine ch2=  chaine
             <p class="prev-next-title"><span class="section-number">7. </span>Tracé avec matplotlib</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../RAPPEL/COURS_RAPPEL.html" title="suivant page">
+    <a class='right-next' id="next-link" href="../CHAP9/Precision.html" title="suivant page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">suivant</p>
-        <p class="prev-next-title">Rappel de maths et physique</p>
+        <p class="prev-next-title"><span class="section-number">9. </span>Précision et validation</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

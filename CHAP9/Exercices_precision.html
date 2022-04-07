@@ -1,0 +1,620 @@
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>9.8. Exercices &#8212; INPROS INtroduction à la PROgrammation Scientifique en Python</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="canonical" href="https://perso.univ-lyon1.fr/marc.buffat/CHAP9/Exercices_precision.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="10. Algorithmes numériques" href="../CHAP10/COURS_ALGORITHME.html" />
+    <link rel="prev" title="9. Précision et validation" href="Precision.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="fr">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">INPROS INtroduction à la PROgrammation Scientifique en Python</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Rechercher dans ce livre ..." aria-label="Rechercher dans ce livre ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Introduction à la PROgrammation Scientifique
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  INPROS
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP1/COURS_INTRO.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP2/COURS_ORDI.html">
+   2. Fonctionnement d’un ordinateur
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP3/COURS_VAR.html">
+   3. Variable et éléments de base
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../CHAP4/COURS_LOOP.html">
+   4. Structures de contrôle
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../CHAP4/EXERCICES_LOOP.html">
+     4.10. Exercices
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP5/COURS_FONCTION.html">
+   5. Fonctions et procédures
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../CHAP6/COURS_TABLEAU.html">
+   6. Les tableaux (vecteur, matrice)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../CHAP6/EXERCICES_TABLEAU.html">
+     6.8. Correction des exercices
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP7/COURS_PLOT.html">
+   7. Tracé avec matplotlib
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP8/COURS_FICHIER.html">
+   8. Gestion de fichiers et E/S
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="Precision.html">
+   9. Précision et validation
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     9.8. Exercices
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP10/COURS_ALGORITHME.html">
+   10. Algorithmes numériques
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP11/Efficiency.html">
+   11. Efficacité / complexité
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP12/debugging.html">
+   13. Recherche d’erreurs
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Annexes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../RAPPEL/COURS_RAPPEL.html">
+   Rappel de maths et physique
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../credits.html">
+   Crédits
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Crée par <a href="https://perso.univ-lyon1.fr/marc.buffat/">Marc BUFFAT</a><br> avec <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Basculer la navigation" aria-controls="site-navigation"
+                title="Basculer la navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Téléchargez cette page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/CHAP9/Exercices_precision.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Télécharger le fichier source" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimer au format PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/mbuffat/INPROS"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Dépôt source"><i
+                    class="fab fa-github"></i>dépôt</button></a>
+        <a class="issues-button"
+            href="https://github.com/mbuffat/INPROS/issues/new?title=Issue%20on%20page%20%2FCHAP9/Exercices_precision.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Ouvrez un problème"><i class="fas fa-lightbulb"></i>signaler un problème</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Mode plein écran"
+        title="Mode plein écran"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contenu
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-calcul-de-pi">
+   9.8.1. Exercice: calcul de
+   <span class="math notranslate nohighlight">
+    \(\pi\)
+   </span>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#algorithme-de-base-calcul-de-la-limite-de-an">
+     9.8.1.1. Algorithme de base: calcul de la limite de An
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#amelioration-de-la-precision">
+     9.8.1.2. amélioration de la précision
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fin-des-exercices">
+   9.8.2. FIN des exercices
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Exercices</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contenu </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-calcul-de-pi">
+   9.8.1. Exercice: calcul de
+   <span class="math notranslate nohighlight">
+    \(\pi\)
+   </span>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#algorithme-de-base-calcul-de-la-limite-de-an">
+     9.8.1.1. Algorithme de base: calcul de la limite de An
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#amelioration-de-la-precision">
+     9.8.1.2. amélioration de la précision
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fin-des-exercices">
+   9.8.2. FIN des exercices
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <a class="reference internal image-reference" href="../_images/logo_trans11.png"><img alt="LyonHPC" src="../_images/logo_trans11.png" style="width: 180px;" /></a>
+<a class="reference internal image-reference" href="../_images/python-logo11.gif"><img alt="LyonHPC" src="../_images/python-logo11.gif" style="width: 200px;" /></a>
+<div class="tex2jax_ignore mathjax_ignore section" id="exercices">
+<h1><span class="section-number">9.8. </span>Exercices<a class="headerlink" href="#exercices" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span><span class="p">,</span><span class="n">display</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="exercice-calcul-de-pi">
+<h2><span class="section-number">9.8.1. </span>Exercice: calcul de <span class="math notranslate nohighlight">\(\pi\)</span><a class="headerlink" href="#exercice-calcul-de-pi" title="Lien permanent vers ce titre">¶</a></h2>
+<p>calcul de <span class="math notranslate nohighlight">\(\pi\)</span> en tant que limite de la surface d’un polygonne inscrit dans un cercle de rayon 1.</p>
+<a class="reference internal image-reference" href="../_images/cercle_poly.png"><img alt="../_images/cercle_poly.png" src="../_images/cercle_poly.png" style="width: 300px;" /></a>
+<p>Soit  <span class="math notranslate nohighlight">\(a_n\)</span>
+l’aire du triangle <span class="math notranslate nohighlight">\(OAB\)</span> avec <span class="math notranslate nohighlight">\(\alpha = 2\pi/n\)</span></p>
+<div class="math notranslate nohighlight">
+\[ a_n = \cos\frac{\alpha}{2}\sin\frac{\alpha}{2} \]</div>
+<p>l’aire <span class="math notranslate nohighlight">\(A_n\)</span> du polygone inscrit à  n cotés :</p>
+<div class="math notranslate nohighlight">
+\[ A_n = n a_n = \frac{n}{2}\sin\frac{2\pi}{n}\]</div>
+<p>et on a</p>
+<div class="math notranslate nohighlight">
+\[\lim _{n\rightarrow\infty} A_n = \pi \]</div>
+<p>Pour calculer <span class="math notranslate nohighlight">\(A_{2n}\)</span>,on exprime <span class="math notranslate nohighlight">\(s_{2n}=\sin\frac{2\pi}{2n}\)</span> en fonction de <span class="math notranslate nohighlight">\(s_n=\sin\frac{2\pi}{n}\)</span> en utilisant l’identité <span class="math notranslate nohighlight">\((\sin a)^2 = \frac{ 1- cos(2a)}{2}\)</span></p>
+<div class="math notranslate nohighlight">
+\[ A_{2n} = \frac{n}{2} s_{2n} \mbox{ avec } s_{2n} = \sqrt{\frac{1-\sqrt{1-(s_n)^2}}{2}} \]</div>
+<div class="section" id="algorithme-de-base-calcul-de-la-limite-de-an">
+<h3><span class="section-number">9.8.1.1. </span>Algorithme de base: calcul de la limite de An<a class="headerlink" href="#algorithme-de-base-calcul-de-la-limite-de-an" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    n=4
+    s=1.0  # sin(2pi/n)
+    tant que s&gt;eps faire
+        s = sqrt((1 - sqrt(1-s*s))/2)
+        n = 2*n
+        A = (n/2) * s
+</pre></div>
+</div>
+<p>Avec cette algorithme implémenter sur un ordinateur avec des réels en double précision la suite <span class="math notranslate nohighlight">\(A_n\)</span> converve tout d’abord vers <span class="math notranslate nohighlight">\(\pi\)</span> puis tends vers 0 !!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calcul de la suite An (version de base)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">s</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">eps</span> <span class="o">=</span> <span class="mf">1.0e-14</span>
+<span class="k">while</span> <span class="n">s</span> <span class="o">&gt;</span> <span class="n">eps</span> <span class="p">:</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="mf">1.</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">1.</span><span class="o">-</span><span class="n">s</span><span class="o">*</span><span class="n">s</span><span class="p">))</span><span class="o">/</span><span class="mf">2.</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">n</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span><span class="n">s</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;n=</span><span class="si">%10d</span><span class="s2">&quot;</span><span class="o">%</span><span class="k">n</span>,&quot; An=%15.10f&quot;%A,&quot; err=%15g&quot;%(A-np.pi))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>n=         8  An=   2.8284271247  err=      -0.313166
+n=        16  An=   3.0614674589  err=     -0.0801252
+n=        32  An=   3.1214451523  err=     -0.0201475
+n=        64  An=   3.1365484905  err=    -0.00504416
+n=       128  An=   3.1403311570  err=     -0.0012615
+n=       256  An=   3.1412772509  err=   -0.000315403
+n=       512  An=   3.1415138011  err=   -7.88524e-05
+n=      1024  An=   3.1415729404  err=   -1.97132e-05
+n=      2048  An=   3.1415877253  err=   -4.92831e-06
+n=      4096  An=   3.1415914215  err=   -1.23209e-06
+n=      8192  An=   3.1415923456  err=   -3.07979e-07
+n=     16384  An=   3.1415925765  err=   -7.70448e-08
+n=     32768  An=   3.1415926335  err=   -2.01265e-08
+n=     65536  An=   3.1415926548  err=     1.2178e-09
+n=    131072  An=   3.1415926453  err=   -8.26858e-09
+n=    262144  An=   3.1415926074  err=   -4.62141e-08
+n=    524288  An=   3.1415929109  err=     2.5735e-07
+n=   1048576  An=   3.1415941252  err=    1.47161e-06
+n=   2097152  An=   3.1415965537  err=    3.90012e-06
+n=   4194304  An=   3.1415965537  err=    3.90012e-06
+n=   8388608  An=   3.1416742650  err=    8.16114e-05
+n=  16777216  An=   3.1418296819  err=    0.000237028
+n=  33554432  An=   3.1424512725  err=    0.000858619
+n=  67108864  An=   3.1424512725  err=    0.000858619
+n= 134217728  An=   3.1622776602  err=       0.020685
+n= 268435456  An=   3.1622776602  err=       0.020685
+n= 536870912  An=   3.4641016151  err=       0.322509
+n=1073741824  An=   4.0000000000  err=       0.858407
+n=2147483648  An=   0.0000000000  err=       -3.14159
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="amelioration-de-la-precision">
+<h3><span class="section-number">9.8.1.2. </span>amélioration de la précision<a class="headerlink" href="#amelioration-de-la-precision" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Le problème vient du calcul de <span class="math notranslate nohighlight">\(1-\sqrt{1-s^2}\)</span> qui pour <span class="math notranslate nohighlight">\(s\ll 1\)</span> est peu précis !
+En utilisant la formule équivalente suivante, on améliore a précision:</p>
+<div class="math notranslate nohighlight">
+\[ 1-\sqrt{1-s^2} = \frac{s}{1 + \sqrt{1-s^2}}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calcul de la suite An (version précise)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">s</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">eps</span> <span class="o">=</span> <span class="mf">1.0e-14</span>
+<span class="k">while</span> <span class="n">s</span> <span class="o">&gt;</span> <span class="n">eps</span> <span class="p">:</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="mf">1.</span><span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">1.</span><span class="o">-</span><span class="n">s</span><span class="o">*</span><span class="n">s</span><span class="p">)))</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">n</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span><span class="n">s</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;n=</span><span class="si">%16d</span><span class="s2">&quot;</span><span class="o">%</span><span class="k">n</span>,&quot; An=%20.18f&quot;%A,&quot; err=%15g&quot;%(A-np.pi))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>n=               8  An=2.828427124746189847  err=      -0.313166
+n=              16  An=3.061467458920717810  err=     -0.0801252
+n=              32  An=3.121445152258051969  err=     -0.0201475
+n=              64  An=3.136548490545938872  err=    -0.00504416
+n=             128  An=3.140331156954752512  err=     -0.0012615
+n=             256  An=3.141277250932772436  err=   -0.000315403
+n=             512  An=3.141513801144300899  err=   -7.88524e-05
+n=            1024  An=3.141572940367091338  err=   -1.97132e-05
+n=            2048  An=3.141587725277159571  err=   -4.92831e-06
+n=            4096  An=3.141591421511199744  err=   -1.23208e-06
+n=            8192  An=3.141592345570117573  err=    -3.0802e-07
+n=           16384  An=3.141592576584872454  err=   -7.70049e-08
+n=           32768  An=3.141592634338563172  err=   -1.92512e-08
+n=           65536  An=3.141592648776985630  err=   -4.81281e-09
+n=          131072  An=3.141592652386591134  err=    -1.2032e-09
+n=          262144  An=3.141592653288992842  err=     -3.008e-10
+n=          524288  An=3.141592653514593270  err=   -7.51998e-11
+n=         1048576  An=3.141592653570993487  err=   -1.87996e-11
+n=         2097152  An=3.141592653585093764  err=   -4.69935e-12
+n=         4194304  An=3.141592653588618944  err=   -1.17417e-12
+n=         8388608  An=3.141592653589500461  err=   -2.92655e-13
+n=        16777216  An=3.141592653589720729  err=   -7.23865e-14
+n=        33554432  An=3.141592653589775797  err=   -1.73195e-14
+n=        67108864  An=3.141592653589789563  err=   -3.55271e-15
+n=       134217728  An=3.141592653589793116  err=              0
+n=       268435456  An=3.141592653589794004  err=    8.88178e-16
+n=       536870912  An=3.141592653589794448  err=    1.33227e-15
+n=      1073741824  An=3.141592653589794448  err=    1.33227e-15
+n=      2147483648  An=3.141592653589794448  err=    1.33227e-15
+n=      4294967296  An=3.141592653589794448  err=    1.33227e-15
+n=      8589934592  An=3.141592653589794448  err=    1.33227e-15
+n=     17179869184  An=3.141592653589794448  err=    1.33227e-15
+n=     34359738368  An=3.141592653589794448  err=    1.33227e-15
+n=     68719476736  An=3.141592653589794448  err=    1.33227e-15
+n=    137438953472  An=3.141592653589794448  err=    1.33227e-15
+n=    274877906944  An=3.141592653589794448  err=    1.33227e-15
+n=    549755813888  An=3.141592653589794448  err=    1.33227e-15
+n=   1099511627776  An=3.141592653589794448  err=    1.33227e-15
+n=   2199023255552  An=3.141592653589794448  err=    1.33227e-15
+n=   4398046511104  An=3.141592653589794448  err=    1.33227e-15
+n=   8796093022208  An=3.141592653589794448  err=    1.33227e-15
+n=  17592186044416  An=3.141592653589794448  err=    1.33227e-15
+n=  35184372088832  An=3.141592653589794448  err=    1.33227e-15
+n=  70368744177664  An=3.141592653589794448  err=    1.33227e-15
+n= 140737488355328  An=3.141592653589794448  err=    1.33227e-15
+n= 281474976710656  An=3.141592653589794448  err=    1.33227e-15
+n= 562949953421312  An=3.141592653589794448  err=    1.33227e-15
+n=1125899906842624  An=3.141592653589794448  err=    1.33227e-15
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="fin-des-exercices">
+<h2><span class="section-number">9.8.2. </span>FIN des exercices<a class="headerlink" href="#fin-des-exercices" title="Lien permanent vers ce titre">¶</a></h2>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./CHAP9"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Precision.html" title="précédent page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">précédent</p>
+            <p class="prev-next-title"><span class="section-number">9. </span>Précision et validation</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../CHAP10/COURS_ALGORITHME.html" title="suivant page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">suivant</p>
+        <p class="prev-next-title"><span class="section-number">10. </span>Algorithmes numériques</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      Par Marc BUFFAT, dpt mécanique, Lyon 1<br/>
+    
+        &copy; droits d'auteur 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

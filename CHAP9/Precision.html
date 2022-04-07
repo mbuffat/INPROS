@@ -1,0 +1,1434 @@
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>9. Précision et validation &#8212; INPROS INtroduction à la PROgrammation Scientifique en Python</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="canonical" href="https://perso.univ-lyon1.fr/marc.buffat/CHAP9/Precision.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="9.8. Exercices" href="Exercices_precision.html" />
+    <link rel="prev" title="8. Gestion de fichiers et E/S" href="../CHAP8/COURS_FICHIER.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="fr">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">INPROS INtroduction à la PROgrammation Scientifique en Python</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Rechercher dans ce livre ..." aria-label="Rechercher dans ce livre ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Introduction à la PROgrammation Scientifique
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  INPROS
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP1/COURS_INTRO.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP2/COURS_ORDI.html">
+   2. Fonctionnement d’un ordinateur
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP3/COURS_VAR.html">
+   3. Variable et éléments de base
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../CHAP4/COURS_LOOP.html">
+   4. Structures de contrôle
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../CHAP4/EXERCICES_LOOP.html">
+     4.10. Exercices
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP5/COURS_FONCTION.html">
+   5. Fonctions et procédures
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../CHAP6/COURS_TABLEAU.html">
+   6. Les tableaux (vecteur, matrice)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../CHAP6/EXERCICES_TABLEAU.html">
+     6.8. Correction des exercices
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP7/COURS_PLOT.html">
+   7. Tracé avec matplotlib
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP8/COURS_FICHIER.html">
+   8. Gestion de fichiers et E/S
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
+   9. Précision et validation
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Exercices_precision.html">
+     9.8. Exercices
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP10/COURS_ALGORITHME.html">
+   10. Algorithmes numériques
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP11/Efficiency.html">
+   11. Efficacité / complexité
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP12/debugging.html">
+   13. Recherche d’erreurs
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Annexes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../RAPPEL/COURS_RAPPEL.html">
+   Rappel de maths et physique
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../credits.html">
+   Crédits
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Crée par <a href="https://perso.univ-lyon1.fr/marc.buffat/">Marc BUFFAT</a><br> avec <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Basculer la navigation" aria-controls="site-navigation"
+                title="Basculer la navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Téléchargez cette page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/CHAP9/Precision.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Télécharger le fichier source" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimer au format PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/mbuffat/INPROS"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Dépôt source"><i
+                    class="fab fa-github"></i>dépôt</button></a>
+        <a class="issues-button"
+            href="https://github.com/mbuffat/INPROS/issues/new?title=Issue%20on%20page%20%2FCHAP9/Precision.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Ouvrez un problème"><i class="fas fa-lightbulb"></i>signaler un problème</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Mode plein écran"
+        title="Mode plein écran"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contenu
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#erreur-de-representation">
+   9.1. Erreur de représentation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemple-preliminaire">
+     9.1.1. Exemple préliminaire
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#algorithme">
+       9.1.1.1. Algorithme
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#programme-python">
+       9.1.1.2. Programme Python
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#applications">
+       9.1.1.3. Applications
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#solution-utilisation-de-la-propriete-e-x-1-e-x">
+       9.1.1.4. Solution: utilisation de la propriété
+       <span class="math notranslate nohighlight">
+        \(e^{-x} = 1/e^x \)
+       </span>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercice">
+       9.1.1.5. Exercice
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#representation-des-nombres-sur-un-ordinateur">
+     9.1.2. Représentation des nombres sur un ordinateur
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exemple">
+       9.1.2.1. Exemple
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#precision-des-calculs">
+   9.2. Précision des calculs
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#precision-machine-epsilon">
+     9.2.1. Précision machine
+     <span class="math notranslate nohighlight">
+      \(\epsilon\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#algorithme-de-calcul-de-la-precision-machine">
+     9.2.2. Algorithme de calcul de la précision machine
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     9.2.3. Programme Python
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#erreurs-numeriques">
+   9.3. Erreurs numériques
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemple-racine-d-une-equation-du-2nd-degre">
+     9.3.1. Exemple: racine d’une équation du 2nd degré
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#programme-python-de-base">
+       9.3.1.1. programme Python de base
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#meilleur-approximation">
+       9.3.1.2. meilleur approximation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calcul-d-erreurs">
+     9.3.2. Calcul d’erreurs
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#regles-sur-les-erreurs">
+       9.3.2.1. règles sur les erreurs
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#condition-sur-l-erreur-relative">
+       9.3.2.2. condition sur l” erreur relative
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conditionnement-et-erreurs-d-approximation">
+   9.4. Conditionnement et erreurs d’approximation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sensibilite-aux-erreurs">
+     9.4.1. sensibilité aux erreurs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#erreurs-d-approximation">
+     9.4.2. Erreurs d’approximation
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ordre-d-approximation">
+       9.4.2.1. Ordre d’approximation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemple-calcul-de-e-a-avec-des-tables-pour-0-a-1">
+     9.4.3. Exemple: calcul de
+     <span class="math notranslate nohighlight">
+      \(e^a\)
+     </span>
+     avec des tables pour
+     <span class="math notranslate nohighlight">
+      \(0 &lt; a &lt; 1\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#algorithme-approximation-de-exp-a-a-l-aide-de-tables">
+     9.4.4. Algorithme: approximation de exp(a) à l’aide de tables
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     9.4.5. Programme Python
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comparaison-avec-le-calcul-utilisant-les-series-entieres">
+     9.4.6. comparaison avec le calcul utilisant les séries entières
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     9.4.7. Exercice:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#verification-des-calculs">
+   9.5. Vérification des calculs
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#validation-de-la-simulation-d-alunissage">
+     9.5.1. validation de la simulation d’alunissage
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#validation-du-calcul-de-exp-a-avec-n-valeurs-tabulees">
+     9.5.2. Validation du calcul de
+     <span class="math notranslate nohighlight">
+      \(exp(a)\)
+     </span>
+     avec
+     <span class="math notranslate nohighlight">
+      \(n\)
+     </span>
+     valeurs tabulées
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
+       9.5.2.1. programme Python
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-href-sommaire-bibliographie-a-a-name-section2">
+   9.6.
+   <a href="#sommaire">
+    Bibliographie
+   </a>
+   <a name="section2">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fin-de-la-lecon">
+   9.7. FIN de la leçon
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Précision et validation</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contenu </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#erreur-de-representation">
+   9.1. Erreur de représentation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemple-preliminaire">
+     9.1.1. Exemple préliminaire
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#algorithme">
+       9.1.1.1. Algorithme
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#programme-python">
+       9.1.1.2. Programme Python
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#applications">
+       9.1.1.3. Applications
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#solution-utilisation-de-la-propriete-e-x-1-e-x">
+       9.1.1.4. Solution: utilisation de la propriété
+       <span class="math notranslate nohighlight">
+        \(e^{-x} = 1/e^x \)
+       </span>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercice">
+       9.1.1.5. Exercice
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#representation-des-nombres-sur-un-ordinateur">
+     9.1.2. Représentation des nombres sur un ordinateur
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exemple">
+       9.1.2.1. Exemple
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#precision-des-calculs">
+   9.2. Précision des calculs
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#precision-machine-epsilon">
+     9.2.1. Précision machine
+     <span class="math notranslate nohighlight">
+      \(\epsilon\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#algorithme-de-calcul-de-la-precision-machine">
+     9.2.2. Algorithme de calcul de la précision machine
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     9.2.3. Programme Python
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#erreurs-numeriques">
+   9.3. Erreurs numériques
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemple-racine-d-une-equation-du-2nd-degre">
+     9.3.1. Exemple: racine d’une équation du 2nd degré
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#programme-python-de-base">
+       9.3.1.1. programme Python de base
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#meilleur-approximation">
+       9.3.1.2. meilleur approximation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calcul-d-erreurs">
+     9.3.2. Calcul d’erreurs
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#regles-sur-les-erreurs">
+       9.3.2.1. règles sur les erreurs
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#condition-sur-l-erreur-relative">
+       9.3.2.2. condition sur l” erreur relative
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conditionnement-et-erreurs-d-approximation">
+   9.4. Conditionnement et erreurs d’approximation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sensibilite-aux-erreurs">
+     9.4.1. sensibilité aux erreurs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#erreurs-d-approximation">
+     9.4.2. Erreurs d’approximation
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ordre-d-approximation">
+       9.4.2.1. Ordre d’approximation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemple-calcul-de-e-a-avec-des-tables-pour-0-a-1">
+     9.4.3. Exemple: calcul de
+     <span class="math notranslate nohighlight">
+      \(e^a\)
+     </span>
+     avec des tables pour
+     <span class="math notranslate nohighlight">
+      \(0 &lt; a &lt; 1\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#algorithme-approximation-de-exp-a-a-l-aide-de-tables">
+     9.4.4. Algorithme: approximation de exp(a) à l’aide de tables
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     9.4.5. Programme Python
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comparaison-avec-le-calcul-utilisant-les-series-entieres">
+     9.4.6. comparaison avec le calcul utilisant les séries entières
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     9.4.7. Exercice:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#verification-des-calculs">
+   9.5. Vérification des calculs
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#validation-de-la-simulation-d-alunissage">
+     9.5.1. validation de la simulation d’alunissage
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#validation-du-calcul-de-exp-a-avec-n-valeurs-tabulees">
+     9.5.2. Validation du calcul de
+     <span class="math notranslate nohighlight">
+      \(exp(a)\)
+     </span>
+     avec
+     <span class="math notranslate nohighlight">
+      \(n\)
+     </span>
+     valeurs tabulées
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
+       9.5.2.1. programme Python
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-href-sommaire-bibliographie-a-a-name-section2">
+   9.6.
+   <a href="#sommaire">
+    Bibliographie
+   </a>
+   <a name="section2">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fin-de-la-lecon">
+   9.7. FIN de la leçon
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <a class="reference internal image-reference" href="../_images/logo_trans11.png"><img alt="LyonHPC" src="../_images/logo_trans11.png" style="width: 180px;" /></a>
+<a class="reference internal image-reference" href="../_images/python-logo11.gif"><img alt="LyonHPC" src="../_images/python-logo11.gif" style="width: 200px;" /></a>
+<div class="tex2jax_ignore mathjax_ignore section" id="precision-et-validation">
+<h1><span class="section-number">9. </span>Précision et validation<a class="headerlink" href="#precision-et-validation" title="Lien permanent vers ce titre">¶</a></h1>
+<a class="reference internal image-reference" href="../_images/cloud_precision.png"><img alt="sommaire" src="../_images/cloud_precision.png" style="width: 300px;" /></a>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span><span class="p">,</span><span class="n">display</span><span class="p">,</span><span class="n">IFrame</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span><span class="p">,</span><span class="n">Markdown</span><span class="p">,</span><span class="n">Video</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="erreur-de-representation">
+<h2><span class="section-number">9.1. </span>Erreur de représentation<a class="headerlink" href="#erreur-de-representation" title="Lien permanent vers ce titre">¶</a></h2>
+<p><em>Les nombres réels n’ont pas de représentation exacte sur un ordinateur</em></p>
+<div class="section" id="exemple-preliminaire">
+<h3><span class="section-number">9.1.1. </span>Exemple préliminaire<a class="headerlink" href="#exemple-preliminaire" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Calcul de la somme <span class="math notranslate nohighlight">\(S_n\)</span> de la série convergente:</p>
+<div class="math notranslate nohighlight">
+\[S_n = \sum_{i=0}^n \frac{x^i}{i!} \]</div>
+<div class="section" id="algorithme">
+<h4><span class="section-number">9.1.1.1. </span>Algorithme<a class="headerlink" href="#algorithme" title="Lien permanent vers ce titre">¶</a></h4>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Algorithme serie(x,n)
+     term  = 1.
+     somme = 1.
+     pour i de 1 a n (exclu)
+        term = term*x/i
+        somme = somme + term
+     fin pour
+     Serie = somme
+</pre></div>
+</div>
+</div>
+<div class="section" id="programme-python">
+<h4><span class="section-number">9.1.1.2. </span>Programme Python<a class="headerlink" href="#programme-python" title="Lien permanent vers ce titre">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">serie</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="p">)</span> <span class="p">:</span>
+    <span class="n">term</span> <span class="o">=</span> <span class="mf">1.0</span>
+    <span class="n">somme</span> <span class="o">=</span> <span class="n">term</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">term</span> <span class="o">=</span> <span class="n">term</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">i</span>
+        <span class="n">somme</span> <span class="o">=</span> <span class="n">somme</span> <span class="o">+</span> <span class="n">term</span>
+    <span class="k">return</span> <span class="n">somme</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="applications">
+<h4><span class="section-number">9.1.1.3. </span>Applications<a class="headerlink" href="#applications" title="Lien permanent vers ce titre">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">exp</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pour x=&quot;</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="s2">&quot; serie=&quot;</span><span class="p">,</span><span class="n">serie</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span><span class="s2">&quot; exp(x)=&quot;</span><span class="p">,</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mf">100.0</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pour x=&quot;</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="s2">&quot; serie=&quot;</span><span class="p">,</span><span class="n">serie</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">1000</span><span class="p">),</span><span class="s2">&quot; exp(x)=&quot;</span><span class="p">,</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pour x= 1.0  serie= 2.7182818284590455  exp(x)= 2.718281828459045
+Pour x= 100.0  serie= 2.6881171418161336e+43  exp(x)= 2.6881171418161356e+43
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pour x=&quot;</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="s2">&quot; serie=&quot;</span><span class="p">,</span><span class="n">serie</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span><span class="s2">&quot; exp(x)=&quot;</span><span class="p">,</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mf">100.0</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pour x=&quot;</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="s2">&quot; serie=&quot;</span><span class="p">,</span><span class="n">serie</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">1000</span><span class="p">),</span><span class="s2">&quot; exp(x)=&quot;</span><span class="p">,</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pour x= -1.0  serie= 0.36787944117144245  exp(x)= 0.36787944117144233
+Pour x= -100.0  serie= -2.9137556468915326e+25  exp(x)= 3.720075976020836e-44
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pour <span class="math notranslate nohighlight">\(x &lt; 0\)</span> , la série converge mais numériquement le calcul diverge à cause des erreurs d’arrondis.</p>
+</div>
+<div class="section" id="solution-utilisation-de-la-propriete-e-x-1-e-x">
+<h4><span class="section-number">9.1.1.4. </span>Solution: utilisation de la propriété <span class="math notranslate nohighlight">\(e^{-x} = 1/e^x \)</span><a class="headerlink" href="#solution-utilisation-de-la-propriete-e-x-1-e-x" title="Lien permanent vers ce titre">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mf">100.0</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pour x=&quot;</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="s2">&quot; serie=&quot;</span><span class="p">,</span><span class="mf">1.</span><span class="o">/</span><span class="n">serie</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">,</span><span class="mi">1000</span><span class="p">),</span><span class="s2">&quot; exp(x)=&quot;</span><span class="p">,</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pour x= -100.0  serie= 3.7200759760208386e-44  exp(x)= 3.720075976020836e-44
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exercice">
+<h4><span class="section-number">9.1.1.5. </span>Exercice<a class="headerlink" href="#exercice" title="Lien permanent vers ce titre">¶</a></h4>
+<p>On peut améliorer la précision du calcul en notant que pour <span class="math notranslate nohighlight">\(x&gt;0\)</span>, on peut écrire:</p>
+<div class="math notranslate nohighlight">
+\[e^x = (e^{x_0})^n \mbox{ avec } 0\le x_0 \le1 \]</div>
+<p>Réécrire l’algorithme précédent en utilisant cette propriété.</p>
+</div>
+</div>
+<div class="section" id="representation-des-nombres-sur-un-ordinateur">
+<h3><span class="section-number">9.1.2. </span>Représentation des nombres sur un ordinateur<a class="headerlink" href="#representation-des-nombres-sur-un-ordinateur" title="Lien permanent vers ce titre">¶</a></h3>
+<ul class="simple">
+<li><p>nombre entier exacte (32 bits): <span class="math notranslate nohighlight">\(-2^{31}\le n \le 2^{31}\)</span></p></li>
+<li><p>nombre réel: mantisse + exposant:</p></li>
+</ul>
+<p>Réel <span class="math notranslate nohighlight">\(a\neq\ 0\)</span>
+normalisé = mantisse+exposant</p>
+<div class="math notranslate nohighlight">
+\[\forall\ a\in\mathbb{R}\,\,\, a=\pm\ 10^{q}\sum_{i=1}^{\infty}a_{i}.10^{-i}\mbox{ avec }a_{1}\neq\ 0\]</div>
+<p>représentation flottante (si <span class="math notranslate nohighlight">\(-N\leq\ q\leq\ M\)</span>)</p>
+<div class="math notranslate nohighlight">
+\[fl(a)=\pm\ 10^{q}\sum_{i=1}^{t}a_{i}.10^{-i}\]</div>
+<ul class="simple">
+<li><p>simple précision 32 bits: <span class="math notranslate nohighlight">\(t=7\)</span>,  <span class="math notranslate nohighlight">\(-45&lt;q&lt;38\)</span></p></li>
+<li><p>double précision 64 bits: <span class="math notranslate nohighlight">\(t=15\)</span>, <span class="math notranslate nohighlight">\(-324&lt;q&lt;308\)</span></p></li>
+</ul>
+<div class="section" id="exemple">
+<h4><span class="section-number">9.1.2.1. </span>Exemple<a class="headerlink" href="#exemple" title="Lien permanent vers ce titre">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">1.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">x</span><span class="o">+</span><span class="n">x</span><span class="o">+</span><span class="n">x</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span> <span class="o">==</span> <span class="mf">3.</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span><span class="mf">0.1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">x</span><span class="o">+</span><span class="n">x</span><span class="o">+</span><span class="n">x</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span> <span class="o">==</span> <span class="mf">0.3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.1
+False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;s=&quot;</span><span class="p">,</span><span class="n">s</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;s=&quot;</span><span class="p">,</span><span class="nb">repr</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>s= 0.30000000000000004
+s= 0.30000000000000004
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="precision-des-calculs">
+<h2><span class="section-number">9.2. </span>Précision des calculs<a class="headerlink" href="#precision-des-calculs" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="precision-machine-epsilon">
+<h3><span class="section-number">9.2.1. </span>Précision machine <span class="math notranslate nohighlight">\(\epsilon\)</span><a class="headerlink" href="#precision-machine-epsilon" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="math notranslate nohighlight">
+\[\frac{\left\Vert a-fl(a)\right\Vert }{\left\Vert a\right\Vert }\le\epsilon\]</div>
+</div>
+<div class="section" id="algorithme-de-calcul-de-la-precision-machine">
+<h3><span class="section-number">9.2.2. </span>Algorithme de calcul de la précision machine<a class="headerlink" href="#algorithme-de-calcul-de-la-precision-machine" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Algorithme Precision()
+    eps = 1.
+    tant que 1. + eps &gt; 1.
+        eps = eps/2
+    fin tant que
+    Precision = 2*eps
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h3><span class="section-number">9.2.3. </span>Programme Python<a class="headerlink" href="#id1" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Precision</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot; calcul la precision machine &quot;&quot;&quot;</span>
+    <span class="n">eps</span> <span class="o">=</span> <span class="mf">1.0</span>
+    <span class="k">while</span> <span class="p">(</span><span class="mf">1.</span><span class="o">+</span><span class="n">eps</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">1.0</span> <span class="p">:</span>
+        <span class="n">eps</span> <span class="o">=</span> <span class="n">eps</span><span class="o">/</span><span class="mf">2.</span>
+    <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="n">eps</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Precision machine = &quot;</span><span class="p">,</span><span class="n">Precision</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Precision machine =  2.220446049250313e-16
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="erreurs-numeriques">
+<h2><span class="section-number">9.3. </span>Erreurs numériques<a class="headerlink" href="#erreurs-numeriques" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li><p>non associativité de l’addition et soustraction</p></li>
+<li><p>formule exacte <span class="math notranslate nohighlight">\(\leadsto\)</span> résultats numériques faux</p></li>
+<li><p>absorption <span class="math notranslate nohighlight">\(x + y = x\)</span>  si <span class="math notranslate nohighlight">\(y \ll x\)</span></p></li>
+</ul>
+<div class="section" id="exemple-racine-d-une-equation-du-2nd-degre">
+<h3><span class="section-number">9.3.1. </span>Exemple: racine d’une équation du 2nd degré<a class="headerlink" href="#exemple-racine-d-une-equation-du-2nd-degre" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="math notranslate nohighlight">
+\[x=\frac{-b\mp\sqrt{b^{2}-4ac}}{2a}\]</div>
+<div class="section" id="programme-python-de-base">
+<h4><span class="section-number">9.3.1.1. </span>programme Python de base<a class="headerlink" href="#programme-python-de-base" title="Lien permanent vers ce titre">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">sqrt</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mf">1.e-8</span>
+<span class="n">b</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2.</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mf">1.e-8</span>
+
+<span class="n">x1</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">+</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">b</span><span class="o">*</span><span class="n">b</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">c</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">)</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">-</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">b</span><span class="o">*</span><span class="n">b</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">c</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x1=&quot;</span><span class="p">,</span><span class="n">x1</span><span class="p">,</span> <span class="s2">&quot;x2=&quot;</span><span class="p">,</span><span class="n">x2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x1*x2=&quot;</span><span class="p">,</span><span class="n">x1</span><span class="o">*</span><span class="n">x2</span><span class="p">,</span><span class="s2">&quot;# produit=&quot;</span><span class="p">,</span><span class="n">c</span><span class="o">/</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x1= 200000000.0 x2= 1.1102230246251565e-08
+x1*x2= 2.220446049250313 # produit= 1.0
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="meilleur-approximation">
+<h4><span class="section-number">9.3.1.2. </span>meilleur approximation<a class="headerlink" href="#meilleur-approximation" title="Lien permanent vers ce titre">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x2</span> <span class="o">=</span> <span class="n">c</span><span class="o">/</span><span class="n">a</span><span class="o">/</span><span class="n">x1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x1=&quot;</span><span class="p">,</span><span class="n">x1</span><span class="p">,</span> <span class="s2">&quot;x2=&quot;</span><span class="p">,</span><span class="n">x2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x1*x2=&quot;</span><span class="p">,</span><span class="n">x1</span><span class="o">*</span><span class="n">x2</span><span class="p">,</span><span class="s2">&quot;= produit=&quot;</span><span class="p">,</span><span class="n">c</span><span class="o">/</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x1= 200000000.0 x2= 5e-09
+x1*x2= 1.0 = produit= 1.0
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="calcul-d-erreurs">
+<h3><span class="section-number">9.3.2. </span>Calcul d’erreurs<a class="headerlink" href="#calcul-d-erreurs" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="section" id="regles-sur-les-erreurs">
+<h4><span class="section-number">9.3.2.1. </span>règles sur les erreurs<a class="headerlink" href="#regles-sur-les-erreurs" title="Lien permanent vers ce titre">¶</a></h4>
+<div class="math notranslate nohighlight">
+\[\Delta(x+y)=\Delta x+\Delta y\]</div>
+<div class="math notranslate nohighlight">
+\[\Delta(x-y)=\Delta x+\Delta y\]</div>
+<div class="math notranslate nohighlight">
+\[\Delta(x*y)=\left|y\right|\Delta x+\left|x\right|\Delta y\]</div>
+<div class="math notranslate nohighlight">
+\[\Delta(\frac{x}{y})=\frac{\left|y\right|\Delta x+\left|x\right|\Delta y}{y^{2}}\]</div>
+</div>
+<div class="section" id="condition-sur-l-erreur-relative">
+<h4><span class="section-number">9.3.2.2. </span>condition sur l” erreur relative<a class="headerlink" href="#condition-sur-l-erreur-relative" title="Lien permanent vers ce titre">¶</a></h4>
+<div class="math notranslate nohighlight">
+\[\frac{\Delta x}{|x|} \le \epsilon \]</div>
+</div>
+</div>
+</div>
+<div class="section" id="conditionnement-et-erreurs-d-approximation">
+<h2><span class="section-number">9.4. </span>Conditionnement et erreurs d’approximation<a class="headerlink" href="#conditionnement-et-erreurs-d-approximation" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="sensibilite-aux-erreurs">
+<h3><span class="section-number">9.4.1. </span>sensibilité aux erreurs<a class="headerlink" href="#sensibilite-aux-erreurs" title="Lien permanent vers ce titre">¶</a></h3>
+<p><strong>Conditionnement</strong> sensibilité du résultat à une petite variation des données.</p>
+<p>Problème mal conditionné=grande sensibilité vis à vis des données.</p>
+<p><strong>Stabilité</strong> sensibilité de l’algorithme vis a vis des erreurs numériques</p>
+</div>
+<div class="section" id="erreurs-d-approximation">
+<h3><span class="section-number">9.4.2. </span>Erreurs d’approximation<a class="headerlink" href="#erreurs-d-approximation" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Soit <span class="math notranslate nohighlight">\(U^h\)</span> une approximation de la solution <span class="math notranslate nohighlight">\(U_{ex}\)</span>  fonction d’un petit paramètre d’approximation <span class="math notranslate nohighlight">\(h\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\lim_{h \rightarrow 0}{U^h} = U_{ex} \]</div>
+<p>Erreur <span class="math notranslate nohighlight">\(E(h)\)</span></p>
+<div class="math notranslate nohighlight">
+\[ E(h) =  \left\Vert U^h - U_{ex} \right\Vert \rightarrow 0 \]</div>
+<div class="section" id="ordre-d-approximation">
+<h4><span class="section-number">9.4.2.1. </span>Ordre d’approximation<a class="headerlink" href="#ordre-d-approximation" title="Lien permanent vers ce titre">¶</a></h4>
+<p><strong>Ordre <span class="math notranslate nohighlight">\(O(h^{n})\)</span></strong></p>
+<ul class="simple">
+<li><p>La fonction <span class="math notranslate nohighlight">\(E(h)\)</span> est en <span class="math notranslate nohighlight">\(O(h^{n})\)</span> s’il existe une constante <span class="math notranslate nohighlight">\(C&gt;0\)</span> telle que <span class="math notranslate nohighlight">\(\left|E(h)\right|&lt;Ch^{n}\)</span></p></li>
+</ul>
+<p><strong>Approximation d’ordre n</strong>:</p>
+<ul class="simple">
+<li><p>si l’erreur est en <span class="math notranslate nohighlight">\(O(h^{n})\)</span>, alors l” approximation est d’ordre n</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="exemple-calcul-de-e-a-avec-des-tables-pour-0-a-1">
+<h3><span class="section-number">9.4.3. </span>Exemple: calcul de <span class="math notranslate nohighlight">\(e^a\)</span> avec des tables pour <span class="math notranslate nohighlight">\(0 &lt; a &lt; 1\)</span><a class="headerlink" href="#exemple-calcul-de-e-a-avec-des-tables-pour-0-a-1" title="Lien permanent vers ce titre">¶</a></h3>
+<p>On précalcule  <span class="math notranslate nohighlight">\(n+1\)</span> valeurs <span class="math notranslate nohighlight">\(l_k=\log(1 + 10^{-k})\)</span> ( pour <span class="math notranslate nohighlight">\(k=0,n\)</span> )</p>
+<p>On a donc <span class="math notranslate nohighlight">\(e^{l_k} = 1 + 10^{-k}\)</span></p>
+<p>On décompose ensuite <span class="math notranslate nohighlight">\(a\)</span> sous la forme</p>
+<div class="math notranslate nohighlight">
+\[ a = \sum_{k=0}^{n} a_k l_k + \epsilon \mbox{ avec } a_k\in \mathbb{N} \mbox{ et } |\epsilon| \lt 10^{-n}\]</div>
+<p>ce qui donne (en utilisant <span class="math notranslate nohighlight">\(e^{a+b}=e^a e^b \)</span>) :</p>
+<div class="math notranslate nohighlight">
+\[ e^a = \left[\prod_{k=0}^{n}\left(1 + 10^{-k}\right)^{a_k}\right] e^\epsilon\]</div>
+<p>En approximant <span class="math notranslate nohighlight">\(e^\epsilon \simeq 1+ \epsilon\)</span>, on obtiens une approximation de <span class="math notranslate nohighlight">\(e^a\)</span></p>
+<div class="math notranslate nohighlight">
+\[ e^a \simeq \left[\prod_{k=0}^{n}\left(1 + 10^{-k}\right)^{a_k}\right] ( 1 + \epsilon) \]</div>
+<p>avec une erreur relative  <span class="math notranslate nohighlight">\(\epsilon^2\)</span></p>
+<div class="math notranslate nohighlight">
+\[ \frac{\Delta e^a}{e^a} = \frac {e^\epsilon- 1 - \epsilon}{e^\epsilon} \simeq \theta(\epsilon^2)\]</div>
+</div>
+<div class="section" id="algorithme-approximation-de-exp-a-a-l-aide-de-tables">
+<h3><span class="section-number">9.4.4. </span>Algorithme: approximation de exp(a) à l’aide de tables<a class="headerlink" href="#algorithme-approximation-de-exp-a-a-l-aide-de-tables" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Algorithme Exp(a)
+    n = 8  # nbre de valeurs de la table
+    L = [ln(1),ln(1+0.1),ln(1+0.01),...ln(1+10^-7)]
+    x = a  # valeur a decomposer (a, a-a0*l0, a-a0*l0-a*l1,...)
+    y = 1  # valeur de exp(a)
+    pour k de 0 a n-1
+       # Calcul de ak par decomposition 
+       # de x = a - a0*L[0]-a1*L[1]-..ak-1*L[k_1]
+       ak = 0
+       tant que x&gt;L[k] faire
+           x = x - L[k]
+           y = y*(1+10^-k)
+           ak = ak + 1
+       fin calcul ak 
+     fin boucle k
+     # prise en compte du reste ici x
+     y = y*(1+x)
+     retour y
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3><span class="section-number">9.4.5. </span>Programme Python<a class="headerlink" href="#id2" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">exp</span><span class="p">,</span><span class="n">log</span><span class="p">,</span><span class="n">log1p</span>
+<span class="c1"># table précalculée</span>
+<span class="n">n</span><span class="o">=</span><span class="mi">8</span>
+<span class="n">L</span><span class="o">=</span><span class="p">[</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="n">k</span><span class="p">))</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+<span class="c1"># calcul exp(a)</span>
+<span class="k">def</span> <span class="nf">Exp</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; calcul approximation y de exp(a)&quot;&quot;&quot;</span>
+    <span class="k">global</span> <span class="n">L</span><span class="p">,</span><span class="n">n</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">a</span>
+    <span class="n">y</span><span class="o">=</span><span class="mf">1.</span>
+    <span class="n">dixmk</span><span class="o">=</span><span class="mf">1.</span> <span class="c1"># puissance 10**(-k)</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">L</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">x</span><span class="p">):</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">L</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">y</span><span class="o">*</span><span class="n">dixmk</span>
+        <span class="n">dixmk</span> <span class="o">=</span> <span class="n">dixmk</span><span class="o">/</span><span class="mf">10.</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">y</span>
+<span class="c1"># test</span>
+<span class="n">a</span><span class="o">=</span><span class="mf">0.8</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Erreur relative = &quot;</span><span class="p">,(</span><span class="n">exp</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">-</span><span class="n">Exp</span><span class="p">(</span><span class="n">a</span><span class="p">))</span><span class="o">/</span><span class="n">exp</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="n">a</span><span class="o">=</span><span class="mf">0.00008</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Erreur relative = &quot;</span><span class="p">,(</span><span class="n">exp</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">-</span><span class="n">Exp</span><span class="p">(</span><span class="n">a</span><span class="p">))</span><span class="o">/</span><span class="n">exp</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Erreur relative =  1.3967950124629484e-15
+Erreur relative =  4.4405368413432215e-16
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="comparaison-avec-le-calcul-utilisant-les-series-entieres">
+<h3><span class="section-number">9.4.6. </span>comparaison avec le calcul utilisant les séries entières<a class="headerlink" href="#comparaison-avec-le-calcul-utilisant-les-series-entieres" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">Ye</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">Ya</span> <span class="o">=</span> <span class="p">[</span><span class="n">Exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">X</span><span class="p">]</span>
+<span class="n">Ys</span> <span class="o">=</span> <span class="p">[</span><span class="n">serie</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">14</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">X</span><span class="p">]</span>
+<span class="c1"># tracer</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Ye</span><span class="p">,</span><span class="n">X</span><span class="p">,</span><span class="n">Ya</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;exp(x)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">Ya</span><span class="o">-</span><span class="n">Ye</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;table n=7&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">Ys</span><span class="o">-</span><span class="n">Ye</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;serie n=14&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Erreur&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Precision_32_0.png" src="../_images/Precision_32_0.png" />
+</div>
+</div>
+<p><strong>Remarques</strong></p>
+<ul class="simple">
+<li><p>on peut améliorer la précision en utilisant la fonction numpy <strong>log1p(x)</strong> qui calcul log(1+x) avec une plus grande précision pour x petit</p></li>
+<li><p><strong>attention</strong> le calcul précis des fonctions élémentaires est un problème complexe (voir l’article sur la précsion de l’instruction <strong>fsin</strong> des processeurs Intel)</p></li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h3><span class="section-number">9.4.7. </span>Exercice:<a class="headerlink" href="#id3" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Utiliser le principe de l’algorithme précédent pour calculer <span class="math notranslate nohighlight">\(log(a)\)</span> pour <span class="math notranslate nohighlight">\(a&gt;1\)</span>.
+On pourra décomposer <span class="math notranslate nohighlight">\(a\)</span> sous la forme:</p>
+<div class="math notranslate nohighlight">
+\[a = \left[\prod_{k=0}^{n}\left(1 + 10^{-k}\right)^{a_k}\right] (1+\epsilon)\]</div>
+<p>En déduire une approximation de <span class="math notranslate nohighlight">\(log(a)\)</span> avec une erreur relative de <span class="math notranslate nohighlight">\(\epsilon^2\)</span></p>
+</div>
+</div>
+<div class="section" id="verification-des-calculs">
+<h2><span class="section-number">9.5. </span>Vérification des calculs<a class="headerlink" href="#verification-des-calculs" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li><p>une simulation numérique calcule une approximation</p></li>
+<li><p>toute simulation numérique doit être validée</p></li>
+<li><p>vérification et validation font partie intégrante du calcul scientifique</p></li>
+</ul>
+<p>La validation d’une simulation numérique peut utiliser</p>
+<ul class="simple">
+<li><p>une vérification de la convergence</p></li>
+<li><p>une comparaison avec une solution analytique ou une solution de référence</p></li>
+</ul>
+<div class="section" id="validation-de-la-simulation-d-alunissage">
+<h3><span class="section-number">9.5.1. </span>validation de la simulation d’alunissage<a class="headerlink" href="#validation-de-la-simulation-d-alunissage" title="Lien permanent vers ce titre">¶</a></h3>
+<p><strong>comparaison avec une solution analytique</strong></p>
+<p>Dans la modélisation de alunissage on a utiliser une approximation de la solution de l’équation du mouvement:</p>
+<div class="math notranslate nohighlight">
+\[ \frac{d^2 Z}{dt^2} = -g + \frac{Qe*Ue}{M_0-Q_e*t}\]</div>
+<p>sous la forme</p>
+<div class="math notranslate nohighlight">
+\[ Z = Z_0 - V_0 t - g \frac{t^2}{2} + t U_e (\frac{X}{2} + \frac{X^2}{6} + \frac{X^3}{12}  + \frac{X^4}{20} + \frac{X^5}{30})\]</div>
+<p>avec <span class="math notranslate nohighlight">\(X=t/t_0\)</span> et <span class="math notranslate nohighlight">\(t_0=M_0/Q_e\)</span></p>
+<p>Cette équation admet une solution analytique:</p>
+<div class="math notranslate nohighlight">
+\[ Z_e = Z_0 - V_0 t - g \frac{t^2}{2} + U_e t_0 (1-X)ln(1-X) + U_e t \]</div>
+<p>L’approximation correspond à un DL de <span class="math notranslate nohighlight">\(ln(1-X)\)</span> a l’ordre 5, et
+l’erreur doit etre en <span class="math notranslate nohighlight">\(\theta(X^7)\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="c1"># constantes en unité SI (kg/m/s)</span>
+<span class="n">g</span>  <span class="o">=</span> <span class="mf">1.6</span>     <span class="c1"># gravité</span>
+<span class="n">Ue</span> <span class="o">=</span> <span class="mf">2900.</span>   <span class="c1"># vitesse d&#39;ejection</span>
+<span class="n">Z0</span> <span class="o">=</span> <span class="mf">190000.</span> <span class="c1"># position</span>
+<span class="n">V0</span> <span class="o">=</span> <span class="mf">1580.</span>   <span class="c1"># et vitesse</span>
+<span class="n">M0</span> <span class="o">=</span> <span class="mf">15000.</span>  <span class="c1"># masse initiale du LEM</span>
+<span class="n">Me</span> <span class="o">=</span> <span class="mf">8000.</span>   <span class="c1"># dont une masse de fuel</span>
+<span class="n">t</span>  <span class="o">=</span> <span class="mf">0.</span>      <span class="c1"># temps simulation</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="mf">10.</span>     <span class="c1"># pas en temps </span>
+<span class="n">Qe</span> <span class="o">=</span> <span class="mf">90.</span>     <span class="c1"># poussée</span>
+<span class="n">t0</span> <span class="o">=</span> <span class="n">M0</span><span class="o">/</span><span class="n">Qe</span>
+<span class="c1"># calcul distance parcourue DZ</span>
+<span class="k">def</span> <span class="nf">DZ</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">t</span><span class="o">/</span><span class="n">t0</span>
+    <span class="n">dZ</span> <span class="o">=</span> <span class="o">-</span> <span class="n">V0</span><span class="o">*</span><span class="n">t</span> <span class="o">-</span> <span class="n">g</span><span class="o">*</span><span class="n">t</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="mf">2.</span> <span class="o">+</span> <span class="n">Ue</span><span class="o">*</span><span class="n">t</span><span class="o">*</span><span class="p">(</span><span class="n">X</span><span class="o">/</span><span class="mf">2.</span> <span class="o">+</span> <span class="n">X</span><span class="o">*</span><span class="n">X</span><span class="o">/</span><span class="mf">6.</span> <span class="o">+</span> <span class="n">X</span><span class="o">**</span><span class="mi">3</span><span class="o">/</span><span class="mf">12.</span> <span class="o">+</span> <span class="n">X</span><span class="o">**</span><span class="mi">4</span><span class="o">/</span><span class="mf">20.</span> <span class="o">+</span> <span class="n">X</span><span class="o">**</span><span class="mi">5</span><span class="o">/</span><span class="mf">30.</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">dZ</span>
+<span class="c1"># solution exacte</span>
+<span class="k">def</span> <span class="nf">DZe</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">t</span><span class="o">/</span><span class="n">t0</span>
+    <span class="n">dZ</span> <span class="o">=</span> <span class="o">-</span> <span class="n">V0</span><span class="o">*</span><span class="n">t</span> <span class="o">-</span> <span class="n">g</span><span class="o">*</span><span class="n">t</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="mf">2.</span> <span class="o">+</span> <span class="n">Ue</span><span class="o">*</span><span class="p">(</span><span class="n">t0</span><span class="o">-</span><span class="n">t</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">X</span><span class="p">)</span> <span class="o">+</span> <span class="n">Ue</span><span class="o">*</span><span class="n">t</span>
+    <span class="k">return</span> <span class="n">dZ</span>
+<span class="c1"># calcul de l&#39;erreur</span>
+<span class="n">T</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">2.</span><span class="p">,</span><span class="mi">10</span><span class="o">*</span><span class="n">dt</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">Z</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">DZ</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">T</span><span class="p">])</span>
+<span class="n">Ze</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">DZe</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">T</span><span class="p">])</span>
+<span class="n">Err7</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">t0</span><span class="o">*</span><span class="p">(</span><span class="n">t</span><span class="o">/</span><span class="n">t0</span><span class="p">)</span><span class="o">**</span><span class="mi">7</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">T</span><span class="p">])</span>
+<span class="c1">#</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">Z</span><span class="p">,</span><span class="n">T</span><span class="p">,</span><span class="n">Ze</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;distance parcourue&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">Z</span><span class="o">-</span><span class="n">Ze</span><span class="p">),</span><span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;err&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">Err7</span><span class="p">,</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;$O(X^7)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Precision_37_0.png" src="../_images/Precision_37_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="validation-du-calcul-de-exp-a-avec-n-valeurs-tabulees">
+<h3><span class="section-number">9.5.2. </span>Validation du calcul de <span class="math notranslate nohighlight">\(exp(a)\)</span> avec <span class="math notranslate nohighlight">\(n\)</span> valeurs tabulées<a class="headerlink" href="#validation-du-calcul-de-exp-a-avec-n-valeurs-tabulees" title="Lien permanent vers ce titre">¶</a></h3>
+<p><strong>vérification de la convergence</strong></p>
+<p>erreur relative <span class="math notranslate nohighlight">\(err \simeq \epsilon^2\)</span> avec <span class="math notranslate nohighlight">\(\epsilon \lt 10^{-n}\)</span></p>
+<div class="section" id="id4">
+<h4><span class="section-number">9.5.2.1. </span>programme Python<a class="headerlink" href="#id4" title="Lien permanent vers ce titre">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="c1"># calcul exp(a) avec une precision 10^-2n</span>
+<span class="k">def</span> <span class="nf">Exp</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; calcul approximation y de exp(a)&quot;&quot;&quot;</span>
+    <span class="n">L</span><span class="o">=</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="n">k</span><span class="p">))</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">a</span>
+    <span class="n">y</span><span class="o">=</span><span class="mf">1.</span>
+    <span class="n">dixmk</span><span class="o">=</span><span class="mf">1.</span> <span class="c1"># puissance 10**(-k)</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">L</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">x</span><span class="p">):</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">L</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">y</span><span class="o">*</span><span class="n">dixmk</span>
+        <span class="n">dixmk</span> <span class="o">=</span> <span class="n">dixmk</span><span class="o">/</span><span class="mf">10.</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">y</span>
+<span class="c1">#</span>
+<span class="n">n</span><span class="o">=</span><span class="mi">12</span>
+<span class="n">N</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">Y</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">N</span><span class="p">]</span>
+<span class="n">Err</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">a</span><span class="o">=</span><span class="mf">0.5</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">Err</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">Exp</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">a</span><span class="p">))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">Err</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;err&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;$10^{-2n}$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Precision_39_0.png" src="../_images/Precision_39_0.png" />
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="a-href-sommaire-bibliographie-a-a-name-section2">
+<h2><span class="section-number">9.6. </span><a href="#sommaire">Bibliographie</a><a name="section2" /><a class="headerlink" href="#a-href-sommaire-bibliographie-a-a-name-section2" title="Lien permanent vers ce titre">¶</a></h2>
+<ol class="simple">
+<li><p><a class="reference external" href="http://mp.cpgedupuydelome.fr/document.php?doc=Article%20-%20Calcul%20des%20fonctions%20usuelles%20par%20la%20calculatrice.txt">Calcul des fonctions usuelles sur une calculatrice (blog prépa Dupuis de Lome)</a></p></li>
+<li><p><a class="reference external" href="https://www.irisa.fr/sage/jocelyne/cours/HPC/prec-1101.pdf">Calcul scientifique (J. Erhel INRIA -Rennes)</a></p></li>
+<li><p><a class="reference external" href="http://randomascii.wordpress.com/2014/10/09/intel-underestimates-error-bounds-by-1-3-quintillion">Intel Underestimates Error Bounds by 1.3 quintillion for the fsin instruction</a></p></li>
+<li><p><a class="reference external" href="http://www5.in.tum.de/~huckle/bugse.html">Collection of software bugs</a></p></li>
+<li><p>J. P. Demailly. « Analyse Numérique et Equations Différentielles », PUG, 1994.</p></li>
+</ol>
+</div>
+<div class="section" id="fin-de-la-lecon">
+<h2><span class="section-number">9.7. </span>FIN de la leçon<a class="headerlink" href="#fin-de-la-lecon" title="Lien permanent vers ce titre">¶</a></h2>
+<a class="reference internal image-reference" href="../_images/cloud_precision.png"><img alt="sommaire" src="../_images/cloud_precision.png" style="width: 300px;" /></a>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./CHAP9"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../CHAP8/COURS_FICHIER.html" title="précédent page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">précédent</p>
+            <p class="prev-next-title"><span class="section-number">8. </span>Gestion de fichiers et E/S</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Exercices_precision.html" title="suivant page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">suivant</p>
+        <p class="prev-next-title"><span class="section-number">9.8. </span>Exercices</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      Par Marc BUFFAT, dpt mécanique, Lyon 1<br/>
+    
+        &copy; droits d'auteur 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

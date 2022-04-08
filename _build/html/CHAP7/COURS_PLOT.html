@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>7. Tracé avec matplotlib &#8212; INPROS INtroduction à la PROgrammation Scientifique en Python</title>
+    <title>8. Tracé avec matplotlib &#8212; INPROS INtroduction à la PROgrammation Scientifique en Python</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -55,8 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="canonical" href="https://perso.univ-lyon1.fr/marc.buffat/CHAP7/COURS_PLOT.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
-    <link rel="next" title="8. Gestion de fichiers et E/S" href="../CHAP8/COURS_FICHIER.html" />
-    <link rel="prev" title="6.8. Correction des exercices" href="../CHAP6/EXERCICES_TABLEAU.html" />
+    <link rel="next" title="9. Gestion de fichiers et E/S" href="../CHAP8/COURS_FICHIER.html" />
+    <link rel="prev" title="7.8. Correction des exercices" href="../CHAP6/EXERCICES_TABLEAU.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="fr">
     
@@ -143,9 +143,14 @@ const thebe_selector_output = ".output, .cell_output"
    5. Fonctions et procédures
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP5/COURS_ALGORITHMIQUE.html">
+   6. Programmation structurée
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../CHAP6/COURS_TABLEAU.html">
-   6. Les tableaux (vecteur, matrice)
+   7. Les tableaux (vecteur, matrice)
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -155,24 +160,24 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../CHAP6/EXERCICES_TABLEAU.html">
-     6.8. Correction des exercices
+     7.8. Correction des exercices
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   7. Tracé avec matplotlib
+   8. Tracé avec matplotlib
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../CHAP8/COURS_FICHIER.html">
-   8. Gestion de fichiers et E/S
+   9. Gestion de fichiers et E/S
   </a>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../CHAP9/Precision.html">
-   9. Précision et validation
+   10. Précision et validation
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -182,24 +187,24 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../CHAP9/Exercices_precision.html">
-     9.8. Exercices
+     10.8. Exercices
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../CHAP10/COURS_ALGORITHME.html">
-   10. Algorithmes numériques
+   11. Algorithmes numériques
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../CHAP11/Efficiency.html">
-   11. Efficacité / complexité
+   12. Efficacité / complexité
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../CHAP12/debugging.html">
-   13. Recherche d’erreurs
+   14. Recherche d’erreurs
   </a>
  </li>
 </ul>
@@ -308,37 +313,37 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduction-a-matplotlib">
-   7.1. Introduction à matplotlib
+   8.1. Introduction à matplotlib
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#site-web-http-matplotlib-org">
-     7.1.1. Site web [http://matplotlib.org]
+     8.1.1. Site web [http://matplotlib.org]
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#tutorial-en-anglais">
-     7.1.2. Tutorial en anglais
+     8.1.2. Tutorial en anglais
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#utilisation">
-     7.1.3. Utilisation
+     8.1.3. Utilisation
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exemple-tracer-simple-d-une-courbe">
-     7.1.4. Exemple: tracer simple d’une courbe
+     8.1.4. Exemple: tracer simple d’une courbe
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#remarques">
-       7.1.4.1. remarques
+       8.1.4.1. remarques
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#question">
-       7.1.4.2. question
+       8.1.4.2. question
       </a>
      </li>
     </ul>
@@ -347,68 +352,68 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#trace-de-courbes">
-   7.2. Tracé de courbes
+   8.2. Tracé de courbes
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#fonctions-de-trace-de-courbes-avec-sous-figures-legende-et-titre">
-     7.2.1. Fonctions de tracé de courbes avec sous-figures, légende et titre
+     8.2.1. Fonctions de tracé de courbes avec sous-figures, légende et titre
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exemple-tracer-avec-sous-figures">
-     7.2.2. Exemple: tracer avec sous-figures
+     8.2.2. Exemple: tracer avec sous-figures
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#selection-des-limites-des-axes">
-     7.2.3. Sélection des limites des axes
+     8.2.3. Sélection des limites des axes
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#sauvegarde-sur-fichiers-pdf-eps-png">
-     7.2.4. Sauvegarde sur fichiers (pdf, eps, png)
+     8.2.4. Sauvegarde sur fichiers (pdf, eps, png)
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#trace-de-surface-en-3d">
-   7.3. Tracé de surface en 3D
+   8.3. Tracé de surface en 3D
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exemple">
-     7.3.1. Exemple
+     8.3.1. Exemple
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#animation">
-   7.4. Animation
+   8.4. Animation
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exemple-d-animation">
-     7.4.1. Exemple d’animation
+     8.4.1. Exemple d’animation
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id1">
-     7.4.2. Remarques
+     8.4.2. Remarques
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#visualisation-de-l-animation">
-     7.4.3. Visualisation de l’animation
+     8.4.3. Visualisation de l’animation
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#fin-de-la-lecon">
-   7.5. FIN de la leçon
+   8.5. FIN de la leçon
   </a>
  </li>
 </ul>
@@ -433,37 +438,37 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduction-a-matplotlib">
-   7.1. Introduction à matplotlib
+   8.1. Introduction à matplotlib
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#site-web-http-matplotlib-org">
-     7.1.1. Site web [http://matplotlib.org]
+     8.1.1. Site web [http://matplotlib.org]
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#tutorial-en-anglais">
-     7.1.2. Tutorial en anglais
+     8.1.2. Tutorial en anglais
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#utilisation">
-     7.1.3. Utilisation
+     8.1.3. Utilisation
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exemple-tracer-simple-d-une-courbe">
-     7.1.4. Exemple: tracer simple d’une courbe
+     8.1.4. Exemple: tracer simple d’une courbe
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#remarques">
-       7.1.4.1. remarques
+       8.1.4.1. remarques
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#question">
-       7.1.4.2. question
+       8.1.4.2. question
       </a>
      </li>
     </ul>
@@ -472,68 +477,68 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#trace-de-courbes">
-   7.2. Tracé de courbes
+   8.2. Tracé de courbes
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#fonctions-de-trace-de-courbes-avec-sous-figures-legende-et-titre">
-     7.2.1. Fonctions de tracé de courbes avec sous-figures, légende et titre
+     8.2.1. Fonctions de tracé de courbes avec sous-figures, légende et titre
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exemple-tracer-avec-sous-figures">
-     7.2.2. Exemple: tracer avec sous-figures
+     8.2.2. Exemple: tracer avec sous-figures
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#selection-des-limites-des-axes">
-     7.2.3. Sélection des limites des axes
+     8.2.3. Sélection des limites des axes
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#sauvegarde-sur-fichiers-pdf-eps-png">
-     7.2.4. Sauvegarde sur fichiers (pdf, eps, png)
+     8.2.4. Sauvegarde sur fichiers (pdf, eps, png)
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#trace-de-surface-en-3d">
-   7.3. Tracé de surface en 3D
+   8.3. Tracé de surface en 3D
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exemple">
-     7.3.1. Exemple
+     8.3.1. Exemple
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#animation">
-   7.4. Animation
+   8.4. Animation
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exemple-d-animation">
-     7.4.1. Exemple d’animation
+     8.4.1. Exemple d’animation
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id1">
-     7.4.2. Remarques
+     8.4.2. Remarques
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#visualisation-de-l-animation">
-     7.4.3. Visualisation de l’animation
+     8.4.3. Visualisation de l’animation
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#fin-de-la-lecon">
-   7.5. FIN de la leçon
+   8.5. FIN de la leçon
   </a>
  </li>
 </ul>
@@ -548,7 +553,7 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal image-reference" href="../_images/logo_trans9.png"><img alt="LyonHPC" src="../_images/logo_trans9.png" style="width: 180px;" /></a>
 <a class="reference internal image-reference" href="../_images/python-logo9.gif"><img alt="LyonHPC" src="../_images/python-logo9.gif" style="width: 200px;" /></a>
 <div class="tex2jax_ignore mathjax_ignore section" id="trace-avec-matplotlib">
-<h1><span class="section-number">7. </span>Tracé avec matplotlib<a class="headerlink" href="#trace-avec-matplotlib" title="Lien permanent vers ce titre">¶</a></h1>
+<h1><span class="section-number">8. </span>Tracé avec matplotlib<a class="headerlink" href="#trace-avec-matplotlib" title="Lien permanent vers ce titre">¶</a></h1>
 <a class="reference internal image-reference" href="../_images/plot3d.png"><img alt="plot3d" src="../_images/plot3d.png" style="width: 250px;" /></a>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -585,11 +590,11 @@ const thebe_selector_output = ".output, .cell_output"
 les étudiants Lyon1 <a class="reference external" href="https://jupyter.mecanique.univ-lyon1.fr">https://jupyter.mecanique.univ-lyon1.fr</a></p>
 </div>
 <div class="section" id="introduction-a-matplotlib">
-<h2><span class="section-number">7.1. </span>Introduction à matplotlib<a class="headerlink" href="#introduction-a-matplotlib" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">8.1. </span>Introduction à matplotlib<a class="headerlink" href="#introduction-a-matplotlib" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Matplotlib est une bibliothèque de Python destinée à tracer et visualiser des données sous formes de graphiques.  Combinée avec numpy,
 elle permet une analyse des simulations numériques, à la fois sous forme interactive et pour produire des documents de très grande qualité, directement utilisable dans les publications scientifiques.</p>
 <div class="section" id="site-web-http-matplotlib-org">
-<h3><span class="section-number">7.1.1. </span>Site web [<a class="reference external" href="http://matplotlib.org">http://matplotlib.org</a>]<a class="headerlink" href="#site-web-http-matplotlib-org" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">8.1.1. </span>Site web [<a class="reference external" href="http://matplotlib.org">http://matplotlib.org</a>]<a class="headerlink" href="#site-web-http-matplotlib-org" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">IFrame</span><span class="p">(</span><span class="s2">&quot;https://matplotlib.org/stable/gallery/index.html&quot;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">))</span>
@@ -609,11 +614,11 @@ elle permet une analyse des simulations numériques, à la fois sous forme inter
 </div>
 </div>
 <div class="section" id="tutorial-en-anglais">
-<h3><span class="section-number">7.1.2. </span>Tutorial en anglais<a class="headerlink" href="#tutorial-en-anglais" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">8.1.2. </span>Tutorial en anglais<a class="headerlink" href="#tutorial-en-anglais" title="Lien permanent vers ce titre">¶</a></h3>
 <p>[<a class="reference external" href="http://scipy-lectures.org/intro/matplotlib/">http://scipy-lectures.org/intro/matplotlib/</a>]</p>
 </div>
 <div class="section" id="utilisation">
-<h3><span class="section-number">7.1.3. </span>Utilisation<a class="headerlink" href="#utilisation" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">8.1.3. </span>Utilisation<a class="headerlink" href="#utilisation" title="Lien permanent vers ce titre">¶</a></h3>
 <p>il faut importer la librairie matplolib et son module pyplot ainsi que numpy:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -625,7 +630,7 @@ elle permet une analyse des simulations numériques, à la fois sous forme inter
 </div>
 </div>
 <div class="section" id="exemple-tracer-simple-d-une-courbe">
-<h3><span class="section-number">7.1.4. </span>Exemple: tracer simple d’une courbe<a class="headerlink" href="#exemple-tracer-simple-d-une-courbe" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">8.1.4. </span>Exemple: tracer simple d’une courbe<a class="headerlink" href="#exemple-tracer-simple-d-une-courbe" title="Lien permanent vers ce titre">¶</a></h3>
 <p>fonction <strong>plot</strong> pour tracer la fonction y=f(x) donnée par ses valeurs Y en des points discrets X</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -644,7 +649,7 @@ elle permet une analyse des simulations numériques, à la fois sous forme inter
 </div>
 </div>
 <div class="section" id="remarques">
-<h4><span class="section-number">7.1.4.1. </span>remarques<a class="headerlink" href="#remarques" title="Lien permanent vers ce titre">¶</a></h4>
+<h4><span class="section-number">8.1.4.1. </span>remarques<a class="headerlink" href="#remarques" title="Lien permanent vers ce titre">¶</a></h4>
 <ul>
 <li><p>l’utilisation de la fonction <strong>plt.show()</strong> n’est pas obligatoire en mode interactif avec ipython (mais nécessaire avec python)</p></li>
 <li><p>l’importation de la librairie <strong>pyplot</strong> sous le nom <strong>plt</strong> est une convention souvant utilisée</p>
@@ -660,13 +665,13 @@ elle permet une analyse des simulations numériques, à la fois sous forme inter
 </ul>
 </div>
 <div class="section" id="question">
-<h4><span class="section-number">7.1.4.2. </span>question<a class="headerlink" href="#question" title="Lien permanent vers ce titre">¶</a></h4>
+<h4><span class="section-number">8.1.4.2. </span>question<a class="headerlink" href="#question" title="Lien permanent vers ce titre">¶</a></h4>
 <p>Que fait le programme précédent avec <strong>X=np.linspace(-6*np.pi,6*np.pi,401)</strong></p>
 </div>
 </div>
 </div>
 <div class="section" id="trace-de-courbes">
-<h2><span class="section-number">7.2. </span>Tracé de courbes<a class="headerlink" href="#trace-de-courbes" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">8.2. </span>Tracé de courbes<a class="headerlink" href="#trace-de-courbes" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;**Video du cours: tracé de courbes**&quot;</span><span class="p">))</span>
@@ -694,7 +699,7 @@ Avec Python 3, <code class="docutils literal notranslate"><span class="pre">prin
 soit <code class="docutils literal notranslate"><span class="pre">print('bonjour')</span></code></p>
 </div>
 <div class="section" id="fonctions-de-trace-de-courbes-avec-sous-figures-legende-et-titre">
-<h3><span class="section-number">7.2.1. </span>Fonctions de tracé de courbes avec sous-figures, légende et titre<a class="headerlink" href="#fonctions-de-trace-de-courbes-avec-sous-figures-legende-et-titre" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">8.2.1. </span>Fonctions de tracé de courbes avec sous-figures, légende et titre<a class="headerlink" href="#fonctions-de-trace-de-courbes-avec-sous-figures-legende-et-titre" title="Lien permanent vers ce titre">¶</a></h3>
 <ul class="simple">
 <li><p>plt.<strong>subplot</strong>(nline,ncol,num)</p></li>
 <li><p>plt.<strong>xlabel</strong>(titre axe des X) plt.<strong>ylabel</strong>(titre axe des Y)</p></li>
@@ -703,7 +708,7 @@ soit <code class="docutils literal notranslate"><span class="pre">print('bonjour
 </ul>
 </div>
 <div class="section" id="exemple-tracer-avec-sous-figures">
-<h3><span class="section-number">7.2.2. </span>Exemple: tracer avec sous-figures<a class="headerlink" href="#exemple-tracer-avec-sous-figures" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">8.2.2. </span>Exemple: tracer avec sous-figures<a class="headerlink" href="#exemple-tracer-avec-sous-figures" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># augmente la taille du texte par defaut</span>
@@ -731,7 +736,7 @@ soit <code class="docutils literal notranslate"><span class="pre">print('bonjour
 </div>
 </div>
 <div class="section" id="selection-des-limites-des-axes">
-<h3><span class="section-number">7.2.3. </span>Sélection des limites des axes<a class="headerlink" href="#selection-des-limites-des-axes" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">8.2.3. </span>Sélection des limites des axes<a class="headerlink" href="#selection-des-limites-des-axes" title="Lien permanent vers ce titre">¶</a></h3>
 <ul class="simple">
 <li><p>plt.<strong>xlim</strong>(xmin,xmax)</p></li>
 <li><p>plt.<strong>ylim</strong>(ymin,ymax)</p></li>
@@ -753,7 +758,7 @@ soit <code class="docutils literal notranslate"><span class="pre">print('bonjour
 </div>
 </div>
 <div class="section" id="sauvegarde-sur-fichiers-pdf-eps-png">
-<h3><span class="section-number">7.2.4. </span>Sauvegarde sur fichiers (pdf, eps, png)<a class="headerlink" href="#sauvegarde-sur-fichiers-pdf-eps-png" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">8.2.4. </span>Sauvegarde sur fichiers (pdf, eps, png)<a class="headerlink" href="#sauvegarde-sur-fichiers-pdf-eps-png" title="Lien permanent vers ce titre">¶</a></h3>
 <ul class="simple">
 <li><p>plt.<strong>savefig</strong>(nom_fichier)</p></li>
 </ul>
@@ -780,7 +785,7 @@ ls -al mafigure.pdf
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-rw-rw-r-- 1 buffat buffat 18433 avril  7 22:04 mafigure.pdf
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-rw-rw-r-- 1 buffat buffat 18433 avril  8 11:38 mafigure.pdf
 </pre></div>
 </div>
 </div>
@@ -788,7 +793,7 @@ ls -al mafigure.pdf
 </div>
 </div>
 <div class="section" id="trace-de-surface-en-3d">
-<h2><span class="section-number">7.3. </span>Tracé de surface en 3D<a class="headerlink" href="#trace-de-surface-en-3d" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">8.3. </span>Tracé de surface en 3D<a class="headerlink" href="#trace-de-surface-en-3d" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;**Video du cours: tracé en 3D et animation**&quot;</span><span class="p">))</span>
@@ -823,7 +828,7 @@ soit <code class="docutils literal notranslate"><span class="pre">print('bonjour
 <li><p><strong>surface</strong>(X,Y,Z,rstride=1,cstride=1)</p></li>
 </ul>
 <div class="section" id="exemple">
-<h3><span class="section-number">7.3.1. </span>Exemple<a class="headerlink" href="#exemple" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">8.3.1. </span>Exemple<a class="headerlink" href="#exemple" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
@@ -850,7 +855,7 @@ soit <code class="docutils literal notranslate"><span class="pre">print('bonjour
 </div>
 </div>
 <div class="section" id="animation">
-<h2><span class="section-number">7.4. </span>Animation<a class="headerlink" href="#animation" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">8.4. </span>Animation<a class="headerlink" href="#animation" title="Lien permanent vers ce titre">¶</a></h2>
 <p>utilisation de la bibliothéque <strong>matplotlib.animation</strong> et de la fonction</p>
 <ul class="simple">
 <li><p><strong>FuncAnimation</strong>(figure,animate,init_func=init,frames=n,interval=pas,blit=True)</p></li>
@@ -858,7 +863,7 @@ soit <code class="docutils literal notranslate"><span class="pre">print('bonjour
 <p><strong>principe:</strong> on génère n images avec une fonction utilisateur <strong>animate</strong>(i) (i numéro de l’image), et on obtiens une vidéo avec un délai de pas millisecondes entre l’appel de la fonction.
 La fonction utilisateur <strong>init()</strong> permet une initialisation de la séquence.</p>
 <div class="section" id="exemple-d-animation">
-<h3><span class="section-number">7.4.1. </span>Exemple d’animation<a class="headerlink" href="#exemple-d-animation" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">8.4.1. </span>Exemple d’animation<a class="headerlink" href="#exemple-d-animation" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -901,7 +906,7 @@ La fonction utilisateur <strong>init()</strong> permet une initialisation de la 
 </div>
 </div>
 <div class="section" id="id1">
-<h3><span class="section-number">7.4.2. </span>Remarques<a class="headerlink" href="#id1" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">8.4.2. </span>Remarques<a class="headerlink" href="#id1" title="Lien permanent vers ce titre">¶</a></h3>
 <ul class="simple">
 <li><p>notez la virgule dans la ligne return des fonctions animate et init: elle est obligatoire car on retourne une liste</p></li>
 <li><p>la fonction save utilise un programme externe pour générer la vidéo: ffmepg qui doit donc être installé pour pouvoir l’utiliser</p></li>
@@ -915,14 +920,14 @@ ls -al *mp4
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-rw-rw-r-- 1 buffat buffat 73664 avril  7 22:04 mon_animation.mp4
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-rw-rw-r-- 1 buffat buffat 73664 avril  8 11:38 mon_animation.mp4
 </pre></div>
 </div>
 </div>
 </div>
 </div>
 <div class="section" id="visualisation-de-l-animation">
-<h3><span class="section-number">7.4.3. </span>Visualisation de l’animation<a class="headerlink" href="#visualisation-de-l-animation" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">8.4.3. </span>Visualisation de l’animation<a class="headerlink" href="#visualisation-de-l-animation" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
@@ -2078,7 +2083,7 @@ bwAAAB1kYXRhAAAAAQAAAABMYXZmNTguMjkuMTAw
 </div>
 </div>
 <div class="section" id="fin-de-la-lecon">
-<h2><span class="section-number">7.5. </span>FIN de la leçon<a class="headerlink" href="#fin-de-la-lecon" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">8.5. </span>FIN de la leçon<a class="headerlink" href="#fin-de-la-lecon" title="Lien permanent vers ce titre">¶</a></h2>
 <a class="reference internal image-reference" href="../_images/plot3d.png"><img alt="plot3d" src="../_images/plot3d.png" style="width: 300px;" /></a>
 </div>
 </div>
@@ -2112,13 +2117,13 @@ bwAAAB1kYXRhAAAAAQAAAABMYXZmNTguMjkuMTAw
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">précédent</p>
-            <p class="prev-next-title"><span class="section-number">6.8. </span>Correction des exercices</p>
+            <p class="prev-next-title"><span class="section-number">7.8. </span>Correction des exercices</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../CHAP8/COURS_FICHIER.html" title="suivant page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">suivant</p>
-        <p class="prev-next-title"><span class="section-number">8. </span>Gestion de fichiers et E/S</p>
+        <p class="prev-next-title"><span class="section-number">9. </span>Gestion de fichiers et E/S</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>13. Recherche d’erreurs &#8212; INPROS INtroduction à la PROgrammation Scientifique en Python</title>
+    <title>14. Recherche d’erreurs &#8212; INPROS INtroduction à la PROgrammation Scientifique en Python</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -56,7 +56,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
     <link rel="next" title="Rappel de maths et physique" href="../RAPPEL/COURS_RAPPEL.html" />
-    <link rel="prev" title="11. Efficacité / complexité" href="../CHAP11/Efficiency.html" />
+    <link rel="prev" title="12. Efficacité / complexité" href="../CHAP11/Efficiency.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="fr">
     
@@ -143,9 +143,14 @@ const thebe_selector_output = ".output, .cell_output"
    5. Fonctions et procédures
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP5/COURS_ALGORITHMIQUE.html">
+   6. Programmation structurée
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../CHAP6/COURS_TABLEAU.html">
-   6. Les tableaux (vecteur, matrice)
+   7. Les tableaux (vecteur, matrice)
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -155,24 +160,24 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../CHAP6/EXERCICES_TABLEAU.html">
-     6.8. Correction des exercices
+     7.8. Correction des exercices
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../CHAP7/COURS_PLOT.html">
-   7. Tracé avec matplotlib
+   8. Tracé avec matplotlib
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../CHAP8/COURS_FICHIER.html">
-   8. Gestion de fichiers et E/S
+   9. Gestion de fichiers et E/S
   </a>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../CHAP9/Precision.html">
-   9. Précision et validation
+   10. Précision et validation
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -182,24 +187,24 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../CHAP9/Exercices_precision.html">
-     9.8. Exercices
+     10.8. Exercices
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../CHAP10/COURS_ALGORITHME.html">
-   10. Algorithmes numériques
+   11. Algorithmes numériques
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../CHAP11/Efficiency.html">
-   11. Efficacité / complexité
+   12. Efficacité / complexité
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   13. Recherche d’erreurs
+   14. Recherche d’erreurs
   </a>
  </li>
 </ul>
@@ -308,73 +313,73 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#historique">
-   13.1. Historique
+   14.1. Historique
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#methodologie">
-   13.2. Méthodologie
+   14.2. Méthodologie
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#objectifs-du-debugging">
-     13.2.1. objectifs du debugging
+     14.2.1. objectifs du debugging
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#demarche-du-debugging">
-     13.2.2. démarche du debugging
+     14.2.2. démarche du debugging
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#methode">
-     13.2.3. méthode
+     14.2.3. méthode
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exemple-de-debugging">
-   13.3. Exemple de debugging
+   14.3. Exemple de debugging
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#principe-de-l-algorithme">
-     13.3.1. principe de l’algorithme
+     14.3.1. principe de l’algorithme
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#programme-avec-des-bugs">
-     13.3.2. programme avec des bugs !!
+     14.3.2. programme avec des bugs !!
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#instrumentation-du-programme">
-     13.3.3. instrumentation du programme
+     14.3.3. instrumentation du programme
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#programme-correcte">
-     13.3.4. programme correcte
+     14.3.4. programme correcte
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#utilisation-de-assert">
-   13.4. Utilisation de assert
+   14.4. Utilisation de assert
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exemple-d-utilisation">
-     13.4.1. exemple d’utilisation
+     14.4.1. exemple d’utilisation
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#fin-de-la-lecon">
-   13.5. FIN de la leçon
+   14.5. FIN de la leçon
   </a>
  </li>
 </ul>
@@ -399,73 +404,73 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#historique">
-   13.1. Historique
+   14.1. Historique
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#methodologie">
-   13.2. Méthodologie
+   14.2. Méthodologie
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#objectifs-du-debugging">
-     13.2.1. objectifs du debugging
+     14.2.1. objectifs du debugging
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#demarche-du-debugging">
-     13.2.2. démarche du debugging
+     14.2.2. démarche du debugging
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#methode">
-     13.2.3. méthode
+     14.2.3. méthode
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exemple-de-debugging">
-   13.3. Exemple de debugging
+   14.3. Exemple de debugging
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#principe-de-l-algorithme">
-     13.3.1. principe de l’algorithme
+     14.3.1. principe de l’algorithme
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#programme-avec-des-bugs">
-     13.3.2. programme avec des bugs !!
+     14.3.2. programme avec des bugs !!
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#instrumentation-du-programme">
-     13.3.3. instrumentation du programme
+     14.3.3. instrumentation du programme
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#programme-correcte">
-     13.3.4. programme correcte
+     14.3.4. programme correcte
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#utilisation-de-assert">
-   13.4. Utilisation de assert
+   14.4. Utilisation de assert
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exemple-d-utilisation">
-     13.4.1. exemple d’utilisation
+     14.4.1. exemple d’utilisation
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#fin-de-la-lecon">
-   13.5. FIN de la leçon
+   14.5. FIN de la leçon
   </a>
  </li>
 </ul>
@@ -480,7 +485,7 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal image-reference" href="../_images/logo_trans3.png"><img alt="LyonHPC" src="../_images/logo_trans3.png" style="width: 180px;" /></a>
 <a class="reference internal image-reference" href="../_images/python-logo3.gif"><img alt="LyonHPC" src="../_images/python-logo3.gif" style="width: 200px;" /></a>
 <div class="tex2jax_ignore mathjax_ignore section" id="recherche-d-erreurs">
-<h1><span class="section-number">13. </span>Recherche d’erreurs<a class="headerlink" href="#recherche-d-erreurs" title="Lien permanent vers ce titre">¶</a></h1>
+<h1><span class="section-number">14. </span>Recherche d’erreurs<a class="headerlink" href="#recherche-d-erreurs" title="Lien permanent vers ce titre">¶</a></h1>
 <a class="reference internal image-reference" href="../_images/phd011406s.gif"><img alt="../_images/phd011406s.gif" src="../_images/phd011406s.gif" style="width: 400px;" /></a>
 <p>d’après le site <a class="reference external" href="http://phdcomics.com/comics.php">http://phdcomics.com/comics.php</a></p>
 <div class="cell docutils container">
@@ -492,14 +497,14 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="historique">
-<h2><span class="section-number">13.1. </span>Historique<a class="headerlink" href="#historique" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">14.1. </span>Historique<a class="headerlink" href="#historique" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Un <strong>bug informatique</strong> ou <strong>bogue</strong> est communément attribué au tout premier incident informatique qui a été causé par un insecte lors du développement du système informatique électromécanique à lampes Harvard Mark II en 1945.</p>
 <a class="reference internal image-reference" href="../_images/SE-harvard-mark-II.jpg"><img alt="Mark II" src="../_images/SE-harvard-mark-II.jpg" style="width: 350px;" /></a>
 <a class="reference internal image-reference" href="../_images/BugMark2.jpg"><img alt="Bug" src="../_images/BugMark2.jpg" style="width: 200px;" /></a>
 <p>Cependant, le terme bug était déja utiliser pour désigner un défaut de conception depuis Thomas Edison en 1878.</p>
 </div>
 <div class="section" id="methodologie">
-<h2><span class="section-number">13.2. </span>Méthodologie<a class="headerlink" href="#methodologie" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">14.2. </span>Méthodologie<a class="headerlink" href="#methodologie" title="Lien permanent vers ce titre">¶</a></h2>
 <p><em>(voir aussi le cours MIT 6.00 « Introduction to computer science and programming » )</em></p>
 <p>Les erreurs  dans un programme (bogues ou bugs) sont introduites par le programmeur:</p>
 <ul class="simple">
@@ -508,7 +513,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>erreur algorithmique</p></li>
 </ul>
 <div class="section" id="objectifs-du-debugging">
-<h3><span class="section-number">13.2.1. </span>objectifs du debugging<a class="headerlink" href="#objectifs-du-debugging" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">14.2.1. </span>objectifs du debugging<a class="headerlink" href="#objectifs-du-debugging" title="Lien permanent vers ce titre">¶</a></h3>
 <ul class="simple">
 <li><p>essayer d’obtenir un programme avec le moins d’erreurs possible (bug-free program)</p></li>
 <li><p>et non pas éliminer rapidement une erreur</p></li>
@@ -517,7 +522,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Dans le développement d’applications, la partie debugging et validation représente la part la plus importante.</p>
 </div>
 <div class="section" id="demarche-du-debugging">
-<h3><span class="section-number">13.2.2. </span>démarche du debugging<a class="headerlink" href="#demarche-du-debugging" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">14.2.2. </span>démarche du debugging<a class="headerlink" href="#demarche-du-debugging" title="Lien permanent vers ce titre">¶</a></h3>
 <ul class="simple">
 <li><p>démarche systématique basée sur la logique</p></li>
 <li><p>outils d’aide au debugging = debugger OK</p></li>
@@ -526,7 +531,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </div>
 <div class="section" id="methode">
-<h3><span class="section-number">13.2.3. </span>méthode<a class="headerlink" href="#methode" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">14.2.3. </span>méthode<a class="headerlink" href="#methode" title="Lien permanent vers ce titre">¶</a></h3>
 <ul class="simple">
 <li><p>recherche de bugs par dichotomie (binary search)</p></li>
 <li><p>avec pour objectif non pas de trouver pourquoi le programme ne donne pas le bon résultat, mais de comprendre pourquoi le programme fonctionne de cette façon pour ensuite le corriger.</p></li>
@@ -546,7 +551,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="exemple-de-debugging">
-<h2><span class="section-number">13.3. </span>Exemple de debugging<a class="headerlink" href="#exemple-de-debugging" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">14.3. </span>Exemple de debugging<a class="headerlink" href="#exemple-de-debugging" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Voici un programme qui teste si la représentation base 2 d’un entier
 est un palindrome.</p>
 <p><strong>exemple:</strong></p>
@@ -555,7 +560,7 @@ est un palindrome.</p>
 <li><p>n=12 en base 2 s’écrit 1100 et n’est pas un palindrome</p></li>
 </ul>
 <div class="section" id="principe-de-l-algorithme">
-<h3><span class="section-number">13.3.1. </span>principe de l’algorithme<a class="headerlink" href="#principe-de-l-algorithme" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">14.3.1. </span>principe de l’algorithme<a class="headerlink" href="#principe-de-l-algorithme" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>n entier positif
 conversion de n en base 2 sous forme d&#39;une liste de 0 et 1
    éléments de la liste = reste division successive de n par 2
@@ -565,7 +570,7 @@ test si la liste est un palindrome
 </div>
 </div>
 <div class="section" id="programme-avec-des-bugs">
-<h3><span class="section-number">13.3.2. </span>programme avec des bugs !!<a class="headerlink" href="#programme-avec-des-bugs" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">14.3.2. </span>programme avec des bugs !!<a class="headerlink" href="#programme-avec-des-bugs" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># digit en base 2</span>
@@ -605,7 +610,7 @@ pour n=12 1100  palindrome faux : True
 </div>
 </div>
 <div class="section" id="instrumentation-du-programme">
-<h3><span class="section-number">13.3.3. </span>instrumentation du programme<a class="headerlink" href="#instrumentation-du-programme" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">14.3.3. </span>instrumentation du programme<a class="headerlink" href="#instrumentation-du-programme" title="Lien permanent vers ce titre">¶</a></h3>
 <p>utilisation de print en utilisant une méthode de dichotomie pour rechercher les bogues</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -651,7 +656,7 @@ pour n=12 1100  palindrome faux : True
 </div>
 </div>
 <div class="section" id="programme-correcte">
-<h3><span class="section-number">13.3.4. </span>programme correcte<a class="headerlink" href="#programme-correcte" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">14.3.4. </span>programme correcte<a class="headerlink" href="#programme-correcte" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># digit en base 2</span>
@@ -693,7 +698,7 @@ pour n=12 1100  palindrome faux : False
 </div>
 </div>
 <div class="section" id="utilisation-de-assert">
-<h2><span class="section-number">13.4. </span>Utilisation de assert<a class="headerlink" href="#utilisation-de-assert" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">14.4. </span>Utilisation de assert<a class="headerlink" href="#utilisation-de-assert" title="Lien permanent vers ce titre">¶</a></h2>
 <p>L’instruction <strong>assert</strong> permet de vérifier si une condition cdt est vérifiée. Dans le cas contraire, génère une exception et affiche le message optionnel.</p>
 <p><strong>syntaxe</strong></p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>   assert cdt [, message ]
@@ -712,7 +717,7 @@ AssertionError: x doit etre negatif
 </pre></div>
 </div>
 <div class="section" id="exemple-d-utilisation">
-<h3><span class="section-number">13.4.1. </span>exemple d’utilisation<a class="headerlink" href="#exemple-d-utilisation" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">14.4.1. </span>exemple d’utilisation<a class="headerlink" href="#exemple-d-utilisation" title="Lien permanent vers ce titre">¶</a></h3>
 <p>test si l’argument d’une fonction est valide</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -771,7 +776,7 @@ AssertionError: x doit etre non nul
 </div>
 </div>
 <div class="section" id="fin-de-la-lecon">
-<h2><span class="section-number">13.5. </span>FIN de la leçon<a class="headerlink" href="#fin-de-la-lecon" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">14.5. </span>FIN de la leçon<a class="headerlink" href="#fin-de-la-lecon" title="Lien permanent vers ce titre">¶</a></h2>
 </div>
 </div>
 
@@ -804,7 +809,7 @@ AssertionError: x doit etre non nul
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">précédent</p>
-            <p class="prev-next-title"><span class="section-number">11. </span>Efficacité / complexité</p>
+            <p class="prev-next-title"><span class="section-number">12. </span>Efficacité / complexité</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../RAPPEL/COURS_RAPPEL.html" title="suivant page">

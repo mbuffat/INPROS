@@ -13,10 +13,10 @@ kernelspec:
   name: python3
 ---
 
-Introduction à la PROgrammation Scientifique
+INtroduction à la PROgrammation Scientifique
 ============================================
 
-par [Marc BUFFAT](https://perso.univ-lyon1.fr/marc.buffat)
+par [Marc BUFFAT](https://perso.univ-lyon1.fr/marc.buffat), dpt Mécanique, [Université Lyon 1](https://www.univ-lyon1.fr)
 
 
 Ce cours regroupe des notebooks IPython, développé pour mes enseignements 
@@ -73,9 +73,9 @@ Contenu du cours
 ```
 
 ```{admonition} Objectifs
-Ce cours comprends 10 leçons utilisant des Notebooks Ipython et des petites videos. 
+Ce cours comprends une dizaine de leçons utilisant des Notebooks Ipython et des petites videos. 
 L'accès à un serveur Jupyter permet à l'étudiant sur son navigateur de tester  les programmes
-Python en parallèle du visionnement vidéo du cours. 
+Python en parallèle de la lecture et du visionnement vidéo du cours. 
 ```
 
 ```{tip} 

@@ -58,7 +58,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
     <link rel="next" title="Crédits" href="../credits.html" />
-    <link rel="prev" title="13. Recherche d’erreurs" href="../CHAP12/debugging.html" />
+    <link rel="prev" title="14. Recherche d’erreurs" href="../CHAP12/debugging.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="fr">
     
@@ -145,9 +145,14 @@ const thebe_selector_output = ".output, .cell_output"
    5. Fonctions et procédures
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP5/COURS_ALGORITHMIQUE.html">
+   6. Programmation structurée
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../CHAP6/COURS_TABLEAU.html">
-   6. Les tableaux (vecteur, matrice)
+   7. Les tableaux (vecteur, matrice)
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -157,24 +162,24 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../CHAP6/EXERCICES_TABLEAU.html">
-     6.8. Correction des exercices
+     7.8. Correction des exercices
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../CHAP7/COURS_PLOT.html">
-   7. Tracé avec matplotlib
+   8. Tracé avec matplotlib
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../CHAP8/COURS_FICHIER.html">
-   8. Gestion de fichiers et E/S
+   9. Gestion de fichiers et E/S
   </a>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../CHAP9/Precision.html">
-   9. Précision et validation
+   10. Précision et validation
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -184,24 +189,24 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../CHAP9/Exercices_precision.html">
-     9.8. Exercices
+     10.8. Exercices
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../CHAP10/COURS_ALGORITHME.html">
-   10. Algorithmes numériques
+   11. Algorithmes numériques
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../CHAP11/Efficiency.html">
-   11. Efficacité / complexité
+   12. Efficacité / complexité
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../CHAP12/debugging.html">
-   13. Recherche d’erreurs
+   14. Recherche d’erreurs
   </a>
  </li>
 </ul>
@@ -612,7 +617,16 @@ $<span class="math notranslate nohighlight">\( \frac{df}{dx}(x)=\lim_{\Delta x\r
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/COURS_RAPPEL_4_0.png" src="../_images/COURS_RAPPEL_4_0.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Font family [&#39;xkcd&#39;, &#39;xkcd Script&#39;, &#39;Humor Sans&#39;, &#39;Comic Sans MS&#39;, &#39;StayPuft&#39;] not found. Falling back to DejaVu Sans.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Font family [&#39;xkcd&#39;, &#39;xkcd Script&#39;, &#39;Humor Sans&#39;, &#39;Comic Sans MS&#39;, &#39;StayPuft&#39;] not found. Falling back to DejaVu Sans.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Font family [&#39;xkcd&#39;, &#39;xkcd Script&#39;, &#39;Humor Sans&#39;, &#39;Comic Sans MS&#39;, &#39;StayPuft&#39;] not found. Falling back to DejaVu Sans.
+</pre></div>
+</div>
+<img alt="../_images/COURS_RAPPEL_4_3.png" src="../_images/COURS_RAPPEL_4_3.png" />
 </div>
 </div>
 </div>
@@ -696,8 +710,8 @@ $<span class="math notranslate nohighlight">\( \frac{df}{dx}(x)=\lim_{\Delta x\r
 <div class="section" id="exemple-d-equation-du-mouvement">
 <h4>exemple d’équation du mouvement:<a class="headerlink" href="#exemple-d-equation-du-mouvement" title="Lien permanent vers ce titre">¶</a></h4>
 <p>pour un corps de masse <span class="math notranslate nohighlight">\(m\)</span> constante se déplaçant dans un plan, dont la position est donnée dans un référentiel cartésien par <span class="math notranslate nohighlight">\(P(x(t),y(t))\)</span>, cette loi conduit au système de deux équations différentielles d’ordre 2:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-46bf9932-1f76-4111-b779-a502a8b6533b">
-<span class="eqno">(1)<a class="headerlink" href="#equation-46bf9932-1f76-4111-b779-a502a8b6533b" title="Lien permanent vers cette équation">¶</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-37341557-0a56-4968-93a5-b389cb3b6b8b">
+<span class="eqno">(1)<a class="headerlink" href="#equation-37341557-0a56-4968-93a5-b389cb3b6b8b" title="Lien permanent vers cette équation">¶</a></span>\[\begin{eqnarray}
 m\frac{d^2 x}{dt^2} &amp;=&amp; \sum_i F_i^x \mbox{ avec }F_i^x \mbox{ composante de } \overrightarrow{F_i} \mbox{ suivant x}\\
 m\frac{d^2 y}{dt^2} &amp;=&amp; \sum_i F_i^y \mbox{ avec }F_i^y \mbox{ composante de } \overrightarrow{F_i} \mbox{ suivant y}
 \end{eqnarray}\]</div>
@@ -762,7 +776,13 @@ E_t = \frac{1}{2} m v^2 + \sum_j U_j = cste
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/COURS_RAPPEL_15_0.png" src="../_images/COURS_RAPPEL_15_0.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Font family [&#39;xkcd&#39;, &#39;xkcd Script&#39;, &#39;Humor Sans&#39;, &#39;Comic Sans MS&#39;, &#39;StayPuft&#39;] not found. Falling back to DejaVu Sans.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Font family [&#39;xkcd&#39;, &#39;xkcd Script&#39;, &#39;Humor Sans&#39;, &#39;Comic Sans MS&#39;, &#39;StayPuft&#39;] not found. Falling back to DejaVu Sans.
+</pre></div>
+</div>
+<img alt="../_images/COURS_RAPPEL_15_2.png" src="../_images/COURS_RAPPEL_15_2.png" />
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 432x288 with 0 Axes&gt;
 </pre></div>
 </div>
@@ -770,14 +790,14 @@ E_t = \frac{1}{2} m v^2 + \sum_j U_j = cste
 </div>
 <div class="section" id="equations-du-mouvement">
 <h3>Équations du mouvement<a class="headerlink" href="#equations-du-mouvement" title="Lien permanent vers ce titre">¶</a></h3>
-<div class="amsmath math notranslate nohighlight" id="equation-3f8a20e2-1d80-432b-95c3-820ac679f042">
-<span class="eqno">(2)<a class="headerlink" href="#equation-3f8a20e2-1d80-432b-95c3-820ac679f042" title="Lien permanent vers cette équation">¶</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-5ac828e5-4e90-4c14-8201-33c6313310fe">
+<span class="eqno">(2)<a class="headerlink" href="#equation-5ac828e5-4e90-4c14-8201-33c6313310fe" title="Lien permanent vers cette équation">¶</a></span>\[\begin{eqnarray}
 m\frac{d^2 x}{dt^2} &amp;=  0   &amp;\mbox{ avec  } x(0)=x_0 , \frac{dx}{dt}(0)=u_0\\
 m\frac{d^2 z}{dt^2} &amp;= -m g &amp;\mbox{ avec  } z(0)=z_0 , \frac{dz}{dt}(0)=w_0
 \end{eqnarray}\]</div>
 <p>La solution est parabolique et s’écrit:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ec4958c7-825a-4aee-aeab-a32f6f8a0baa">
-<span class="eqno">(3)<a class="headerlink" href="#equation-ec4958c7-825a-4aee-aeab-a32f6f8a0baa" title="Lien permanent vers cette équation">¶</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-eba39ca3-5c9a-456b-95f6-327e6a265d4a">
+<span class="eqno">(3)<a class="headerlink" href="#equation-eba39ca3-5c9a-456b-95f6-327e6a265d4a" title="Lien permanent vers cette équation">¶</a></span>\[\begin{eqnarray}
 x(t) &amp;=&amp; x_0 + u_0 t \\
 z(t) &amp;=&amp; z_0 + w_0 t - \frac{1}{2} g t^2
 \end{eqnarray}\]</div>
@@ -801,7 +821,7 @@ z(t) &amp;=&amp; z_0 + w_0 t - \frac{1}{2} g t^2
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>trajectoire balistique U0= 10.0  alpha= 1.1780972450961724
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.animation.FuncAnimation at 0x7f7df4d993d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.animation.FuncAnimation at 0x7f6fb0966a30&gt;
 </pre></div>
 </div>
 <img alt="../_images/COURS_RAPPEL_17_2.png" src="../_images/COURS_RAPPEL_17_2.png" />
@@ -1479,7 +1499,7 @@ AAAAAAAALWlsc3QAAAAlqXRvbwAAAB1kYXRhAAAAAQAAAABMYXZmNTguMjkuMTAw
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>trajectoire d&#39;un satellite omega= 1.0  r= 1.0
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.animation.FuncAnimation at 0x7f7df41d7b80&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.animation.FuncAnimation at 0x7f6faed190d0&gt;
 </pre></div>
 </div>
 <img alt="../_images/COURS_RAPPEL_22_2.png" src="../_images/COURS_RAPPEL_22_2.png" />
@@ -2594,7 +2614,7 @@ s’écrit:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.animation.FuncAnimation at 0x7f7de3709e80&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.animation.FuncAnimation at 0x7f6fac0ce280&gt;
 </pre></div>
 </div>
 <img alt="../_images/COURS_RAPPEL_27_1.png" src="../_images/COURS_RAPPEL_27_1.png" />
@@ -4138,7 +4158,7 @@ bHN0AAAAJal0b28AAAAdZGF0YQAAAAEAAAAATGF2ZjU4LjI5LjEwMA==
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">précédent</p>
-            <p class="prev-next-title"><span class="section-number">13. </span>Recherche d’erreurs</p>
+            <p class="prev-next-title"><span class="section-number">14. </span>Recherche d’erreurs</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../credits.html" title="suivant page">

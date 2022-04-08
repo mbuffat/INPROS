@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>6. Les tableaux (vecteur, matrice) &#8212; INPROS INtroduction à la PROgrammation Scientifique en Python</title>
+    <title>7. Les tableaux (vecteur, matrice) &#8212; INPROS INtroduction à la PROgrammation Scientifique en Python</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -57,8 +57,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="canonical" href="https://perso.univ-lyon1.fr/marc.buffat/CHAP6/COURS_TABLEAU.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
-    <link rel="next" title="6.8. Correction des exercices" href="EXERCICES_TABLEAU.html" />
-    <link rel="prev" title="5. Fonctions et procédures" href="../CHAP5/COURS_FONCTION.html" />
+    <link rel="next" title="7.8. Correction des exercices" href="EXERCICES_TABLEAU.html" />
+    <link rel="prev" title="6. Programmation structurée" href="../CHAP5/COURS_ALGORITHMIQUE.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="fr">
     
@@ -145,9 +145,14 @@ const thebe_selector_output = ".output, .cell_output"
    5. Fonctions et procédures
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP5/COURS_ALGORITHMIQUE.html">
+   6. Programmation structurée
+  </a>
+ </li>
  <li class="toctree-l1 current active has-children">
   <a class="current reference internal" href="#">
-   6. Les tableaux (vecteur, matrice)
+   7. Les tableaux (vecteur, matrice)
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -157,24 +162,24 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="EXERCICES_TABLEAU.html">
-     6.8. Correction des exercices
+     7.8. Correction des exercices
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../CHAP7/COURS_PLOT.html">
-   7. Tracé avec matplotlib
+   8. Tracé avec matplotlib
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../CHAP8/COURS_FICHIER.html">
-   8. Gestion de fichiers et E/S
+   9. Gestion de fichiers et E/S
   </a>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../CHAP9/Precision.html">
-   9. Précision et validation
+   10. Précision et validation
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -184,24 +189,24 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../CHAP9/Exercices_precision.html">
-     9.8. Exercices
+     10.8. Exercices
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../CHAP10/COURS_ALGORITHME.html">
-   10. Algorithmes numériques
+   11. Algorithmes numériques
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../CHAP11/Efficiency.html">
-   11. Efficacité / complexité
+   12. Efficacité / complexité
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../CHAP12/debugging.html">
-   13. Recherche d’erreurs
+   14. Recherche d’erreurs
   </a>
  </li>
 </ul>
@@ -310,57 +315,57 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#tableau-1d">
-   6.1. Tableau 1D
+   7.1. Tableau 1D
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exemple-point-dans-l-espace">
-     6.1.1. Exemple: point dans l’espace
+     7.1.1. Exemple: point dans l’espace
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#tableau-numerique-sous-python">
-     6.1.2. Tableau numérique sous Python
+     7.1.2. Tableau numérique sous Python
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#visualisation-de-l-execution">
-     6.1.3. visualisation de l’exécution
+     7.1.3. visualisation de l’exécution
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#indice-d-un-tableau">
-     6.1.4. Indice d’un tableau
+     7.1.4. Indice d’un tableau
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#manipulation-de-tableaux-1d-en-python">
-     6.1.5. Manipulation de tableaux 1D en Python
+     7.1.5. Manipulation de tableaux 1D en Python
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#creation-d-un-tableau">
-       6.1.5.1. création d’un tableau
+       7.1.5.1. création d’un tableau
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#tableaux-particuliers">
-       6.1.5.2. tableaux particuliers
+       7.1.5.2. tableaux particuliers
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#taille-et-element-d-un-tableau">
-       6.1.5.3. taille et élément d’un tableau
+       7.1.5.3. taille et élément d’un tableau
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#aliasing-et-copie-de-tableau">
-       6.1.5.4. aliasing et copie de tableau
+       7.1.5.4. aliasing et copie de tableau
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#boucle-sur-les-elements-d-un-tableau">
-       6.1.5.5. boucle sur les éléments d’un tableau
+       7.1.5.5. boucle sur les éléments d’un tableau
       </a>
      </li>
     </ul>
@@ -369,27 +374,27 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exemples-et-exercises-d-utilisation-de-tableaux-1d">
-   6.2. Exemples et exercises d’utilisation de tableaux 1D
+   7.2. Exemples et exercises d’utilisation de tableaux 1D
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exemple-produit-scalaire">
-     6.2.1. Exemple: produit scalaire
+     7.2.1. Exemple: produit scalaire
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercices">
-     6.2.2. Exercices
+     7.2.2. Exercices
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#test-de-colinearite-de-2-vecteurs">
-       6.2.2.1. Test de colinéarité de 2 vecteurs
+       7.2.2.1. Test de colinéarité de 2 vecteurs
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#normalisation-d-un-vecteur-x">
-       6.2.2.2. Normalisation d’un vecteur X
+       7.2.2.2. Normalisation d’un vecteur X
       </a>
      </li>
     </ul>
@@ -398,12 +403,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#tableau-2d">
-   6.3. Tableau 2D
+   7.3. Tableau 2D
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exemple-matrice-de-rotation-dans-mathcal-r-2">
-     6.3.1. Exemple: matrice de rotation dans
+     7.3.1. Exemple: matrice de rotation dans
      <span class="math notranslate nohighlight">
       \(\mathcal{R}^2\)
      </span>
@@ -411,49 +416,49 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#matrices-en-python">
-     6.3.2. Matrices en Python
+     7.3.2. Matrices en Python
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#creation-de-tableaux-2d">
-       6.3.2.1. création de tableaux 2D
+       7.3.2.1. création de tableaux 2D
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#taille-et-elements-d-un-tableau-2d">
-       6.3.2.2. taille et éléments d’un tableau 2D
+       7.3.2.2. taille et éléments d’un tableau 2D
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#equivalence-avec-les-tableaux-1d">
-       6.3.2.3. équivalence avec les tableaux 1D
+       7.3.2.3. équivalence avec les tableaux 1D
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#copie-et-aliasing">
-       6.3.2.4. Copie et aliasing
+       7.3.2.4. Copie et aliasing
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exemple-produit-matrice-vecteur">
-     6.3.3. Exemple: produit matrice-vecteur
+     7.3.3. Exemple: produit matrice-vecteur
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id1">
-     6.3.4. Exercices
+     7.3.4. Exercices
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#produit-matrice-matrice">
-       6.3.4.1. Produit matrice-matrice
+       7.3.4.1. Produit matrice-matrice
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#matrice-de-vandermonde">
-       6.3.4.2. Matrice de Vandermonde
+       7.3.4.2. Matrice de Vandermonde
       </a>
      </li>
     </ul>
@@ -462,61 +467,61 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#boucle-en-python-sur-les-tableaux">
-   6.4. Boucle en Python sur les tableaux
+   7.4. Boucle en Python sur les tableaux
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#iterations-avec-un-indice">
-     6.4.1. itérations avec un indice
+     7.4.1. itérations avec un indice
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#iterations-sur-les-elements-val-d-un-tableau-tab-ou-d-une-liste">
-     6.4.2. itérations sur les éléments val d’un tableau Tab (ou d’une liste)
+     7.4.2. itérations sur les éléments val d’un tableau Tab (ou d’une liste)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#iterations-avec-indice-et-valeur-enumerate">
-     6.4.3. itérations avec indice et valeur (enumerate)
+     7.4.3. itérations avec indice et valeur (enumerate)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#boucle-avec-un-indice-decroissant-reversed">
-     6.4.4. boucle avec un indice décroissant (reversed)
+     7.4.4. boucle avec un indice décroissant (reversed)
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#exemple-permutation-circulaire-vers-la-droite">
-       6.4.4.1. exemple : permutation circulaire vers la droite
+       7.4.4.1. exemple : permutation circulaire vers la droite
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#boucles-de-tres-grande-taille-xrange">
-     6.4.5. boucles de très grande taille: xrange
+     7.4.5. boucles de très grande taille: xrange
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#notation-matricielle-a-la-matlab">
-   6.5. Notation matricielle (à la Matlab)
+   7.5. Notation matricielle (à la Matlab)
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#efficacite-boucles-dans-la-bibliotheque-numpy">
-     6.5.1. Efficacité -&gt; boucles dans la bibliothéque numpy
+     7.5.1. Efficacité -&gt; boucles dans la bibliothéque numpy
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#utilisez-les-fonctions-de-la-bibliotheque-numpy">
-     6.5.2. Utilisez les fonctions de la bibliothéque numpy
+     7.5.2. Utilisez les fonctions de la bibliothéque numpy
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#a-href-ici085-aide-sur-les-fonctions-help-ou-tab-a-a-name-ici085-a">
-     6.5.3.
+     7.5.3.
      <a href="#ici085">
       Aide sur les fonctions : help() ou TAB
      </a>
@@ -528,12 +533,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#bibliographie">
-   6.6. Bibliographie
+   7.6. Bibliographie
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#fin-de-la-lecon">
-   6.7. Fin de la leçon
+   7.7. Fin de la leçon
   </a>
  </li>
 </ul>
@@ -558,57 +563,57 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#tableau-1d">
-   6.1. Tableau 1D
+   7.1. Tableau 1D
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exemple-point-dans-l-espace">
-     6.1.1. Exemple: point dans l’espace
+     7.1.1. Exemple: point dans l’espace
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#tableau-numerique-sous-python">
-     6.1.2. Tableau numérique sous Python
+     7.1.2. Tableau numérique sous Python
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#visualisation-de-l-execution">
-     6.1.3. visualisation de l’exécution
+     7.1.3. visualisation de l’exécution
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#indice-d-un-tableau">
-     6.1.4. Indice d’un tableau
+     7.1.4. Indice d’un tableau
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#manipulation-de-tableaux-1d-en-python">
-     6.1.5. Manipulation de tableaux 1D en Python
+     7.1.5. Manipulation de tableaux 1D en Python
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#creation-d-un-tableau">
-       6.1.5.1. création d’un tableau
+       7.1.5.1. création d’un tableau
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#tableaux-particuliers">
-       6.1.5.2. tableaux particuliers
+       7.1.5.2. tableaux particuliers
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#taille-et-element-d-un-tableau">
-       6.1.5.3. taille et élément d’un tableau
+       7.1.5.3. taille et élément d’un tableau
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#aliasing-et-copie-de-tableau">
-       6.1.5.4. aliasing et copie de tableau
+       7.1.5.4. aliasing et copie de tableau
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#boucle-sur-les-elements-d-un-tableau">
-       6.1.5.5. boucle sur les éléments d’un tableau
+       7.1.5.5. boucle sur les éléments d’un tableau
       </a>
      </li>
     </ul>
@@ -617,27 +622,27 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exemples-et-exercises-d-utilisation-de-tableaux-1d">
-   6.2. Exemples et exercises d’utilisation de tableaux 1D
+   7.2. Exemples et exercises d’utilisation de tableaux 1D
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exemple-produit-scalaire">
-     6.2.1. Exemple: produit scalaire
+     7.2.1. Exemple: produit scalaire
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercices">
-     6.2.2. Exercices
+     7.2.2. Exercices
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#test-de-colinearite-de-2-vecteurs">
-       6.2.2.1. Test de colinéarité de 2 vecteurs
+       7.2.2.1. Test de colinéarité de 2 vecteurs
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#normalisation-d-un-vecteur-x">
-       6.2.2.2. Normalisation d’un vecteur X
+       7.2.2.2. Normalisation d’un vecteur X
       </a>
      </li>
     </ul>
@@ -646,12 +651,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#tableau-2d">
-   6.3. Tableau 2D
+   7.3. Tableau 2D
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exemple-matrice-de-rotation-dans-mathcal-r-2">
-     6.3.1. Exemple: matrice de rotation dans
+     7.3.1. Exemple: matrice de rotation dans
      <span class="math notranslate nohighlight">
       \(\mathcal{R}^2\)
      </span>
@@ -659,49 +664,49 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#matrices-en-python">
-     6.3.2. Matrices en Python
+     7.3.2. Matrices en Python
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#creation-de-tableaux-2d">
-       6.3.2.1. création de tableaux 2D
+       7.3.2.1. création de tableaux 2D
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#taille-et-elements-d-un-tableau-2d">
-       6.3.2.2. taille et éléments d’un tableau 2D
+       7.3.2.2. taille et éléments d’un tableau 2D
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#equivalence-avec-les-tableaux-1d">
-       6.3.2.3. équivalence avec les tableaux 1D
+       7.3.2.3. équivalence avec les tableaux 1D
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#copie-et-aliasing">
-       6.3.2.4. Copie et aliasing
+       7.3.2.4. Copie et aliasing
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exemple-produit-matrice-vecteur">
-     6.3.3. Exemple: produit matrice-vecteur
+     7.3.3. Exemple: produit matrice-vecteur
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id1">
-     6.3.4. Exercices
+     7.3.4. Exercices
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#produit-matrice-matrice">
-       6.3.4.1. Produit matrice-matrice
+       7.3.4.1. Produit matrice-matrice
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#matrice-de-vandermonde">
-       6.3.4.2. Matrice de Vandermonde
+       7.3.4.2. Matrice de Vandermonde
       </a>
      </li>
     </ul>
@@ -710,61 +715,61 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#boucle-en-python-sur-les-tableaux">
-   6.4. Boucle en Python sur les tableaux
+   7.4. Boucle en Python sur les tableaux
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#iterations-avec-un-indice">
-     6.4.1. itérations avec un indice
+     7.4.1. itérations avec un indice
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#iterations-sur-les-elements-val-d-un-tableau-tab-ou-d-une-liste">
-     6.4.2. itérations sur les éléments val d’un tableau Tab (ou d’une liste)
+     7.4.2. itérations sur les éléments val d’un tableau Tab (ou d’une liste)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#iterations-avec-indice-et-valeur-enumerate">
-     6.4.3. itérations avec indice et valeur (enumerate)
+     7.4.3. itérations avec indice et valeur (enumerate)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#boucle-avec-un-indice-decroissant-reversed">
-     6.4.4. boucle avec un indice décroissant (reversed)
+     7.4.4. boucle avec un indice décroissant (reversed)
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#exemple-permutation-circulaire-vers-la-droite">
-       6.4.4.1. exemple : permutation circulaire vers la droite
+       7.4.4.1. exemple : permutation circulaire vers la droite
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#boucles-de-tres-grande-taille-xrange">
-     6.4.5. boucles de très grande taille: xrange
+     7.4.5. boucles de très grande taille: xrange
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#notation-matricielle-a-la-matlab">
-   6.5. Notation matricielle (à la Matlab)
+   7.5. Notation matricielle (à la Matlab)
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#efficacite-boucles-dans-la-bibliotheque-numpy">
-     6.5.1. Efficacité -&gt; boucles dans la bibliothéque numpy
+     7.5.1. Efficacité -&gt; boucles dans la bibliothéque numpy
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#utilisez-les-fonctions-de-la-bibliotheque-numpy">
-     6.5.2. Utilisez les fonctions de la bibliothéque numpy
+     7.5.2. Utilisez les fonctions de la bibliothéque numpy
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#a-href-ici085-aide-sur-les-fonctions-help-ou-tab-a-a-name-ici085-a">
-     6.5.3.
+     7.5.3.
      <a href="#ici085">
       Aide sur les fonctions : help() ou TAB
      </a>
@@ -776,12 +781,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#bibliographie">
-   6.6. Bibliographie
+   7.6. Bibliographie
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#fin-de-la-lecon">
-   6.7. Fin de la leçon
+   7.7. Fin de la leçon
   </a>
  </li>
 </ul>
@@ -796,7 +801,7 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal image-reference" href="../_images/logo_trans8.png"><img alt="LyonHPC" src="../_images/logo_trans8.png" style="width: 180px;" /></a>
 <a class="reference internal image-reference" href="../_images/python-logo8.gif"><img alt="LyonHPC" src="../_images/python-logo8.gif" style="width: 200px;" /></a>
 <div class="tex2jax_ignore mathjax_ignore section" id="les-tableaux-vecteur-matrice">
-<h1><span class="section-number">6. </span>Les tableaux (vecteur, matrice)<a class="headerlink" href="#les-tableaux-vecteur-matrice" title="Lien permanent vers ce titre">¶</a></h1>
+<h1><span class="section-number">7. </span>Les tableaux (vecteur, matrice)<a class="headerlink" href="#les-tableaux-vecteur-matrice" title="Lien permanent vers ce titre">¶</a></h1>
 <a class="reference internal image-reference" href="../_images/numpy_array.png"><img alt="../_images/numpy_array.png" src="../_images/numpy_array.png" style="width: 300px;" /></a>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -833,7 +838,7 @@ const thebe_selector_output = ".output, .cell_output"
 les étudiants Lyon1 <a class="reference external" href="https://jupyter.mecanique.univ-lyon1.fr">https://jupyter.mecanique.univ-lyon1.fr</a></p>
 </div>
 <div class="section" id="tableau-1d">
-<h2><span class="section-number">6.1. </span>Tableau 1D<a class="headerlink" href="#tableau-1d" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">7.1. </span>Tableau 1D<a class="headerlink" href="#tableau-1d" title="Lien permanent vers ce titre">¶</a></h2>
 <p>structure de données pour représenter un vecteur</p>
 <p><strong>tableau 1D</strong> : liste de n éléments du même type (entier ou réel)
 (n = dimension du tableau)</p>
@@ -844,7 +849,7 @@ les étudiants Lyon1 <a class="reference external" href="https://jupyter.mecaniq
 <p><strong>élément d’un tableau</strong> : X[i] <span class="math notranslate nohighlight">\(\equiv\mathbf{X}_{i+1}\)</span></p>
 <p><strong>attention</strong>  on compte à partir de 0, donc i varie de 0 à n-1</p>
 <div class="section" id="exemple-point-dans-l-espace">
-<h3><span class="section-number">6.1.1. </span>Exemple: point dans l’espace<a class="headerlink" href="#exemple-point-dans-l-espace" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">7.1.1. </span>Exemple: point dans l’espace<a class="headerlink" href="#exemple-point-dans-l-espace" title="Lien permanent vers ce titre">¶</a></h3>
 <p>le point <strong>P</strong> dans l’espace <span class="math notranslate nohighlight">\(\mathcal{R}^3\)</span> de coordonnées cartesiennes:
 $<span class="math notranslate nohighlight">\( \mathbf{OP}=\left[\begin{array}{c}
 1.\\
@@ -882,7 +887,7 @@ soit <code class="docutils literal notranslate"><span class="pre">print('bonjour
 </div>
 </div>
 <div class="section" id="tableau-numerique-sous-python">
-<h3><span class="section-number">6.1.2. </span>Tableau numérique sous Python<a class="headerlink" href="#tableau-numerique-sous-python" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">7.1.2. </span>Tableau numérique sous Python<a class="headerlink" href="#tableau-numerique-sous-python" title="Lien permanent vers ce titre">¶</a></h3>
 <ul class="simple">
 <li><p>plusieurs structures de données possible (list, array, ..)</p></li>
 <li><p>mais on utilisera essentiellement la structure <strong>array</strong> de la bibliothéque <strong>numpy</strong></p></li>
@@ -911,7 +916,7 @@ soit <code class="docutils literal notranslate"><span class="pre">print('bonjour
 </div>
 </div>
 <div class="section" id="visualisation-de-l-execution">
-<h3><span class="section-number">6.1.3. </span>visualisation de l’exécution<a class="headerlink" href="#visualisation-de-l-execution" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">7.1.3. </span>visualisation de l’exécution<a class="headerlink" href="#visualisation-de-l-execution" title="Lien permanent vers ce titre">¶</a></h3>
 <p><strong>utilisation du site : <a class="reference external" href="http://pythontutor.com">http://pythontutor.com</a></strong></p>
 <p><em>vous pouvez copier l’exemple de code python sur le site pour l’exécuter</em></p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>P = [1.,3.,5.]
@@ -936,7 +941,7 @@ z = P[3]
 </div>
 </div>
 <div class="section" id="indice-d-un-tableau">
-<h3><span class="section-number">6.1.4. </span>Indice d’un tableau<a class="headerlink" href="#indice-d-un-tableau" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">7.1.4. </span>Indice d’un tableau<a class="headerlink" href="#indice-d-un-tableau" title="Lien permanent vers ce titre">¶</a></h3>
 <p><strong>attention</strong> pour un tableau de dimension n : indice <span class="math notranslate nohighlight">\(0 \le i \lt n\)</span></p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>print(P[2])
 print(P[3])
@@ -953,9 +958,9 @@ IndexError: index 3 is out of bounds for axis 0 with size 3
 </div>
 </div>
 <div class="section" id="manipulation-de-tableaux-1d-en-python">
-<h3><span class="section-number">6.1.5. </span>Manipulation de tableaux 1D en Python<a class="headerlink" href="#manipulation-de-tableaux-1d-en-python" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">7.1.5. </span>Manipulation de tableaux 1D en Python<a class="headerlink" href="#manipulation-de-tableaux-1d-en-python" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="section" id="creation-d-un-tableau">
-<h4><span class="section-number">6.1.5.1. </span>création d’un tableau<a class="headerlink" href="#creation-d-un-tableau" title="Lien permanent vers ce titre">¶</a></h4>
+<h4><span class="section-number">7.1.5.1. </span>création d’un tableau<a class="headerlink" href="#creation-d-un-tableau" title="Lien permanent vers ce titre">¶</a></h4>
 <ul class="simple">
 <li><p>à partir d’une liste (entre [ ]):  ** array(liste) **</p></li>
 <li><p>dimension = nbre d’éléments de la liste</p></li>
@@ -1005,7 +1010,7 @@ soit <code class="docutils literal notranslate"><span class="pre">print('bonjour
 </div>
 </div>
 <div class="section" id="tableaux-particuliers">
-<h4><span class="section-number">6.1.5.2. </span>tableaux particuliers<a class="headerlink" href="#tableaux-particuliers" title="Lien permanent vers ce titre">¶</a></h4>
+<h4><span class="section-number">7.1.5.2. </span>tableaux particuliers<a class="headerlink" href="#tableaux-particuliers" title="Lien permanent vers ce titre">¶</a></h4>
 <ul class="simple">
 <li><p>tableau de  0.0 ou de 1.0 : <strong>zeros(n)</strong> ou <strong>ones(n)</strong>  ( n dimension)</p></li>
 <li><p>tableau de n valeurs non initialisées (attention !!!): <strong>empty(n)</strong></p></li>
@@ -1075,7 +1080,7 @@ soit <code class="docutils literal notranslate"><span class="pre">print('bonjour
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.2153373  0.65010156 0.80453828 0.95709781 0.1940736 ]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.44394066 0.7345521  0.69825174 0.47305282 0.38657288]
 </pre></div>
 </div>
 </div>
@@ -1116,7 +1121,7 @@ soit <code class="docutils literal notranslate"><span class="pre">print('bonjour
 </div>
 </div>
 <div class="section" id="taille-et-element-d-un-tableau">
-<h4><span class="section-number">6.1.5.3. </span>taille et élément d’un tableau<a class="headerlink" href="#taille-et-element-d-un-tableau" title="Lien permanent vers ce titre">¶</a></h4>
+<h4><span class="section-number">7.1.5.3. </span>taille et élément d’un tableau<a class="headerlink" href="#taille-et-element-d-un-tableau" title="Lien permanent vers ce titre">¶</a></h4>
 <ul class="simple">
 <li><p>nbre d’éléments du tableau X: <strong>X.size</strong> ou <strong>len(X)</strong></p></li>
 <li><p>taille du tableau X: <strong>X.shape</strong></p></li>
@@ -1177,7 +1182,7 @@ soit <code class="docutils literal notranslate"><span class="pre">print('bonjour
 </div>
 </div>
 <div class="section" id="aliasing-et-copie-de-tableau">
-<h4><span class="section-number">6.1.5.4. </span>aliasing et copie de tableau<a class="headerlink" href="#aliasing-et-copie-de-tableau" title="Lien permanent vers ce titre">¶</a></h4>
+<h4><span class="section-number">7.1.5.4. </span>aliasing et copie de tableau<a class="headerlink" href="#aliasing-et-copie-de-tableau" title="Lien permanent vers ce titre">¶</a></h4>
 <ul class="simple">
 <li><p>aliasing par défaut: <strong>Y=X</strong> ne crée pas un nouveau tableau mais un alias</p>
 <ul>
@@ -1210,7 +1215,7 @@ soit <code class="docutils literal notranslate"><span class="pre">print('bonjour
 </div>
 </div>
 <div class="section" id="boucle-sur-les-elements-d-un-tableau">
-<h4><span class="section-number">6.1.5.5. </span>boucle sur les éléments d’un tableau<a class="headerlink" href="#boucle-sur-les-elements-d-un-tableau" title="Lien permanent vers ce titre">¶</a></h4>
+<h4><span class="section-number">7.1.5.5. </span>boucle sur les éléments d’un tableau<a class="headerlink" href="#boucle-sur-les-elements-d-un-tableau" title="Lien permanent vers ce titre">¶</a></h4>
 <p>boucle for : <strong>for i in range(n):</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1232,7 +1237,7 @@ soit <code class="docutils literal notranslate"><span class="pre">print('bonjour
 </div>
 </div>
 <div class="section" id="exemples-et-exercises-d-utilisation-de-tableaux-1d">
-<h2><span class="section-number">6.2. </span>Exemples et exercises d’utilisation de tableaux 1D<a class="headerlink" href="#exemples-et-exercises-d-utilisation-de-tableaux-1d" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">7.2. </span>Exemples et exercises d’utilisation de tableaux 1D<a class="headerlink" href="#exemples-et-exercises-d-utilisation-de-tableaux-1d" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;**Video du cours: Exemple d&#39;utilisation de tableaux**&quot;</span><span class="p">))</span>
@@ -1260,7 +1265,7 @@ Avec Python 3, <code class="docutils literal notranslate"><span class="pre">prin
 soit <code class="docutils literal notranslate"><span class="pre">print('bonjour')</span></code></p>
 </div>
 <div class="section" id="exemple-produit-scalaire">
-<h3><span class="section-number">6.2.1. </span>Exemple: produit scalaire<a class="headerlink" href="#exemple-produit-scalaire" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">7.2.1. </span>Exemple: produit scalaire<a class="headerlink" href="#exemple-produit-scalaire" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Calcul du produit scalaire <strong>scal</strong> de 2 vecteurs <strong>X,Y</strong>:</p>
 <div class="math notranslate nohighlight">
 \[ \mathbf{X}\in\mathcal{R}^n , \mathbf{Y}\in\mathcal{R}^n  \ \ scal =\sum_{i=1}^{n} X_i Y_i\]</div>
@@ -1297,22 +1302,25 @@ soit <code class="docutils literal notranslate"><span class="pre">print('bonjour
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X = [0.23450095 0.78466008]
-Y = [0.87079942 0.64988368]
-X.Y = 0.7141410670690657  ou 0.7141410670690657
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X =
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> [0.85130975 0.38405958]
+Y = [0.75229749 0.28422782]
+X.Y = 0.7495986105890232  ou 0.7495986105890232
 </pre></div>
 </div>
 </div>
 </div>
 </div>
 <div class="section" id="exercices">
-<h3><span class="section-number">6.2.2. </span>Exercices<a class="headerlink" href="#exercices" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">7.2.2. </span>Exercices<a class="headerlink" href="#exercices" title="Lien permanent vers ce titre">¶</a></h3>
 <ol class="simple">
 <li><p>Test de colinéarité de 2 vecteurs</p></li>
 <li><p>Normalisation d’un vecteur</p></li>
 </ol>
 <div class="section" id="test-de-colinearite-de-2-vecteurs">
-<h4><span class="section-number">6.2.2.1. </span>Test de colinéarité de 2 vecteurs<a class="headerlink" href="#test-de-colinearite-de-2-vecteurs" title="Lien permanent vers ce titre">¶</a></h4>
+<h4><span class="section-number">7.2.2.1. </span>Test de colinéarité de 2 vecteurs<a class="headerlink" href="#test-de-colinearite-de-2-vecteurs" title="Lien permanent vers ce titre">¶</a></h4>
 <div class="math notranslate nohighlight">
 \[\mathbf{U} \in \mathcal{R}^n , \mathbf{V} \in \mathcal{R}^n \mbox{ si } \left|\mathbf{U}.\mathbf{V}\right| = \left\Vert\mathbf{U}\right\Vert \left\Vert\mathbf{V}\right\Vert \mbox{ alors } \mathbf{U} \mbox{ et } \mathbf{V} \mbox{ sont colinéaires} \]</div>
 <p>Ecrire une fonction qui teste la colinéarité</p>
@@ -1322,7 +1330,7 @@ X.Y = 0.7141410670690657  ou 0.7141410670690657
 <p>Attention à la précision</p>
 </div>
 <div class="section" id="normalisation-d-un-vecteur-x">
-<h4><span class="section-number">6.2.2.2. </span>Normalisation d’un vecteur X<a class="headerlink" href="#normalisation-d-un-vecteur-x" title="Lien permanent vers ce titre">¶</a></h4>
+<h4><span class="section-number">7.2.2.2. </span>Normalisation d’un vecteur X<a class="headerlink" href="#normalisation-d-un-vecteur-x" title="Lien permanent vers ce titre">¶</a></h4>
 <div class="math notranslate nohighlight">
 \[\mathbf{U} \in \mathcal{R}^n \mbox{ calcul } \mathbf{U} \leftarrow \frac{\mathbf{U}}{\left\Vert\mathbf{U} \right\Vert}\]</div>
 <p>Ecrire une fonction python qui normalise un vecteur X</p>
@@ -1334,7 +1342,7 @@ X.Y = 0.7141410670690657  ou 0.7141410670690657
 </div>
 </div>
 <div class="section" id="tableau-2d">
-<h2><span class="section-number">6.3. </span>Tableau 2D<a class="headerlink" href="#tableau-2d" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">7.3. </span>Tableau 2D<a class="headerlink" href="#tableau-2d" title="Lien permanent vers ce titre">¶</a></h2>
 <p>structure de données pour représenter une matrice</p>
 <p><strong>tableau 2D</strong> : liste de <span class="math notranslate nohighlight">\(n*p\)</span> éléments du même type (entier ou réel)
 (n,p = dimensions de la matrice)</p>
@@ -1345,7 +1353,7 @@ X.Y = 0.7141410670690657  ou 0.7141410670690657
 <p><strong>élément i,i du tableau</strong> : A[i,j] <span class="math notranslate nohighlight">\(\equiv\mathbf{A}_{i+1,j+1}\)</span></p>
 <p><strong>Attention</strong>  on compte à partir de 0, donc i varie de 0 à n-1 et j de 0 à p-1</p>
 <div class="section" id="exemple-matrice-de-rotation-dans-mathcal-r-2">
-<h3><span class="section-number">6.3.1. </span>Exemple: matrice de rotation dans <span class="math notranslate nohighlight">\(\mathcal{R}^2\)</span><a class="headerlink" href="#exemple-matrice-de-rotation-dans-mathcal-r-2" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">7.3.1. </span>Exemple: matrice de rotation dans <span class="math notranslate nohighlight">\(\mathcal{R}^2\)</span><a class="headerlink" href="#exemple-matrice-de-rotation-dans-mathcal-r-2" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Rotation <span class="math notranslate nohighlight">\(\theta\)</span> d’un repère :</p>
 <div class="math notranslate nohighlight">
 \[\begin{split} \mathbf{R}=\left[\begin{array}{cc}
@@ -1387,10 +1395,10 @@ soit <code class="docutils literal notranslate"><span class="pre">print('bonjour
 </div>
 </div>
 <div class="section" id="matrices-en-python">
-<h3><span class="section-number">6.3.2. </span>Matrices en Python<a class="headerlink" href="#matrices-en-python" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">7.3.2. </span>Matrices en Python<a class="headerlink" href="#matrices-en-python" title="Lien permanent vers ce titre">¶</a></h3>
 <p>bibliothèque numpy: <strong>array</strong>,  dimension couple (tuple) <strong>(n,p)</strong></p>
 <div class="section" id="creation-de-tableaux-2d">
-<h4><span class="section-number">6.3.2.1. </span>création de tableaux 2D<a class="headerlink" href="#creation-de-tableaux-2d" title="Lien permanent vers ce titre">¶</a></h4>
+<h4><span class="section-number">7.3.2.1. </span>création de tableaux 2D<a class="headerlink" href="#creation-de-tableaux-2d" title="Lien permanent vers ce titre">¶</a></h4>
 <ul>
 <li><p>explicite</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  A = array([[1.,2.],[3.,4.]])
@@ -1437,7 +1445,7 @@ soit <code class="docutils literal notranslate"><span class="pre">print('bonjour
 </div>
 </div>
 <div class="section" id="taille-et-elements-d-un-tableau-2d">
-<h4><span class="section-number">6.3.2.2. </span>taille et éléments d’un tableau 2D<a class="headerlink" href="#taille-et-elements-d-un-tableau-2d" title="Lien permanent vers ce titre">¶</a></h4>
+<h4><span class="section-number">7.3.2.2. </span>taille et éléments d’un tableau 2D<a class="headerlink" href="#taille-et-elements-d-un-tableau-2d" title="Lien permanent vers ce titre">¶</a></h4>
 <ul class="simple">
 <li><p>nbre total d’éléments du tableau A: <strong>A.size</strong> ou <strong>len(A)</strong></p></li>
 <li><p>par dimension <strong>A.shape</strong></p></li>
@@ -1486,7 +1494,7 @@ C=
 </div>
 </div>
 <div class="section" id="equivalence-avec-les-tableaux-1d">
-<h4><span class="section-number">6.3.2.3. </span>équivalence avec les tableaux 1D<a class="headerlink" href="#equivalence-avec-les-tableaux-1d" title="Lien permanent vers ce titre">¶</a></h4>
+<h4><span class="section-number">7.3.2.3. </span>équivalence avec les tableaux 1D<a class="headerlink" href="#equivalence-avec-les-tableaux-1d" title="Lien permanent vers ce titre">¶</a></h4>
 <p><span class="math notranslate nohighlight">\(A\)</span> tableau 2D  (<strong>array</strong> 2D) <span class="math notranslate nohighlight">\(n*p\)</span> réels  <span class="math notranslate nohighlight">\(\equiv\)</span> <span class="math notranslate nohighlight">\(B\)</span> tableau 1D de même dimension globale <span class="math notranslate nohighlight">\(np\)</span></p>
 <p>les données sont identiques, seul l’accès est différent:</p>
 <p><strong>reshape(tableau,dimension)</strong> (attention aliasing !!)</p>
@@ -1557,7 +1565,7 @@ C=
 </div>
 </div>
 <div class="section" id="copie-et-aliasing">
-<h4><span class="section-number">6.3.2.4. </span>Copie et aliasing<a class="headerlink" href="#copie-et-aliasing" title="Lien permanent vers ce titre">¶</a></h4>
+<h4><span class="section-number">7.3.2.4. </span>Copie et aliasing<a class="headerlink" href="#copie-et-aliasing" title="Lien permanent vers ce titre">¶</a></h4>
 <p><strong>aliasing</strong> = noms de variable différents, mais données partagées</p>
 <ul class="simple">
 <li><p>aliasing par défaut sous python: ** B=A **</p></li>
@@ -1588,7 +1596,7 @@ C= [[3. 4.]
 </div>
 </div>
 <div class="section" id="exemple-produit-matrice-vecteur">
-<h3><span class="section-number">6.3.3. </span>Exemple: produit matrice-vecteur<a class="headerlink" href="#exemple-produit-matrice-vecteur" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">7.3.3. </span>Exemple: produit matrice-vecteur<a class="headerlink" href="#exemple-produit-matrice-vecteur" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Calcul du produit matriciel  <strong>Y=A X</strong>:</p>
 <div class="math notranslate nohighlight">
 \[ \mathbf{A}\in\mathcal{R}^n\times\mathcal{R}^p  , \mathbf{X}\in\mathcal{R}^p , \mathbf{Y}\in\mathcal{R}^n  \ \ Y_i =\sum_{j=1}^{p} A_{i,j} X_j\]</div>
@@ -1641,19 +1649,19 @@ Y = [1. 3. 5.]
 </div>
 </div>
 <div class="section" id="id1">
-<h3><span class="section-number">6.3.4. </span>Exercices<a class="headerlink" href="#id1" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">7.3.4. </span>Exercices<a class="headerlink" href="#id1" title="Lien permanent vers ce titre">¶</a></h3>
 <ol class="simple">
 <li><p>Calcul du produit de 2 matrices</p></li>
 <li><p>Calcul de la matrice de Vandermonde d’ordre n</p></li>
 </ol>
 <div class="section" id="produit-matrice-matrice">
-<h4><span class="section-number">6.3.4.1. </span>Produit matrice-matrice<a class="headerlink" href="#produit-matrice-matrice" title="Lien permanent vers ce titre">¶</a></h4>
+<h4><span class="section-number">7.3.4.1. </span>Produit matrice-matrice<a class="headerlink" href="#produit-matrice-matrice" title="Lien permanent vers ce titre">¶</a></h4>
 <p><span class="math notranslate nohighlight">\(\mathbf{C} = \mathbf{A}\ \mathbf{B} \)</span> pour <span class="math notranslate nohighlight">\(\mathbf{A} \in \mathcal{R}^n\times\mathcal{R}^p\)</span> , <span class="math notranslate nohighlight">\(\mathbf{B} \in \mathcal{R}^p\times\mathcal{R}^q\)</span> et <span class="math notranslate nohighlight">\(\mathbf{C} \in \mathcal{R}^n\times\mathcal{R}^q\)</span></p>
 <div class="math notranslate nohighlight">
 \[ C_{i,j} = \sum_{k=1}^{p} A_{i,k} B_{k,j}\]</div>
 </div>
 <div class="section" id="matrice-de-vandermonde">
-<h4><span class="section-number">6.3.4.2. </span>Matrice de Vandermonde<a class="headerlink" href="#matrice-de-vandermonde" title="Lien permanent vers ce titre">¶</a></h4>
+<h4><span class="section-number">7.3.4.2. </span>Matrice de Vandermonde<a class="headerlink" href="#matrice-de-vandermonde" title="Lien permanent vers ce titre">¶</a></h4>
 <div class="math notranslate nohighlight">
 \[\begin{split} V = \left[ \begin{array}{ccccc}
 1 &amp; x_0 &amp; x_0^2 &amp; \ldots &amp; x_0^{n} \\
@@ -1668,15 +1676,15 @@ Y = [1. 3. 5.]
 </div>
 </div>
 <div class="section" id="boucle-en-python-sur-les-tableaux">
-<h2><span class="section-number">6.4. </span>Boucle en Python sur les tableaux<a class="headerlink" href="#boucle-en-python-sur-les-tableaux" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">7.4. </span>Boucle en Python sur les tableaux<a class="headerlink" href="#boucle-en-python-sur-les-tableaux" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="section" id="iterations-avec-un-indice">
-<h3><span class="section-number">6.4.1. </span>itérations avec un indice<a class="headerlink" href="#iterations-avec-un-indice" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">7.4.1. </span>itérations avec un indice<a class="headerlink" href="#iterations-avec-un-indice" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>for i in range(len(Tab)):
 </pre></div>
 </div>
 </div>
 <div class="section" id="iterations-sur-les-elements-val-d-un-tableau-tab-ou-d-une-liste">
-<h3><span class="section-number">6.4.2. </span>itérations sur les éléments val d’un tableau Tab (ou d’une liste)<a class="headerlink" href="#iterations-sur-les-elements-val-d-un-tableau-tab-ou-d-une-liste" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">7.4.2. </span>itérations sur les éléments val d’un tableau Tab (ou d’une liste)<a class="headerlink" href="#iterations-sur-les-elements-val-d-un-tableau-tab-ou-d-une-liste" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>for val in Tab:
 </pre></div>
 </div>
@@ -1692,14 +1700,14 @@ Y = [1. 3. 5.]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>32.14140192305627
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>32.19621271587842
 </pre></div>
 </div>
 </div>
 </div>
 </div>
 <div class="section" id="iterations-avec-indice-et-valeur-enumerate">
-<h3><span class="section-number">6.4.3. </span>itérations avec indice et valeur (enumerate)<a class="headerlink" href="#iterations-avec-indice-et-valeur-enumerate" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">7.4.3. </span>itérations avec indice et valeur (enumerate)<a class="headerlink" href="#iterations-avec-indice-et-valeur-enumerate" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>for i,val in enumerate(Tab):
 </pre></div>
 </div>
@@ -1719,21 +1727,21 @@ Y = [1. 3. 5.]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.16744075 0.52218211 0.60308052 0.86664339 0.6390745  0.56859025
- 0.50637324 0.40886888 0.33409992 0.09125825]
-xmax = 0.8666433893770404  pour i = 3
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.49482849 0.10495686 0.33167636 0.78296994 0.32300653 0.38819826
+ 0.22437685 0.73524524 0.96842014 0.8125108 ]
+xmax = 0.9684201356000487  pour i = 8
 </pre></div>
 </div>
 </div>
 </div>
 </div>
 <div class="section" id="boucle-avec-un-indice-decroissant-reversed">
-<h3><span class="section-number">6.4.4. </span>boucle avec un indice décroissant (reversed)<a class="headerlink" href="#boucle-avec-un-indice-decroissant-reversed" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">7.4.4. </span>boucle avec un indice décroissant (reversed)<a class="headerlink" href="#boucle-avec-un-indice-decroissant-reversed" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>for i in reversed(range(n)):
 </pre></div>
 </div>
 <div class="section" id="exemple-permutation-circulaire-vers-la-droite">
-<h4><span class="section-number">6.4.4.1. </span>exemple : permutation circulaire vers la droite<a class="headerlink" href="#exemple-permutation-circulaire-vers-la-droite" title="Lien permanent vers ce titre">¶</a></h4>
+<h4><span class="section-number">7.4.4.1. </span>exemple : permutation circulaire vers la droite<a class="headerlink" href="#exemple-permutation-circulaire-vers-la-droite" title="Lien permanent vers ce titre">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># permutation des valeurs d&#39;un tableau vers la droite: X[i+1]=X[i]</span>
@@ -1748,8 +1756,10 @@ xmax = 0.8666433893770404  pour i = 3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.53550489 0.46650487 0.935889   0.15609534]
-[0.15609534 0.53550489 0.46650487 0.935889  ]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.51917772 0.42967876 0.6077558  0.50939431]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.50939431 0.51917772 0.42967876 0.6077558 ]
 </pre></div>
 </div>
 </div>
@@ -1757,7 +1767,7 @@ xmax = 0.8666433893770404  pour i = 3
 </div>
 </div>
 <div class="section" id="boucles-de-tres-grande-taille-xrange">
-<h3><span class="section-number">6.4.5. </span>boucles de très grande taille: xrange<a class="headerlink" href="#boucles-de-tres-grande-taille-xrange" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">7.4.5. </span>boucles de très grande taille: xrange<a class="headerlink" href="#boucles-de-tres-grande-taille-xrange" title="Lien permanent vers ce titre">¶</a></h3>
 <p>pour des boucles de très grandes tailles (n &gt; 100 000) on peut utiliser</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>for i in xrange(n)
 </pre></div>
@@ -1770,7 +1780,7 @@ xmax = 0.8666433893770404  pour i = 3
 </div>
 </div>
 <div class="section" id="notation-matricielle-a-la-matlab">
-<h2><span class="section-number">6.5. </span>Notation matricielle (à la Matlab)<a class="headerlink" href="#notation-matricielle-a-la-matlab" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">7.5. </span>Notation matricielle (à la Matlab)<a class="headerlink" href="#notation-matricielle-a-la-matlab" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">&quot;**Video du cours: Notation matricielle avec Numpy**&quot;</span><span class="p">))</span>
@@ -1798,7 +1808,7 @@ Avec Python 3, <code class="docutils literal notranslate"><span class="pre">prin
 soit <code class="docutils literal notranslate"><span class="pre">print('bonjour')</span></code></p>
 </div>
 <div class="section" id="efficacite-boucles-dans-la-bibliotheque-numpy">
-<h3><span class="section-number">6.5.1. </span>Efficacité -&gt; boucles dans la bibliothéque numpy<a class="headerlink" href="#efficacite-boucles-dans-la-bibliotheque-numpy" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">7.5.1. </span>Efficacité -&gt; boucles dans la bibliothéque numpy<a class="headerlink" href="#efficacite-boucles-dans-la-bibliotheque-numpy" title="Lien permanent vers ce titre">¶</a></h3>
 <ul class="simple">
 <li><p>opérations (terme à terme) sur les vecteurs +,-,*,/</p></li>
 </ul>
@@ -1811,9 +1821,9 @@ soit <code class="docutils literal notranslate"><span class="pre">print('bonjour
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X= [0.12788027 0.19945283 0.58398838] 
-Y= [0.97750412 0.41028548 0.22824819] 
-XY= [0.12500349 0.0818326  0.13329429]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X= [0.85522068 0.94264644 0.46860517] 
+Y= [0.77628044 0.42333267 0.28003526] 
+XY= [0.66389109 0.39905304 0.13122597]
 </pre></div>
 </div>
 </div>
@@ -1828,14 +1838,14 @@ XY= [0.12500349 0.0818326  0.13329429]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.99183446 0.98017514 0.83427027]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.65605197 0.58764881 0.89219912]
 </pre></div>
 </div>
 </div>
 </div>
 </div>
 <div class="section" id="utilisez-les-fonctions-de-la-bibliotheque-numpy">
-<h3><span class="section-number">6.5.2. </span>Utilisez les fonctions de la bibliothéque numpy<a class="headerlink" href="#utilisez-les-fonctions-de-la-bibliotheque-numpy" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">7.5.2. </span>Utilisez les fonctions de la bibliothéque numpy<a class="headerlink" href="#utilisez-les-fonctions-de-la-bibliotheque-numpy" title="Lien permanent vers ce titre">¶</a></h3>
 <ul class="simple">
 <li><p>opérations matricielle: fonction <strong>dot</strong></p></li>
 </ul>
@@ -1852,15 +1862,13 @@ $<span class="math notranslate nohighlight">\( C= dot(A,B)\ \rightarrow\  C_{ij}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X.Y= 0.34013038464307055
-|X|= 0.6302199821483996
-A*X= [0.46759503 0.23348327 0.69378104]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A*A=
- [[0.30496364 0.7290066  0.74883983]
- [0.43028571 0.71670245 0.36181311]
- [0.60086777 1.31607113 0.96194635]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X.Y= 1.194170092979542
+|X|= 1.3563095243946734
+A*X= [1.08627044 0.89119311 1.70088489]
+A*A=
+ [[0.89934719 0.93943571 1.25764973]
+ [0.72761273 0.76873464 1.04065476]
+ [1.03639723 1.10354611 1.7707986 ]]
 </pre></div>
 </div>
 </div>
@@ -1878,12 +1886,12 @@ $<span class="math notranslate nohighlight">\( C= inner(A,B)\ \rightarrow\  C_{i
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>inner(X,Y)= 0.34013038464307055
-inner(A,X)= [0.46759503 0.23348327 0.69378104]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>inner(X,Y)= 1.194170092979542
+inner(A,X)= [1.08627044 0.89119311 1.70088489]
 inner(A,A)=
- [[0.55514123 0.27833682 0.80673222]
- [0.27833682 0.77969849 0.73912888]
- [0.80673222 0.73912888 1.41300598]]
+ [[1.08145037 0.86909567 1.22621867]
+ [0.86909567 0.70577447 1.00163501]
+ [1.22621867 1.00163501 1.68780818]]
 </pre></div>
 </div>
 </div>
@@ -1901,9 +1909,9 @@ inner(A,A)=
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>outer(X,X)=
- [[0.01635336 0.02550608 0.07468059]
- [0.02550608 0.03978143 0.11647814]
- [0.07468059 0.11647814 0.34104243]]
+ [[0.73140242 0.80617073 0.40076083]
+ [0.80617073 0.88858231 0.44172899]
+ [0.40076083 0.44172899 0.2195908 ]]
 </pre></div>
 </div>
 </div>
@@ -1915,7 +1923,7 @@ inner(A,A)=
 <p>voir la <strong>documentation numpy</strong>: <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference">http://docs.scipy.org/doc/numpy/reference</a></p>
 </div>
 <div class="section" id="a-href-ici085-aide-sur-les-fonctions-help-ou-tab-a-a-name-ici085-a">
-<h3><span class="section-number">6.5.3. </span><a href="#ici085">Aide sur les fonctions : help() ou TAB</a><a name="ici085"></a><a class="headerlink" href="#a-href-ici085-aide-sur-les-fonctions-help-ou-tab-a-a-name-ici085-a" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">7.5.3. </span><a href="#ici085">Aide sur les fonctions : help() ou TAB</a><a name="ici085"></a><a class="headerlink" href="#a-href-ici085-aide-sur-les-fonctions-help-ou-tab-a-a-name-ici085-a" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>help(fonction) ou fonction?
 </pre></div>
 </div>
@@ -1953,7 +1961,7 @@ sum(a, axis=None, dtype=None, out=None, keepdims=&lt;no value&gt;, initial=&lt;n
 </div>
 </div>
 <div class="section" id="bibliographie">
-<h2><span class="section-number">6.6. </span>Bibliographie<a class="headerlink" href="#bibliographie" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">7.6. </span>Bibliographie<a class="headerlink" href="#bibliographie" title="Lien permanent vers ce titre">¶</a></h2>
 <ol class="simple">
 <li><p><a class="reference external" href="http://www.cs.utexas.edu/users/EWD/transcriptions/EWD08xx/EWD831.html"><strong>Why numbering should start at zero</strong></a></p></li>
 </ol>
@@ -1967,7 +1975,7 @@ sum(a, axis=None, dtype=None, out=None, keepdims=&lt;no value&gt;, initial=&lt;n
 </ul>
 </div>
 <div class="section" id="fin-de-la-lecon">
-<h2><span class="section-number">6.7. </span>Fin de la leçon<a class="headerlink" href="#fin-de-la-lecon" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">7.7. </span>Fin de la leçon<a class="headerlink" href="#fin-de-la-lecon" title="Lien permanent vers ce titre">¶</a></h2>
 <a class="reference internal image-reference" href="../_images/numpy_array.png"><img alt="../_images/numpy_array.png" src="../_images/numpy_array.png" style="width: 300px;" /></a>
 </div>
 <div class="toctree-wrapper compound">
@@ -1999,17 +2007,17 @@ sum(a, axis=None, dtype=None, out=None, keepdims=&lt;no value&gt;, initial=&lt;n
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../CHAP5/COURS_FONCTION.html" title="précédent page">
+    <a class='left-prev' id="prev-link" href="../CHAP5/COURS_ALGORITHMIQUE.html" title="précédent page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">précédent</p>
-            <p class="prev-next-title"><span class="section-number">5. </span>Fonctions et procédures</p>
+            <p class="prev-next-title"><span class="section-number">6. </span>Programmation structurée</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="EXERCICES_TABLEAU.html" title="suivant page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">suivant</p>
-        <p class="prev-next-title"><span class="section-number">6.8. </span>Correction des exercices</p>
+        <p class="prev-next-title"><span class="section-number">7.8. </span>Correction des exercices</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

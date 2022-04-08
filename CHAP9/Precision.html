@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>9. Précision et validation &#8212; INPROS INtroduction à la PROgrammation Scientifique en Python</title>
+    <title>10. Précision et validation &#8212; INPROS INtroduction à la PROgrammation Scientifique en Python</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -57,8 +57,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="canonical" href="https://perso.univ-lyon1.fr/marc.buffat/CHAP9/Precision.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
-    <link rel="next" title="9.8. Exercices" href="Exercices_precision.html" />
-    <link rel="prev" title="8. Gestion de fichiers et E/S" href="../CHAP8/COURS_FICHIER.html" />
+    <link rel="next" title="10.8. Exercices" href="Exercices_precision.html" />
+    <link rel="prev" title="9. Gestion de fichiers et E/S" href="../CHAP8/COURS_FICHIER.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="fr">
     
@@ -145,9 +145,14 @@ const thebe_selector_output = ".output, .cell_output"
    5. Fonctions et procédures
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP5/COURS_ALGORITHMIQUE.html">
+   6. Programmation structurée
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../CHAP6/COURS_TABLEAU.html">
-   6. Les tableaux (vecteur, matrice)
+   7. Les tableaux (vecteur, matrice)
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -157,24 +162,24 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../CHAP6/EXERCICES_TABLEAU.html">
-     6.8. Correction des exercices
+     7.8. Correction des exercices
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../CHAP7/COURS_PLOT.html">
-   7. Tracé avec matplotlib
+   8. Tracé avec matplotlib
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../CHAP8/COURS_FICHIER.html">
-   8. Gestion de fichiers et E/S
+   9. Gestion de fichiers et E/S
   </a>
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="current reference internal" href="#">
-   9. Précision et validation
+   10. Précision et validation
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -184,24 +189,24 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="Exercices_precision.html">
-     9.8. Exercices
+     10.8. Exercices
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../CHAP10/COURS_ALGORITHME.html">
-   10. Algorithmes numériques
+   11. Algorithmes numériques
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../CHAP11/Efficiency.html">
-   11. Efficacité / complexité
+   12. Efficacité / complexité
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../CHAP12/debugging.html">
-   13. Recherche d’erreurs
+   14. Recherche d’erreurs
   </a>
  </li>
 </ul>
@@ -310,32 +315,32 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#erreur-de-representation">
-   9.1. Erreur de représentation
+   10.1. Erreur de représentation
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exemple-preliminaire">
-     9.1.1. Exemple préliminaire
+     10.1.1. Exemple préliminaire
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#algorithme">
-       9.1.1.1. Algorithme
+       10.1.1.1. Algorithme
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#programme-python">
-       9.1.1.2. Programme Python
+       10.1.1.2. Programme Python
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#applications">
-       9.1.1.3. Applications
+       10.1.1.3. Applications
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#solution-utilisation-de-la-propriete-e-x-1-e-x">
-       9.1.1.4. Solution: utilisation de la propriété
+       10.1.1.4. Solution: utilisation de la propriété
        <span class="math notranslate nohighlight">
         \(e^{-x} = 1/e^x \)
        </span>
@@ -343,19 +348,19 @@ const thebe_selector_output = ".output, .cell_output"
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#exercice">
-       9.1.1.5. Exercice
+       10.1.1.5. Exercice
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#representation-des-nombres-sur-un-ordinateur">
-     9.1.2. Représentation des nombres sur un ordinateur
+     10.1.2. Représentation des nombres sur un ordinateur
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#exemple">
-       9.1.2.1. Exemple
+       10.1.2.1. Exemple
       </a>
      </li>
     </ul>
@@ -364,12 +369,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#precision-des-calculs">
-   9.2. Précision des calculs
+   10.2. Précision des calculs
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#precision-machine-epsilon">
-     9.2.1. Précision machine
+     10.2.1. Précision machine
      <span class="math notranslate nohighlight">
       \(\epsilon\)
      </span>
@@ -377,51 +382,51 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#algorithme-de-calcul-de-la-precision-machine">
-     9.2.2. Algorithme de calcul de la précision machine
+     10.2.2. Algorithme de calcul de la précision machine
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id1">
-     9.2.3. Programme Python
+     10.2.3. Programme Python
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#erreurs-numeriques">
-   9.3. Erreurs numériques
+   10.3. Erreurs numériques
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exemple-racine-d-une-equation-du-2nd-degre">
-     9.3.1. Exemple: racine d’une équation du 2nd degré
+     10.3.1. Exemple: racine d’une équation du 2nd degré
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#programme-python-de-base">
-       9.3.1.1. programme Python de base
+       10.3.1.1. programme Python de base
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#meilleur-approximation">
-       9.3.1.2. meilleur approximation
+       10.3.1.2. meilleur approximation
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#calcul-d-erreurs">
-     9.3.2. Calcul d’erreurs
+     10.3.2. Calcul d’erreurs
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#regles-sur-les-erreurs">
-       9.3.2.1. règles sur les erreurs
+       10.3.2.1. règles sur les erreurs
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#condition-sur-l-erreur-relative">
-       9.3.2.2. condition sur l” erreur relative
+       10.3.2.2. condition sur l” erreur relative
       </a>
      </li>
     </ul>
@@ -430,29 +435,29 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#conditionnement-et-erreurs-d-approximation">
-   9.4. Conditionnement et erreurs d’approximation
+   10.4. Conditionnement et erreurs d’approximation
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#sensibilite-aux-erreurs">
-     9.4.1. sensibilité aux erreurs
+     10.4.1. sensibilité aux erreurs
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#erreurs-d-approximation">
-     9.4.2. Erreurs d’approximation
+     10.4.2. Erreurs d’approximation
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#ordre-d-approximation">
-       9.4.2.1. Ordre d’approximation
+       10.4.2.1. Ordre d’approximation
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exemple-calcul-de-e-a-avec-des-tables-pour-0-a-1">
-     9.4.3. Exemple: calcul de
+     10.4.3. Exemple: calcul de
      <span class="math notranslate nohighlight">
       \(e^a\)
      </span>
@@ -464,39 +469,39 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#algorithme-approximation-de-exp-a-a-l-aide-de-tables">
-     9.4.4. Algorithme: approximation de exp(a) à l’aide de tables
+     10.4.4. Algorithme: approximation de exp(a) à l’aide de tables
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id2">
-     9.4.5. Programme Python
+     10.4.5. Programme Python
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#comparaison-avec-le-calcul-utilisant-les-series-entieres">
-     9.4.6. comparaison avec le calcul utilisant les séries entières
+     10.4.6. comparaison avec le calcul utilisant les séries entières
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id3">
-     9.4.7. Exercice:
+     10.4.7. Exercice:
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#verification-des-calculs">
-   9.5. Vérification des calculs
+   10.5. Vérification des calculs
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#validation-de-la-simulation-d-alunissage">
-     9.5.1. validation de la simulation d’alunissage
+     10.5.1. validation de la simulation d’alunissage
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#validation-du-calcul-de-exp-a-avec-n-valeurs-tabulees">
-     9.5.2. Validation du calcul de
+     10.5.2. Validation du calcul de
      <span class="math notranslate nohighlight">
       \(exp(a)\)
      </span>
@@ -509,7 +514,7 @@ const thebe_selector_output = ".output, .cell_output"
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id4">
-       9.5.2.1. programme Python
+       10.5.2.1. programme Python
       </a>
      </li>
     </ul>
@@ -518,7 +523,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#a-href-sommaire-bibliographie-a-a-name-section2">
-   9.6.
+   10.6.
    <a href="#sommaire">
     Bibliographie
    </a>
@@ -528,7 +533,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#fin-de-la-lecon">
-   9.7. FIN de la leçon
+   10.7. FIN de la leçon
   </a>
  </li>
 </ul>
@@ -553,32 +558,32 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#erreur-de-representation">
-   9.1. Erreur de représentation
+   10.1. Erreur de représentation
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exemple-preliminaire">
-     9.1.1. Exemple préliminaire
+     10.1.1. Exemple préliminaire
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#algorithme">
-       9.1.1.1. Algorithme
+       10.1.1.1. Algorithme
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#programme-python">
-       9.1.1.2. Programme Python
+       10.1.1.2. Programme Python
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#applications">
-       9.1.1.3. Applications
+       10.1.1.3. Applications
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#solution-utilisation-de-la-propriete-e-x-1-e-x">
-       9.1.1.4. Solution: utilisation de la propriété
+       10.1.1.4. Solution: utilisation de la propriété
        <span class="math notranslate nohighlight">
         \(e^{-x} = 1/e^x \)
        </span>
@@ -586,19 +591,19 @@ const thebe_selector_output = ".output, .cell_output"
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#exercice">
-       9.1.1.5. Exercice
+       10.1.1.5. Exercice
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#representation-des-nombres-sur-un-ordinateur">
-     9.1.2. Représentation des nombres sur un ordinateur
+     10.1.2. Représentation des nombres sur un ordinateur
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#exemple">
-       9.1.2.1. Exemple
+       10.1.2.1. Exemple
       </a>
      </li>
     </ul>
@@ -607,12 +612,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#precision-des-calculs">
-   9.2. Précision des calculs
+   10.2. Précision des calculs
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#precision-machine-epsilon">
-     9.2.1. Précision machine
+     10.2.1. Précision machine
      <span class="math notranslate nohighlight">
       \(\epsilon\)
      </span>
@@ -620,51 +625,51 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#algorithme-de-calcul-de-la-precision-machine">
-     9.2.2. Algorithme de calcul de la précision machine
+     10.2.2. Algorithme de calcul de la précision machine
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id1">
-     9.2.3. Programme Python
+     10.2.3. Programme Python
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#erreurs-numeriques">
-   9.3. Erreurs numériques
+   10.3. Erreurs numériques
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exemple-racine-d-une-equation-du-2nd-degre">
-     9.3.1. Exemple: racine d’une équation du 2nd degré
+     10.3.1. Exemple: racine d’une équation du 2nd degré
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#programme-python-de-base">
-       9.3.1.1. programme Python de base
+       10.3.1.1. programme Python de base
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#meilleur-approximation">
-       9.3.1.2. meilleur approximation
+       10.3.1.2. meilleur approximation
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#calcul-d-erreurs">
-     9.3.2. Calcul d’erreurs
+     10.3.2. Calcul d’erreurs
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#regles-sur-les-erreurs">
-       9.3.2.1. règles sur les erreurs
+       10.3.2.1. règles sur les erreurs
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#condition-sur-l-erreur-relative">
-       9.3.2.2. condition sur l” erreur relative
+       10.3.2.2. condition sur l” erreur relative
       </a>
      </li>
     </ul>
@@ -673,29 +678,29 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#conditionnement-et-erreurs-d-approximation">
-   9.4. Conditionnement et erreurs d’approximation
+   10.4. Conditionnement et erreurs d’approximation
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#sensibilite-aux-erreurs">
-     9.4.1. sensibilité aux erreurs
+     10.4.1. sensibilité aux erreurs
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#erreurs-d-approximation">
-     9.4.2. Erreurs d’approximation
+     10.4.2. Erreurs d’approximation
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#ordre-d-approximation">
-       9.4.2.1. Ordre d’approximation
+       10.4.2.1. Ordre d’approximation
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exemple-calcul-de-e-a-avec-des-tables-pour-0-a-1">
-     9.4.3. Exemple: calcul de
+     10.4.3. Exemple: calcul de
      <span class="math notranslate nohighlight">
       \(e^a\)
      </span>
@@ -707,39 +712,39 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#algorithme-approximation-de-exp-a-a-l-aide-de-tables">
-     9.4.4. Algorithme: approximation de exp(a) à l’aide de tables
+     10.4.4. Algorithme: approximation de exp(a) à l’aide de tables
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id2">
-     9.4.5. Programme Python
+     10.4.5. Programme Python
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#comparaison-avec-le-calcul-utilisant-les-series-entieres">
-     9.4.6. comparaison avec le calcul utilisant les séries entières
+     10.4.6. comparaison avec le calcul utilisant les séries entières
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id3">
-     9.4.7. Exercice:
+     10.4.7. Exercice:
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#verification-des-calculs">
-   9.5. Vérification des calculs
+   10.5. Vérification des calculs
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#validation-de-la-simulation-d-alunissage">
-     9.5.1. validation de la simulation d’alunissage
+     10.5.1. validation de la simulation d’alunissage
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#validation-du-calcul-de-exp-a-avec-n-valeurs-tabulees">
-     9.5.2. Validation du calcul de
+     10.5.2. Validation du calcul de
      <span class="math notranslate nohighlight">
       \(exp(a)\)
      </span>
@@ -752,7 +757,7 @@ const thebe_selector_output = ".output, .cell_output"
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id4">
-       9.5.2.1. programme Python
+       10.5.2.1. programme Python
       </a>
      </li>
     </ul>
@@ -761,7 +766,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#a-href-sommaire-bibliographie-a-a-name-section2">
-   9.6.
+   10.6.
    <a href="#sommaire">
     Bibliographie
    </a>
@@ -771,7 +776,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#fin-de-la-lecon">
-   9.7. FIN de la leçon
+   10.7. FIN de la leçon
   </a>
  </li>
 </ul>
@@ -786,7 +791,7 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal image-reference" href="../_images/logo_trans11.png"><img alt="LyonHPC" src="../_images/logo_trans11.png" style="width: 180px;" /></a>
 <a class="reference internal image-reference" href="../_images/python-logo11.gif"><img alt="LyonHPC" src="../_images/python-logo11.gif" style="width: 200px;" /></a>
 <div class="tex2jax_ignore mathjax_ignore section" id="precision-et-validation">
-<h1><span class="section-number">9. </span>Précision et validation<a class="headerlink" href="#precision-et-validation" title="Lien permanent vers ce titre">¶</a></h1>
+<h1><span class="section-number">10. </span>Précision et validation<a class="headerlink" href="#precision-et-validation" title="Lien permanent vers ce titre">¶</a></h1>
 <a class="reference internal image-reference" href="../_images/cloud_precision.png"><img alt="sommaire" src="../_images/cloud_precision.png" style="width: 300px;" /></a>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -798,15 +803,15 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="erreur-de-representation">
-<h2><span class="section-number">9.1. </span>Erreur de représentation<a class="headerlink" href="#erreur-de-representation" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">10.1. </span>Erreur de représentation<a class="headerlink" href="#erreur-de-representation" title="Lien permanent vers ce titre">¶</a></h2>
 <p><em>Les nombres réels n’ont pas de représentation exacte sur un ordinateur</em></p>
 <div class="section" id="exemple-preliminaire">
-<h3><span class="section-number">9.1.1. </span>Exemple préliminaire<a class="headerlink" href="#exemple-preliminaire" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">10.1.1. </span>Exemple préliminaire<a class="headerlink" href="#exemple-preliminaire" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Calcul de la somme <span class="math notranslate nohighlight">\(S_n\)</span> de la série convergente:</p>
 <div class="math notranslate nohighlight">
 \[S_n = \sum_{i=0}^n \frac{x^i}{i!} \]</div>
 <div class="section" id="algorithme">
-<h4><span class="section-number">9.1.1.1. </span>Algorithme<a class="headerlink" href="#algorithme" title="Lien permanent vers ce titre">¶</a></h4>
+<h4><span class="section-number">10.1.1.1. </span>Algorithme<a class="headerlink" href="#algorithme" title="Lien permanent vers ce titre">¶</a></h4>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Algorithme serie(x,n)
      term  = 1.
      somme = 1.
@@ -819,7 +824,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="programme-python">
-<h4><span class="section-number">9.1.1.2. </span>Programme Python<a class="headerlink" href="#programme-python" title="Lien permanent vers ce titre">¶</a></h4>
+<h4><span class="section-number">10.1.1.2. </span>Programme Python<a class="headerlink" href="#programme-python" title="Lien permanent vers ce titre">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">serie</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="p">)</span> <span class="p">:</span>
@@ -835,7 +840,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="applications">
-<h4><span class="section-number">9.1.1.3. </span>Applications<a class="headerlink" href="#applications" title="Lien permanent vers ce titre">¶</a></h4>
+<h4><span class="section-number">10.1.1.3. </span>Applications<a class="headerlink" href="#applications" title="Lien permanent vers ce titre">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">exp</span>
@@ -872,7 +877,7 @@ Pour x= -100.0  serie= -2.9137556468915326e+25  exp(x)= 3.720075976020836e-44
 <p>Pour <span class="math notranslate nohighlight">\(x &lt; 0\)</span> , la série converge mais numériquement le calcul diverge à cause des erreurs d’arrondis.</p>
 </div>
 <div class="section" id="solution-utilisation-de-la-propriete-e-x-1-e-x">
-<h4><span class="section-number">9.1.1.4. </span>Solution: utilisation de la propriété <span class="math notranslate nohighlight">\(e^{-x} = 1/e^x \)</span><a class="headerlink" href="#solution-utilisation-de-la-propriete-e-x-1-e-x" title="Lien permanent vers ce titre">¶</a></h4>
+<h4><span class="section-number">10.1.1.4. </span>Solution: utilisation de la propriété <span class="math notranslate nohighlight">\(e^{-x} = 1/e^x \)</span><a class="headerlink" href="#solution-utilisation-de-la-propriete-e-x-1-e-x" title="Lien permanent vers ce titre">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mf">100.0</span>
@@ -888,7 +893,7 @@ Pour x= -100.0  serie= -2.9137556468915326e+25  exp(x)= 3.720075976020836e-44
 </div>
 </div>
 <div class="section" id="exercice">
-<h4><span class="section-number">9.1.1.5. </span>Exercice<a class="headerlink" href="#exercice" title="Lien permanent vers ce titre">¶</a></h4>
+<h4><span class="section-number">10.1.1.5. </span>Exercice<a class="headerlink" href="#exercice" title="Lien permanent vers ce titre">¶</a></h4>
 <p>On peut améliorer la précision du calcul en notant que pour <span class="math notranslate nohighlight">\(x&gt;0\)</span>, on peut écrire:</p>
 <div class="math notranslate nohighlight">
 \[e^x = (e^{x_0})^n \mbox{ avec } 0\le x_0 \le1 \]</div>
@@ -896,7 +901,7 @@ Pour x= -100.0  serie= -2.9137556468915326e+25  exp(x)= 3.720075976020836e-44
 </div>
 </div>
 <div class="section" id="representation-des-nombres-sur-un-ordinateur">
-<h3><span class="section-number">9.1.2. </span>Représentation des nombres sur un ordinateur<a class="headerlink" href="#representation-des-nombres-sur-un-ordinateur" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">10.1.2. </span>Représentation des nombres sur un ordinateur<a class="headerlink" href="#representation-des-nombres-sur-un-ordinateur" title="Lien permanent vers ce titre">¶</a></h3>
 <ul class="simple">
 <li><p>nombre entier exacte (32 bits): <span class="math notranslate nohighlight">\(-2^{31}\le n \le 2^{31}\)</span></p></li>
 <li><p>nombre réel: mantisse + exposant:</p></li>
@@ -913,7 +918,7 @@ normalisé = mantisse+exposant</p>
 <li><p>double précision 64 bits: <span class="math notranslate nohighlight">\(t=15\)</span>, <span class="math notranslate nohighlight">\(-324&lt;q&lt;308\)</span></p></li>
 </ul>
 <div class="section" id="exemple">
-<h4><span class="section-number">9.1.2.1. </span>Exemple<a class="headerlink" href="#exemple" title="Lien permanent vers ce titre">¶</a></h4>
+<h4><span class="section-number">10.1.2.1. </span>Exemple<a class="headerlink" href="#exemple" title="Lien permanent vers ce titre">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">1.</span>
@@ -964,14 +969,14 @@ s= 0.30000000000000004
 </div>
 </div>
 <div class="section" id="precision-des-calculs">
-<h2><span class="section-number">9.2. </span>Précision des calculs<a class="headerlink" href="#precision-des-calculs" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">10.2. </span>Précision des calculs<a class="headerlink" href="#precision-des-calculs" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="section" id="precision-machine-epsilon">
-<h3><span class="section-number">9.2.1. </span>Précision machine <span class="math notranslate nohighlight">\(\epsilon\)</span><a class="headerlink" href="#precision-machine-epsilon" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">10.2.1. </span>Précision machine <span class="math notranslate nohighlight">\(\epsilon\)</span><a class="headerlink" href="#precision-machine-epsilon" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="math notranslate nohighlight">
 \[\frac{\left\Vert a-fl(a)\right\Vert }{\left\Vert a\right\Vert }\le\epsilon\]</div>
 </div>
 <div class="section" id="algorithme-de-calcul-de-la-precision-machine">
-<h3><span class="section-number">9.2.2. </span>Algorithme de calcul de la précision machine<a class="headerlink" href="#algorithme-de-calcul-de-la-precision-machine" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">10.2.2. </span>Algorithme de calcul de la précision machine<a class="headerlink" href="#algorithme-de-calcul-de-la-precision-machine" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Algorithme Precision()
     eps = 1.
     tant que 1. + eps &gt; 1.
@@ -982,7 +987,7 @@ s= 0.30000000000000004
 </div>
 </div>
 <div class="section" id="id1">
-<h3><span class="section-number">9.2.3. </span>Programme Python<a class="headerlink" href="#id1" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">10.2.3. </span>Programme Python<a class="headerlink" href="#id1" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Precision</span><span class="p">():</span>
@@ -1005,18 +1010,18 @@ s= 0.30000000000000004
 </div>
 </div>
 <div class="section" id="erreurs-numeriques">
-<h2><span class="section-number">9.3. </span>Erreurs numériques<a class="headerlink" href="#erreurs-numeriques" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">10.3. </span>Erreurs numériques<a class="headerlink" href="#erreurs-numeriques" title="Lien permanent vers ce titre">¶</a></h2>
 <ul class="simple">
 <li><p>non associativité de l’addition et soustraction</p></li>
 <li><p>formule exacte <span class="math notranslate nohighlight">\(\leadsto\)</span> résultats numériques faux</p></li>
 <li><p>absorption <span class="math notranslate nohighlight">\(x + y = x\)</span>  si <span class="math notranslate nohighlight">\(y \ll x\)</span></p></li>
 </ul>
 <div class="section" id="exemple-racine-d-une-equation-du-2nd-degre">
-<h3><span class="section-number">9.3.1. </span>Exemple: racine d’une équation du 2nd degré<a class="headerlink" href="#exemple-racine-d-une-equation-du-2nd-degre" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">10.3.1. </span>Exemple: racine d’une équation du 2nd degré<a class="headerlink" href="#exemple-racine-d-une-equation-du-2nd-degre" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="math notranslate nohighlight">
 \[x=\frac{-b\mp\sqrt{b^{2}-4ac}}{2a}\]</div>
 <div class="section" id="programme-python-de-base">
-<h4><span class="section-number">9.3.1.1. </span>programme Python de base<a class="headerlink" href="#programme-python-de-base" title="Lien permanent vers ce titre">¶</a></h4>
+<h4><span class="section-number">10.3.1.1. </span>programme Python de base<a class="headerlink" href="#programme-python-de-base" title="Lien permanent vers ce titre">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">sqrt</span>
@@ -1041,7 +1046,7 @@ x1*x2= 2.220446049250313 # produit= 1.0
 </div>
 </div>
 <div class="section" id="meilleur-approximation">
-<h4><span class="section-number">9.3.1.2. </span>meilleur approximation<a class="headerlink" href="#meilleur-approximation" title="Lien permanent vers ce titre">¶</a></h4>
+<h4><span class="section-number">10.3.1.2. </span>meilleur approximation<a class="headerlink" href="#meilleur-approximation" title="Lien permanent vers ce titre">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x2</span> <span class="o">=</span> <span class="n">c</span><span class="o">/</span><span class="n">a</span><span class="o">/</span><span class="n">x1</span>
@@ -1060,9 +1065,9 @@ x1*x2= 1.0 = produit= 1.0
 </div>
 </div>
 <div class="section" id="calcul-d-erreurs">
-<h3><span class="section-number">9.3.2. </span>Calcul d’erreurs<a class="headerlink" href="#calcul-d-erreurs" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">10.3.2. </span>Calcul d’erreurs<a class="headerlink" href="#calcul-d-erreurs" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="section" id="regles-sur-les-erreurs">
-<h4><span class="section-number">9.3.2.1. </span>règles sur les erreurs<a class="headerlink" href="#regles-sur-les-erreurs" title="Lien permanent vers ce titre">¶</a></h4>
+<h4><span class="section-number">10.3.2.1. </span>règles sur les erreurs<a class="headerlink" href="#regles-sur-les-erreurs" title="Lien permanent vers ce titre">¶</a></h4>
 <div class="math notranslate nohighlight">
 \[\Delta(x+y)=\Delta x+\Delta y\]</div>
 <div class="math notranslate nohighlight">
@@ -1073,22 +1078,22 @@ x1*x2= 1.0 = produit= 1.0
 \[\Delta(\frac{x}{y})=\frac{\left|y\right|\Delta x+\left|x\right|\Delta y}{y^{2}}\]</div>
 </div>
 <div class="section" id="condition-sur-l-erreur-relative">
-<h4><span class="section-number">9.3.2.2. </span>condition sur l” erreur relative<a class="headerlink" href="#condition-sur-l-erreur-relative" title="Lien permanent vers ce titre">¶</a></h4>
+<h4><span class="section-number">10.3.2.2. </span>condition sur l” erreur relative<a class="headerlink" href="#condition-sur-l-erreur-relative" title="Lien permanent vers ce titre">¶</a></h4>
 <div class="math notranslate nohighlight">
 \[\frac{\Delta x}{|x|} \le \epsilon \]</div>
 </div>
 </div>
 </div>
 <div class="section" id="conditionnement-et-erreurs-d-approximation">
-<h2><span class="section-number">9.4. </span>Conditionnement et erreurs d’approximation<a class="headerlink" href="#conditionnement-et-erreurs-d-approximation" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">10.4. </span>Conditionnement et erreurs d’approximation<a class="headerlink" href="#conditionnement-et-erreurs-d-approximation" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="section" id="sensibilite-aux-erreurs">
-<h3><span class="section-number">9.4.1. </span>sensibilité aux erreurs<a class="headerlink" href="#sensibilite-aux-erreurs" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">10.4.1. </span>sensibilité aux erreurs<a class="headerlink" href="#sensibilite-aux-erreurs" title="Lien permanent vers ce titre">¶</a></h3>
 <p><strong>Conditionnement</strong> sensibilité du résultat à une petite variation des données.</p>
 <p>Problème mal conditionné=grande sensibilité vis à vis des données.</p>
 <p><strong>Stabilité</strong> sensibilité de l’algorithme vis a vis des erreurs numériques</p>
 </div>
 <div class="section" id="erreurs-d-approximation">
-<h3><span class="section-number">9.4.2. </span>Erreurs d’approximation<a class="headerlink" href="#erreurs-d-approximation" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">10.4.2. </span>Erreurs d’approximation<a class="headerlink" href="#erreurs-d-approximation" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Soit <span class="math notranslate nohighlight">\(U^h\)</span> une approximation de la solution <span class="math notranslate nohighlight">\(U_{ex}\)</span>  fonction d’un petit paramètre d’approximation <span class="math notranslate nohighlight">\(h\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\lim_{h \rightarrow 0}{U^h} = U_{ex} \]</div>
@@ -1096,7 +1101,7 @@ x1*x2= 1.0 = produit= 1.0
 <div class="math notranslate nohighlight">
 \[ E(h) =  \left\Vert U^h - U_{ex} \right\Vert \rightarrow 0 \]</div>
 <div class="section" id="ordre-d-approximation">
-<h4><span class="section-number">9.4.2.1. </span>Ordre d’approximation<a class="headerlink" href="#ordre-d-approximation" title="Lien permanent vers ce titre">¶</a></h4>
+<h4><span class="section-number">10.4.2.1. </span>Ordre d’approximation<a class="headerlink" href="#ordre-d-approximation" title="Lien permanent vers ce titre">¶</a></h4>
 <p><strong>Ordre <span class="math notranslate nohighlight">\(O(h^{n})\)</span></strong></p>
 <ul class="simple">
 <li><p>La fonction <span class="math notranslate nohighlight">\(E(h)\)</span> est en <span class="math notranslate nohighlight">\(O(h^{n})\)</span> s’il existe une constante <span class="math notranslate nohighlight">\(C&gt;0\)</span> telle que <span class="math notranslate nohighlight">\(\left|E(h)\right|&lt;Ch^{n}\)</span></p></li>
@@ -1108,7 +1113,7 @@ x1*x2= 1.0 = produit= 1.0
 </div>
 </div>
 <div class="section" id="exemple-calcul-de-e-a-avec-des-tables-pour-0-a-1">
-<h3><span class="section-number">9.4.3. </span>Exemple: calcul de <span class="math notranslate nohighlight">\(e^a\)</span> avec des tables pour <span class="math notranslate nohighlight">\(0 &lt; a &lt; 1\)</span><a class="headerlink" href="#exemple-calcul-de-e-a-avec-des-tables-pour-0-a-1" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">10.4.3. </span>Exemple: calcul de <span class="math notranslate nohighlight">\(e^a\)</span> avec des tables pour <span class="math notranslate nohighlight">\(0 &lt; a &lt; 1\)</span><a class="headerlink" href="#exemple-calcul-de-e-a-avec-des-tables-pour-0-a-1" title="Lien permanent vers ce titre">¶</a></h3>
 <p>On précalcule  <span class="math notranslate nohighlight">\(n+1\)</span> valeurs <span class="math notranslate nohighlight">\(l_k=\log(1 + 10^{-k})\)</span> ( pour <span class="math notranslate nohighlight">\(k=0,n\)</span> )</p>
 <p>On a donc <span class="math notranslate nohighlight">\(e^{l_k} = 1 + 10^{-k}\)</span></p>
 <p>On décompose ensuite <span class="math notranslate nohighlight">\(a\)</span> sous la forme</p>
@@ -1125,7 +1130,7 @@ x1*x2= 1.0 = produit= 1.0
 \[ \frac{\Delta e^a}{e^a} = \frac {e^\epsilon- 1 - \epsilon}{e^\epsilon} \simeq \theta(\epsilon^2)\]</div>
 </div>
 <div class="section" id="algorithme-approximation-de-exp-a-a-l-aide-de-tables">
-<h3><span class="section-number">9.4.4. </span>Algorithme: approximation de exp(a) à l’aide de tables<a class="headerlink" href="#algorithme-approximation-de-exp-a-a-l-aide-de-tables" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">10.4.4. </span>Algorithme: approximation de exp(a) à l’aide de tables<a class="headerlink" href="#algorithme-approximation-de-exp-a-a-l-aide-de-tables" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Algorithme Exp(a)
     n = 8  # nbre de valeurs de la table
     L = [ln(1),ln(1+0.1),ln(1+0.01),...ln(1+10^-7)]
@@ -1148,7 +1153,7 @@ x1*x2= 1.0 = produit= 1.0
 </div>
 </div>
 <div class="section" id="id2">
-<h3><span class="section-number">9.4.5. </span>Programme Python<a class="headerlink" href="#id2" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">10.4.5. </span>Programme Python<a class="headerlink" href="#id2" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">exp</span><span class="p">,</span><span class="n">log</span><span class="p">,</span><span class="n">log1p</span>
@@ -1186,7 +1191,7 @@ Erreur relative =  4.4405368413432215e-16
 </div>
 </div>
 <div class="section" id="comparaison-avec-le-calcul-utilisant-les-series-entieres">
-<h3><span class="section-number">9.4.6. </span>comparaison avec le calcul utilisant les séries entières<a class="headerlink" href="#comparaison-avec-le-calcul-utilisant-les-series-entieres" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">10.4.6. </span>comparaison avec le calcul utilisant les séries entières<a class="headerlink" href="#comparaison-avec-le-calcul-utilisant-les-series-entieres" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -1221,7 +1226,7 @@ Erreur relative =  4.4405368413432215e-16
 </ul>
 </div>
 <div class="section" id="id3">
-<h3><span class="section-number">9.4.7. </span>Exercice:<a class="headerlink" href="#id3" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">10.4.7. </span>Exercice:<a class="headerlink" href="#id3" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Utiliser le principe de l’algorithme précédent pour calculer <span class="math notranslate nohighlight">\(log(a)\)</span> pour <span class="math notranslate nohighlight">\(a&gt;1\)</span>.
 On pourra décomposer <span class="math notranslate nohighlight">\(a\)</span> sous la forme:</p>
 <div class="math notranslate nohighlight">
@@ -1230,7 +1235,7 @@ On pourra décomposer <span class="math notranslate nohighlight">\(a\)</span> so
 </div>
 </div>
 <div class="section" id="verification-des-calculs">
-<h2><span class="section-number">9.5. </span>Vérification des calculs<a class="headerlink" href="#verification-des-calculs" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">10.5. </span>Vérification des calculs<a class="headerlink" href="#verification-des-calculs" title="Lien permanent vers ce titre">¶</a></h2>
 <ul class="simple">
 <li><p>une simulation numérique calcule une approximation</p></li>
 <li><p>toute simulation numérique doit être validée</p></li>
@@ -1242,7 +1247,7 @@ On pourra décomposer <span class="math notranslate nohighlight">\(a\)</span> so
 <li><p>une comparaison avec une solution analytique ou une solution de référence</p></li>
 </ul>
 <div class="section" id="validation-de-la-simulation-d-alunissage">
-<h3><span class="section-number">9.5.1. </span>validation de la simulation d’alunissage<a class="headerlink" href="#validation-de-la-simulation-d-alunissage" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">10.5.1. </span>validation de la simulation d’alunissage<a class="headerlink" href="#validation-de-la-simulation-d-alunissage" title="Lien permanent vers ce titre">¶</a></h3>
 <p><strong>comparaison avec une solution analytique</strong></p>
 <p>Dans la modélisation de alunissage on a utiliser une approximation de la solution de l’équation du mouvement:</p>
 <div class="math notranslate nohighlight">
@@ -1307,11 +1312,11 @@ l’erreur doit etre en <span class="math notranslate nohighlight">\(\theta(X^7)
 </div>
 </div>
 <div class="section" id="validation-du-calcul-de-exp-a-avec-n-valeurs-tabulees">
-<h3><span class="section-number">9.5.2. </span>Validation du calcul de <span class="math notranslate nohighlight">\(exp(a)\)</span> avec <span class="math notranslate nohighlight">\(n\)</span> valeurs tabulées<a class="headerlink" href="#validation-du-calcul-de-exp-a-avec-n-valeurs-tabulees" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">10.5.2. </span>Validation du calcul de <span class="math notranslate nohighlight">\(exp(a)\)</span> avec <span class="math notranslate nohighlight">\(n\)</span> valeurs tabulées<a class="headerlink" href="#validation-du-calcul-de-exp-a-avec-n-valeurs-tabulees" title="Lien permanent vers ce titre">¶</a></h3>
 <p><strong>vérification de la convergence</strong></p>
 <p>erreur relative <span class="math notranslate nohighlight">\(err \simeq \epsilon^2\)</span> avec <span class="math notranslate nohighlight">\(\epsilon \lt 10^{-n}\)</span></p>
 <div class="section" id="id4">
-<h4><span class="section-number">9.5.2.1. </span>programme Python<a class="headerlink" href="#id4" title="Lien permanent vers ce titre">¶</a></h4>
+<h4><span class="section-number">10.5.2.1. </span>programme Python<a class="headerlink" href="#id4" title="Lien permanent vers ce titre">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -1354,7 +1359,7 @@ l’erreur doit etre en <span class="math notranslate nohighlight">\(\theta(X^7)
 </div>
 </div>
 <div class="section" id="a-href-sommaire-bibliographie-a-a-name-section2">
-<h2><span class="section-number">9.6. </span><a href="#sommaire">Bibliographie</a><a name="section2" /><a class="headerlink" href="#a-href-sommaire-bibliographie-a-a-name-section2" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">10.6. </span><a href="#sommaire">Bibliographie</a><a name="section2" /><a class="headerlink" href="#a-href-sommaire-bibliographie-a-a-name-section2" title="Lien permanent vers ce titre">¶</a></h2>
 <ol class="simple">
 <li><p><a class="reference external" href="http://mp.cpgedupuydelome.fr/document.php?doc=Article%20-%20Calcul%20des%20fonctions%20usuelles%20par%20la%20calculatrice.txt">Calcul des fonctions usuelles sur une calculatrice (blog prépa Dupuis de Lome)</a></p></li>
 <li><p><a class="reference external" href="https://www.irisa.fr/sage/jocelyne/cours/HPC/prec-1101.pdf">Calcul scientifique (J. Erhel INRIA -Rennes)</a></p></li>
@@ -1364,7 +1369,7 @@ l’erreur doit etre en <span class="math notranslate nohighlight">\(\theta(X^7)
 </ol>
 </div>
 <div class="section" id="fin-de-la-lecon">
-<h2><span class="section-number">9.7. </span>FIN de la leçon<a class="headerlink" href="#fin-de-la-lecon" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">10.7. </span>FIN de la leçon<a class="headerlink" href="#fin-de-la-lecon" title="Lien permanent vers ce titre">¶</a></h2>
 <a class="reference internal image-reference" href="../_images/cloud_precision.png"><img alt="sommaire" src="../_images/cloud_precision.png" style="width: 300px;" /></a>
 </div>
 <div class="toctree-wrapper compound">
@@ -1400,13 +1405,13 @@ l’erreur doit etre en <span class="math notranslate nohighlight">\(\theta(X^7)
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">précédent</p>
-            <p class="prev-next-title"><span class="section-number">8. </span>Gestion de fichiers et E/S</p>
+            <p class="prev-next-title"><span class="section-number">9. </span>Gestion de fichiers et E/S</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="Exercices_precision.html" title="suivant page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">suivant</p>
-        <p class="prev-next-title"><span class="section-number">9.8. </span>Exercices</p>
+        <p class="prev-next-title"><span class="section-number">10.8. </span>Exercices</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>6.8. Correction des exercices &#8212; INPROS INtroduction à la PROgrammation Scientifique en Python</title>
+    <title>7.8. Correction des exercices &#8212; INPROS INtroduction à la PROgrammation Scientifique en Python</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -57,8 +57,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="canonical" href="https://perso.univ-lyon1.fr/marc.buffat/CHAP6/EXERCICES_TABLEAU.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
-    <link rel="next" title="7. Tracé avec matplotlib" href="../CHAP7/COURS_PLOT.html" />
-    <link rel="prev" title="6. Les tableaux (vecteur, matrice)" href="COURS_TABLEAU.html" />
+    <link rel="next" title="8. Tracé avec matplotlib" href="../CHAP7/COURS_PLOT.html" />
+    <link rel="prev" title="7. Les tableaux (vecteur, matrice)" href="COURS_TABLEAU.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="fr">
     
@@ -145,9 +145,14 @@ const thebe_selector_output = ".output, .cell_output"
    5. Fonctions et procédures
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP5/COURS_ALGORITHMIQUE.html">
+   6. Programmation structurée
+  </a>
+ </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="COURS_TABLEAU.html">
-   6. Les tableaux (vecteur, matrice)
+   7. Les tableaux (vecteur, matrice)
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -157,24 +162,24 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     6.8. Correction des exercices
+     7.8. Correction des exercices
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../CHAP7/COURS_PLOT.html">
-   7. Tracé avec matplotlib
+   8. Tracé avec matplotlib
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../CHAP8/COURS_FICHIER.html">
-   8. Gestion de fichiers et E/S
+   9. Gestion de fichiers et E/S
   </a>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../CHAP9/Precision.html">
-   9. Précision et validation
+   10. Précision et validation
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -184,24 +189,24 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../CHAP9/Exercices_precision.html">
-     9.8. Exercices
+     10.8. Exercices
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../CHAP10/COURS_ALGORITHME.html">
-   10. Algorithmes numériques
+   11. Algorithmes numériques
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../CHAP11/Efficiency.html">
-   11. Efficacité / complexité
+   12. Efficacité / complexité
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../CHAP12/debugging.html">
-   13. Recherche d’erreurs
+   14. Recherche d’erreurs
   </a>
  </li>
 </ul>
@@ -310,97 +315,97 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#test-de-colinearite-de-2-vecteurs">
-   6.8.1. Test de colinéarité de 2 vecteurs
+   7.8.1. Test de colinéarité de 2 vecteurs
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#algorithme-test-de-colinearite-de-2-vecteurs">
-     6.8.1.1. Algorithme: Test de colinéarité de 2 vecteurs
+     7.8.1.1. Algorithme: Test de colinéarité de 2 vecteurs
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#programme-python">
-     6.8.1.2. Programme Python
+     7.8.1.2. Programme Python
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#normalisation-d-un-vecteur-x">
-   6.8.2. Normalisation d’un vecteur X
+   7.8.2. Normalisation d’un vecteur X
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#algorithme-normalisation-d-un-vecteur-x">
-     6.8.2.1. Algorithme: normalisation d’un vecteur X
+     7.8.2.1. Algorithme: normalisation d’un vecteur X
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#programme-python-normalisation-d-un-vecteur-x">
-     6.8.2.2. Programme Python: normalisation d’un vecteur X
+     7.8.2.2. Programme Python: normalisation d’un vecteur X
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#droite-des-moindres-carrees">
-   6.8.3. Droite des moindres carrées
+   7.8.3. Droite des moindres carrées
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#principe">
-     6.8.3.1. Principe
+     7.8.3.1. Principe
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#algorithme-moindre-carre">
-     6.8.3.2. Algorithme: moindre carré
+     7.8.3.2. Algorithme: moindre carré
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#programme-python-moindre-carre">
-     6.8.3.3. Programme Python « moindre carré »
+     7.8.3.3. Programme Python « moindre carré »
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#produit-matrice-matrice">
-   6.8.4. Produit matrice-matrice
+   7.8.4. Produit matrice-matrice
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#algorithme-produit-matrice-matrice">
-   6.8.5. Algorithme: « produit matrice-matrice »
+   7.8.5. Algorithme: « produit matrice-matrice »
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#programme-python-produit-matrice-matrice">
-     6.8.5.1. Programme Python: « produit matrice-matrice »
+     7.8.5.1. Programme Python: « produit matrice-matrice »
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#calcul-matrice-de-vandermonde">
-   6.8.6. Calcul matrice de Vandermonde
+   7.8.6. Calcul matrice de Vandermonde
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#algorithme-vandermonde">
-     6.8.6.1. Algorithme: vandermonde
+     7.8.6.1. Algorithme: vandermonde
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#programme-python-vandermonde">
-     6.8.6.2. Programme Python: vandermonde
+     7.8.6.2. Programme Python: vandermonde
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#fin-des-exercices">
-   6.8.7. FIN des exercices
+   7.8.7. FIN des exercices
   </a>
  </li>
 </ul>
@@ -425,97 +430,97 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#test-de-colinearite-de-2-vecteurs">
-   6.8.1. Test de colinéarité de 2 vecteurs
+   7.8.1. Test de colinéarité de 2 vecteurs
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#algorithme-test-de-colinearite-de-2-vecteurs">
-     6.8.1.1. Algorithme: Test de colinéarité de 2 vecteurs
+     7.8.1.1. Algorithme: Test de colinéarité de 2 vecteurs
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#programme-python">
-     6.8.1.2. Programme Python
+     7.8.1.2. Programme Python
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#normalisation-d-un-vecteur-x">
-   6.8.2. Normalisation d’un vecteur X
+   7.8.2. Normalisation d’un vecteur X
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#algorithme-normalisation-d-un-vecteur-x">
-     6.8.2.1. Algorithme: normalisation d’un vecteur X
+     7.8.2.1. Algorithme: normalisation d’un vecteur X
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#programme-python-normalisation-d-un-vecteur-x">
-     6.8.2.2. Programme Python: normalisation d’un vecteur X
+     7.8.2.2. Programme Python: normalisation d’un vecteur X
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#droite-des-moindres-carrees">
-   6.8.3. Droite des moindres carrées
+   7.8.3. Droite des moindres carrées
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#principe">
-     6.8.3.1. Principe
+     7.8.3.1. Principe
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#algorithme-moindre-carre">
-     6.8.3.2. Algorithme: moindre carré
+     7.8.3.2. Algorithme: moindre carré
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#programme-python-moindre-carre">
-     6.8.3.3. Programme Python « moindre carré »
+     7.8.3.3. Programme Python « moindre carré »
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#produit-matrice-matrice">
-   6.8.4. Produit matrice-matrice
+   7.8.4. Produit matrice-matrice
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#algorithme-produit-matrice-matrice">
-   6.8.5. Algorithme: « produit matrice-matrice »
+   7.8.5. Algorithme: « produit matrice-matrice »
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#programme-python-produit-matrice-matrice">
-     6.8.5.1. Programme Python: « produit matrice-matrice »
+     7.8.5.1. Programme Python: « produit matrice-matrice »
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#calcul-matrice-de-vandermonde">
-   6.8.6. Calcul matrice de Vandermonde
+   7.8.6. Calcul matrice de Vandermonde
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#algorithme-vandermonde">
-     6.8.6.1. Algorithme: vandermonde
+     7.8.6.1. Algorithme: vandermonde
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#programme-python-vandermonde">
-     6.8.6.2. Programme Python: vandermonde
+     7.8.6.2. Programme Python: vandermonde
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#fin-des-exercices">
-   6.8.7. FIN des exercices
+   7.8.7. FIN des exercices
   </a>
  </li>
 </ul>
@@ -530,7 +535,7 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal image-reference" href="../_images/logo_trans8.png"><img alt="LyonHPC" src="../_images/logo_trans8.png" style="width: 180px;" /></a>
 <a class="reference internal image-reference" href="../_images/python-logo8.gif"><img alt="LyonHPC" src="../_images/python-logo8.gif" style="width: 200px;" /></a>
 <div class="tex2jax_ignore mathjax_ignore section" id="correction-des-exercices">
-<h1><span class="section-number">6.8. </span>Correction des exercices<a class="headerlink" href="#correction-des-exercices" title="Lien permanent vers ce titre">¶</a></h1>
+<h1><span class="section-number">7.8. </span>Correction des exercices<a class="headerlink" href="#correction-des-exercices" title="Lien permanent vers ce titre">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
@@ -541,7 +546,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="test-de-colinearite-de-2-vecteurs">
-<h2><span class="section-number">6.8.1. </span>Test de colinéarité de 2 vecteurs<a class="headerlink" href="#test-de-colinearite-de-2-vecteurs" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">7.8.1. </span>Test de colinéarité de 2 vecteurs<a class="headerlink" href="#test-de-colinearite-de-2-vecteurs" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="math notranslate nohighlight">
 \[\mathbf{U} \in \mathcal{R}^n , \mathbf{V} \in \mathcal{R}^n \mbox{ si } \left|\mathbf{U}.\mathbf{V}\right| = \left\Vert\mathbf{U}\right\Vert \left\Vert\mathbf{V}\right\Vert \mbox{ alors } \mathbf{U} \mbox{ et } \mathbf{V} \mbox{ sont colinéaires} \]</div>
 <p>Ecrire une fonction qui teste la colinéarité</p>
@@ -550,7 +555,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <p>Attention à la précision</p>
 <div class="section" id="algorithme-test-de-colinearite-de-2-vecteurs">
-<h3><span class="section-number">6.8.1.1. </span>Algorithme: Test de colinéarité de 2 vecteurs<a class="headerlink" href="#algorithme-test-de-colinearite-de-2-vecteurs" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">7.8.1.1. </span>Algorithme: Test de colinéarité de 2 vecteurs<a class="headerlink" href="#algorithme-test-de-colinearite-de-2-vecteurs" title="Lien permanent vers ce titre">¶</a></h3>
 <p><strong>attention:</strong> calcul avec une précision <span class="math notranslate nohighlight">\(\epsilon\)</span></p>
 <div class="math notranslate nohighlight">
 \[ \left|\, \left|\mathbf{U}.\mathbf{V}\right| - \left\Vert\mathbf{U}\right\Vert \left\Vert\mathbf{V}\right\Vert \,\right| &lt; \epsilon\]</div>
@@ -575,7 +580,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="programme-python">
-<h3><span class="section-number">6.8.1.2. </span>Programme Python<a class="headerlink" href="#programme-python" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">7.8.1.2. </span>Programme Python<a class="headerlink" href="#programme-python" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -606,9 +611,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>U = [0.23985336 0.18378269 0.2244125 ] V = [0.58996375 0.82377772 0.04693395]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>U = [0.92591445 0.73594867 0.2124627 ] V = [0.45236574 0.56627863 0.66608434]
 False
-U = [0.23985336 0.18378269 0.2244125 ] V = [0.47970672 0.36756537 0.448825  ]
+U = [0.92591445 0.73594867 0.2124627 ] V = [1.8518289  1.47189734 0.42492541]
 True
 </pre></div>
 </div>
@@ -617,7 +622,7 @@ True
 </div>
 </div>
 <div class="section" id="normalisation-d-un-vecteur-x">
-<h2><span class="section-number">6.8.2. </span>Normalisation d’un vecteur X<a class="headerlink" href="#normalisation-d-un-vecteur-x" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">7.8.2. </span>Normalisation d’un vecteur X<a class="headerlink" href="#normalisation-d-un-vecteur-x" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="math notranslate nohighlight">
 \[\mathbf{U} \in \mathcal{R}^n \mbox{ calcul } \mathbf{U} \leftarrow \frac{\mathbf{U}}{\left\Vert\mathbf{U} \right\Vert}\]</div>
 <p>Ecrire une fonction python qui normalise un vecteur X</p>
@@ -626,7 +631,7 @@ True
 </div>
 <p>attention au cas X=0</p>
 <div class="section" id="algorithme-normalisation-d-un-vecteur-x">
-<h3><span class="section-number">6.8.2.1. </span>Algorithme: normalisation d’un vecteur X<a class="headerlink" href="#algorithme-normalisation-d-un-vecteur-x" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">7.8.2.1. </span>Algorithme: normalisation d’un vecteur X<a class="headerlink" href="#algorithme-normalisation-d-un-vecteur-x" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Algorithme normalisation(U)
     n dimension de U
     normU = 0.
@@ -639,7 +644,7 @@ True
 </div>
 </div>
 <div class="section" id="programme-python-normalisation-d-un-vecteur-x">
-<h3><span class="section-number">6.8.2.2. </span>Programme Python: normalisation d’un vecteur X<a class="headerlink" href="#programme-python-normalisation-d-un-vecteur-x" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">7.8.2.2. </span>Programme Python: normalisation d’un vecteur X<a class="headerlink" href="#programme-python-normalisation-d-un-vecteur-x" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="o">*</span>
@@ -664,8 +669,8 @@ True
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>U= [0.05454657 0.74609501 0.35050167]
-U normalise= [0.06602692 0.90312473 0.42427134]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>U= [0.75684132 0.17318733 0.29545636]
+U normalise= [0.91106578 0.20847837 0.35566264]
 </pre></div>
 </div>
 </div>
@@ -673,10 +678,10 @@ U normalise= [0.06602692 0.90312473 0.42427134]
 </div>
 </div>
 <div class="section" id="droite-des-moindres-carrees">
-<h2><span class="section-number">6.8.3. </span>Droite des moindres carrées<a class="headerlink" href="#droite-des-moindres-carrees" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">7.8.3. </span>Droite des moindres carrées<a class="headerlink" href="#droite-des-moindres-carrees" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Soient <span class="math notranslate nohighlight">\(n\)</span> couples de points expérimentaux: <span class="math notranslate nohighlight">\((X_i,Y_i)_{i=0,n-1}\)</span>, on cherche à lisser ces points par la droite des moindres carrés: <span class="math notranslate nohighlight">\(y = a x +b \)</span></p>
 <div class="section" id="principe">
-<h3><span class="section-number">6.8.3.1. </span>Principe<a class="headerlink" href="#principe" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">7.8.3.1. </span>Principe<a class="headerlink" href="#principe" title="Lien permanent vers ce titre">¶</a></h3>
 <p>on détermine la droite <span class="math notranslate nohighlight">\(y = a x + b\)</span> qui minimise l’erreur <span class="math notranslate nohighlight">\(Err\)</span> entre les points de mesure et les points de la droite:</p>
 <div class="math notranslate nohighlight">
 \[ Err(a,b) = \sum_{i=0}^{n-1} \Delta_i ^2 \]</div>
@@ -692,7 +697,7 @@ U normalise= [0.06602692 0.90312473 0.42427134]
 \[ a = \frac{\overline{XY}- \overline{X}\ \overline{Y}}{\overline{X^2}- (\overline{X})^2} \mbox{ et }  b = \overline{Y} - a \overline{X} \]</div>
 </div>
 <div class="section" id="algorithme-moindre-carre">
-<h3><span class="section-number">6.8.3.2. </span>Algorithme: moindre carré<a class="headerlink" href="#algorithme-moindre-carre" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">7.8.3.2. </span>Algorithme: moindre carré<a class="headerlink" href="#algorithme-moindre-carre" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>initialiser n 
 X,Y tableaux de n reels
 Xm=0.; XXm=0.
@@ -711,7 +716,7 @@ b = Ym - a * Xm
 </div>
 </div>
 <div class="section" id="programme-python-moindre-carre">
-<h3><span class="section-number">6.8.3.3. </span>Programme Python « moindre carré »<a class="headerlink" href="#programme-python-moindre-carre" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">7.8.3.3. </span>Programme Python « moindre carré »<a class="headerlink" href="#programme-python-moindre-carre" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">,</span> <span class="mf">4.</span><span class="p">])</span>
@@ -761,12 +766,12 @@ b = Ym - a * Xm
 </div>
 </div>
 <div class="section" id="produit-matrice-matrice">
-<h2><span class="section-number">6.8.4. </span>Produit matrice-matrice<a class="headerlink" href="#produit-matrice-matrice" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">7.8.4. </span>Produit matrice-matrice<a class="headerlink" href="#produit-matrice-matrice" title="Lien permanent vers ce titre">¶</a></h2>
 <p><span class="math notranslate nohighlight">\(\mathbf{C} = \mathbf{A}\ \mathbf{B} \)</span> pour <span class="math notranslate nohighlight">\(\mathbf{A} \in \mathcal{R}^n\times\mathcal{R}^p\)</span> , <span class="math notranslate nohighlight">\(\mathbf{B} \in \mathcal{R}^p\times\mathcal{R}^q\)</span> et <span class="math notranslate nohighlight">\(\mathbf{C} \in \mathcal{R}^n\times\mathcal{R}^q\)</span>
 $<span class="math notranslate nohighlight">\( C_{i,j} = \sum_{k=0}^{p-1} A_{i,k} B_{k,j}\)</span>$</p>
 </div>
 <div class="section" id="algorithme-produit-matrice-matrice">
-<h2><span class="section-number">6.8.5. </span>Algorithme: « produit matrice-matrice »<a class="headerlink" href="#algorithme-produit-matrice-matrice" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">7.8.5. </span>Algorithme: « produit matrice-matrice »<a class="headerlink" href="#algorithme-produit-matrice-matrice" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>initialise n,p,q (dimension)
 A matrice dimension n,p
 B matrice dimension p,q
@@ -784,7 +789,7 @@ affiche C
 </pre></div>
 </div>
 <div class="section" id="programme-python-produit-matrice-matrice">
-<h3><span class="section-number">6.8.5.1. </span>Programme Python: « produit matrice-matrice »<a class="headerlink" href="#programme-python-produit-matrice-matrice" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">7.8.5.1. </span>Programme Python: « produit matrice-matrice »<a class="headerlink" href="#programme-python-produit-matrice-matrice" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span> 
@@ -815,7 +820,7 @@ C = A.B [[ 3.  4.  5.]
 </div>
 </div>
 <div class="section" id="calcul-matrice-de-vandermonde">
-<h2><span class="section-number">6.8.6. </span>Calcul matrice de Vandermonde<a class="headerlink" href="#calcul-matrice-de-vandermonde" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">7.8.6. </span>Calcul matrice de Vandermonde<a class="headerlink" href="#calcul-matrice-de-vandermonde" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="math notranslate nohighlight">
 \[\begin{split} V = \left[ \begin{array}{ccccc}
 1 &amp; x_0 &amp; x_0^2 &amp; \ldots &amp; x_0^{n} \\
@@ -827,7 +832,7 @@ C = A.B [[ 3.  4.  5.]
 \end{split}\]</div>
 <p>Intervient dans le problème de la détermination du polynôme d’interpolation de degré <span class="math notranslate nohighlight">\(n\)</span> passant par <span class="math notranslate nohighlight">\(n+1\)</span> points <span class="math notranslate nohighlight">\(\{x_i,y_i\}_{i=0,n}\)</span></p>
 <div class="section" id="algorithme-vandermonde">
-<h3><span class="section-number">6.8.6.1. </span>Algorithme: vandermonde<a class="headerlink" href="#algorithme-vandermonde" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">7.8.6.1. </span>Algorithme: vandermonde<a class="headerlink" href="#algorithme-vandermonde" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>initialiser n
 X vecteur dimension n+1
 V matrice dimension (n+1,n+1)
@@ -842,7 +847,7 @@ print V
 </div>
 </div>
 <div class="section" id="programme-python-vandermonde">
-<h3><span class="section-number">6.8.6.2. </span>Programme Python: vandermonde<a class="headerlink" href="#programme-python-vandermonde" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">7.8.6.2. </span>Programme Python: vandermonde<a class="headerlink" href="#programme-python-vandermonde" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">4</span>
@@ -871,7 +876,7 @@ print V
 </div>
 </div>
 <div class="section" id="fin-des-exercices">
-<h2><span class="section-number">6.8.7. </span>FIN des exercices<a class="headerlink" href="#fin-des-exercices" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">7.8.7. </span>FIN des exercices<a class="headerlink" href="#fin-des-exercices" title="Lien permanent vers ce titre">¶</a></h2>
 <a class="reference internal image-reference" href="../_images/logo_trans8.png"><img alt="LyonHPC" src="../_images/logo_trans8.png" style="width: 180px;" /></a>
 <a class="reference internal image-reference" href="../_images/python-logo8.gif"><img alt="LyonHPC" src="../_images/python-logo8.gif" style="width: 200px;" /></a>
 </div>
@@ -906,13 +911,13 @@ print V
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">précédent</p>
-            <p class="prev-next-title"><span class="section-number">6. </span>Les tableaux (vecteur, matrice)</p>
+            <p class="prev-next-title"><span class="section-number">7. </span>Les tableaux (vecteur, matrice)</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../CHAP7/COURS_PLOT.html" title="suivant page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">suivant</p>
-        <p class="prev-next-title"><span class="section-number">7. </span>Tracé avec matplotlib</p>
+        <p class="prev-next-title"><span class="section-number">8. </span>Tracé avec matplotlib</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

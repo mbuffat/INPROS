@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>11. Efficacité / complexité &#8212; INPROS INtroduction à la PROgrammation Scientifique en Python</title>
+    <title>12. Efficacité / complexité &#8212; INPROS INtroduction à la PROgrammation Scientifique en Python</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -57,8 +57,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="canonical" href="https://perso.univ-lyon1.fr/marc.buffat/CHAP11/Efficiency.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
-    <link rel="next" title="13. Recherche d’erreurs" href="../CHAP12/debugging.html" />
-    <link rel="prev" title="10. Algorithmes numériques" href="../CHAP10/COURS_ALGORITHME.html" />
+    <link rel="next" title="14. Recherche d’erreurs" href="../CHAP12/debugging.html" />
+    <link rel="prev" title="11. Algorithmes numériques" href="../CHAP10/COURS_ALGORITHME.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="fr">
     
@@ -145,9 +145,14 @@ const thebe_selector_output = ".output, .cell_output"
    5. Fonctions et procédures
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP5/COURS_ALGORITHMIQUE.html">
+   6. Programmation structurée
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../CHAP6/COURS_TABLEAU.html">
-   6. Les tableaux (vecteur, matrice)
+   7. Les tableaux (vecteur, matrice)
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -157,24 +162,24 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../CHAP6/EXERCICES_TABLEAU.html">
-     6.8. Correction des exercices
+     7.8. Correction des exercices
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../CHAP7/COURS_PLOT.html">
-   7. Tracé avec matplotlib
+   8. Tracé avec matplotlib
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../CHAP8/COURS_FICHIER.html">
-   8. Gestion de fichiers et E/S
+   9. Gestion de fichiers et E/S
   </a>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../CHAP9/Precision.html">
-   9. Précision et validation
+   10. Précision et validation
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -184,24 +189,24 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../CHAP9/Exercices_precision.html">
-     9.8. Exercices
+     10.8. Exercices
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../CHAP10/COURS_ALGORITHME.html">
-   10. Algorithmes numériques
+   11. Algorithmes numériques
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   11. Efficacité / complexité
+   12. Efficacité / complexité
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../CHAP12/debugging.html">
-   13. Recherche d’erreurs
+   14. Recherche d’erreurs
   </a>
  </li>
 </ul>
@@ -310,71 +315,71 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   11. Efficacité / complexité
+   12. Efficacité / complexité
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#recherche-d-un-element-dans-un-tableau-trie">
-     11.1. Recherche d’un élément dans un tableau trié
+     12.1. Recherche d’un élément dans un tableau trié
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h3 nav-item toc-entry">
       <a class="reference internal nav-link" href="#algorithme-de-recherche-lineaire">
-       11.1.1. algorithme de recherche linéaire
+       12.1.1. algorithme de recherche linéaire
       </a>
      </li>
      <li class="toc-h3 nav-item toc-entry">
       <a class="reference internal nav-link" href="#recherche-par-dichotomie-binary-search">
-       11.1.2. recherche par dichotomie (binary search)
+       12.1.2. recherche par dichotomie (binary search)
       </a>
      </li>
      <li class="toc-h3 nav-item toc-entry">
       <a class="reference internal nav-link" href="#comparaison-de-lefficacite-des-2-algorithmes-de-trie">
-       11.1.3. comparaison de l’efficacité des 2 algorithmes de trie
+       12.1.3. comparaison de l’efficacité des 2 algorithmes de trie
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#complexite-et-efficacite-d-un-algorithme">
-     11.2. Complexité et efficacité d’un algorithme
+     12.2. Complexité et efficacité d’un algorithme
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h3 nav-item toc-entry">
       <a class="reference internal nav-link" href="#differentes-classes-de-complexite-classees-par-efficacite">
-       11.2.1. Différentes classes de compléxité (classées par efficacité)
+       12.2.1. Différentes classes de compléxité (classées par efficacité)
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exemples">
-     11.3. Exemples
+     12.3. Exemples
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h3 nav-item toc-entry">
       <a class="reference internal nav-link" href="#algorithme-inefficace-determinant-de-cramer">
-       11.3.1. algorithme inefficace: déterminant de Cramer
+       12.3.1. algorithme inefficace: déterminant de Cramer
       </a>
      </li>
      <li class="toc-h3 nav-item toc-entry">
       <a class="reference internal nav-link" href="#exemple-recherche-de-la-racine-d-une-fonction">
-       11.3.2. Exemple: recherche de la racine d’une fonction
+       12.3.2. Exemple: recherche de la racine d’une fonction
       </a>
       <ul class="nav section-nav flex-column">
        <li class="toc-h4 nav-item toc-entry">
         <a class="reference internal nav-link" href="#methode-de-dichotomie">
-         11.3.2.1. Méthode de dichotomie
+         12.3.2.1. Méthode de dichotomie
         </a>
        </li>
        <li class="toc-h4 nav-item toc-entry">
         <a class="reference internal nav-link" href="#methode-de-newton">
-         11.3.2.2. Méthode de Newton
+         12.3.2.2. Méthode de Newton
         </a>
        </li>
        <li class="toc-h4 nav-item toc-entry">
         <a class="reference internal nav-link" href="#conclusion">
-         11.3.2.3. Conclusion
+         12.3.2.3. Conclusion
         </a>
        </li>
       </ul>
@@ -385,7 +390,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#fin-de-la-lecon">
-   12. FIN de la leçon
+   13. FIN de la leçon
   </a>
  </li>
 </ul>
@@ -410,71 +415,71 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   11. Efficacité / complexité
+   12. Efficacité / complexité
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#recherche-d-un-element-dans-un-tableau-trie">
-     11.1. Recherche d’un élément dans un tableau trié
+     12.1. Recherche d’un élément dans un tableau trié
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h3 nav-item toc-entry">
       <a class="reference internal nav-link" href="#algorithme-de-recherche-lineaire">
-       11.1.1. algorithme de recherche linéaire
+       12.1.1. algorithme de recherche linéaire
       </a>
      </li>
      <li class="toc-h3 nav-item toc-entry">
       <a class="reference internal nav-link" href="#recherche-par-dichotomie-binary-search">
-       11.1.2. recherche par dichotomie (binary search)
+       12.1.2. recherche par dichotomie (binary search)
       </a>
      </li>
      <li class="toc-h3 nav-item toc-entry">
       <a class="reference internal nav-link" href="#comparaison-de-lefficacite-des-2-algorithmes-de-trie">
-       11.1.3. comparaison de l’efficacité des 2 algorithmes de trie
+       12.1.3. comparaison de l’efficacité des 2 algorithmes de trie
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#complexite-et-efficacite-d-un-algorithme">
-     11.2. Complexité et efficacité d’un algorithme
+     12.2. Complexité et efficacité d’un algorithme
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h3 nav-item toc-entry">
       <a class="reference internal nav-link" href="#differentes-classes-de-complexite-classees-par-efficacite">
-       11.2.1. Différentes classes de compléxité (classées par efficacité)
+       12.2.1. Différentes classes de compléxité (classées par efficacité)
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exemples">
-     11.3. Exemples
+     12.3. Exemples
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h3 nav-item toc-entry">
       <a class="reference internal nav-link" href="#algorithme-inefficace-determinant-de-cramer">
-       11.3.1. algorithme inefficace: déterminant de Cramer
+       12.3.1. algorithme inefficace: déterminant de Cramer
       </a>
      </li>
      <li class="toc-h3 nav-item toc-entry">
       <a class="reference internal nav-link" href="#exemple-recherche-de-la-racine-d-une-fonction">
-       11.3.2. Exemple: recherche de la racine d’une fonction
+       12.3.2. Exemple: recherche de la racine d’une fonction
       </a>
       <ul class="nav section-nav flex-column">
        <li class="toc-h4 nav-item toc-entry">
         <a class="reference internal nav-link" href="#methode-de-dichotomie">
-         11.3.2.1. Méthode de dichotomie
+         12.3.2.1. Méthode de dichotomie
         </a>
        </li>
        <li class="toc-h4 nav-item toc-entry">
         <a class="reference internal nav-link" href="#methode-de-newton">
-         11.3.2.2. Méthode de Newton
+         12.3.2.2. Méthode de Newton
         </a>
        </li>
        <li class="toc-h4 nav-item toc-entry">
         <a class="reference internal nav-link" href="#conclusion">
-         11.3.2.3. Conclusion
+         12.3.2.3. Conclusion
         </a>
        </li>
       </ul>
@@ -485,7 +490,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#fin-de-la-lecon">
-   12. FIN de la leçon
+   13. FIN de la leçon
   </a>
  </li>
 </ul>
@@ -500,7 +505,7 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal image-reference" href="../_images/logo_trans2.png"><img alt="LyonHPC" src="../_images/logo_trans2.png" style="width: 180px;" /></a>
 <a class="reference internal image-reference" href="../_images/python-logo2.gif"><img alt="LyonHPC" src="../_images/python-logo2.gif" style="width: 200px;" /></a>
 <div class="tex2jax_ignore mathjax_ignore section" id="efficacite-complexite">
-<h1><span class="section-number">11. </span>Efficacité / complexité<a class="headerlink" href="#efficacite-complexite" title="Lien permanent vers ce titre">¶</a></h1>
+<h1><span class="section-number">12. </span>Efficacité / complexité<a class="headerlink" href="#efficacite-complexite" title="Lien permanent vers ce titre">¶</a></h1>
 <a class="reference internal image-reference" href="../_images/cloud_sommaire.png"><img alt="cloud" src="../_images/cloud_sommaire.png" style="width: 400px;" /></a>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -512,11 +517,11 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="recherche-d-un-element-dans-un-tableau-trie">
-<h2><span class="section-number">11.1. </span>Recherche d’un élément dans un tableau trié<a class="headerlink" href="#recherche-d-un-element-dans-un-tableau-trie" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">12.1. </span>Recherche d’un élément dans un tableau trié<a class="headerlink" href="#recherche-d-un-element-dans-un-tableau-trie" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Soit X un tableau contenant n valeurs triées, i.e: X[0]&lt;X[1]&lt;…&lt;X[n-1]<br />
 on veut déterminer l’indice k d’un élément a, i.e: X[k]=a</p>
 <div class="section" id="algorithme-de-recherche-lineaire">
-<h3><span class="section-number">11.1.1. </span>algorithme de recherche linéaire<a class="headerlink" href="#algorithme-de-recherche-lineaire" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">12.1.1. </span>algorithme de recherche linéaire<a class="headerlink" href="#algorithme-de-recherche-lineaire" title="Lien permanent vers ce titre">¶</a></h3>
 <ul class="simple">
 <li><p>on parcours toute la liste en partant du premier élément pour chercher a</p></li>
 <li><p>dans le pire des cas, on fait n itérations</p></li>
@@ -552,7 +557,7 @@ on veut déterminer l’indice k d’un élément a, i.e: X[k]=a</p>
 </div>
 </div>
 <div class="section" id="recherche-par-dichotomie-binary-search">
-<h3><span class="section-number">11.1.2. </span>recherche par dichotomie (binary search)<a class="headerlink" href="#recherche-par-dichotomie-binary-search" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">12.1.2. </span>recherche par dichotomie (binary search)<a class="headerlink" href="#recherche-par-dichotomie-binary-search" title="Lien permanent vers ce titre">¶</a></h3>
 <p>on compare a chaque étape la valeur x du milieu du tableau avec a:</p>
 <ul class="simple">
 <li><p>si a &gt; x, on recommence avec la moitié droite du tableau</p></li>
@@ -599,7 +604,7 @@ on veut déterminer l’indice k d’un élément a, i.e: X[k]=a</p>
 </ul>
 </div>
 <div class="section" id="comparaison-de-lefficacite-des-2-algorithmes-de-trie">
-<h3><span class="section-number">11.1.3. </span>comparaison de l’efficacité des 2 algorithmes de trie<a class="headerlink" href="#comparaison-de-lefficacite-des-2-algorithmes-de-trie" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">12.1.3. </span>comparaison de l’efficacité des 2 algorithmes de trie<a class="headerlink" href="#comparaison-de-lefficacite-des-2-algorithmes-de-trie" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">run</span> <span class="n">courbe1</span><span class="o">.</span><span class="n">py</span>
@@ -607,19 +612,25 @@ on veut déterminer l’indice k d’un élément a, i.e: X[k]=a</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Efficiency_8_0.png" src="../_images/Efficiency_8_0.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Font family [&#39;xkcd&#39;, &#39;xkcd Script&#39;, &#39;Humor Sans&#39;, &#39;Comic Sans MS&#39;, &#39;StayPuft&#39;] not found. Falling back to DejaVu Sans.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Font family [&#39;xkcd&#39;, &#39;xkcd Script&#39;, &#39;Humor Sans&#39;, &#39;Comic Sans MS&#39;, &#39;StayPuft&#39;] not found. Falling back to DejaVu Sans.
+</pre></div>
+</div>
+<img alt="../_images/Efficiency_8_2.png" src="../_images/Efficiency_8_2.png" />
 </div>
 </div>
 <p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> <strong>pour n grand l’algorithme de trie par bisection est beaucoup plus efficace</strong></p>
 </div>
 </div>
 <div class="section" id="complexite-et-efficacite-d-un-algorithme">
-<h2><span class="section-number">11.2. </span>Complexité et efficacité d’un algorithme<a class="headerlink" href="#complexite-et-efficacite-d-un-algorithme" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">12.2. </span>Complexité et efficacité d’un algorithme<a class="headerlink" href="#complexite-et-efficacite-d-un-algorithme" title="Lien permanent vers ce titre">¶</a></h2>
 <p><strong>théorie de la complexité:</strong> analyse d’un algorithme en vue de déterminer les ressources nécessaire (en temps CPU, en taille mémoire,..)  pour l’exécuter en fonction des données (taille des données, paramètre de précision).</p>
 <p><strong>efficacité</strong> = estimation asymptotique de la complexité en temps sur une machine idéale (machine de Turing) en fonction d’un paramètre n caractérisant les entrées (taille des entrées, nbre de digits pour la précision,..)</p>
 <p><strong>attention</strong> cette analyse n’est qu’indicative, et peut être remise en question suivant l’architecture des machines (machines parallèles)</p>
 <div class="section" id="differentes-classes-de-complexite-classees-par-efficacite">
-<h3><span class="section-number">11.2.1. </span>Différentes classes de compléxité (classées par efficacité)<a class="headerlink" href="#differentes-classes-de-complexite-classees-par-efficacite" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">12.2.1. </span>Différentes classes de compléxité (classées par efficacité)<a class="headerlink" href="#differentes-classes-de-complexite-classees-par-efficacite" title="Lien permanent vers ce titre">¶</a></h3>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>type</p></th>
@@ -675,9 +686,9 @@ on veut déterminer l’indice k d’un élément a, i.e: X[k]=a</p>
 </div>
 </div>
 <div class="section" id="exemples">
-<h2><span class="section-number">11.3. </span>Exemples<a class="headerlink" href="#exemples" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">12.3. </span>Exemples<a class="headerlink" href="#exemples" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="section" id="algorithme-inefficace-determinant-de-cramer">
-<h3><span class="section-number">11.3.1. </span>algorithme inefficace: déterminant de Cramer<a class="headerlink" href="#algorithme-inefficace-determinant-de-cramer" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">12.3.1. </span>algorithme inefficace: déterminant de Cramer<a class="headerlink" href="#algorithme-inefficace-determinant-de-cramer" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Calcul du déterminant d’une matrice <span class="math notranslate nohighlight">\(A\)</span> par la méthode de Cramer</p>
 <ul class="simple">
 <li><p>formule récursive de calcul par développement  par rapport à la première colonne</p></li>
@@ -725,15 +736,15 @@ on veut déterminer l’indice k d’un élément a, i.e: X[k]=a</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>n=5 nops=       615 cpu=   0.0052667 s
-n=6 nops=      3708 cpu=    0.016713 s
-n=7 nops=     25977 cpu=    0.110478 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>n=5 nops=       615 cpu=   0.0167587 s
+n=6 nops=      3708 cpu=   0.0892365 s
+n=7 nops=     25977 cpu=      0.4512 s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>n=8 nops=    207840 cpu=    0.913434 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>n=8 nops=    207840 cpu=     2.50121 s
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>n=9 nops=   1870587 cpu=      8.2791 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>n=9 nops=   1870587 cpu=     22.3046 s
 </pre></div>
 </div>
 </div>
@@ -751,14 +762,14 @@ n=7 nops=     25977 cpu=    0.110478 s
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(9, 9)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.58 µs ± 634 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18.2 µs ± 88.2 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 </pre></div>
 </div>
 </div>
 </div>
 </div>
 <div class="section" id="exemple-recherche-de-la-racine-d-une-fonction">
-<h3><span class="section-number">11.3.2. </span>Exemple: recherche de la racine d’une fonction<a class="headerlink" href="#exemple-recherche-de-la-racine-d-une-fonction" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">12.3.2. </span>Exemple: recherche de la racine d’une fonction<a class="headerlink" href="#exemple-recherche-de-la-racine-d-une-fonction" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Calcul d’une valeur approchée <span class="math notranslate nohighlight">\(x^n\)</span> de la racine <span class="math notranslate nohighlight">\(x^*\)</span> d’une fonction <span class="math notranslate nohighlight">\(f(x)\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[  \left| x^* - x^n \right| &lt; \epsilon \mbox{ avec } f(x^*)=0 \]</div>
@@ -766,7 +777,7 @@ n=7 nops=     25977 cpu=    0.110478 s
 On compare l’efficacité de 2 algorithmes en fonction de <span class="math notranslate nohighlight">\(P\)</span><br />
 On suppose que l’on a un intervalle <span class="math notranslate nohighlight">\([a,b]\)</span> contenant la racine <span class="math notranslate nohighlight">\(x^*\)</span></p>
 <div class="section" id="methode-de-dichotomie">
-<h4><span class="section-number">11.3.2.1. </span>Méthode de dichotomie<a class="headerlink" href="#methode-de-dichotomie" title="Lien permanent vers ce titre">¶</a></h4>
+<h4><span class="section-number">12.3.2.1. </span>Méthode de dichotomie<a class="headerlink" href="#methode-de-dichotomie" title="Lien permanent vers ce titre">¶</a></h4>
 <ul class="simple">
 <li><p>algorithme itératif de dichotomie</p></li>
 <li><p>on choisit comme approximation le milieu de l’intervalle</p></li>
@@ -811,7 +822,7 @@ On suppose que l’on a un intervalle <span class="math notranslate nohighlight"
 </div>
 </div>
 <div class="section" id="methode-de-newton">
-<h4><span class="section-number">11.3.2.2. </span>Méthode de Newton<a class="headerlink" href="#methode-de-newton" title="Lien permanent vers ce titre">¶</a></h4>
+<h4><span class="section-number">12.3.2.2. </span>Méthode de Newton<a class="headerlink" href="#methode-de-newton" title="Lien permanent vers ce titre">¶</a></h4>
 <ul class="simple">
 <li><p>à partir de <span class="math notranslate nohighlight">\(x_0\)</span>, on approxime la courbe par sa tangente en <span class="math notranslate nohighlight">\(x_0\)</span></p></li>
 <li><p>nouvelle approximation <span class="math notranslate nohighlight">\(x_1\)</span> = intersection tangente avec l’axe des x</p></li>
@@ -834,7 +845,13 @@ On suppose que l’on a un intervalle <span class="math notranslate nohighlight"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Efficiency_21_0.png" src="../_images/Efficiency_21_0.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Font family [&#39;xkcd&#39;, &#39;xkcd Script&#39;, &#39;Humor Sans&#39;, &#39;Comic Sans MS&#39;, &#39;StayPuft&#39;] not found. Falling back to DejaVu Sans.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Font family [&#39;xkcd&#39;, &#39;xkcd Script&#39;, &#39;Humor Sans&#39;, &#39;Comic Sans MS&#39;, &#39;StayPuft&#39;] not found. Falling back to DejaVu Sans.
+</pre></div>
+</div>
+<img alt="../_images/Efficiency_21_2.png" src="../_images/Efficiency_21_2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -868,7 +885,7 @@ On suppose que l’on a un intervalle <span class="math notranslate nohighlight"
 </div>
 </div>
 <div class="section" id="conclusion">
-<h4><span class="section-number">11.3.2.3. </span>Conclusion<a class="headerlink" href="#conclusion" title="Lien permanent vers ce titre">¶</a></h4>
+<h4><span class="section-number">12.3.2.3. </span>Conclusion<a class="headerlink" href="#conclusion" title="Lien permanent vers ce titre">¶</a></h4>
 <p>La méthode de Newton est beaucoup plus efficace que la méthode de dichotomie<br />
 Attention cependant, la convergence de la méthode de Newton est uniquement locale !!!</p>
 </div>
@@ -876,7 +893,7 @@ Attention cependant, la convergence de la méthode de Newton est uniquement loca
 </div>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="fin-de-la-lecon">
-<h1><span class="section-number">12. </span>FIN de la leçon<a class="headerlink" href="#fin-de-la-lecon" title="Lien permanent vers ce titre">¶</a></h1>
+<h1><span class="section-number">13. </span>FIN de la leçon<a class="headerlink" href="#fin-de-la-lecon" title="Lien permanent vers ce titre">¶</a></h1>
 <a class="reference internal image-reference" href="../_images/cloud_sommaire.png"><img alt="cloud" src="../_images/cloud_sommaire.png" style="width: 400px;" /></a>
 </div>
 
@@ -909,13 +926,13 @@ Attention cependant, la convergence de la méthode de Newton est uniquement loca
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">précédent</p>
-            <p class="prev-next-title"><span class="section-number">10. </span>Algorithmes numériques</p>
+            <p class="prev-next-title"><span class="section-number">11. </span>Algorithmes numériques</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../CHAP12/debugging.html" title="suivant page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">suivant</p>
-        <p class="prev-next-title"><span class="section-number">13. </span>Recherche d’erreurs</p>
+        <p class="prev-next-title"><span class="section-number">14. </span>Recherche d’erreurs</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

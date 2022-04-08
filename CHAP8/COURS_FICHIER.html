@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>8. Gestion de fichiers et E/S &#8212; INPROS INtroduction à la PROgrammation Scientifique en Python</title>
+    <title>9. Gestion de fichiers et E/S &#8212; INPROS INtroduction à la PROgrammation Scientifique en Python</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -57,8 +57,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="canonical" href="https://perso.univ-lyon1.fr/marc.buffat/CHAP8/COURS_FICHIER.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
-    <link rel="next" title="9. Précision et validation" href="../CHAP9/Precision.html" />
-    <link rel="prev" title="7. Tracé avec matplotlib" href="../CHAP7/COURS_PLOT.html" />
+    <link rel="next" title="10. Précision et validation" href="../CHAP9/Precision.html" />
+    <link rel="prev" title="8. Tracé avec matplotlib" href="../CHAP7/COURS_PLOT.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="fr">
     
@@ -145,9 +145,14 @@ const thebe_selector_output = ".output, .cell_output"
    5. Fonctions et procédures
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../CHAP5/COURS_ALGORITHMIQUE.html">
+   6. Programmation structurée
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../CHAP6/COURS_TABLEAU.html">
-   6. Les tableaux (vecteur, matrice)
+   7. Les tableaux (vecteur, matrice)
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -157,24 +162,24 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../CHAP6/EXERCICES_TABLEAU.html">
-     6.8. Correction des exercices
+     7.8. Correction des exercices
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../CHAP7/COURS_PLOT.html">
-   7. Tracé avec matplotlib
+   8. Tracé avec matplotlib
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   8. Gestion de fichiers et E/S
+   9. Gestion de fichiers et E/S
   </a>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../CHAP9/Precision.html">
-   9. Précision et validation
+   10. Précision et validation
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -184,24 +189,24 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../CHAP9/Exercices_precision.html">
-     9.8. Exercices
+     10.8. Exercices
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../CHAP10/COURS_ALGORITHME.html">
-   10. Algorithmes numériques
+   11. Algorithmes numériques
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../CHAP11/Efficiency.html">
-   11. Efficacité / complexité
+   12. Efficacité / complexité
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../CHAP12/debugging.html">
-   13. Recherche d’erreurs
+   14. Recherche d’erreurs
   </a>
  </li>
 </ul>
@@ -310,32 +315,32 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#fichier-informatique">
-   8.1. Fichier informatique
+   9.1. Fichier informatique
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#fichier-de-programme-ou-script-sous-python">
-   8.2. Fichier de programme (ou script) sous Python
+   9.2. Fichier de programme (ou script) sous Python
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exemple-trace-de-courbes-de-lissajous">
-     8.2.1. Exemple: trace de courbes de Lissajous
+     9.2.1. Exemple: trace de courbes de Lissajous
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#fichier-lissajous-py">
-       8.2.1.1. fichier lissajous.py
+       9.2.1.1. fichier lissajous.py
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#execution-du-programme">
-       8.2.1.2. exécution du programme
+       9.2.1.2. exécution du programme
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#utilisation-en-tant-que-module-ou-librairie">
-       8.2.1.3. utilisation en tant que module (ou librairie)
+       9.2.1.3. utilisation en tant que module (ou librairie)
       </a>
      </li>
     </ul>
@@ -344,80 +349,80 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#fichier-de-donnees-sous-python">
-   8.3. Fichier de données sous Python
+   9.3. Fichier de données sous Python
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#fonction-de-lecture-ecriture">
-     8.3.1. fonction de lecture/écriture
+     9.3.1. fonction de lecture/écriture
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exemple-ecriture-de-donnees">
-     8.3.2. Exemple: écriture de données
+     9.3.2. Exemple: écriture de données
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#programme-python">
-       8.3.2.1. Programme Python
+       9.3.2.1. Programme Python
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exemple-lecture-de-donnees">
-     8.3.3. Exemple: lecture de données
+     9.3.3. Exemple: lecture de données
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#lecture-d-un-fichier-ligne-par-ligne">
-     8.3.4. Lecture d’un fichier ligne par ligne
+     9.3.4. Lecture d’un fichier ligne par ligne
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ecriture-format-csv">
-     8.3.5. Ecriture format CSV
+     9.3.5. Ecriture format CSV
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#entree-sortie-en-python">
-   8.4. Entrée Sortie en python
+   9.4. Entrée Sortie en python
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#lecture-au-clavier">
-     8.4.1. Lecture au clavier
+     9.4.1. Lecture au clavier
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ecriture-avec-formatage-mise-en-forme">
-     8.4.2. Écriture avec formatage (mise en forme)
+     9.4.2. Écriture avec formatage (mise en forme)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#format-avec-python-3">
-     8.4.3. format avec python 3
+     9.4.3. format avec python 3
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#reference">
-   8.5. Référence
+   9.5. Référence
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#programme-python-lissajous">
-     8.5.1. Programme Python Lissajous
+     9.5.1. Programme Python Lissajous
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#fin-de-la-lecon">
-   8.6. FIN de la leçon
+   9.6. FIN de la leçon
   </a>
  </li>
 </ul>
@@ -442,32 +447,32 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#fichier-informatique">
-   8.1. Fichier informatique
+   9.1. Fichier informatique
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#fichier-de-programme-ou-script-sous-python">
-   8.2. Fichier de programme (ou script) sous Python
+   9.2. Fichier de programme (ou script) sous Python
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exemple-trace-de-courbes-de-lissajous">
-     8.2.1. Exemple: trace de courbes de Lissajous
+     9.2.1. Exemple: trace de courbes de Lissajous
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#fichier-lissajous-py">
-       8.2.1.1. fichier lissajous.py
+       9.2.1.1. fichier lissajous.py
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#execution-du-programme">
-       8.2.1.2. exécution du programme
+       9.2.1.2. exécution du programme
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#utilisation-en-tant-que-module-ou-librairie">
-       8.2.1.3. utilisation en tant que module (ou librairie)
+       9.2.1.3. utilisation en tant que module (ou librairie)
       </a>
      </li>
     </ul>
@@ -476,80 +481,80 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#fichier-de-donnees-sous-python">
-   8.3. Fichier de données sous Python
+   9.3. Fichier de données sous Python
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#fonction-de-lecture-ecriture">
-     8.3.1. fonction de lecture/écriture
+     9.3.1. fonction de lecture/écriture
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exemple-ecriture-de-donnees">
-     8.3.2. Exemple: écriture de données
+     9.3.2. Exemple: écriture de données
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#programme-python">
-       8.3.2.1. Programme Python
+       9.3.2.1. Programme Python
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exemple-lecture-de-donnees">
-     8.3.3. Exemple: lecture de données
+     9.3.3. Exemple: lecture de données
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#lecture-d-un-fichier-ligne-par-ligne">
-     8.3.4. Lecture d’un fichier ligne par ligne
+     9.3.4. Lecture d’un fichier ligne par ligne
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ecriture-format-csv">
-     8.3.5. Ecriture format CSV
+     9.3.5. Ecriture format CSV
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#entree-sortie-en-python">
-   8.4. Entrée Sortie en python
+   9.4. Entrée Sortie en python
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#lecture-au-clavier">
-     8.4.1. Lecture au clavier
+     9.4.1. Lecture au clavier
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ecriture-avec-formatage-mise-en-forme">
-     8.4.2. Écriture avec formatage (mise en forme)
+     9.4.2. Écriture avec formatage (mise en forme)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#format-avec-python-3">
-     8.4.3. format avec python 3
+     9.4.3. format avec python 3
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#reference">
-   8.5. Référence
+   9.5. Référence
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#programme-python-lissajous">
-     8.5.1. Programme Python Lissajous
+     9.5.1. Programme Python Lissajous
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#fin-de-la-lecon">
-   8.6. FIN de la leçon
+   9.6. FIN de la leçon
   </a>
  </li>
 </ul>
@@ -564,7 +569,7 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal image-reference" href="../_images/logo_trans10.png"><img alt="LyonHPC" src="../_images/logo_trans10.png" style="width: 180px;" /></a>
 <a class="reference internal image-reference" href="../_images/python-logo10.gif"><img alt="LyonHPC" src="../_images/python-logo10.gif" style="width: 200px;" /></a>
 <div class="tex2jax_ignore mathjax_ignore section" id="gestion-de-fichiers-et-e-s">
-<h1><span class="section-number">8. </span>Gestion de fichiers et E/S<a class="headerlink" href="#gestion-de-fichiers-et-e-s" title="Lien permanent vers ce titre">¶</a></h1>
+<h1><span class="section-number">9. </span>Gestion de fichiers et E/S<a class="headerlink" href="#gestion-de-fichiers-et-e-s" title="Lien permanent vers ce titre">¶</a></h1>
 <a class="reference internal image-reference" href="../_images/python_file.png"><img alt="../_images/python_file.png" src="../_images/python_file.png" style="width: 300px;" /></a>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -577,7 +582,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="fichier-informatique">
-<h2><span class="section-number">8.1. </span>Fichier informatique<a class="headerlink" href="#fichier-informatique" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">9.1. </span>Fichier informatique<a class="headerlink" href="#fichier-informatique" title="Lien permanent vers ce titre">¶</a></h2>
 <p><strong>définition (Wikipédia)</strong>
 un fichier informatique est  une collection d’informations numériques (séquences d’octets) réunies sous un même nom, enregistrées sur un support de stockage tel qu’un disque dur, un CD-ROM, une clé USB …</p>
 <p>En vue de faciliter leur organisation, les fichiers sont disposés dans des systèmes de fichiers qui permettent de placer les fichiers dans des emplacements appelés répertoires ou dossiers eux-mêmes organisés selon le même principe de manière à former une hiérarchie arborescente</p>
@@ -601,7 +606,7 @@ un fichier informatique est  une collection d’informations numériques (séque
 <p>Pour éviter des problèmes de compatibilités entre systèmes informatiques, on choisira des noms de fichiers sans caractères accentués, sans espace ni caractéres spéciaux (autre que <strong>.</strong> ou <strong>_</strong> ou <strong>-</strong> )</p>
 </div>
 <div class="section" id="fichier-de-programme-ou-script-sous-python">
-<h2><span class="section-number">8.2. </span>Fichier de programme (ou script) sous Python<a class="headerlink" href="#fichier-de-programme-ou-script-sous-python" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">9.2. </span>Fichier de programme (ou script) sous Python<a class="headerlink" href="#fichier-de-programme-ou-script-sous-python" title="Lien permanent vers ce titre">¶</a></h2>
 <p>un fichier contenant un programme Python a par convention une extension <strong>.py</strong>. Un simple éditeur de texte (notepad sous Windows) suffit pour créer et modifier un programme Python</p>
 <ul class="simple">
 <li><p><strong>gedit</strong> <a class="reference external" href="http://wiki.gnome.org/Apps/Gedit">« voir le site gedit »</a> un éditeur simple et efficace</p></li>
@@ -609,29 +614,31 @@ un fichier informatique est  une collection d’informations numériques (séque
 <li><p><strong>spyder</strong> <a class="reference external" href="http://pythonhosted.org/spyder/">« voir le site spyder »</a> un environnement de développement Python à la matlab pour les applications scientifiques. <em>Sous Spyder, on utilisera plutôt la console Ipython pour exécuter les programmes, que la console par défaut qui utilise des conventions matlab différentes d’un interpréteur Python classique</em>.</p></li>
 </ul>
 <div class="section" id="exemple-trace-de-courbes-de-lissajous">
-<h3><span class="section-number">8.2.1. </span>Exemple: trace de courbes de Lissajous<a class="headerlink" href="#exemple-trace-de-courbes-de-lissajous" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">9.2.1. </span>Exemple: trace de courbes de Lissajous<a class="headerlink" href="#exemple-trace-de-courbes-de-lissajous" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Une courbe de Lissajous (d’après le physicien français <a class="reference external" href="http://fr.wikipedia.org/wiki/Jules_Lissajous%5D">« Jules Antoine Lissajous »</a>) est une courbe paramétrique du plan dont les composantes sont des fonctions périodiques du paramètre (en générale le temps en physique, et que l’on peut observer avec un oscilloscope).</p>
 <p>Le programme Python suivant <strong><a class="reference external" href="http://lissajous.py">lissajous.py</a></strong> trace les courbes de Lissajous suivantes</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d3db8daa-64cb-4b85-aea0-598b642fc9ea">
-<span class="eqno">(8.1)<a class="headerlink" href="#equation-d3db8daa-64cb-4b85-aea0-598b642fc9ea" title="Lien permanent vers cette équation">¶</a></span>\[\begin{eqnarray} 
+<div class="amsmath math notranslate nohighlight" id="equation-28a1d96c-3b05-4553-807f-98b326269319">
+<span class="eqno">(9.1)<a class="headerlink" href="#equation-28a1d96c-3b05-4553-807f-98b326269319" title="Lien permanent vers cette équation">¶</a></span>\[\begin{eqnarray} 
 x(t) &amp;=&amp;  \sin{(\frac{2\pi}{p} t)}\\
 y(t) &amp;=&amp;  \sin{(\frac{2\pi}{q} t + \phi)}
 \end{eqnarray}\]</div>
 <p>Le rapport <span class="math notranslate nohighlight">\(n=\frac{p}{q}\)</span> est le paramètre de la courbe et <span class="math notranslate nohighlight">\(\phi\)</span> le déphassage. Le temps <span class="math notranslate nohighlight">\(T\)</span> de parcours de la courbe est le plus petit commun multiple de <span class="math notranslate nohighlight">\(p\)</span> et <span class="math notranslate nohighlight">\(q\)</span>:
 $<span class="math notranslate nohighlight">\(T=pcm(p,q)=\frac{pq}{pgcd(p,q)}\)</span>$</p>
 <div class="section" id="fichier-lissajous-py">
-<h4><span class="section-number">8.2.1.1. </span>fichier <a class="reference external" href="http://lissajous.py">lissajous.py</a><a class="headerlink" href="#fichier-lissajous-py" title="Lien permanent vers ce titre">¶</a></h4>
+<h4><span class="section-number">9.2.1.1. </span>fichier <a class="reference external" href="http://lissajous.py">lissajous.py</a><a class="headerlink" href="#fichier-lissajous-py" title="Lien permanent vers ce titre">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span> --err /dev/null
-ls -al lissajous.py
-cat lissajous.py
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># excution de commandes</span>
+<span class="o">!</span>ls -al lissajous.py
+<span class="o">!</span>cat lissajous.py
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-rwxrwxr-x 1 buffat buffat 1659 janv. 27  2018 lissajous.py
-#! /usr/bin/env python
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-rwxrwxr-x 1 buffat buffat 1659 févr.  1  2018 lissajous.py
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#! /usr/bin/env python
 # -*- coding: utf-8 -*-
 &quot;&quot;&quot;
     tracer de courbe de Lissajous
@@ -702,36 +709,21 @@ if __name__ == &quot;__main__&quot;:
 </div>
 </div>
 <div class="section" id="execution-du-programme">
-<h4><span class="section-number">8.2.1.2. </span>exécution du programme<a class="headerlink" href="#execution-du-programme" title="Lien permanent vers ce titre">¶</a></h4>
+<h4><span class="section-number">9.2.1.2. </span>exécution du programme<a class="headerlink" href="#execution-du-programme" title="Lien permanent vers ce titre">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span> --err /dev/null
-echo &quot;execution avec interpreteur python&quot;
-python lissajous.py
-ls -al lissajous.png
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># execution cde</span>
+<span class="o">!</span><span class="nb">echo</span> <span class="s2">&quot;execution avec interpreteur python&quot;</span>
+<span class="o">!</span>python3 lissajous.py
+<span class="o">!</span>ls -al lissajous.png
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>execution avec interpreteur python
--rw-rw-r-- 1 buffat buffat 66833 avril  7 21:50 lissajous.png
 </pre></div>
 </div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span> --err /dev/null
-echo &quot;execution automatique&quot;
-chmod +x lissajous.py
-./lissajous.py
-ls -al lissajous.png
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>execution automatique
--rw-rw-r-- 1 buffat buffat 66833 avril  7 21:50 lissajous.png
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-rw-rw-r-- 1 buffat buffat 97161 avril  8 11:39 lissajous.png
 </pre></div>
 </div>
 </div>
@@ -746,7 +738,7 @@ ls -al lissajous.png
 </div>
 </div>
 <div class="section" id="utilisation-en-tant-que-module-ou-librairie">
-<h4><span class="section-number">8.2.1.3. </span>utilisation en tant que module (ou librairie)<a class="headerlink" href="#utilisation-en-tant-que-module-ou-librairie" title="Lien permanent vers ce titre">¶</a></h4>
+<h4><span class="section-number">9.2.1.3. </span>utilisation en tant que module (ou librairie)<a class="headerlink" href="#utilisation-en-tant-que-module-ou-librairie" title="Lien permanent vers ce titre">¶</a></h4>
 <p><strong>module</strong>  fichier contenant des fonctions et des définitions en python (bibliothèque)</p>
 <p><strong>nom du module</strong> nom du fichier sans l’extension .py</p>
 <p><strong>utilisation</strong> du module mon_module.py</p>
@@ -776,10 +768,10 @@ alors spécifier son chemin d’accès (path) (voir documentation Python)</p>
 </div>
 </div>
 <div class="section" id="fichier-de-donnees-sous-python">
-<h2><span class="section-number">8.3. </span>Fichier de données sous Python<a class="headerlink" href="#fichier-de-donnees-sous-python" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">9.3. </span>Fichier de données sous Python<a class="headerlink" href="#fichier-de-donnees-sous-python" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Comme dans la pluspart des langages informatiques, lire ou écrire dans un fichier, on va associer à un fichier (à son nom) une variable informatique de type <strong>file</strong>, qui posséde des fonctions (ou méthodes) permettant de lire ou écrire des données dans le fichier.</p>
 <div class="section" id="fonction-de-lecture-ecriture">
-<h3><span class="section-number">8.3.1. </span>fonction de lecture/écriture<a class="headerlink" href="#fonction-de-lecture-ecriture" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">9.3.1. </span>fonction de lecture/écriture<a class="headerlink" href="#fonction-de-lecture-ecriture" title="Lien permanent vers ce titre">¶</a></h3>
 <ul class="simple">
 <li><p>ouverture d’un fichier <em>mon_fichier.dat</em> en lecture:
 f=open(« nom_fichier.dat »,”r”)</p></li>
@@ -796,7 +788,7 @@ f.close()</p></li>
 </ul>
 </div>
 <div class="section" id="exemple-ecriture-de-donnees">
-<h3><span class="section-number">8.3.2. </span>Exemple: écriture de données<a class="headerlink" href="#exemple-ecriture-de-donnees" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">9.3.2. </span>Exemple: écriture de données<a class="headerlink" href="#exemple-ecriture-de-donnees" title="Lien permanent vers ce titre">¶</a></h3>
 <p>écriture sur fichiers de <span class="math notranslate nohighlight">\(n\)</span>  points d’une courbe de Lissajous avec le format suivant</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span># ligne de commentaire
 # n
@@ -808,7 +800,7 @@ tn-1 xn-1 yn-1
 </pre></div>
 </div>
 <div class="section" id="programme-python">
-<h4><span class="section-number">8.3.2.1. </span>Programme Python<a class="headerlink" href="#programme-python" title="Lien permanent vers ce titre">¶</a></h4>
+<h4><span class="section-number">9.3.2.1. </span>Programme Python<a class="headerlink" href="#programme-python" title="Lien permanent vers ce titre">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -837,7 +829,7 @@ cat lissajous.dat
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-rw-rw-r-- 1 buffat buffat 3839 avril  7 22:04 lissajous.dat
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-rw-rw-r-- 1 buffat buffat 3839 avril  8 11:39 lissajous.dat
 # courbe de lissajous avec p=1 q=2
 # 50
 0.000000000000000000e+00 0.000000000000000000e+00 1.000000000000000000e+00
@@ -897,7 +889,7 @@ cat lissajous.dat
 </div>
 </div>
 <div class="section" id="exemple-lecture-de-donnees">
-<h3><span class="section-number">8.3.3. </span>Exemple: lecture de données<a class="headerlink" href="#exemple-lecture-de-donnees" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">9.3.3. </span>Exemple: lecture de données<a class="headerlink" href="#exemple-lecture-de-donnees" title="Lien permanent vers ce titre">¶</a></h3>
 <p>lecture des données précédentes et tracer de la courbe</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -918,12 +910,12 @@ cat lissajous.dat
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>lecture des données taille= (50, 3)
 </pre></div>
 </div>
-<img alt="../_images/COURS_FICHIER_19_1.png" src="../_images/COURS_FICHIER_19_1.png" />
+<img alt="../_images/COURS_FICHIER_18_1.png" src="../_images/COURS_FICHIER_18_1.png" />
 </div>
 </div>
 </div>
 <div class="section" id="lecture-d-un-fichier-ligne-par-ligne">
-<h3><span class="section-number">8.3.4. </span>Lecture d’un fichier ligne par ligne<a class="headerlink" href="#lecture-d-un-fichier-ligne-par-ligne" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">9.3.4. </span>Lecture d’un fichier ligne par ligne<a class="headerlink" href="#lecture-d-un-fichier-ligne-par-ligne" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">F</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;lissajous.dat&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">)</span>
@@ -946,7 +938,7 @@ cat lissajous.dat
 </div>
 </div>
 <div class="section" id="ecriture-format-csv">
-<h3><span class="section-number">8.3.5. </span>Ecriture format CSV<a class="headerlink" href="#ecriture-format-csv" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">9.3.5. </span>Ecriture format CSV<a class="headerlink" href="#ecriture-format-csv" title="Lien permanent vers ce titre">¶</a></h3>
 <p>le format CSV (Comma-Separated Values) permet de partagé les données avec un tableur (localc, excel). Il suffit de délimiter les données avec une “<strong>,</strong>”.</p>
 <p><strong>Attention:</strong> <em>pour un tableur francisé, il faut lire le fichier avec l’option langue=US pour une conversion correcte des nombres réels. Python (comme beaucoup de langage informatique) utilise le point (cad la convention anglo-saxonne) et non la virgule pour représenter un nombre réel</em>.</p>
 <div class="cell docutils container">
@@ -965,7 +957,7 @@ cat lissajous.csv
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-rw-rw-r-- 1 buffat buffat 3799 avril  7 22:04 lissajous.csv
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-rw-rw-r-- 1 buffat buffat 3799 avril  8 11:39 lissajous.csv
 0.000000000000000000e+00,0.000000000000000000e+00,1.000000000000000000e+00
 4.081632653061224164e-02,2.536545839095073474e-01,9.917900138232461638e-01
 8.163265306122448328e-02,4.907175520039378513e-01,9.672948630390294511e-01
@@ -1023,9 +1015,9 @@ cat lissajous.csv
 </div>
 </div>
 <div class="section" id="entree-sortie-en-python">
-<h2><span class="section-number">8.4. </span>Entrée Sortie en python<a class="headerlink" href="#entree-sortie-en-python" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">9.4. </span>Entrée Sortie en python<a class="headerlink" href="#entree-sortie-en-python" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="section" id="lecture-au-clavier">
-<h3><span class="section-number">8.4.1. </span>Lecture au clavier<a class="headerlink" href="#lecture-au-clavier" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">9.4.1. </span>Lecture au clavier<a class="headerlink" href="#lecture-au-clavier" title="Lien permanent vers ce titre">¶</a></h3>
 <p>lecture au clavier <strong>input</strong> d’une valeur sans conversion</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>val = input(&quot;message&quot;)
 </pre></div>
@@ -1044,7 +1036,7 @@ chaine =1
 </div>
 </div>
 <div class="section" id="ecriture-avec-formatage-mise-en-forme">
-<h3><span class="section-number">8.4.2. </span>Écriture avec formatage (mise en forme)<a class="headerlink" href="#ecriture-avec-formatage-mise-en-forme" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">9.4.2. </span>Écriture avec formatage (mise en forme)<a class="headerlink" href="#ecriture-avec-formatage-mise-en-forme" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>print(format%(val1,val2,..)
 </pre></div>
 </div>
@@ -1074,7 +1066,7 @@ ch1=chaine ch2=  chaine
 </div>
 </div>
 <div class="section" id="format-avec-python-3">
-<h3><span class="section-number">8.4.3. </span>format avec python 3<a class="headerlink" href="#format-avec-python-3" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">9.4.3. </span>format avec python 3<a class="headerlink" href="#format-avec-python-3" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>string.format(var1,var2,..)
 </pre></div>
 </div>
@@ -1094,9 +1086,9 @@ ch1=chaine ch2=  chaine
 </div>
 </div>
 <div class="section" id="reference">
-<h2><span class="section-number">8.5. </span>Référence<a class="headerlink" href="#reference" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">9.5. </span>Référence<a class="headerlink" href="#reference" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="section" id="programme-python-lissajous">
-<h3><span class="section-number">8.5.1. </span>Programme Python Lissajous<a class="headerlink" href="#programme-python-lissajous" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><span class="section-number">9.5.1. </span>Programme Python Lissajous<a class="headerlink" href="#programme-python-lissajous" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -1125,7 +1117,7 @@ ch1=chaine ch2=  chaine
 </div>
 </div>
 <div class="section" id="fin-de-la-lecon">
-<h2><span class="section-number">8.6. </span>FIN de la leçon<a class="headerlink" href="#fin-de-la-lecon" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><span class="section-number">9.6. </span>FIN de la leçon<a class="headerlink" href="#fin-de-la-lecon" title="Lien permanent vers ce titre">¶</a></h2>
 <a class="reference internal image-reference" href="../_images/python_file.png"><img alt="../_images/python_file.png" src="../_images/python_file.png" style="width: 300px;" /></a>
 </div>
 </div>
@@ -1159,13 +1151,13 @@ ch1=chaine ch2=  chaine
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">précédent</p>
-            <p class="prev-next-title"><span class="section-number">7. </span>Tracé avec matplotlib</p>
+            <p class="prev-next-title"><span class="section-number">8. </span>Tracé avec matplotlib</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../CHAP9/Precision.html" title="suivant page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">suivant</p>
-        <p class="prev-next-title"><span class="section-number">9. </span>Précision et validation</p>
+        <p class="prev-next-title"><span class="section-number">10. </span>Précision et validation</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

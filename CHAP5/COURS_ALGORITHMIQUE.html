@@ -796,17 +796,11 @@ soit <code class="docutils literal notranslate"><span class="pre">print('bonjour
     <span class="n">T</span><span class="o">=</span><span class="n">dt</span>
     <span class="k">if</span> <span class="n">Me</span><span class="o">&gt;</span><span class="mi">0</span> <span class="p">:</span>
         <span class="c1"># lecture poussee</span>
-        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-            <span class="c1"># lecture clavier</span>
-            <span class="c1"># ch = input(&quot;Entrez la valeur de la poussée (0-9) (en 10eme kg/s) = &quot;)[0]</span>
-            <span class="c1"># lecture aleatoire</span>
-            <span class="n">ch</span> <span class="o">=</span> <span class="n">sample</span><span class="p">([</span><span class="s1">&#39;0&#39;</span><span class="p">,</span><span class="s1">&#39;1&#39;</span><span class="p">,</span><span class="s1">&#39;2&#39;</span><span class="p">,</span><span class="s1">&#39;3&#39;</span><span class="p">,</span><span class="s1">&#39;4&#39;</span><span class="p">,</span><span class="s1">&#39;5&#39;</span><span class="p">,</span><span class="s1">&#39;6&#39;</span><span class="p">,</span><span class="s1">&#39;7&#39;</span><span class="p">,</span><span class="s1">&#39;8&#39;</span><span class="p">,</span><span class="s1">&#39;9&#39;</span><span class="p">],</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-            <span class="c1">#</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">ch</span><span class="o">&gt;=</span><span class="s1">&#39;0&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">ch</span><span class="o">&lt;=</span><span class="s1">&#39;9&#39;</span><span class="p">)</span> <span class="p">:</span>
-                <span class="n">Qe</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span><span class="o">*</span><span class="mi">10</span> <span class="c1"># pousse en kg/s</span>
-                <span class="k">break</span><span class="p">;</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">ch</span><span class="o">==</span><span class="s1">&#39;Q&#39;</span><span class="p">)</span> <span class="p">:</span> <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Erreur: entrer un chiffre entre 0 et 9 &quot;</span><span class="p">)</span>
+        <span class="c1"># lecture clavier</span>
+        <span class="c1"># ch = input(&quot;Entrez la valeur de la poussée (0-100) (en kg/s) = &quot;)[0]</span>
+        <span class="c1"># Qe = int(ch)</span>
+        <span class="c1"># lecture aleatoire</span>
+        <span class="n">Qe</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
         <span class="c1"># test si reserve de fuel suffisante</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">Me</span><span class="o">-</span><span class="n">Qe</span><span class="o">*</span><span class="n">T</span><span class="p">)</span><span class="o">&lt;</span><span class="mi">0</span> <span class="p">:</span>
             <span class="c1"># temps restant d&#39;utilisation du fuel</span>
@@ -899,24 +893,23 @@ soit <code class="docutils literal notranslate"><span class="pre">print('bonjour
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Simulation alunissage
-t= 10 s Z= 174411 m V= 1537 m/s fuel= 7700 kg
-t= 20 s Z= 159864 m V= 1370 m/s fuel= 6800 kg
-t= 30 s Z= 146722 m V= 1257 m/s fuel= 6200 kg
-t= 40 s Z= 135081 m V= 1068 m/s fuel= 5300 kg
-t= 50 s Z= 124793 m V= 988 m/s fuel= 4900 kg
-t= 60 s Z= 115952 m V= 776 m/s fuel= 4000 kg
-t= 70 s Z= 108505 m V= 712 m/s fuel= 3700 kg
-t= 80 s Z= 101302 m V= 728 m/s fuel= 3700 kg
-t= 90 s Z= 94626 m V= 605 m/s fuel= 3200 kg
-t= 100 s Z= 88777 m V= 564 m/s fuel= 3000 kg
-t= 110 s Z= 84248 m V= 338 m/s fuel= 2200 kg
-t= 120 s Z= 82251 m V= 55 m/s fuel= 1300 kg
-t= 130 s Z= 81613 m V= 71 m/s fuel= 1300 kg
-t= 140 s Z= 82448 m V= -245 m/s fuel= 400 kg
-t= 145 s Z= 84052 m V= -398 m/s fuel= 0 kg
+t= 10 s Z= 174402 m V= 1539 m/s fuel= 7710 kg
+t= 20 s Z= 159690 m V= 1401 m/s fuel= 6950 kg
+t= 30 s Z= 145888 m V= 1358 m/s fuel= 6670 kg
+t= 40 s Z= 133064 m V= 1204 m/s fuel= 5890 kg
+t= 50 s Z= 121499 m V= 1107 m/s fuel= 5400 kg
+t= 60 s Z= 111504 m V= 887 m/s fuel= 4430 kg
+t= 70 s Z= 102623 m V= 888 m/s fuel= 4370 kg
+t= 80 s Z= 94357 m V= 763 m/s fuel= 3830 kg
+t= 90 s Z= 87784 m V= 548 m/s fuel= 3000 kg
+t= 100 s Z= 83005 m V= 406 m/s fuel= 2470 kg
+t= 110 s Z= 79706 m V= 251 m/s fuel= 1930 kg
+t= 120 s Z= 78637 m V= -43 m/s fuel= 1020 kg
+t= 130 s Z= 80608 m V= -356 m/s fuel= 160 kg
+t= 133 s Z= 81821 m V= -417 m/s fuel= 0 kg
 Plus de fuel 
-t= 802 s Z= 0 m V= 653 m/s fuel= 0 kg
-Alunissage avec une vitesse  653  m/s
+t= 806 s Z= 0 m V= 660 m/s fuel= 0 kg
+Alunissage avec une vitesse  660  m/s
 Crash fatal: aucun survivant
 </pre></div>
 </div>

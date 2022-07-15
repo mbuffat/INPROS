@@ -6,16 +6,24 @@ livre du cours **INPROS** utilisant jupyter-book
 
 - [https://mbuffat.github.io/INPROS/intro.html](https://mbuffat.github.io/INPROS/intro.html)
 
-## création du livre
+## création du livre (se placer en dessus du répertoire INPROS)
+
+**version html**
 
 ```
-cd ..
-
 jupyter-book build INPROS/
 ```
+
 crétion d'une version html statique dans **INPROS/_build/html/**
 
 - [version statique html](_build/html/index.html)
+
+**version pdf**
+
+```
+jupyter-book build INPROS/ --builder pdflatex
+```
+
 
 ## gestion sous git
 

@@ -1,575 +1,460 @@
 
 <!DOCTYPE html>
 
-<html lang="fr">
+
+<html lang="fr" data-content_root="../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>9. Gestion de fichiers et E/S &#8212; INPROS INtroduction à la PROgrammation Scientifique en Python</title>
-    
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    <title>10. Gestion de fichiers et E/S &#8212; INPROS INtroduction à la PROgrammation Scientifique en Python</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    
-      
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/documentation_options.js?v=72dce1d2"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=5eb1bb1e"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
-    <script src="../_static/translations.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/translations.js?v=041d0952"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CHAP8/COURS_FICHIER';</script>
     <link rel="canonical" href="https://perso.univ-lyon1.fr/marc.buffat/CHAP8/COURS_FICHIER.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
-    <link rel="next" title="10. Précision et validation" href="../CHAP9/Precision.html" />
-    <link rel="prev" title="8. Tracé avec matplotlib" href="../CHAP7/COURS_PLOT.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="fr">
-    
-
-    <!-- Google Analytics -->
-    
+    <link rel="next" title="11. Précision et validation" href="../CHAP9/Precision.html" />
+    <link rel="prev" title="9. Tracé avec matplotlib" href="../CHAP7/COURS_PLOT.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="fr"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Passer au contenu principal</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Haut de page</button>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">INPROS INtroduction à la PROgrammation Scientifique en Python</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Rechercher dans ce livre ..." aria-label="Rechercher dans ce livre ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   INtroduction à la PROgrammation Scientifique
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  INPROS
- </span>
-</p>
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="INPROS INtroduction à la PROgrammation Scientifique en Python - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="INPROS INtroduction à la PROgrammation Scientifique en Python - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Recherche</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    INtroduction à la PROgrammation Scientifique
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">INPROS</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../CHAP1/COURS_INTRO.html">
-   1. Introduction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../CHAP2/COURS_ORDI.html">
-   2. Fonctionnement d’un ordinateur
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../CHAP3/COURS_VAR.html">
-   3. Variable et éléments de base
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../CHAP4/COURS_LOOP.html">
-   4. Structures de contrôle
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../CHAP4/EXERCICES_LOOP.html">
-     4.10. Exercices
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../CHAP5/COURS_FONCTION.html">
-   5. Fonctions et procédures
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../CHAP5/COURS_ALGORITHMIQUE.html">
-   6. Programmation structurée
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../CHAP6/COURS_TABLEAU.html">
-   7. Les tableaux (vecteur, matrice)
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../CHAP6/EXERCICES_TABLEAU.html">
-     7.8. Correction des exercices
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../CHAP7/COURS_PLOT.html">
-   8. Tracé avec matplotlib
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   9. Gestion de fichiers et E/S
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../CHAP9/Precision.html">
-   10. Précision et validation
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../CHAP9/Exercices_precision.html">
-     10.8. Exercices
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../CHAP10/COURS_ALGORITHME.html">
-   11. Algorithmes numériques
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../CHAP11/Efficiency.html">
-   12. Efficacité / complexité
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../CHAP12/debugging.html">
-   13. Recherche d’erreurs
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CHAP1/COURS_INTRO.html">2. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CHAP2/COURS_ORDI.html">3. Fonctionnement d’un ordinateur</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CHAP3/COURS_VAR.html">4. Variable et éléments de base</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../CHAP4/COURS_LOOP.html">5. Structures de contrôle</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../CHAP4/EXERCICES_LOOP.html">5.10. Exercices</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../CHAP5/COURS_FONCTION.html">6. Fonctions et procédures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CHAP5/COURS_ALGORITHMIQUE.html">7. Programmation structurée</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../CHAP6/COURS_TABLEAU.html">8. Les tableaux (vecteur, matrice)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../CHAP6/EXERCICES_TABLEAU.html">8.8. Correction des exercices</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../CHAP7/COURS_PLOT.html">9. Tracé avec matplotlib</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">10. Gestion de fichiers et E/S</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../CHAP9/Precision.html">11. Précision et validation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../CHAP9/Exercices_precision.html">11.8. Exercices</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../CHAP10/COURS_ALGORITHME.html">12. Algorithmes numériques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CHAP11/Efficiency.html">13. Efficacité / complexité</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CHAP12/debugging.html">14. Recherche d’erreurs</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Annexes
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Annexes</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../RAPPEL/COURS_RAPPEL.html">
-   Rappel de maths et physique
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../credits.html">
-   Crédits
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../RAPPEL/COURS_RAPPEL.html">Rappel de maths et physique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../credits.html">Crédits</a></li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Crée par <a href="https://perso.univ-lyon1.fr/marc.buffat/">Marc BUFFAT</a><br> avec <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Basculer la navigation" aria-controls="site-navigation"
-                title="Basculer la navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Téléchargez cette page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/CHAP8/COURS_FICHIER.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Télécharger le fichier source" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimer au format PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
-            <!-- Source interaction buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/mbuffat/INPROS"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Dépôt source"><i
-                    class="fab fa-github"></i>dépôt</button></a>
-        <a class="issues-button"
-            href="https://github.com/mbuffat/INPROS/issues/new?title=Issue%20on%20page%20%2FCHAP8/COURS_FICHIER.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Ouvrez un problème"><i class="fas fa-lightbulb"></i>signaler un problème</button></a>
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
         
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
     </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/mbuffat/INPROS" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Dépôt source"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/mbuffat/INPROS/issues/new?title=Issue%20on%20page%20%2FCHAP8/COURS_FICHIER.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Ouvrez un problème"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Mode plein écran"
-        title="Mode plein écran"><i
-            class="fas fa-expand"></i></button></a>
 
-            <!-- Launch buttons -->
 
-        </div>
 
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Téléchargez cette page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/CHAP8/COURS_FICHIER.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Télécharger le fichier source"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimer au format PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Mode plein écran"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="clair/sombre" aria-label="clair/sombre" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Gestion de fichiers et E/S</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contenu
+            <div>
+                <h2> Contenu </h2>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fichier-informatique">
-   9.1. Fichier informatique
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fichier-de-programme-ou-script-sous-python">
-   9.2. Fichier de programme (ou script) sous Python
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exemple-trace-de-courbes-de-lissajous">
-     9.2.1. Exemple: trace de courbes de Lissajous
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#fichier-lissajous-py">
-       9.2.1.1. fichier lissajous.py
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#execution-du-programme">
-       9.2.1.2. exécution du programme
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#utilisation-en-tant-que-module-ou-librairie">
-       9.2.1.3. utilisation en tant que module (ou librairie)
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fichier-de-donnees-sous-python">
-   9.3. Fichier de données sous Python
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#fonction-de-lecture-ecriture">
-     9.3.1. fonction de lecture/écriture
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exemple-ecriture-de-donnees">
-     9.3.2. Exemple: écriture de données
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#programme-python">
-       9.3.2.1. Programme Python
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exemple-lecture-de-donnees">
-     9.3.3. Exemple: lecture de données
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#lecture-d-un-fichier-ligne-par-ligne">
-     9.3.4. Lecture d’un fichier ligne par ligne
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ecriture-format-csv">
-     9.3.5. Ecriture format CSV
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#entree-sortie-en-python">
-   9.4. Entrée Sortie en python
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#lecture-au-clavier">
-     9.4.1. Lecture au clavier
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ecriture-avec-formatage-mise-en-forme">
-     9.4.2. Écriture avec formatage (mise en forme)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#format-avec-python-3">
-     9.4.3. format avec python 3
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#reference">
-   9.5. Référence
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#programme-python-lissajous">
-     9.5.1. Programme Python Lissajous
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fin-de-la-lecon">
-   9.6. FIN de la leçon
-  </a>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fichier-informatique">10.1. Fichier informatique</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fichier-de-programme-ou-script-sous-python">10.2. Fichier de programme (ou script) sous Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-trace-de-courbes-de-lissajous">10.2.1. Exemple: trace de courbes de Lissajous</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fichier-lissajous-py">10.2.1.1. fichier lissajous.py</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#execution-du-programme">10.2.1.2. exécution du programme</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utilisation-en-tant-que-module-ou-librairie">10.2.1.3. utilisation en tant que module (ou librairie)</a></li>
 </ul>
-
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fichier-de-donnees-sous-python">10.3. Fichier de données sous Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fonction-de-lecture-ecriture">10.3.1. fonction de lecture/écriture</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-ecriture-de-donnees">10.3.2. Exemple: écriture de données</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#programme-python">10.3.2.1. Programme Python</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-lecture-de-donnees">10.3.3. Exemple: lecture de données</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-d-un-fichier-ligne-par-ligne">10.3.4. Lecture d’un fichier ligne par ligne</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ecriture-format-csv">10.3.5. Ecriture format CSV</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entree-sortie-en-python">10.4. Entrée Sortie en python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-au-clavier">10.4.1. Lecture au clavier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ecriture-avec-formatage-mise-en-forme">10.4.2. Écriture avec formatage (mise en forme)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#format-avec-python-3">10.4.3. format avec python 3</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">10.5. Référence</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#programme-python-lissajous">10.5.1. Programme Python Lissajous</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fin-de-la-lecon">10.6. FIN de la leçon</a></li>
+</ul>
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Gestion de fichiers et E/S</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contenu </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fichier-informatique">
-   9.1. Fichier informatique
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fichier-de-programme-ou-script-sous-python">
-   9.2. Fichier de programme (ou script) sous Python
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exemple-trace-de-courbes-de-lissajous">
-     9.2.1. Exemple: trace de courbes de Lissajous
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#fichier-lissajous-py">
-       9.2.1.1. fichier lissajous.py
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#execution-du-programme">
-       9.2.1.2. exécution du programme
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#utilisation-en-tant-que-module-ou-librairie">
-       9.2.1.3. utilisation en tant que module (ou librairie)
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fichier-de-donnees-sous-python">
-   9.3. Fichier de données sous Python
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#fonction-de-lecture-ecriture">
-     9.3.1. fonction de lecture/écriture
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exemple-ecriture-de-donnees">
-     9.3.2. Exemple: écriture de données
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#programme-python">
-       9.3.2.1. Programme Python
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exemple-lecture-de-donnees">
-     9.3.3. Exemple: lecture de données
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#lecture-d-un-fichier-ligne-par-ligne">
-     9.3.4. Lecture d’un fichier ligne par ligne
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ecriture-format-csv">
-     9.3.5. Ecriture format CSV
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#entree-sortie-en-python">
-   9.4. Entrée Sortie en python
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#lecture-au-clavier">
-     9.4.1. Lecture au clavier
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ecriture-avec-formatage-mise-en-forme">
-     9.4.2. Écriture avec formatage (mise en forme)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#format-avec-python-3">
-     9.4.3. format avec python 3
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#reference">
-   9.5. Référence
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#programme-python-lissajous">
-     9.5.1. Programme Python Lissajous
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fin-de-la-lecon">
-   9.6. FIN de la leçon
-  </a>
- </li>
-</ul>
 
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            
-              <div>
+              
                 
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <a class="reference internal image-reference" href="../_images/logo_trans10.png"><img alt="LyonHPC" src="../_images/logo_trans10.png" style="width: 180px;" /></a>
 <a class="reference internal image-reference" href="../_images/python-logo10.gif"><img alt="LyonHPC" src="../_images/python-logo10.gif" style="width: 200px;" /></a>
-<div class="tex2jax_ignore mathjax_ignore section" id="gestion-de-fichiers-et-e-s">
-<h1><span class="section-number">9. </span>Gestion de fichiers et E/S<a class="headerlink" href="#gestion-de-fichiers-et-e-s" title="Lien permanent vers ce titre">¶</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="gestion-de-fichiers-et-e-s">
+<h1><span class="section-number">10. </span>Gestion de fichiers et E/S<a class="headerlink" href="#gestion-de-fichiers-et-e-s" title="Lien vers cette rubrique">#</a></h1>
 <a class="reference internal image-reference" href="../_images/python_file.png"><img alt="../_images/python_file.png" src="../_images/python_file.png" style="width: 300px;" /></a>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -581,8 +466,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="fichier-informatique">
-<h2><span class="section-number">9.1. </span>Fichier informatique<a class="headerlink" href="#fichier-informatique" title="Lien permanent vers ce titre">¶</a></h2>
+<section id="fichier-informatique">
+<h2><span class="section-number">10.1. </span>Fichier informatique<a class="headerlink" href="#fichier-informatique" title="Lien vers cette rubrique">#</a></h2>
 <p><strong>définition (Wikipédia)</strong>
 un fichier informatique est  une collection d’informations numériques (séquences d’octets) réunies sous un même nom, enregistrées sur un support de stockage tel qu’un disque dur, un CD-ROM, une clé USB …</p>
 <p>En vue de faciliter leur organisation, les fichiers sont disposés dans des systèmes de fichiers qui permettent de placer les fichiers dans des emplacements appelés répertoires ou dossiers eux-mêmes organisés selon le même principe de manière à former une hiérarchie arborescente</p>
@@ -604,38 +489,38 @@ un fichier informatique est  une collection d’informations numériques (séque
 </ul>
 <p>Dans la suite on ne considérera que les fichiers programmes Python (extension .py) et des fichiers de données textes (extension .dat).</p>
 <p>Pour éviter des problèmes de compatibilités entre systèmes informatiques, on choisira des noms de fichiers sans caractères accentués, sans espace ni caractéres spéciaux (autre que <strong>.</strong> ou <strong>_</strong> ou <strong>-</strong> )</p>
-</div>
-<div class="section" id="fichier-de-programme-ou-script-sous-python">
-<h2><span class="section-number">9.2. </span>Fichier de programme (ou script) sous Python<a class="headerlink" href="#fichier-de-programme-ou-script-sous-python" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="fichier-de-programme-ou-script-sous-python">
+<h2><span class="section-number">10.2. </span>Fichier de programme (ou script) sous Python<a class="headerlink" href="#fichier-de-programme-ou-script-sous-python" title="Lien vers cette rubrique">#</a></h2>
 <p>un fichier contenant un programme Python a par convention une extension <strong>.py</strong>. Un simple éditeur de texte (notepad sous Windows) suffit pour créer et modifier un programme Python</p>
 <ul class="simple">
 <li><p><strong>gedit</strong> <a class="reference external" href="http://wiki.gnome.org/Apps/Gedit">« voir le site gedit »</a> un éditeur simple et efficace</p></li>
 <li><p><strong>vim</strong> et variante <a class="reference external" href="http://wiki.python.org/moin/Vim">« soir le site vim »</a> un éditeur de référence pour les programmeurs</p></li>
 <li><p><strong>spyder</strong> <a class="reference external" href="http://pythonhosted.org/spyder/">« voir le site spyder »</a> un environnement de développement Python à la matlab pour les applications scientifiques. <em>Sous Spyder, on utilisera plutôt la console Ipython pour exécuter les programmes, que la console par défaut qui utilise des conventions matlab différentes d’un interpréteur Python classique</em>.</p></li>
 </ul>
-<div class="section" id="exemple-trace-de-courbes-de-lissajous">
-<h3><span class="section-number">9.2.1. </span>Exemple: trace de courbes de Lissajous<a class="headerlink" href="#exemple-trace-de-courbes-de-lissajous" title="Lien permanent vers ce titre">¶</a></h3>
+<section id="exemple-trace-de-courbes-de-lissajous">
+<h3><span class="section-number">10.2.1. </span>Exemple: trace de courbes de Lissajous<a class="headerlink" href="#exemple-trace-de-courbes-de-lissajous" title="Lien vers cette rubrique">#</a></h3>
 <p>Une courbe de Lissajous (d’après le physicien français <a class="reference external" href="http://fr.wikipedia.org/wiki/Jules_Lissajous%5D">« Jules Antoine Lissajous »</a>) est une courbe paramétrique du plan dont les composantes sont des fonctions périodiques du paramètre (en générale le temps en physique, et que l’on peut observer avec un oscilloscope).</p>
 <p>Le programme Python suivant <strong><a class="reference external" href="http://lissajous.py">lissajous.py</a></strong> trace les courbes de Lissajous suivantes</p>
-<div class="amsmath math notranslate nohighlight" id="equation-26110567-8915-4d5f-888d-65d8a9b82e31">
-<span class="eqno">(9.1)<a class="headerlink" href="#equation-26110567-8915-4d5f-888d-65d8a9b82e31" title="Lien permanent vers cette équation">¶</a></span>\[\begin{eqnarray} 
+<div class="amsmath math notranslate nohighlight" id="equation-cb6bd937-61e4-4473-8929-dde4bdb42600">
+<span class="eqno">(10.1)<a class="headerlink" href="#equation-cb6bd937-61e4-4473-8929-dde4bdb42600" title="Permalink to this equation">#</a></span>\[\begin{eqnarray} 
 x(t) &amp;=&amp;  \sin{(\frac{2\pi}{p} t)}\\
 y(t) &amp;=&amp;  \sin{(\frac{2\pi}{q} t + \phi)}
 \end{eqnarray}\]</div>
 <p>Le rapport <span class="math notranslate nohighlight">\(n=\frac{p}{q}\)</span> est le paramètre de la courbe et <span class="math notranslate nohighlight">\(\phi\)</span> le déphassage. Le temps <span class="math notranslate nohighlight">\(T\)</span> de parcours de la courbe est le plus petit commun multiple de <span class="math notranslate nohighlight">\(p\)</span> et <span class="math notranslate nohighlight">\(q\)</span>:
 $<span class="math notranslate nohighlight">\(T=pcm(p,q)=\frac{pq}{pgcd(p,q)}\)</span>$</p>
-<div class="section" id="fichier-lissajous-py">
-<h4><span class="section-number">9.2.1.1. </span>fichier <a class="reference external" href="http://lissajous.py">lissajous.py</a><a class="headerlink" href="#fichier-lissajous-py" title="Lien permanent vers ce titre">¶</a></h4>
+<section id="fichier-lissajous-py">
+<h4><span class="section-number">10.2.1.1. </span>fichier <a class="reference external" href="http://lissajous.py">lissajous.py</a><a class="headerlink" href="#fichier-lissajous-py" title="Lien vers cette rubrique">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># excution de commandes</span>
-<span class="o">!</span>ls -al lissajous.py
-<span class="o">!</span>cat lissajous.py
+<span class="o">!</span>ls<span class="w"> </span>-al<span class="w"> </span>lissajous.py
+<span class="o">!</span>cat<span class="w"> </span>lissajous.py
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-rwxrwxr-x 1 buffat buffat 1659 avril  9 18:31 lissajous.py
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-rwxrwxr-x 1 buffat buffat 1659 févr.  1  2018 lissajous.py
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#! /usr/bin/env python
@@ -707,15 +592,15 @@ if __name__ == &quot;__main__&quot;:
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="execution-du-programme">
-<h4><span class="section-number">9.2.1.2. </span>exécution du programme<a class="headerlink" href="#execution-du-programme" title="Lien permanent vers ce titre">¶</a></h4>
+</section>
+<section id="execution-du-programme">
+<h4><span class="section-number">10.2.1.2. </span>exécution du programme<a class="headerlink" href="#execution-du-programme" title="Lien vers cette rubrique">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># execution cde</span>
-<span class="o">!</span><span class="nb">echo</span> <span class="s2">&quot;execution avec interpreteur python&quot;</span>
-<span class="o">!</span>python3 lissajous.py
-<span class="o">!</span>ls -al lissajous.png
+<span class="o">!</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;execution avec interpreteur python&quot;</span>
+<span class="o">!</span>python3<span class="w"> </span>lissajous.py
+<span class="o">!</span>ls<span class="w"> </span>-al<span class="w"> </span>lissajous.png
 </pre></div>
 </div>
 </div>
@@ -723,7 +608,7 @@ if __name__ == &quot;__main__&quot;:
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>execution avec interpreteur python
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-rw-rw-r-- 1 buffat buffat 97715 juil. 15 18:53 lissajous.png
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-rw-rw-r-- 1 buffat buffat 97883 mars  20 16:33 lissajous.png
 </pre></div>
 </div>
 </div>
@@ -735,10 +620,16 @@ if __name__ == &quot;__main__&quot;:
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/4485ad3ce45e6b21b62b94c6822fd2559b5b08d5f98f294aa4d0f0fa8ca80c5e.png" src="../_images/4485ad3ce45e6b21b62b94c6822fd2559b5b08d5f98f294aa4d0f0fa8ca80c5e.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
+</pre></div>
 </div>
 </div>
-<div class="section" id="utilisation-en-tant-que-module-ou-librairie">
-<h4><span class="section-number">9.2.1.3. </span>utilisation en tant que module (ou librairie)<a class="headerlink" href="#utilisation-en-tant-que-module-ou-librairie" title="Lien permanent vers ce titre">¶</a></h4>
+</div>
+</section>
+<section id="utilisation-en-tant-que-module-ou-librairie">
+<h4><span class="section-number">10.2.1.3. </span>utilisation en tant que module (ou librairie)<a class="headerlink" href="#utilisation-en-tant-que-module-ou-librairie" title="Lien vers cette rubrique">#</a></h4>
 <p><strong>module</strong>  fichier contenant des fonctions et des définitions en python (bibliothèque)</p>
 <p><strong>nom du module</strong> nom du fichier sans l’extension .py</p>
 <p><strong>utilisation</strong> du module mon_module.py</p>
@@ -760,18 +651,19 @@ from mon_module import *
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
 </pre></div>
 </div>
+<img alt="../_images/5157ad84fb52a5a5a7a4480cbcc8af314be9b8edf5f33367a34286bf3bc973ff.png" src="../_images/5157ad84fb52a5a5a7a4480cbcc8af314be9b8edf5f33367a34286bf3bc973ff.png" />
 </div>
 </div>
 <p><strong>rem</strong> si votre bibliothèque n’est pas dans le répertoire courant, il faudra
 alors spécifier son chemin d’accès (path) (voir documentation Python)</p>
-</div>
-</div>
-</div>
-<div class="section" id="fichier-de-donnees-sous-python">
-<h2><span class="section-number">9.3. </span>Fichier de données sous Python<a class="headerlink" href="#fichier-de-donnees-sous-python" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+</section>
+</section>
+<section id="fichier-de-donnees-sous-python">
+<h2><span class="section-number">10.3. </span>Fichier de données sous Python<a class="headerlink" href="#fichier-de-donnees-sous-python" title="Lien vers cette rubrique">#</a></h2>
 <p>Comme dans la pluspart des langages informatiques, lire ou écrire dans un fichier, on va associer à un fichier (à son nom) une variable informatique de type <strong>file</strong>, qui posséde des fonctions (ou méthodes) permettant de lire ou écrire des données dans le fichier.</p>
-<div class="section" id="fonction-de-lecture-ecriture">
-<h3><span class="section-number">9.3.1. </span>fonction de lecture/écriture<a class="headerlink" href="#fonction-de-lecture-ecriture" title="Lien permanent vers ce titre">¶</a></h3>
+<section id="fonction-de-lecture-ecriture">
+<h3><span class="section-number">10.3.1. </span>fonction de lecture/écriture<a class="headerlink" href="#fonction-de-lecture-ecriture" title="Lien vers cette rubrique">#</a></h3>
 <ul class="simple">
 <li><p>ouverture d’un fichier <em>mon_fichier.dat</em> en lecture:
 f=open(« nom_fichier.dat »,”r”)</p></li>
@@ -786,9 +678,9 @@ savetxt(file (ou nom de fichier), A)</p></li>
 <li><p>fermeture du fichier
 f.close()</p></li>
 </ul>
-</div>
-<div class="section" id="exemple-ecriture-de-donnees">
-<h3><span class="section-number">9.3.2. </span>Exemple: écriture de données<a class="headerlink" href="#exemple-ecriture-de-donnees" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="exemple-ecriture-de-donnees">
+<h3><span class="section-number">10.3.2. </span>Exemple: écriture de données<a class="headerlink" href="#exemple-ecriture-de-donnees" title="Lien vers cette rubrique">#</a></h3>
 <p>écriture sur fichiers de <span class="math notranslate nohighlight">\(n\)</span>  points d’une courbe de Lissajous avec le format suivant</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span># ligne de commentaire
 # n
@@ -799,8 +691,8 @@ ti xi yi
 tn-1 xn-1 yn-1
 </pre></div>
 </div>
-<div class="section" id="programme-python">
-<h4><span class="section-number">9.3.2.1. </span>Programme Python<a class="headerlink" href="#programme-python" title="Lien permanent vers ce titre">¶</a></h4>
+<section id="programme-python">
+<h4><span class="section-number">10.3.2.1. </span>Programme Python<a class="headerlink" href="#programme-python" title="Lien vers cette rubrique">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -829,67 +721,171 @@ cat lissajous.dat
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-rw-rw-r-- 1 buffat buffat 3839 juil. 15 18:53 lissajous.dat
-# courbe de lissajous avec p=1 q=2
-# 50
-0.000000000000000000e+00 0.000000000000000000e+00 1.000000000000000000e+00
-4.081632653061224164e-02 2.536545839095073474e-01 9.917900138232461638e-01
-8.163265306122448328e-02 4.907175520039378513e-01 9.672948630390294511e-01
-1.224489795918367319e-01 6.956825506034863826e-01 9.269167573460217469e-01
-1.632653061224489666e-01 8.551427630053460849e-01 8.713187041233895203e-01
-2.040816326530612013e-01 9.586678530366605777e-01 8.014136218679566159e-01
-2.448979591836734637e-01 9.994862162006878936e-01 7.183493500977276014e-01
-2.857142857142856984e-01 9.749279121818236193e-01 6.234898018587335944e-01
-3.265306122448979331e-01 8.865993063730001067e-01 5.183925683105251592e-01
-3.673469387755101678e-01 7.402779970753157190e-01 4.047833431223940570e-01
-4.081632653061224025e-01 5.455349012105490392e-01 2.845275866310327251e-01
-4.489795918367346372e-01 3.151082180236212671e-01 1.595998950333795963e-01
-4.897959183673469274e-01 6.407021998071323055e-02 3.205157757165516541e-02
-5.306122448979591066e-01 -1.911586287013718743e-01 -9.602302590768126145e-02
-5.714285714285713969e-01 -4.338837391175580094e-01 -2.225209339563142819e-01
-6.122448979591835760e-01 -6.482283953077878635e-01 -3.453650544213070495e-01
-6.530612244897958663e-01 -8.201722545969556410e-01 -4.625382902408350372e-01
-6.938775510204081565e-01 -9.384684220497602203e-01 -5.721166601221693293e-01
-7.346938775510203357e-01 -9.953791129491981193e-01 -6.723008902613164528e-01
-7.755102040816326259e-01 -9.871817834144501758e-01 -7.614459583691344235e-01
-8.163265306122448051e-01 -9.144126230158128310e-01 -8.380881048918403797e-01
-8.571428571428570953e-01 -7.818314824680299147e-01 -9.009688679024190350e-01
-8.979591836734692745e-01 -5.981105304912169851e-01 -9.490557470106684157e-01
-9.387755102040815647e-01 -3.752670048793745883e-01 -9.815591569910653291e-01
-9.795918367346938549e-01 -1.278771616845066350e-01 -9.979453927503363353e-01
-1.020408163265306145e+00 1.278771616845061354e-01 -9.979453927503363353e-01
-1.061224489795918213e+00 3.752670048793733115e-01 -9.815591569910655512e-01
-1.102040816326530503e+00 5.981105304912150977e-01 -9.490557470106688598e-01
-1.142857142857142794e+00 7.818314824680295816e-01 -9.009688679024192570e-01
-1.183673469387755084e+00 9.144126230158122759e-01 -8.380881048918410459e-01
-1.224489795918367152e+00 9.871817834144499537e-01 -7.614459583691352007e-01
-1.265306122448979442e+00 9.953791129491983414e-01 -6.723008902613174520e-01
-1.306122448979591733e+00 9.384684220497606644e-01 -5.721166601221699954e-01
-1.346938775510204023e+00 8.201722545969559741e-01 -4.625382902408353702e-01
-1.387755102040816313e+00 6.482283953077891958e-01 -3.453650544213082152e-01
-1.428571428571428381e+00 4.338837391175600633e-01 -2.225209339563155031e-01
-1.469387755102040671e+00 1.911586287013736507e-01 -9.602302590768251045e-02
-1.510204081632652962e+00 -6.407021998071230073e-02 3.205157757165480459e-02
-1.551020408163265252e+00 -3.151082180236208230e-01 1.595998950333792354e-01
-1.591836734693877320e+00 -5.455349012105463746e-01 2.845275866310311152e-01
-1.632653061224489610e+00 -7.402779970753142758e-01 4.047833431223928913e-01
-1.673469387755101900e+00 -8.865993063729995516e-01 5.183925683105244930e-01
-1.714285714285714191e+00 -9.749279121818235083e-01 6.234898018587333723e-01
-1.755102040816326481e+00 -9.994862162006878936e-01 7.183493500977270463e-01
-1.795918367346938549e+00 -9.586678530366613549e-01 8.014136218679558388e-01
-1.836734693877550839e+00 -8.551427630053470841e-01 8.713187041233888541e-01
-1.877551020408163129e+00 -6.956825506034870488e-01 9.269167573460215248e-01
-1.918367346938775420e+00 -4.907175520039380734e-01 9.672948630390293401e-01
-1.959183673469387710e+00 -2.536545839095085686e-01 9.917900138232460527e-01
-2.000000000000000000e+00 -4.898587196589412829e-16 1.000000000000000000e+00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-rw-rw-r-- 1 buffat buffat 3839 mars  20 16:33 lissajous.dat
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span># courbe de lissajous avec p=1 q=2
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span># 50
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.000000000000000000e+00 0.000000000000000000e+00 1.000000000000000000e+00
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.081632653061224164e-02 2.536545839095073474e-01 9.917900138232461638e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.163265306122448328e-02 4.907175520039378513e-01 9.672948630390294511e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.224489795918367319e-01 6.956825506034863826e-01 9.269167573460217469e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.632653061224489666e-01 8.551427630053460849e-01 8.713187041233895203e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.040816326530612013e-01 9.586678530366605777e-01 8.014136218679566159e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.448979591836734637e-01 9.994862162006878936e-01 7.183493500977276014e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.857142857142856984e-01 9.749279121818236193e-01 6.234898018587335944e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.265306122448979331e-01 8.865993063730001067e-01 5.183925683105251592e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.673469387755101678e-01 7.402779970753157190e-01 4.047833431223940570e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.081632653061224025e-01 5.455349012105490392e-01 2.845275866310327251e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.489795918367346372e-01 3.151082180236212671e-01 1.595998950333795963e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.897959183673469274e-01 6.407021998071323055e-02 3.205157757165516541e-02
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.306122448979591066e-01 -1.911586287013718743e-01 -9.602302590768126145e-02
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.714285714285713969e-01 -4.338837391175580094e-01 -2.225209339563142819e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.122448979591835760e-01 -6.482283953077878635e-01 -3.453650544213070495e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.530612244897958663e-01 -8.201722545969556410e-01 -4.625382902408350372e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.938775510204081565e-01 -9.384684220497602203e-01 -5.721166601221693293e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.346938775510203357e-01 -9.953791129491981193e-01 -6.723008902613164528e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.755102040816326259e-01 -9.871817834144501758e-01 -7.614459583691344235e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.163265306122448051e-01 -9.144126230158128310e-01 -8.380881048918403797e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.571428571428570953e-01 -7.818314824680299147e-01 -9.009688679024190350e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.979591836734692745e-01 -5.981105304912169851e-01 -9.490557470106684157e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.387755102040815647e-01 -3.752670048793745883e-01 -9.815591569910653291e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.795918367346938549e-01 -1.278771616845066350e-01 -9.979453927503363353e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.020408163265306145e+00 1.278771616845061354e-01 -9.979453927503363353e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.061224489795918213e+00 3.752670048793733115e-01 -9.815591569910655512e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.102040816326530503e+00 5.981105304912150977e-01 -9.490557470106688598e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.142857142857142794e+00 7.818314824680295816e-01 -9.009688679024192570e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.183673469387755084e+00 9.144126230158122759e-01 -8.380881048918410459e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.224489795918367152e+00 9.871817834144499537e-01 -7.614459583691352007e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.265306122448979442e+00 9.953791129491983414e-01 -6.723008902613174520e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.306122448979591733e+00 9.384684220497606644e-01 -5.721166601221699954e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.346938775510204023e+00 8.201722545969559741e-01 -4.625382902408353702e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.387755102040816313e+00 6.482283953077891958e-01 -3.453650544213082152e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.428571428571428381e+00 4.338837391175600633e-01 -2.225209339563155031e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.469387755102040671e+00 1.911586287013736507e-01 -9.602302590768251045e-02
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.510204081632652962e+00 -6.407021998071230073e-02 3.205157757165480459e-02
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.551020408163265252e+00 -3.151082180236208230e-01 1.595998950333792354e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.591836734693877320e+00 -5.455349012105463746e-01 2.845275866310311152e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.632653061224489610e+00 -7.402779970753142758e-01 4.047833431223928913e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.673469387755101900e+00 -8.865993063729995516e-01 5.183925683105244930e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.714285714285714191e+00 -9.749279121818235083e-01 6.234898018587333723e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.755102040816326481e+00 -9.994862162006878936e-01 7.183493500977270463e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.795918367346938549e+00 -9.586678530366613549e-01 8.014136218679558388e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.836734693877550839e+00 -8.551427630053470841e-01 8.713187041233888541e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.877551020408163129e+00 -6.956825506034870488e-01 9.269167573460215248e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.918367346938775420e+00 -4.907175520039380734e-01 9.672948630390293401e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.959183673469387710e+00 -2.536545839095085686e-01 9.917900138232460527e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.000000000000000000e+00 -4.898587196589412829e-16 1.000000000000000000e+00
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="exemple-lecture-de-donnees">
-<h3><span class="section-number">9.3.3. </span>Exemple: lecture de données<a class="headerlink" href="#exemple-lecture-de-donnees" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+</section>
+<section id="exemple-lecture-de-donnees">
+<h3><span class="section-number">10.3.3. </span>Exemple: lecture de données<a class="headerlink" href="#exemple-lecture-de-donnees" title="Lien vers cette rubrique">#</a></h3>
 <p>lecture des données précédentes et tracer de la courbe</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -910,12 +906,12 @@ cat lissajous.dat
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>lecture des données taille= (50, 3)
 </pre></div>
 </div>
-<img alt="../_images/COURS_FICHIER_18_1.png" src="../_images/COURS_FICHIER_18_1.png" />
+<img alt="../_images/31ffe1cb06047211686869a6c44936a912f9d763244c50c09978da756fa5ad7c.png" src="../_images/31ffe1cb06047211686869a6c44936a912f9d763244c50c09978da756fa5ad7c.png" />
 </div>
 </div>
-</div>
-<div class="section" id="lecture-d-un-fichier-ligne-par-ligne">
-<h3><span class="section-number">9.3.4. </span>Lecture d’un fichier ligne par ligne<a class="headerlink" href="#lecture-d-un-fichier-ligne-par-ligne" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="lecture-d-un-fichier-ligne-par-ligne">
+<h3><span class="section-number">10.3.4. </span>Lecture d’un fichier ligne par ligne<a class="headerlink" href="#lecture-d-un-fichier-ligne-par-ligne" title="Lien vers cette rubrique">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">F</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;lissajous.dat&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">)</span>
@@ -936,9 +932,9 @@ cat lissajous.dat
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="ecriture-format-csv">
-<h3><span class="section-number">9.3.5. </span>Ecriture format CSV<a class="headerlink" href="#ecriture-format-csv" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="ecriture-format-csv">
+<h3><span class="section-number">10.3.5. </span>Ecriture format CSV<a class="headerlink" href="#ecriture-format-csv" title="Lien vers cette rubrique">#</a></h3>
 <p>le format CSV (Comma-Separated Values) permet de partagé les données avec un tableur (localc, excel). Il suffit de délimiter les données avec une “<strong>,</strong>”.</p>
 <p><strong>Attention:</strong> <em>pour un tableur francisé, il faut lire le fichier avec l’option langue=US pour une conversion correcte des nombres réels. Python (comme beaucoup de langage informatique) utilise le point (cad la convention anglo-saxonne) et non la virgule pour représenter un nombre réel</em>.</p>
 <div class="cell docutils container">
@@ -957,67 +953,167 @@ cat lissajous.csv
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-rw-rw-r-- 1 buffat buffat 3799 juil. 15 18:53 lissajous.csv
-0.000000000000000000e+00,0.000000000000000000e+00,1.000000000000000000e+00
-4.081632653061224164e-02,2.536545839095073474e-01,9.917900138232461638e-01
-8.163265306122448328e-02,4.907175520039378513e-01,9.672948630390294511e-01
-1.224489795918367319e-01,6.956825506034863826e-01,9.269167573460217469e-01
-1.632653061224489666e-01,8.551427630053460849e-01,8.713187041233895203e-01
-2.040816326530612013e-01,9.586678530366605777e-01,8.014136218679566159e-01
-2.448979591836734637e-01,9.994862162006878936e-01,7.183493500977276014e-01
-2.857142857142856984e-01,9.749279121818236193e-01,6.234898018587335944e-01
-3.265306122448979331e-01,8.865993063730001067e-01,5.183925683105251592e-01
-3.673469387755101678e-01,7.402779970753157190e-01,4.047833431223940570e-01
-4.081632653061224025e-01,5.455349012105490392e-01,2.845275866310327251e-01
-4.489795918367346372e-01,3.151082180236212671e-01,1.595998950333795963e-01
-4.897959183673469274e-01,6.407021998071323055e-02,3.205157757165516541e-02
-5.306122448979591066e-01,-1.911586287013718743e-01,-9.602302590768126145e-02
-5.714285714285713969e-01,-4.338837391175580094e-01,-2.225209339563142819e-01
-6.122448979591835760e-01,-6.482283953077878635e-01,-3.453650544213070495e-01
-6.530612244897958663e-01,-8.201722545969556410e-01,-4.625382902408350372e-01
-6.938775510204081565e-01,-9.384684220497602203e-01,-5.721166601221693293e-01
-7.346938775510203357e-01,-9.953791129491981193e-01,-6.723008902613164528e-01
-7.755102040816326259e-01,-9.871817834144501758e-01,-7.614459583691344235e-01
-8.163265306122448051e-01,-9.144126230158128310e-01,-8.380881048918403797e-01
-8.571428571428570953e-01,-7.818314824680299147e-01,-9.009688679024190350e-01
-8.979591836734692745e-01,-5.981105304912169851e-01,-9.490557470106684157e-01
-9.387755102040815647e-01,-3.752670048793745883e-01,-9.815591569910653291e-01
-9.795918367346938549e-01,-1.278771616845066350e-01,-9.979453927503363353e-01
-1.020408163265306145e+00,1.278771616845061354e-01,-9.979453927503363353e-01
-1.061224489795918213e+00,3.752670048793733115e-01,-9.815591569910655512e-01
-1.102040816326530503e+00,5.981105304912150977e-01,-9.490557470106688598e-01
-1.142857142857142794e+00,7.818314824680295816e-01,-9.009688679024192570e-01
-1.183673469387755084e+00,9.144126230158122759e-01,-8.380881048918410459e-01
-1.224489795918367152e+00,9.871817834144499537e-01,-7.614459583691352007e-01
-1.265306122448979442e+00,9.953791129491983414e-01,-6.723008902613174520e-01
-1.306122448979591733e+00,9.384684220497606644e-01,-5.721166601221699954e-01
-1.346938775510204023e+00,8.201722545969559741e-01,-4.625382902408353702e-01
-1.387755102040816313e+00,6.482283953077891958e-01,-3.453650544213082152e-01
-1.428571428571428381e+00,4.338837391175600633e-01,-2.225209339563155031e-01
-1.469387755102040671e+00,1.911586287013736507e-01,-9.602302590768251045e-02
-1.510204081632652962e+00,-6.407021998071230073e-02,3.205157757165480459e-02
-1.551020408163265252e+00,-3.151082180236208230e-01,1.595998950333792354e-01
-1.591836734693877320e+00,-5.455349012105463746e-01,2.845275866310311152e-01
-1.632653061224489610e+00,-7.402779970753142758e-01,4.047833431223928913e-01
-1.673469387755101900e+00,-8.865993063729995516e-01,5.183925683105244930e-01
-1.714285714285714191e+00,-9.749279121818235083e-01,6.234898018587333723e-01
-1.755102040816326481e+00,-9.994862162006878936e-01,7.183493500977270463e-01
-1.795918367346938549e+00,-9.586678530366613549e-01,8.014136218679558388e-01
-1.836734693877550839e+00,-8.551427630053470841e-01,8.713187041233888541e-01
-1.877551020408163129e+00,-6.956825506034870488e-01,9.269167573460215248e-01
-1.918367346938775420e+00,-4.907175520039380734e-01,9.672948630390293401e-01
-1.959183673469387710e+00,-2.536545839095085686e-01,9.917900138232460527e-01
-2.000000000000000000e+00,-4.898587196589412829e-16,1.000000000000000000e+00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-rw-rw-r-- 1 buffat buffat 3799 mars  20 16:33 lissajous.csv
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.000000000000000000e+00,0.000000000000000000e+00,1.000000000000000000e+00
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.081632653061224164e-02,2.536545839095073474e-01,9.917900138232461638e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.163265306122448328e-02,4.907175520039378513e-01,9.672948630390294511e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.224489795918367319e-01,6.956825506034863826e-01,9.269167573460217469e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.632653061224489666e-01,8.551427630053460849e-01,8.713187041233895203e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.040816326530612013e-01,9.586678530366605777e-01,8.014136218679566159e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.448979591836734637e-01,9.994862162006878936e-01,7.183493500977276014e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.857142857142856984e-01,9.749279121818236193e-01,6.234898018587335944e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.265306122448979331e-01,8.865993063730001067e-01,5.183925683105251592e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.673469387755101678e-01,7.402779970753157190e-01,4.047833431223940570e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.081632653061224025e-01,5.455349012105490392e-01,2.845275866310327251e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.489795918367346372e-01,3.151082180236212671e-01,1.595998950333795963e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.897959183673469274e-01,6.407021998071323055e-02,3.205157757165516541e-02
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.306122448979591066e-01,-1.911586287013718743e-01,-9.602302590768126145e-02
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.714285714285713969e-01,-4.338837391175580094e-01,-2.225209339563142819e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.122448979591835760e-01,-6.482283953077878635e-01,-3.453650544213070495e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.530612244897958663e-01,-8.201722545969556410e-01,-4.625382902408350372e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.938775510204081565e-01,-9.384684220497602203e-01,-5.721166601221693293e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.346938775510203357e-01,-9.953791129491981193e-01,-6.723008902613164528e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.755102040816326259e-01,-9.871817834144501758e-01,-7.614459583691344235e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.163265306122448051e-01,-9.144126230158128310e-01,-8.380881048918403797e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.571428571428570953e-01,-7.818314824680299147e-01,-9.009688679024190350e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.979591836734692745e-01,-5.981105304912169851e-01,-9.490557470106684157e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.387755102040815647e-01,-3.752670048793745883e-01,-9.815591569910653291e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.795918367346938549e-01,-1.278771616845066350e-01,-9.979453927503363353e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.020408163265306145e+00,1.278771616845061354e-01,-9.979453927503363353e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.061224489795918213e+00,3.752670048793733115e-01,-9.815591569910655512e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.102040816326530503e+00,5.981105304912150977e-01,-9.490557470106688598e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.142857142857142794e+00,7.818314824680295816e-01,-9.009688679024192570e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.183673469387755084e+00,9.144126230158122759e-01,-8.380881048918410459e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.224489795918367152e+00,9.871817834144499537e-01,-7.614459583691352007e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.265306122448979442e+00,9.953791129491983414e-01,-6.723008902613174520e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.306122448979591733e+00,9.384684220497606644e-01,-5.721166601221699954e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.346938775510204023e+00,8.201722545969559741e-01,-4.625382902408353702e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.387755102040816313e+00,6.482283953077891958e-01,-3.453650544213082152e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.428571428571428381e+00,4.338837391175600633e-01,-2.225209339563155031e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.469387755102040671e+00,1.911586287013736507e-01,-9.602302590768251045e-02
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.510204081632652962e+00,-6.407021998071230073e-02,3.205157757165480459e-02
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.551020408163265252e+00,-3.151082180236208230e-01,1.595998950333792354e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.591836734693877320e+00,-5.455349012105463746e-01,2.845275866310311152e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.632653061224489610e+00,-7.402779970753142758e-01,4.047833431223928913e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.673469387755101900e+00,-8.865993063729995516e-01,5.183925683105244930e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.714285714285714191e+00,-9.749279121818235083e-01,6.234898018587333723e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.755102040816326481e+00,-9.994862162006878936e-01,7.183493500977270463e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.795918367346938549e+00,-9.586678530366613549e-01,8.014136218679558388e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.836734693877550839e+00,-8.551427630053470841e-01,8.713187041233888541e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.877551020408163129e+00,-6.956825506034870488e-01,9.269167573460215248e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.918367346938775420e+00,-4.907175520039380734e-01,9.672948630390293401e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.959183673469387710e+00,-2.536545839095085686e-01,9.917900138232460527e-01
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.000000000000000000e+00,-4.898587196589412829e-16,1.000000000000000000e+00
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="entree-sortie-en-python">
-<h2><span class="section-number">9.4. </span>Entrée Sortie en python<a class="headerlink" href="#entree-sortie-en-python" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="section" id="lecture-au-clavier">
-<h3><span class="section-number">9.4.1. </span>Lecture au clavier<a class="headerlink" href="#lecture-au-clavier" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+</section>
+<section id="entree-sortie-en-python">
+<h2><span class="section-number">10.4. </span>Entrée Sortie en python<a class="headerlink" href="#entree-sortie-en-python" title="Lien vers cette rubrique">#</a></h2>
+<section id="lecture-au-clavier">
+<h3><span class="section-number">10.4.1. </span>Lecture au clavier<a class="headerlink" href="#lecture-au-clavier" title="Lien vers cette rubrique">#</a></h3>
 <p>lecture au clavier <strong>input</strong> d’une valeur sans conversion</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>val = input(&quot;message&quot;)
 </pre></div>
@@ -1034,9 +1130,9 @@ chaine =1
 1 &lt;class &#39;str&#39;&gt;    
 </pre></div>
 </div>
-</div>
-<div class="section" id="ecriture-avec-formatage-mise-en-forme">
-<h3><span class="section-number">9.4.2. </span>Écriture avec formatage (mise en forme)<a class="headerlink" href="#ecriture-avec-formatage-mise-en-forme" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="ecriture-avec-formatage-mise-en-forme">
+<h3><span class="section-number">10.4.2. </span>Écriture avec formatage (mise en forme)<a class="headerlink" href="#ecriture-avec-formatage-mise-en-forme" title="Lien vers cette rubrique">#</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>print(format%(val1,val2,..)
 </pre></div>
 </div>
@@ -1064,9 +1160,9 @@ ch1=chaine ch2=  chaine
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="format-avec-python-3">
-<h3><span class="section-number">9.4.3. </span>format avec python 3<a class="headerlink" href="#format-avec-python-3" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="format-avec-python-3">
+<h3><span class="section-number">10.4.3. </span>format avec python 3<a class="headerlink" href="#format-avec-python-3" title="Lien vers cette rubrique">#</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>string.format(var1,var2,..)
 </pre></div>
 </div>
@@ -1083,24 +1179,24 @@ ch1=chaine ch2=  chaine
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="reference">
-<h2><span class="section-number">9.5. </span>Référence<a class="headerlink" href="#reference" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="section" id="programme-python-lissajous">
-<h3><span class="section-number">9.5.1. </span>Programme Python Lissajous<a class="headerlink" href="#programme-python-lissajous" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+</section>
+<section id="reference">
+<h2><span class="section-number">10.5. </span>Référence<a class="headerlink" href="#reference" title="Lien vers cette rubrique">#</a></h2>
+<section id="programme-python-lissajous">
+<h3><span class="section-number">10.5.1. </span>Programme Python Lissajous<a class="headerlink" href="#programme-python-lissajous" title="Lien vers cette rubrique">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="k">def</span> <span class="nf">pgcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;calcul du pgcd de a et b par l&#39;algorithme d&#39;Euclide.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;calcul du pgcd de a et b par l&#39;algorithme d&#39;Euclide.&quot;&quot;&quot;</span>
     <span class="k">while</span> <span class="n">b</span><span class="p">:</span>
         <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span>
     <span class="k">return</span> <span class="n">a</span>
 
 <span class="k">def</span> <span class="nf">Lissajous</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">q</span><span class="p">,</span><span class="n">phi</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; calcul de N points d&#39;une courbe de Lissajous&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; calcul de N points d&#39;une courbe de Lissajous&quot;&quot;&quot;</span>
     <span class="n">omega1</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">p</span>
     <span class="n">omega2</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">q</span>
     <span class="c1"># temps d&#39;étude</span>
@@ -1114,13 +1210,13 @@ ch1=chaine ch2=  chaine
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="fin-de-la-lecon">
-<h2><span class="section-number">9.6. </span>FIN de la leçon<a class="headerlink" href="#fin-de-la-lecon" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+</section>
+<section id="fin-de-la-lecon">
+<h2><span class="section-number">10.6. </span>FIN de la leçon<a class="headerlink" href="#fin-de-la-lecon" title="Lien vers cette rubrique">#</a></h2>
 <a class="reference internal image-reference" href="../_images/python_file.png"><img alt="../_images/python_file.png" src="../_images/python_file.png" style="width: 300px;" /></a>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1134,7 +1230,7 @@ ch1=chaine ch2=  chaine
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./CHAP8"
         },
         predefinedOutput: true
@@ -1142,44 +1238,134 @@ ch1=chaine ch2=  chaine
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../CHAP7/COURS_PLOT.html" title="précédent page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">précédent</p>
-            <p class="prev-next-title"><span class="section-number">8. </span>Tracé avec matplotlib</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../CHAP7/COURS_PLOT.html"
+       title="page précédente">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">précédent</p>
+        <p class="prev-next-title"><span class="section-number">9. </span>Tracé avec matplotlib</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="../CHAP9/Precision.html" title="suivant page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="../CHAP9/Precision.html"
+       title="page suivante">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">suivant</p>
-        <p class="prev-next-title"><span class="section-number">10. </span>Précision et validation</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+        <p class="prev-next-title"><span class="section-number">11. </span>Précision et validation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
+                </footer>
+              
+            </div>
             
-        </div>
-    </div>
-    <footer class="footer">
-  <p>
-    
-      Par Marc BUFFAT, dpt mécanique, Lyon 1<br/>
-    
-        &copy; droits d'auteur 2022.<br/>
-  </p>
-</footer>
-</main>
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-      </div>
-    </div>
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenu
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fichier-informatique">10.1. Fichier informatique</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fichier-de-programme-ou-script-sous-python">10.2. Fichier de programme (ou script) sous Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-trace-de-courbes-de-lissajous">10.2.1. Exemple: trace de courbes de Lissajous</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fichier-lissajous-py">10.2.1.1. fichier lissajous.py</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#execution-du-programme">10.2.1.2. exécution du programme</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utilisation-en-tant-que-module-ou-librairie">10.2.1.3. utilisation en tant que module (ou librairie)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fichier-de-donnees-sous-python">10.3. Fichier de données sous Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fonction-de-lecture-ecriture">10.3.1. fonction de lecture/écriture</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-ecriture-de-donnees">10.3.2. Exemple: écriture de données</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#programme-python">10.3.2.1. Programme Python</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-lecture-de-donnees">10.3.3. Exemple: lecture de données</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-d-un-fichier-ligne-par-ligne">10.3.4. Lecture d’un fichier ligne par ligne</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ecriture-format-csv">10.3.5. Ecriture format CSV</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entree-sortie-en-python">10.4. Entrée Sortie en python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-au-clavier">10.4.1. Lecture au clavier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ecriture-avec-formatage-mise-en-forme">10.4.2. Écriture avec formatage (mise en forme)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#format-avec-python-3">10.4.3. format avec python 3</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">10.5. Référence</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#programme-python-lissajous">10.5.1. Programme Python Lissajous</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fin-de-la-lecon">10.6. FIN de la leçon</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <div class="footer-item">
+    
+<p class="component-author">
+Par Marc BUFFAT, dpt mécanique, Lyon 1
+</p>
 
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

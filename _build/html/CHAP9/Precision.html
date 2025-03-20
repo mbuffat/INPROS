@@ -1,797 +1,485 @@
 
 <!DOCTYPE html>
 
-<html lang="fr">
+
+<html lang="fr" data-content_root="../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>10. Précision et validation &#8212; INPROS INtroduction à la PROgrammation Scientifique en Python</title>
-    
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    <title>11. Précision et validation &#8212; INPROS INtroduction à la PROgrammation Scientifique en Python</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    
-      
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/documentation_options.js?v=72dce1d2"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=5eb1bb1e"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
-    <script src="../_static/translations.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/translations.js?v=041d0952"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CHAP9/Precision';</script>
     <link rel="canonical" href="https://perso.univ-lyon1.fr/marc.buffat/CHAP9/Precision.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
-    <link rel="next" title="10.8. Exercices" href="Exercices_precision.html" />
-    <link rel="prev" title="9. Gestion de fichiers et E/S" href="../CHAP8/COURS_FICHIER.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="fr">
-    
-
-    <!-- Google Analytics -->
-    
+    <link rel="next" title="11.8. Exercices" href="Exercices_precision.html" />
+    <link rel="prev" title="10. Gestion de fichiers et E/S" href="../CHAP8/COURS_FICHIER.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="fr"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Passer au contenu principal</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Haut de page</button>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">INPROS INtroduction à la PROgrammation Scientifique en Python</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Rechercher dans ce livre ..." aria-label="Rechercher dans ce livre ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   INtroduction à la PROgrammation Scientifique
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  INPROS
- </span>
-</p>
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="INPROS INtroduction à la PROgrammation Scientifique en Python - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="INPROS INtroduction à la PROgrammation Scientifique en Python - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Recherche</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    INtroduction à la PROgrammation Scientifique
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">INPROS</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../CHAP1/COURS_INTRO.html">
-   1. Introduction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../CHAP2/COURS_ORDI.html">
-   2. Fonctionnement d’un ordinateur
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../CHAP3/COURS_VAR.html">
-   3. Variable et éléments de base
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../CHAP4/COURS_LOOP.html">
-   4. Structures de contrôle
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../CHAP4/EXERCICES_LOOP.html">
-     4.10. Exercices
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../CHAP5/COURS_FONCTION.html">
-   5. Fonctions et procédures
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../CHAP5/COURS_ALGORITHMIQUE.html">
-   6. Programmation structurée
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../CHAP6/COURS_TABLEAU.html">
-   7. Les tableaux (vecteur, matrice)
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../CHAP6/EXERCICES_TABLEAU.html">
-     7.8. Correction des exercices
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../CHAP7/COURS_PLOT.html">
-   8. Tracé avec matplotlib
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../CHAP8/COURS_FICHIER.html">
-   9. Gestion de fichiers et E/S
-  </a>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
-   10. Précision et validation
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Exercices_precision.html">
-     10.8. Exercices
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../CHAP10/COURS_ALGORITHME.html">
-   11. Algorithmes numériques
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../CHAP11/Efficiency.html">
-   12. Efficacité / complexité
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../CHAP12/debugging.html">
-   13. Recherche d’erreurs
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CHAP1/COURS_INTRO.html">2. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CHAP2/COURS_ORDI.html">3. Fonctionnement d’un ordinateur</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CHAP3/COURS_VAR.html">4. Variable et éléments de base</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../CHAP4/COURS_LOOP.html">5. Structures de contrôle</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../CHAP4/EXERCICES_LOOP.html">5.10. Exercices</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../CHAP5/COURS_FONCTION.html">6. Fonctions et procédures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CHAP5/COURS_ALGORITHMIQUE.html">7. Programmation structurée</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../CHAP6/COURS_TABLEAU.html">8. Les tableaux (vecteur, matrice)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../CHAP6/EXERCICES_TABLEAU.html">8.8. Correction des exercices</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../CHAP7/COURS_PLOT.html">9. Tracé avec matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CHAP8/COURS_FICHIER.html">10. Gestion de fichiers et E/S</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">11. Précision et validation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Exercices_precision.html">11.8. Exercices</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../CHAP10/COURS_ALGORITHME.html">12. Algorithmes numériques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CHAP11/Efficiency.html">13. Efficacité / complexité</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CHAP12/debugging.html">14. Recherche d’erreurs</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Annexes
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Annexes</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../RAPPEL/COURS_RAPPEL.html">
-   Rappel de maths et physique
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../credits.html">
-   Crédits
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../RAPPEL/COURS_RAPPEL.html">Rappel de maths et physique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../credits.html">Crédits</a></li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Crée par <a href="https://perso.univ-lyon1.fr/marc.buffat/">Marc BUFFAT</a><br> avec <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Basculer la navigation" aria-controls="site-navigation"
-                title="Basculer la navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Téléchargez cette page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/CHAP9/Precision.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Télécharger le fichier source" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimer au format PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
-            <!-- Source interaction buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/mbuffat/INPROS"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Dépôt source"><i
-                    class="fab fa-github"></i>dépôt</button></a>
-        <a class="issues-button"
-            href="https://github.com/mbuffat/INPROS/issues/new?title=Issue%20on%20page%20%2FCHAP9/Precision.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Ouvrez un problème"><i class="fas fa-lightbulb"></i>signaler un problème</button></a>
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
         
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
     </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/mbuffat/INPROS" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Dépôt source"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/mbuffat/INPROS/issues/new?title=Issue%20on%20page%20%2FCHAP9/Precision.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Ouvrez un problème"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Mode plein écran"
-        title="Mode plein écran"><i
-            class="fas fa-expand"></i></button></a>
 
-            <!-- Launch buttons -->
 
-        </div>
 
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Téléchargez cette page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/CHAP9/Precision.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Télécharger le fichier source"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimer au format PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Mode plein écran"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="clair/sombre" aria-label="clair/sombre" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Précision et validation</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contenu
+            <div>
+                <h2> Contenu </h2>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#erreur-de-representation">
-   10.1. Erreur de représentation
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exemple-preliminaire">
-     10.1.1. Exemple préliminaire
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#algorithme">
-       10.1.1.1. Algorithme
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#programme-python">
-       10.1.1.2. Programme Python
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#applications">
-       10.1.1.3. Applications
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#solution-utilisation-de-la-propriete-e-x-1-e-x">
-       10.1.1.4. Solution: utilisation de la propriété
-       <span class="math notranslate nohighlight">
-        \(e^{-x} = 1/e^x \)
-       </span>
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercice">
-       10.1.1.5. Exercice
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#representation-des-nombres-sur-un-ordinateur">
-     10.1.2. Représentation des nombres sur un ordinateur
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exemple">
-       10.1.2.1. Exemple
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#precision-des-calculs">
-   10.2. Précision des calculs
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#precision-machine-epsilon">
-     10.2.1. Précision machine
-     <span class="math notranslate nohighlight">
-      \(\epsilon\)
-     </span>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#algorithme-de-calcul-de-la-precision-machine">
-     10.2.2. Algorithme de calcul de la précision machine
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     10.2.3. Programme Python
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#erreurs-numeriques">
-   10.3. Erreurs numériques
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exemple-racine-d-une-equation-du-2nd-degre">
-     10.3.1. Exemple: racine d’une équation du 2nd degré
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#programme-python-de-base">
-       10.3.1.1. programme Python de base
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#meilleur-approximation">
-       10.3.1.2. meilleur approximation
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#calcul-d-erreurs">
-     10.3.2. Calcul d’erreurs
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#regles-sur-les-erreurs">
-       10.3.2.1. règles sur les erreurs
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#condition-sur-l-erreur-relative">
-       10.3.2.2. condition sur l” erreur relative
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#conditionnement-et-erreurs-d-approximation">
-   10.4. Conditionnement et erreurs d’approximation
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sensibilite-aux-erreurs">
-     10.4.1. sensibilité aux erreurs
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#erreurs-d-approximation">
-     10.4.2. Erreurs d’approximation
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#ordre-d-approximation">
-       10.4.2.1. Ordre d’approximation
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exemple-calcul-de-e-a-avec-des-tables-pour-0-a-1">
-     10.4.3. Exemple: calcul de
-     <span class="math notranslate nohighlight">
-      \(e^a\)
-     </span>
-     avec des tables pour
-     <span class="math notranslate nohighlight">
-      \(0 &lt; a &lt; 1\)
-     </span>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#algorithme-approximation-de-exp-a-a-l-aide-de-tables">
-     10.4.4. Algorithme: approximation de exp(a) à l’aide de tables
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     10.4.5. Programme Python
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#comparaison-avec-le-calcul-utilisant-les-series-entieres">
-     10.4.6. comparaison avec le calcul utilisant les séries entières
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     10.4.7. Exercice:
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#verification-des-calculs">
-   10.5. Vérification des calculs
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#validation-de-la-simulation-d-alunissage">
-     10.5.1. validation de la simulation d’alunissage
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#validation-du-calcul-de-exp-a-avec-n-valeurs-tabulees">
-     10.5.2. Validation du calcul de
-     <span class="math notranslate nohighlight">
-      \(exp(a)\)
-     </span>
-     avec
-     <span class="math notranslate nohighlight">
-      \(n\)
-     </span>
-     valeurs tabulées
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id4">
-       10.5.2.1. programme Python
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-href-sommaire-bibliographie-a-a-name-section2">
-   10.6.
-   <a href="#sommaire">
-    Bibliographie
-   </a>
-   <a name="section2">
-   </a>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fin-de-la-lecon">
-   10.7. FIN de la leçon
-  </a>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#erreur-de-representation">11.1. Erreur de représentation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-preliminaire">11.1.1. Exemple préliminaire</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithme">11.1.1.1. Algorithme</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#programme-python">11.1.1.2. Programme Python</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#applications">11.1.1.3. Applications</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#solution-utilisation-de-la-propriete-e-x-1-e-x">11.1.1.4. Solution: utilisation de la propriété <span class="math notranslate nohighlight">\(e^{-x} = 1/e^x \)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice">11.1.1.5. Exercice</a></li>
 </ul>
-
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#representation-des-nombres-sur-un-ordinateur">11.1.2. Représentation des nombres sur un ordinateur</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple">11.1.2.1. Exemple</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#precision-des-calculs">11.2. Précision des calculs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#precision-machine-epsilon">11.2.1. Précision machine <span class="math notranslate nohighlight">\(\epsilon\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithme-de-calcul-de-la-precision-machine">11.2.2. Algorithme de calcul de la précision machine</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">11.2.3. Programme Python</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#erreurs-numeriques">11.3. Erreurs numériques</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-racine-d-une-equation-du-2nd-degre">11.3.1. Exemple: racine d’une équation du 2nd degré</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#programme-python-de-base">11.3.1.1. programme Python de base</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#meilleur-approximation">11.3.1.2. meilleur approximation</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calcul-d-erreurs">11.3.2. Calcul d’erreurs</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#regles-sur-les-erreurs">11.3.2.1. règles sur les erreurs</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#condition-sur-l-erreur-relative">11.3.2.2. condition sur l” erreur relative</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditionnement-et-erreurs-d-approximation">11.4. Conditionnement et erreurs d’approximation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sensibilite-aux-erreurs">11.4.1. sensibilité aux erreurs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erreurs-d-approximation">11.4.2. Erreurs d’approximation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ordre-d-approximation">11.4.2.1. Ordre d’approximation</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-calcul-de-e-a-avec-des-tables-pour-0-a-1">11.4.3. Exemple: calcul de <span class="math notranslate nohighlight">\(e^a\)</span> avec des tables pour <span class="math notranslate nohighlight">\(0 &lt; a &lt; 1\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithme-approximation-de-exp-a-a-l-aide-de-tables">11.4.4. Algorithme: approximation de exp(a) à l’aide de tables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">11.4.5. Programme Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparaison-avec-le-calcul-utilisant-les-series-entieres">11.4.6. comparaison avec le calcul utilisant les séries entières</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">11.4.7. Exercice:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verification-des-calculs">11.5. Vérification des calculs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validation-de-la-simulation-d-alunissage">11.5.1. validation de la simulation d’alunissage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validation-du-calcul-de-exp-a-avec-n-valeurs-tabulees">11.5.2. Validation du calcul de <span class="math notranslate nohighlight">\(exp(a)\)</span> avec <span class="math notranslate nohighlight">\(n\)</span> valeurs tabulées</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">11.5.2.1. programme Python</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliographie">11.6. <a href="#sommaire">Bibliographie</a><a name="section2"></a></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fin-de-la-lecon">11.7. FIN de la leçon</a></li>
+</ul>
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Précision et validation</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contenu </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#erreur-de-representation">
-   10.1. Erreur de représentation
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exemple-preliminaire">
-     10.1.1. Exemple préliminaire
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#algorithme">
-       10.1.1.1. Algorithme
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#programme-python">
-       10.1.1.2. Programme Python
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#applications">
-       10.1.1.3. Applications
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#solution-utilisation-de-la-propriete-e-x-1-e-x">
-       10.1.1.4. Solution: utilisation de la propriété
-       <span class="math notranslate nohighlight">
-        \(e^{-x} = 1/e^x \)
-       </span>
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercice">
-       10.1.1.5. Exercice
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#representation-des-nombres-sur-un-ordinateur">
-     10.1.2. Représentation des nombres sur un ordinateur
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exemple">
-       10.1.2.1. Exemple
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#precision-des-calculs">
-   10.2. Précision des calculs
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#precision-machine-epsilon">
-     10.2.1. Précision machine
-     <span class="math notranslate nohighlight">
-      \(\epsilon\)
-     </span>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#algorithme-de-calcul-de-la-precision-machine">
-     10.2.2. Algorithme de calcul de la précision machine
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     10.2.3. Programme Python
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#erreurs-numeriques">
-   10.3. Erreurs numériques
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exemple-racine-d-une-equation-du-2nd-degre">
-     10.3.1. Exemple: racine d’une équation du 2nd degré
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#programme-python-de-base">
-       10.3.1.1. programme Python de base
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#meilleur-approximation">
-       10.3.1.2. meilleur approximation
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#calcul-d-erreurs">
-     10.3.2. Calcul d’erreurs
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#regles-sur-les-erreurs">
-       10.3.2.1. règles sur les erreurs
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#condition-sur-l-erreur-relative">
-       10.3.2.2. condition sur l” erreur relative
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#conditionnement-et-erreurs-d-approximation">
-   10.4. Conditionnement et erreurs d’approximation
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sensibilite-aux-erreurs">
-     10.4.1. sensibilité aux erreurs
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#erreurs-d-approximation">
-     10.4.2. Erreurs d’approximation
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#ordre-d-approximation">
-       10.4.2.1. Ordre d’approximation
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exemple-calcul-de-e-a-avec-des-tables-pour-0-a-1">
-     10.4.3. Exemple: calcul de
-     <span class="math notranslate nohighlight">
-      \(e^a\)
-     </span>
-     avec des tables pour
-     <span class="math notranslate nohighlight">
-      \(0 &lt; a &lt; 1\)
-     </span>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#algorithme-approximation-de-exp-a-a-l-aide-de-tables">
-     10.4.4. Algorithme: approximation de exp(a) à l’aide de tables
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     10.4.5. Programme Python
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#comparaison-avec-le-calcul-utilisant-les-series-entieres">
-     10.4.6. comparaison avec le calcul utilisant les séries entières
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     10.4.7. Exercice:
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#verification-des-calculs">
-   10.5. Vérification des calculs
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#validation-de-la-simulation-d-alunissage">
-     10.5.1. validation de la simulation d’alunissage
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#validation-du-calcul-de-exp-a-avec-n-valeurs-tabulees">
-     10.5.2. Validation du calcul de
-     <span class="math notranslate nohighlight">
-      \(exp(a)\)
-     </span>
-     avec
-     <span class="math notranslate nohighlight">
-      \(n\)
-     </span>
-     valeurs tabulées
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id4">
-       10.5.2.1. programme Python
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-href-sommaire-bibliographie-a-a-name-section2">
-   10.6.
-   <a href="#sommaire">
-    Bibliographie
-   </a>
-   <a name="section2">
-   </a>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fin-de-la-lecon">
-   10.7. FIN de la leçon
-  </a>
- </li>
-</ul>
 
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            
-              <div>
+              
                 
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <a class="reference internal image-reference" href="../_images/logo_trans11.png"><img alt="LyonHPC" src="../_images/logo_trans11.png" style="width: 180px;" /></a>
 <a class="reference internal image-reference" href="../_images/python-logo11.gif"><img alt="LyonHPC" src="../_images/python-logo11.gif" style="width: 200px;" /></a>
-<div class="tex2jax_ignore mathjax_ignore section" id="precision-et-validation">
-<h1><span class="section-number">10. </span>Précision et validation<a class="headerlink" href="#precision-et-validation" title="Lien permanent vers ce titre">¶</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="precision-et-validation">
+<h1><span class="section-number">11. </span>Précision et validation<a class="headerlink" href="#precision-et-validation" title="Lien vers cette rubrique">#</a></h1>
 <a class="reference internal image-reference" href="../_images/cloud_precision.png"><img alt="sommaire" src="../_images/cloud_precision.png" style="width: 300px;" /></a>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -802,16 +490,16 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="erreur-de-representation">
-<h2><span class="section-number">10.1. </span>Erreur de représentation<a class="headerlink" href="#erreur-de-representation" title="Lien permanent vers ce titre">¶</a></h2>
+<section id="erreur-de-representation">
+<h2><span class="section-number">11.1. </span>Erreur de représentation<a class="headerlink" href="#erreur-de-representation" title="Lien vers cette rubrique">#</a></h2>
 <p><em>Les nombres réels n’ont pas de représentation exacte sur un ordinateur</em></p>
-<div class="section" id="exemple-preliminaire">
-<h3><span class="section-number">10.1.1. </span>Exemple préliminaire<a class="headerlink" href="#exemple-preliminaire" title="Lien permanent vers ce titre">¶</a></h3>
+<section id="exemple-preliminaire">
+<h3><span class="section-number">11.1.1. </span>Exemple préliminaire<a class="headerlink" href="#exemple-preliminaire" title="Lien vers cette rubrique">#</a></h3>
 <p>Calcul de la somme <span class="math notranslate nohighlight">\(S_n\)</span> de la série convergente:</p>
 <div class="math notranslate nohighlight">
 \[S_n = \sum_{i=0}^n \frac{x^i}{i!} \]</div>
-<div class="section" id="algorithme">
-<h4><span class="section-number">10.1.1.1. </span>Algorithme<a class="headerlink" href="#algorithme" title="Lien permanent vers ce titre">¶</a></h4>
+<section id="algorithme">
+<h4><span class="section-number">11.1.1.1. </span>Algorithme<a class="headerlink" href="#algorithme" title="Lien vers cette rubrique">#</a></h4>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Algorithme serie(x,n)
      term  = 1.
      somme = 1.
@@ -822,9 +510,9 @@ const thebe_selector_output = ".output, .cell_output"
      Serie = somme
 </pre></div>
 </div>
-</div>
-<div class="section" id="programme-python">
-<h4><span class="section-number">10.1.1.2. </span>Programme Python<a class="headerlink" href="#programme-python" title="Lien permanent vers ce titre">¶</a></h4>
+</section>
+<section id="programme-python">
+<h4><span class="section-number">11.1.1.2. </span>Programme Python<a class="headerlink" href="#programme-python" title="Lien vers cette rubrique">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">serie</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="p">)</span> <span class="p">:</span>
@@ -838,9 +526,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="applications">
-<h4><span class="section-number">10.1.1.3. </span>Applications<a class="headerlink" href="#applications" title="Lien permanent vers ce titre">¶</a></h4>
+</section>
+<section id="applications">
+<h4><span class="section-number">11.1.1.3. </span>Applications<a class="headerlink" href="#applications" title="Lien vers cette rubrique">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">exp</span>
@@ -875,9 +563,9 @@ Pour x= -100.0  serie= -2.9137556468915326e+25  exp(x)= 3.720075976020836e-44
 </div>
 </div>
 <p>Pour <span class="math notranslate nohighlight">\(x &lt; 0\)</span> , la série converge mais numériquement le calcul diverge à cause des erreurs d’arrondis.</p>
-</div>
-<div class="section" id="solution-utilisation-de-la-propriete-e-x-1-e-x">
-<h4><span class="section-number">10.1.1.4. </span>Solution: utilisation de la propriété <span class="math notranslate nohighlight">\(e^{-x} = 1/e^x \)</span><a class="headerlink" href="#solution-utilisation-de-la-propriete-e-x-1-e-x" title="Lien permanent vers ce titre">¶</a></h4>
+</section>
+<section id="solution-utilisation-de-la-propriete-e-x-1-e-x">
+<h4><span class="section-number">11.1.1.4. </span>Solution: utilisation de la propriété <span class="math notranslate nohighlight">\(e^{-x} = 1/e^x \)</span><a class="headerlink" href="#solution-utilisation-de-la-propriete-e-x-1-e-x" title="Lien vers cette rubrique">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mf">100.0</span>
@@ -891,17 +579,17 @@ Pour x= -100.0  serie= -2.9137556468915326e+25  exp(x)= 3.720075976020836e-44
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="exercice">
-<h4><span class="section-number">10.1.1.5. </span>Exercice<a class="headerlink" href="#exercice" title="Lien permanent vers ce titre">¶</a></h4>
+</section>
+<section id="exercice">
+<h4><span class="section-number">11.1.1.5. </span>Exercice<a class="headerlink" href="#exercice" title="Lien vers cette rubrique">#</a></h4>
 <p>On peut améliorer la précision du calcul en notant que pour <span class="math notranslate nohighlight">\(x&gt;0\)</span>, on peut écrire:</p>
 <div class="math notranslate nohighlight">
 \[e^x = (e^{x_0})^n \mbox{ avec } 0\le x_0 \le1 \]</div>
 <p>Réécrire l’algorithme précédent en utilisant cette propriété.</p>
-</div>
-</div>
-<div class="section" id="representation-des-nombres-sur-un-ordinateur">
-<h3><span class="section-number">10.1.2. </span>Représentation des nombres sur un ordinateur<a class="headerlink" href="#representation-des-nombres-sur-un-ordinateur" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+</section>
+<section id="representation-des-nombres-sur-un-ordinateur">
+<h3><span class="section-number">11.1.2. </span>Représentation des nombres sur un ordinateur<a class="headerlink" href="#representation-des-nombres-sur-un-ordinateur" title="Lien vers cette rubrique">#</a></h3>
 <ul class="simple">
 <li><p>nombre entier exacte (32 bits): <span class="math notranslate nohighlight">\(-2^{31}\le n \le 2^{31}\)</span></p></li>
 <li><p>nombre réel: mantisse + exposant:</p></li>
@@ -917,8 +605,8 @@ normalisé = mantisse+exposant</p>
 <li><p>simple précision 32 bits: <span class="math notranslate nohighlight">\(t=7\)</span>,  <span class="math notranslate nohighlight">\(-45&lt;q&lt;38\)</span></p></li>
 <li><p>double précision 64 bits: <span class="math notranslate nohighlight">\(t=15\)</span>, <span class="math notranslate nohighlight">\(-324&lt;q&lt;308\)</span></p></li>
 </ul>
-<div class="section" id="exemple">
-<h4><span class="section-number">10.1.2.1. </span>Exemple<a class="headerlink" href="#exemple" title="Lien permanent vers ce titre">¶</a></h4>
+<section id="exemple">
+<h4><span class="section-number">11.1.2.1. </span>Exemple<a class="headerlink" href="#exemple" title="Lien vers cette rubrique">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">1.</span>
@@ -965,18 +653,18 @@ s= 0.30000000000000004
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="precision-des-calculs">
-<h2><span class="section-number">10.2. </span>Précision des calculs<a class="headerlink" href="#precision-des-calculs" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="section" id="precision-machine-epsilon">
-<h3><span class="section-number">10.2.1. </span>Précision machine <span class="math notranslate nohighlight">\(\epsilon\)</span><a class="headerlink" href="#precision-machine-epsilon" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+</section>
+</section>
+<section id="precision-des-calculs">
+<h2><span class="section-number">11.2. </span>Précision des calculs<a class="headerlink" href="#precision-des-calculs" title="Lien vers cette rubrique">#</a></h2>
+<section id="precision-machine-epsilon">
+<h3><span class="section-number">11.2.1. </span>Précision machine <span class="math notranslate nohighlight">\(\epsilon\)</span><a class="headerlink" href="#precision-machine-epsilon" title="Lien vers cette rubrique">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\frac{\left\Vert a-fl(a)\right\Vert }{\left\Vert a\right\Vert }\le\epsilon\]</div>
-</div>
-<div class="section" id="algorithme-de-calcul-de-la-precision-machine">
-<h3><span class="section-number">10.2.2. </span>Algorithme de calcul de la précision machine<a class="headerlink" href="#algorithme-de-calcul-de-la-precision-machine" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="algorithme-de-calcul-de-la-precision-machine">
+<h3><span class="section-number">11.2.2. </span>Algorithme de calcul de la précision machine<a class="headerlink" href="#algorithme-de-calcul-de-la-precision-machine" title="Lien vers cette rubrique">#</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Algorithme Precision()
     eps = 1.
     tant que 1. + eps &gt; 1.
@@ -985,13 +673,13 @@ s= 0.30000000000000004
     Precision = 2*eps
 </pre></div>
 </div>
-</div>
-<div class="section" id="id1">
-<h3><span class="section-number">10.2.3. </span>Programme Python<a class="headerlink" href="#id1" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="id1">
+<h3><span class="section-number">11.2.3. </span>Programme Python<a class="headerlink" href="#id1" title="Lien vers cette rubrique">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Precision</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot; calcul la precision machine &quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; calcul la precision machine &quot;&quot;&quot;</span>
     <span class="n">eps</span> <span class="o">=</span> <span class="mf">1.0</span>
     <span class="k">while</span> <span class="p">(</span><span class="mf">1.</span><span class="o">+</span><span class="n">eps</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">1.0</span> <span class="p">:</span>
         <span class="n">eps</span> <span class="o">=</span> <span class="n">eps</span><span class="o">/</span><span class="mf">2.</span>
@@ -1007,21 +695,21 @@ s= 0.30000000000000004
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="erreurs-numeriques">
-<h2><span class="section-number">10.3. </span>Erreurs numériques<a class="headerlink" href="#erreurs-numeriques" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+</section>
+<section id="erreurs-numeriques">
+<h2><span class="section-number">11.3. </span>Erreurs numériques<a class="headerlink" href="#erreurs-numeriques" title="Lien vers cette rubrique">#</a></h2>
 <ul class="simple">
 <li><p>non associativité de l’addition et soustraction</p></li>
 <li><p>formule exacte <span class="math notranslate nohighlight">\(\leadsto\)</span> résultats numériques faux</p></li>
 <li><p>absorption <span class="math notranslate nohighlight">\(x + y = x\)</span>  si <span class="math notranslate nohighlight">\(y \ll x\)</span></p></li>
 </ul>
-<div class="section" id="exemple-racine-d-une-equation-du-2nd-degre">
-<h3><span class="section-number">10.3.1. </span>Exemple: racine d’une équation du 2nd degré<a class="headerlink" href="#exemple-racine-d-une-equation-du-2nd-degre" title="Lien permanent vers ce titre">¶</a></h3>
+<section id="exemple-racine-d-une-equation-du-2nd-degre">
+<h3><span class="section-number">11.3.1. </span>Exemple: racine d’une équation du 2nd degré<a class="headerlink" href="#exemple-racine-d-une-equation-du-2nd-degre" title="Lien vers cette rubrique">#</a></h3>
 <div class="math notranslate nohighlight">
 \[x=\frac{-b\mp\sqrt{b^{2}-4ac}}{2a}\]</div>
-<div class="section" id="programme-python-de-base">
-<h4><span class="section-number">10.3.1.1. </span>programme Python de base<a class="headerlink" href="#programme-python-de-base" title="Lien permanent vers ce titre">¶</a></h4>
+<section id="programme-python-de-base">
+<h4><span class="section-number">11.3.1.1. </span>programme Python de base<a class="headerlink" href="#programme-python-de-base" title="Lien vers cette rubrique">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">sqrt</span>
@@ -1044,9 +732,9 @@ x1*x2= 2.220446049250313 # produit= 1.0
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="meilleur-approximation">
-<h4><span class="section-number">10.3.1.2. </span>meilleur approximation<a class="headerlink" href="#meilleur-approximation" title="Lien permanent vers ce titre">¶</a></h4>
+</section>
+<section id="meilleur-approximation">
+<h4><span class="section-number">11.3.1.2. </span>meilleur approximation<a class="headerlink" href="#meilleur-approximation" title="Lien vers cette rubrique">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x2</span> <span class="o">=</span> <span class="n">c</span><span class="o">/</span><span class="n">a</span><span class="o">/</span><span class="n">x1</span>
@@ -1062,12 +750,12 @@ x1*x2= 1.0 = produit= 1.0
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="calcul-d-erreurs">
-<h3><span class="section-number">10.3.2. </span>Calcul d’erreurs<a class="headerlink" href="#calcul-d-erreurs" title="Lien permanent vers ce titre">¶</a></h3>
-<div class="section" id="regles-sur-les-erreurs">
-<h4><span class="section-number">10.3.2.1. </span>règles sur les erreurs<a class="headerlink" href="#regles-sur-les-erreurs" title="Lien permanent vers ce titre">¶</a></h4>
+</section>
+</section>
+<section id="calcul-d-erreurs">
+<h3><span class="section-number">11.3.2. </span>Calcul d’erreurs<a class="headerlink" href="#calcul-d-erreurs" title="Lien vers cette rubrique">#</a></h3>
+<section id="regles-sur-les-erreurs">
+<h4><span class="section-number">11.3.2.1. </span>règles sur les erreurs<a class="headerlink" href="#regles-sur-les-erreurs" title="Lien vers cette rubrique">#</a></h4>
 <div class="math notranslate nohighlight">
 \[\Delta(x+y)=\Delta x+\Delta y\]</div>
 <div class="math notranslate nohighlight">
@@ -1076,32 +764,32 @@ x1*x2= 1.0 = produit= 1.0
 \[\Delta(x*y)=\left|y\right|\Delta x+\left|x\right|\Delta y\]</div>
 <div class="math notranslate nohighlight">
 \[\Delta(\frac{x}{y})=\frac{\left|y\right|\Delta x+\left|x\right|\Delta y}{y^{2}}\]</div>
-</div>
-<div class="section" id="condition-sur-l-erreur-relative">
-<h4><span class="section-number">10.3.2.2. </span>condition sur l” erreur relative<a class="headerlink" href="#condition-sur-l-erreur-relative" title="Lien permanent vers ce titre">¶</a></h4>
+</section>
+<section id="condition-sur-l-erreur-relative">
+<h4><span class="section-number">11.3.2.2. </span>condition sur l” erreur relative<a class="headerlink" href="#condition-sur-l-erreur-relative" title="Lien vers cette rubrique">#</a></h4>
 <div class="math notranslate nohighlight">
 \[\frac{\Delta x}{|x|} \le \epsilon \]</div>
-</div>
-</div>
-</div>
-<div class="section" id="conditionnement-et-erreurs-d-approximation">
-<h2><span class="section-number">10.4. </span>Conditionnement et erreurs d’approximation<a class="headerlink" href="#conditionnement-et-erreurs-d-approximation" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="section" id="sensibilite-aux-erreurs">
-<h3><span class="section-number">10.4.1. </span>sensibilité aux erreurs<a class="headerlink" href="#sensibilite-aux-erreurs" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+</section>
+</section>
+<section id="conditionnement-et-erreurs-d-approximation">
+<h2><span class="section-number">11.4. </span>Conditionnement et erreurs d’approximation<a class="headerlink" href="#conditionnement-et-erreurs-d-approximation" title="Lien vers cette rubrique">#</a></h2>
+<section id="sensibilite-aux-erreurs">
+<h3><span class="section-number">11.4.1. </span>sensibilité aux erreurs<a class="headerlink" href="#sensibilite-aux-erreurs" title="Lien vers cette rubrique">#</a></h3>
 <p><strong>Conditionnement</strong> sensibilité du résultat à une petite variation des données.</p>
 <p>Problème mal conditionné=grande sensibilité vis à vis des données.</p>
 <p><strong>Stabilité</strong> sensibilité de l’algorithme vis a vis des erreurs numériques</p>
-</div>
-<div class="section" id="erreurs-d-approximation">
-<h3><span class="section-number">10.4.2. </span>Erreurs d’approximation<a class="headerlink" href="#erreurs-d-approximation" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="erreurs-d-approximation">
+<h3><span class="section-number">11.4.2. </span>Erreurs d’approximation<a class="headerlink" href="#erreurs-d-approximation" title="Lien vers cette rubrique">#</a></h3>
 <p>Soit <span class="math notranslate nohighlight">\(U^h\)</span> une approximation de la solution <span class="math notranslate nohighlight">\(U_{ex}\)</span>  fonction d’un petit paramètre d’approximation <span class="math notranslate nohighlight">\(h\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\lim_{h \rightarrow 0}{U^h} = U_{ex} \]</div>
 <p>Erreur <span class="math notranslate nohighlight">\(E(h)\)</span></p>
 <div class="math notranslate nohighlight">
 \[ E(h) =  \left\Vert U^h - U_{ex} \right\Vert \rightarrow 0 \]</div>
-<div class="section" id="ordre-d-approximation">
-<h4><span class="section-number">10.4.2.1. </span>Ordre d’approximation<a class="headerlink" href="#ordre-d-approximation" title="Lien permanent vers ce titre">¶</a></h4>
+<section id="ordre-d-approximation">
+<h4><span class="section-number">11.4.2.1. </span>Ordre d’approximation<a class="headerlink" href="#ordre-d-approximation" title="Lien vers cette rubrique">#</a></h4>
 <p><strong>Ordre <span class="math notranslate nohighlight">\(O(h^{n})\)</span></strong></p>
 <ul class="simple">
 <li><p>La fonction <span class="math notranslate nohighlight">\(E(h)\)</span> est en <span class="math notranslate nohighlight">\(O(h^{n})\)</span> s’il existe une constante <span class="math notranslate nohighlight">\(C&gt;0\)</span> telle que <span class="math notranslate nohighlight">\(\left|E(h)\right|&lt;Ch^{n}\)</span></p></li>
@@ -1110,10 +798,10 @@ x1*x2= 1.0 = produit= 1.0
 <ul class="simple">
 <li><p>si l’erreur est en <span class="math notranslate nohighlight">\(O(h^{n})\)</span>, alors l” approximation est d’ordre n</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="exemple-calcul-de-e-a-avec-des-tables-pour-0-a-1">
-<h3><span class="section-number">10.4.3. </span>Exemple: calcul de <span class="math notranslate nohighlight">\(e^a\)</span> avec des tables pour <span class="math notranslate nohighlight">\(0 &lt; a &lt; 1\)</span><a class="headerlink" href="#exemple-calcul-de-e-a-avec-des-tables-pour-0-a-1" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+</section>
+<section id="exemple-calcul-de-e-a-avec-des-tables-pour-0-a-1">
+<h3><span class="section-number">11.4.3. </span>Exemple: calcul de <span class="math notranslate nohighlight">\(e^a\)</span> avec des tables pour <span class="math notranslate nohighlight">\(0 &lt; a &lt; 1\)</span><a class="headerlink" href="#exemple-calcul-de-e-a-avec-des-tables-pour-0-a-1" title="Lien vers cette rubrique">#</a></h3>
 <p>On précalcule  <span class="math notranslate nohighlight">\(n+1\)</span> valeurs <span class="math notranslate nohighlight">\(l_k=\log(1 + 10^{-k})\)</span> ( pour <span class="math notranslate nohighlight">\(k=0,n\)</span> )</p>
 <p>On a donc <span class="math notranslate nohighlight">\(e^{l_k} = 1 + 10^{-k}\)</span></p>
 <p>On décompose ensuite <span class="math notranslate nohighlight">\(a\)</span> sous la forme</p>
@@ -1128,9 +816,9 @@ x1*x2= 1.0 = produit= 1.0
 <p>avec une erreur relative  <span class="math notranslate nohighlight">\(\epsilon^2\)</span></p>
 <div class="math notranslate nohighlight">
 \[ \frac{\Delta e^a}{e^a} = \frac {e^\epsilon- 1 - \epsilon}{e^\epsilon} \simeq \theta(\epsilon^2)\]</div>
-</div>
-<div class="section" id="algorithme-approximation-de-exp-a-a-l-aide-de-tables">
-<h3><span class="section-number">10.4.4. </span>Algorithme: approximation de exp(a) à l’aide de tables<a class="headerlink" href="#algorithme-approximation-de-exp-a-a-l-aide-de-tables" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="algorithme-approximation-de-exp-a-a-l-aide-de-tables">
+<h3><span class="section-number">11.4.4. </span>Algorithme: approximation de exp(a) à l’aide de tables<a class="headerlink" href="#algorithme-approximation-de-exp-a-a-l-aide-de-tables" title="Lien vers cette rubrique">#</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Algorithme Exp(a)
     n = 8  # nbre de valeurs de la table
     L = [ln(1),ln(1+0.1),ln(1+0.01),...ln(1+10^-7)]
@@ -1151,9 +839,9 @@ x1*x2= 1.0 = produit= 1.0
      retour y
 </pre></div>
 </div>
-</div>
-<div class="section" id="id2">
-<h3><span class="section-number">10.4.5. </span>Programme Python<a class="headerlink" href="#id2" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="id2">
+<h3><span class="section-number">11.4.5. </span>Programme Python<a class="headerlink" href="#id2" title="Lien vers cette rubrique">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">exp</span><span class="p">,</span><span class="n">log</span><span class="p">,</span><span class="n">log1p</span>
@@ -1162,7 +850,7 @@ x1*x2= 1.0 = produit= 1.0
 <span class="n">L</span><span class="o">=</span><span class="p">[</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="n">k</span><span class="p">))</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
 <span class="c1"># calcul exp(a)</span>
 <span class="k">def</span> <span class="nf">Exp</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; calcul approximation y de exp(a)&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; calcul approximation y de exp(a)&quot;&quot;&quot;</span>
     <span class="k">global</span> <span class="n">L</span><span class="p">,</span><span class="n">n</span>
     <span class="n">x</span><span class="o">=</span><span class="n">a</span>
     <span class="n">y</span><span class="o">=</span><span class="mf">1.</span>
@@ -1189,9 +877,9 @@ Erreur relative =  4.4405368413432215e-16
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="comparaison-avec-le-calcul-utilisant-les-series-entieres">
-<h3><span class="section-number">10.4.6. </span>comparaison avec le calcul utilisant les séries entières<a class="headerlink" href="#comparaison-avec-le-calcul-utilisant-les-series-entieres" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="comparaison-avec-le-calcul-utilisant-les-series-entieres">
+<h3><span class="section-number">11.4.6. </span>comparaison avec le calcul utilisant les séries entières<a class="headerlink" href="#comparaison-avec-le-calcul-utilisant-les-series-entieres" title="Lien vers cette rubrique">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -1216,7 +904,7 @@ Erreur relative =  4.4405368413432215e-16
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Precision_32_0.png" src="../_images/Precision_32_0.png" />
+<img alt="../_images/233b914aeb8903663347b279387c9273b4172da7eb95af87ed6aea3624f6d922.png" src="../_images/233b914aeb8903663347b279387c9273b4172da7eb95af87ed6aea3624f6d922.png" />
 </div>
 </div>
 <p><strong>Remarques</strong></p>
@@ -1224,18 +912,18 @@ Erreur relative =  4.4405368413432215e-16
 <li><p>on peut améliorer la précision en utilisant la fonction numpy <strong>log1p(x)</strong> qui calcul log(1+x) avec une plus grande précision pour x petit</p></li>
 <li><p><strong>attention</strong> le calcul précis des fonctions élémentaires est un problème complexe (voir l’article sur la précsion de l’instruction <strong>fsin</strong> des processeurs Intel)</p></li>
 </ul>
-</div>
-<div class="section" id="id3">
-<h3><span class="section-number">10.4.7. </span>Exercice:<a class="headerlink" href="#id3" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="id3">
+<h3><span class="section-number">11.4.7. </span>Exercice:<a class="headerlink" href="#id3" title="Lien vers cette rubrique">#</a></h3>
 <p>Utiliser le principe de l’algorithme précédent pour calculer <span class="math notranslate nohighlight">\(log(a)\)</span> pour <span class="math notranslate nohighlight">\(a&gt;1\)</span>.
 On pourra décomposer <span class="math notranslate nohighlight">\(a\)</span> sous la forme:</p>
 <div class="math notranslate nohighlight">
 \[a = \left[\prod_{k=0}^{n}\left(1 + 10^{-k}\right)^{a_k}\right] (1+\epsilon)\]</div>
 <p>En déduire une approximation de <span class="math notranslate nohighlight">\(log(a)\)</span> avec une erreur relative de <span class="math notranslate nohighlight">\(\epsilon^2\)</span></p>
-</div>
-</div>
-<div class="section" id="verification-des-calculs">
-<h2><span class="section-number">10.5. </span>Vérification des calculs<a class="headerlink" href="#verification-des-calculs" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+</section>
+<section id="verification-des-calculs">
+<h2><span class="section-number">11.5. </span>Vérification des calculs<a class="headerlink" href="#verification-des-calculs" title="Lien vers cette rubrique">#</a></h2>
 <ul class="simple">
 <li><p>une simulation numérique calcule une approximation</p></li>
 <li><p>toute simulation numérique doit être validée</p></li>
@@ -1246,8 +934,8 @@ On pourra décomposer <span class="math notranslate nohighlight">\(a\)</span> so
 <li><p>une vérification de la convergence</p></li>
 <li><p>une comparaison avec une solution analytique ou une solution de référence</p></li>
 </ul>
-<div class="section" id="validation-de-la-simulation-d-alunissage">
-<h3><span class="section-number">10.5.1. </span>validation de la simulation d’alunissage<a class="headerlink" href="#validation-de-la-simulation-d-alunissage" title="Lien permanent vers ce titre">¶</a></h3>
+<section id="validation-de-la-simulation-d-alunissage">
+<h3><span class="section-number">11.5.1. </span>validation de la simulation d’alunissage<a class="headerlink" href="#validation-de-la-simulation-d-alunissage" title="Lien vers cette rubrique">#</a></h3>
 <p><strong>comparaison avec une solution analytique</strong></p>
 <p>Dans la modélisation de alunissage on a utiliser une approximation de la solution de l’équation du mouvement:</p>
 <div class="math notranslate nohighlight">
@@ -1307,23 +995,23 @@ l’erreur doit etre en <span class="math notranslate nohighlight">\(\theta(X^7)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Precision_37_0.png" src="../_images/Precision_37_0.png" />
+<img alt="../_images/cd9497acbe84df548e06e927f5e6c87bea4888853859388099b0deb3ab427274.png" src="../_images/cd9497acbe84df548e06e927f5e6c87bea4888853859388099b0deb3ab427274.png" />
 </div>
 </div>
-</div>
-<div class="section" id="validation-du-calcul-de-exp-a-avec-n-valeurs-tabulees">
-<h3><span class="section-number">10.5.2. </span>Validation du calcul de <span class="math notranslate nohighlight">\(exp(a)\)</span> avec <span class="math notranslate nohighlight">\(n\)</span> valeurs tabulées<a class="headerlink" href="#validation-du-calcul-de-exp-a-avec-n-valeurs-tabulees" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="validation-du-calcul-de-exp-a-avec-n-valeurs-tabulees">
+<h3><span class="section-number">11.5.2. </span>Validation du calcul de <span class="math notranslate nohighlight">\(exp(a)\)</span> avec <span class="math notranslate nohighlight">\(n\)</span> valeurs tabulées<a class="headerlink" href="#validation-du-calcul-de-exp-a-avec-n-valeurs-tabulees" title="Lien vers cette rubrique">#</a></h3>
 <p><strong>vérification de la convergence</strong></p>
 <p>erreur relative <span class="math notranslate nohighlight">\(err \simeq \epsilon^2\)</span> avec <span class="math notranslate nohighlight">\(\epsilon \lt 10^{-n}\)</span></p>
-<div class="section" id="id4">
-<h4><span class="section-number">10.5.2.1. </span>programme Python<a class="headerlink" href="#id4" title="Lien permanent vers ce titre">¶</a></h4>
+<section id="id4">
+<h4><span class="section-number">11.5.2.1. </span>programme Python<a class="headerlink" href="#id4" title="Lien vers cette rubrique">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="c1"># calcul exp(a) avec une precision 10^-2n</span>
 <span class="k">def</span> <span class="nf">Exp</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; calcul approximation y de exp(a)&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; calcul approximation y de exp(a)&quot;&quot;&quot;</span>
     <span class="n">L</span><span class="o">=</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="n">k</span><span class="p">))</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
     <span class="n">x</span><span class="o">=</span><span class="n">a</span>
     <span class="n">y</span><span class="o">=</span><span class="mf">1.</span>
@@ -1352,29 +1040,29 @@ l’erreur doit etre en <span class="math notranslate nohighlight">\(\theta(X^7)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Precision_39_0.png" src="../_images/Precision_39_0.png" />
+<img alt="../_images/e92303fdfe6b1f038e63f95f0caf63fc11570420c3d882c29e165d351f411979.png" src="../_images/e92303fdfe6b1f038e63f95f0caf63fc11570420c3d882c29e165d351f411979.png" />
 </div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="a-href-sommaire-bibliographie-a-a-name-section2">
-<h2><span class="section-number">10.6. </span><a href="#sommaire">Bibliographie</a><a name="section2" /><a class="headerlink" href="#a-href-sommaire-bibliographie-a-a-name-section2" title="Lien permanent vers ce titre">¶</a></h2>
-<ol class="simple">
+</section>
+</section>
+</section>
+<section id="bibliographie">
+<h2><span class="section-number">11.6. </span><a href="#sommaire">Bibliographie</a><a name="section2" /><a class="headerlink" href="#bibliographie" title="Lien vers cette rubrique">#</a></h2>
+<ol class="arabic simple">
 <li><p><a class="reference external" href="http://mp.cpgedupuydelome.fr/document.php?doc=Article%20-%20Calcul%20des%20fonctions%20usuelles%20par%20la%20calculatrice.txt">Calcul des fonctions usuelles sur une calculatrice (blog prépa Dupuis de Lome)</a></p></li>
 <li><p><a class="reference external" href="https://www.irisa.fr/sage/jocelyne/cours/HPC/prec-1101.pdf">Calcul scientifique (J. Erhel INRIA -Rennes)</a></p></li>
 <li><p><a class="reference external" href="http://randomascii.wordpress.com/2014/10/09/intel-underestimates-error-bounds-by-1-3-quintillion">Intel Underestimates Error Bounds by 1.3 quintillion for the fsin instruction</a></p></li>
 <li><p><a class="reference external" href="http://www5.in.tum.de/~huckle/bugse.html">Collection of software bugs</a></p></li>
 <li><p>J. P. Demailly. « Analyse Numérique et Equations Différentielles », PUG, 1994.</p></li>
 </ol>
-</div>
-<div class="section" id="fin-de-la-lecon">
-<h2><span class="section-number">10.7. </span>FIN de la leçon<a class="headerlink" href="#fin-de-la-lecon" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="fin-de-la-lecon">
+<h2><span class="section-number">11.7. </span>FIN de la leçon<a class="headerlink" href="#fin-de-la-lecon" title="Lien vers cette rubrique">#</a></h2>
 <a class="reference internal image-reference" href="../_images/cloud_precision.png"><img alt="sommaire" src="../_images/cloud_precision.png" style="width: 300px;" /></a>
-</div>
+</section>
 <div class="toctree-wrapper compound">
 </div>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1388,7 +1076,7 @@ l’erreur doit etre en <span class="math notranslate nohighlight">\(\theta(X^7)
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./CHAP9"
         },
         predefinedOutput: true
@@ -1396,44 +1084,159 @@ l’erreur doit etre en <span class="math notranslate nohighlight">\(\theta(X^7)
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../CHAP8/COURS_FICHIER.html" title="précédent page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">précédent</p>
-            <p class="prev-next-title"><span class="section-number">9. </span>Gestion de fichiers et E/S</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../CHAP8/COURS_FICHIER.html"
+       title="page précédente">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">précédent</p>
+        <p class="prev-next-title"><span class="section-number">10. </span>Gestion de fichiers et E/S</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="Exercices_precision.html" title="suivant page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="Exercices_precision.html"
+       title="page suivante">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">suivant</p>
-        <p class="prev-next-title"><span class="section-number">10.8. </span>Exercices</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+        <p class="prev-next-title"><span class="section-number">11.8. </span>Exercices</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
+                </footer>
+              
+            </div>
             
-        </div>
-    </div>
-    <footer class="footer">
-  <p>
-    
-      Par Marc BUFFAT, dpt mécanique, Lyon 1<br/>
-    
-        &copy; droits d'auteur 2022.<br/>
-  </p>
-</footer>
-</main>
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-      </div>
-    </div>
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenu
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#erreur-de-representation">11.1. Erreur de représentation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-preliminaire">11.1.1. Exemple préliminaire</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithme">11.1.1.1. Algorithme</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#programme-python">11.1.1.2. Programme Python</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#applications">11.1.1.3. Applications</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#solution-utilisation-de-la-propriete-e-x-1-e-x">11.1.1.4. Solution: utilisation de la propriété <span class="math notranslate nohighlight">\(e^{-x} = 1/e^x \)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice">11.1.1.5. Exercice</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#representation-des-nombres-sur-un-ordinateur">11.1.2. Représentation des nombres sur un ordinateur</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple">11.1.2.1. Exemple</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#precision-des-calculs">11.2. Précision des calculs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#precision-machine-epsilon">11.2.1. Précision machine <span class="math notranslate nohighlight">\(\epsilon\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithme-de-calcul-de-la-precision-machine">11.2.2. Algorithme de calcul de la précision machine</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">11.2.3. Programme Python</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#erreurs-numeriques">11.3. Erreurs numériques</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-racine-d-une-equation-du-2nd-degre">11.3.1. Exemple: racine d’une équation du 2nd degré</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#programme-python-de-base">11.3.1.1. programme Python de base</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#meilleur-approximation">11.3.1.2. meilleur approximation</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calcul-d-erreurs">11.3.2. Calcul d’erreurs</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#regles-sur-les-erreurs">11.3.2.1. règles sur les erreurs</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#condition-sur-l-erreur-relative">11.3.2.2. condition sur l” erreur relative</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditionnement-et-erreurs-d-approximation">11.4. Conditionnement et erreurs d’approximation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sensibilite-aux-erreurs">11.4.1. sensibilité aux erreurs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#erreurs-d-approximation">11.4.2. Erreurs d’approximation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ordre-d-approximation">11.4.2.1. Ordre d’approximation</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-calcul-de-e-a-avec-des-tables-pour-0-a-1">11.4.3. Exemple: calcul de <span class="math notranslate nohighlight">\(e^a\)</span> avec des tables pour <span class="math notranslate nohighlight">\(0 &lt; a &lt; 1\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithme-approximation-de-exp-a-a-l-aide-de-tables">11.4.4. Algorithme: approximation de exp(a) à l’aide de tables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">11.4.5. Programme Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparaison-avec-le-calcul-utilisant-les-series-entieres">11.4.6. comparaison avec le calcul utilisant les séries entières</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">11.4.7. Exercice:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verification-des-calculs">11.5. Vérification des calculs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validation-de-la-simulation-d-alunissage">11.5.1. validation de la simulation d’alunissage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validation-du-calcul-de-exp-a-avec-n-valeurs-tabulees">11.5.2. Validation du calcul de <span class="math notranslate nohighlight">\(exp(a)\)</span> avec <span class="math notranslate nohighlight">\(n\)</span> valeurs tabulées</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">11.5.2.1. programme Python</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliographie">11.6. <a href="#sommaire">Bibliographie</a><a name="section2"></a></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fin-de-la-lecon">11.7. FIN de la leçon</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <div class="footer-item">
+    
+<p class="component-author">
+Par Marc BUFFAT, dpt mécanique, Lyon 1
+</p>
 
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

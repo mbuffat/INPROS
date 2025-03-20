@@ -2,7 +2,7 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: intro
+root: index
 defaults:
   titlesonly: True
 
@@ -10,6 +10,7 @@ parts:
 - caption: INPROS
   numbered: True
   chapters:
+  - file: intro
   - file: CHAP1/COURS_INTRO
   - file: CHAP2/COURS_ORDI
   - file: CHAP3/COURS_VAR
@@ -33,6 +34,7 @@ parts:
 - caption: Annexes
   chapters:
   - file: RAPPEL/COURS_RAPPEL
+  - file: reference
   - file: credits
 
 #- file: markdown

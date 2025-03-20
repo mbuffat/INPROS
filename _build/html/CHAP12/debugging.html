@@ -1,491 +1,445 @@
 
 <!DOCTYPE html>
 
-<html lang="fr">
+
+<html lang="fr" data-content_root="../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>13. Recherche d’erreurs &#8212; INPROS INtroduction à la PROgrammation Scientifique en Python</title>
-    
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    <title>14. Recherche d’erreurs &#8212; INPROS INtroduction à la PROgrammation Scientifique en Python</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    
-      
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/documentation_options.js?v=72dce1d2"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=5eb1bb1e"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
-    <script src="../_static/translations.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/translations.js?v=041d0952"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CHAP12/debugging';</script>
     <link rel="canonical" href="https://perso.univ-lyon1.fr/marc.buffat/CHAP12/debugging.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
     <link rel="next" title="Rappel de maths et physique" href="../RAPPEL/COURS_RAPPEL.html" />
-    <link rel="prev" title="12. Efficacité / complexité" href="../CHAP11/Efficiency.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="fr">
-    
-
-    <!-- Google Analytics -->
-    
+    <link rel="prev" title="13. Efficacité / complexité" href="../CHAP11/Efficiency.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="fr"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Passer au contenu principal</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Haut de page</button>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">INPROS INtroduction à la PROgrammation Scientifique en Python</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Rechercher dans ce livre ..." aria-label="Rechercher dans ce livre ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   INtroduction à la PROgrammation Scientifique
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  INPROS
- </span>
-</p>
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="INPROS INtroduction à la PROgrammation Scientifique en Python - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="INPROS INtroduction à la PROgrammation Scientifique en Python - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Recherche</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    INtroduction à la PROgrammation Scientifique
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">INPROS</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../CHAP1/COURS_INTRO.html">
-   1. Introduction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../CHAP2/COURS_ORDI.html">
-   2. Fonctionnement d’un ordinateur
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../CHAP3/COURS_VAR.html">
-   3. Variable et éléments de base
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../CHAP4/COURS_LOOP.html">
-   4. Structures de contrôle
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../CHAP4/EXERCICES_LOOP.html">
-     4.10. Exercices
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../CHAP5/COURS_FONCTION.html">
-   5. Fonctions et procédures
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../CHAP5/COURS_ALGORITHMIQUE.html">
-   6. Programmation structurée
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../CHAP6/COURS_TABLEAU.html">
-   7. Les tableaux (vecteur, matrice)
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../CHAP6/EXERCICES_TABLEAU.html">
-     7.8. Correction des exercices
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../CHAP7/COURS_PLOT.html">
-   8. Tracé avec matplotlib
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../CHAP8/COURS_FICHIER.html">
-   9. Gestion de fichiers et E/S
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../CHAP9/Precision.html">
-   10. Précision et validation
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../CHAP9/Exercices_precision.html">
-     10.8. Exercices
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../CHAP10/COURS_ALGORITHME.html">
-   11. Algorithmes numériques
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../CHAP11/Efficiency.html">
-   12. Efficacité / complexité
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   13. Recherche d’erreurs
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CHAP1/COURS_INTRO.html">2. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CHAP2/COURS_ORDI.html">3. Fonctionnement d’un ordinateur</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CHAP3/COURS_VAR.html">4. Variable et éléments de base</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../CHAP4/COURS_LOOP.html">5. Structures de contrôle</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../CHAP4/EXERCICES_LOOP.html">5.10. Exercices</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../CHAP5/COURS_FONCTION.html">6. Fonctions et procédures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CHAP5/COURS_ALGORITHMIQUE.html">7. Programmation structurée</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../CHAP6/COURS_TABLEAU.html">8. Les tableaux (vecteur, matrice)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../CHAP6/EXERCICES_TABLEAU.html">8.8. Correction des exercices</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../CHAP7/COURS_PLOT.html">9. Tracé avec matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CHAP8/COURS_FICHIER.html">10. Gestion de fichiers et E/S</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../CHAP9/Precision.html">11. Précision et validation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../CHAP9/Exercices_precision.html">11.8. Exercices</a></li>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../CHAP10/COURS_ALGORITHME.html">12. Algorithmes numériques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CHAP11/Efficiency.html">13. Efficacité / complexité</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">14. Recherche d’erreurs</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Annexes
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Annexes</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../RAPPEL/COURS_RAPPEL.html">
-   Rappel de maths et physique
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../credits.html">
-   Crédits
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../RAPPEL/COURS_RAPPEL.html">Rappel de maths et physique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../credits.html">Crédits</a></li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Crée par <a href="https://perso.univ-lyon1.fr/marc.buffat/">Marc BUFFAT</a><br> avec <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Basculer la navigation" aria-controls="site-navigation"
-                title="Basculer la navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Téléchargez cette page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/CHAP12/debugging.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Télécharger le fichier source" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimer au format PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
-            <!-- Source interaction buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/mbuffat/INPROS"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Dépôt source"><i
-                    class="fab fa-github"></i>dépôt</button></a>
-        <a class="issues-button"
-            href="https://github.com/mbuffat/INPROS/issues/new?title=Issue%20on%20page%20%2FCHAP12/debugging.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Ouvrez un problème"><i class="fas fa-lightbulb"></i>signaler un problème</button></a>
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
         
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
     </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/mbuffat/INPROS" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Dépôt source"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/mbuffat/INPROS/issues/new?title=Issue%20on%20page%20%2FCHAP12/debugging.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Ouvrez un problème"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Mode plein écran"
-        title="Mode plein écran"><i
-            class="fas fa-expand"></i></button></a>
 
-            <!-- Launch buttons -->
 
-        </div>
 
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Téléchargez cette page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/CHAP12/debugging.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Télécharger le fichier source"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimer au format PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Mode plein écran"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="clair/sombre" aria-label="clair/sombre" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Recherche d’erreurs</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contenu
+            <div>
+                <h2> Contenu </h2>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#historique">
-   13.1. Historique
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#methodologie">
-   13.2. Méthodologie
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#objectifs-du-debugging">
-     13.2.1. objectifs du debugging
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#demarche-du-debugging">
-     13.2.2. démarche du debugging
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#methode">
-     13.2.3. méthode
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exemple-de-debugging">
-   13.3. Exemple de debugging
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#principe-de-l-algorithme">
-     13.3.1. principe de l’algorithme
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#programme-avec-des-bugs">
-     13.3.2. programme avec des bugs !!
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#instrumentation-du-programme">
-     13.3.3. instrumentation du programme
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#programme-correcte">
-     13.3.4. programme correcte
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#utilisation-de-assert">
-   13.4. Utilisation de assert
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exemple-d-utilisation">
-     13.4.1. exemple d’utilisation
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fin-de-la-lecon">
-   13.5. FIN de la leçon
-  </a>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#historique">14.1. Historique</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methodologie">14.2. Méthodologie</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objectifs-du-debugging">14.2.1. objectifs du debugging</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#demarche-du-debugging">14.2.2. démarche du debugging</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#methode">14.2.3. méthode</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-de-debugging">14.3. Exemple de debugging</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#principe-de-l-algorithme">14.3.1. principe de l’algorithme</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#programme-avec-des-bugs">14.3.2. programme avec des bugs !!</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instrumentation-du-programme">14.3.3. instrumentation du programme</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#programme-correcte">14.3.4. programme correcte</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utilisation-de-assert">14.4. Utilisation de assert</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-d-utilisation">14.4.1. exemple d’utilisation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fin-de-la-lecon">14.5. FIN de la leçon</a></li>
+</ul>
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Recherche d’erreurs</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contenu </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#historique">
-   13.1. Historique
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#methodologie">
-   13.2. Méthodologie
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#objectifs-du-debugging">
-     13.2.1. objectifs du debugging
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#demarche-du-debugging">
-     13.2.2. démarche du debugging
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#methode">
-     13.2.3. méthode
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exemple-de-debugging">
-   13.3. Exemple de debugging
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#principe-de-l-algorithme">
-     13.3.1. principe de l’algorithme
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#programme-avec-des-bugs">
-     13.3.2. programme avec des bugs !!
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#instrumentation-du-programme">
-     13.3.3. instrumentation du programme
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#programme-correcte">
-     13.3.4. programme correcte
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#utilisation-de-assert">
-   13.4. Utilisation de assert
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exemple-d-utilisation">
-     13.4.1. exemple d’utilisation
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fin-de-la-lecon">
-   13.5. FIN de la leçon
-  </a>
- </li>
-</ul>
 
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            
-              <div>
+              
                 
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <a class="reference internal image-reference" href="../_images/logo_trans3.png"><img alt="LyonHPC" src="../_images/logo_trans3.png" style="width: 180px;" /></a>
 <a class="reference internal image-reference" href="../_images/python-logo3.gif"><img alt="LyonHPC" src="../_images/python-logo3.gif" style="width: 200px;" /></a>
-<div class="tex2jax_ignore mathjax_ignore section" id="recherche-d-erreurs">
-<h1><span class="section-number">13. </span>Recherche d’erreurs<a class="headerlink" href="#recherche-d-erreurs" title="Lien permanent vers ce titre">¶</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="recherche-d-erreurs">
+<h1><span class="section-number">14. </span>Recherche d’erreurs<a class="headerlink" href="#recherche-d-erreurs" title="Lien vers cette rubrique">#</a></h1>
 <a class="reference internal image-reference" href="../_images/phd011406s.gif"><img alt="../_images/phd011406s.gif" src="../_images/phd011406s.gif" style="width: 400px;" /></a>
 <p>d’après le site <a class="reference external" href="http://phdcomics.com/comics.php">http://phdcomics.com/comics.php</a></p>
 <div class="cell docutils container">
@@ -495,16 +449,22 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3746331/2753186412.py:2: DeprecationWarning: Importing display from IPython.core.display is deprecated since IPython 7.14, please import from IPython display
+  from IPython.core.display import HTML,display
+</pre></div>
 </div>
-<div class="section" id="historique">
-<h2><span class="section-number">13.1. </span>Historique<a class="headerlink" href="#historique" title="Lien permanent vers ce titre">¶</a></h2>
+</div>
+</div>
+<section id="historique">
+<h2><span class="section-number">14.1. </span>Historique<a class="headerlink" href="#historique" title="Lien vers cette rubrique">#</a></h2>
 <p>Un <strong>bug informatique</strong> ou <strong>bogue</strong> est communément attribué au tout premier incident informatique qui a été causé par un insecte lors du développement du système informatique électromécanique à lampes Harvard Mark II en 1945.</p>
 <a class="reference internal image-reference" href="../_images/SE-harvard-mark-II.jpg"><img alt="Mark II" src="../_images/SE-harvard-mark-II.jpg" style="width: 350px;" /></a>
 <a class="reference internal image-reference" href="../_images/BugMark2.jpg"><img alt="Bug" src="../_images/BugMark2.jpg" style="width: 200px;" /></a>
 <p>Cependant, le terme bug était déja utiliser pour désigner un défaut de conception depuis Thomas Edison en 1878.</p>
-</div>
-<div class="section" id="methodologie">
-<h2><span class="section-number">13.2. </span>Méthodologie<a class="headerlink" href="#methodologie" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="methodologie">
+<h2><span class="section-number">14.2. </span>Méthodologie<a class="headerlink" href="#methodologie" title="Lien vers cette rubrique">#</a></h2>
 <p><em>(voir aussi le cours MIT 6.00 « Introduction to computer science and programming » )</em></p>
 <p>Les erreurs  dans un programme (bogues ou bugs) sont introduites par le programmeur:</p>
 <ul class="simple">
@@ -512,26 +472,26 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>erreur de programmation</p></li>
 <li><p>erreur algorithmique</p></li>
 </ul>
-<div class="section" id="objectifs-du-debugging">
-<h3><span class="section-number">13.2.1. </span>objectifs du debugging<a class="headerlink" href="#objectifs-du-debugging" title="Lien permanent vers ce titre">¶</a></h3>
+<section id="objectifs-du-debugging">
+<h3><span class="section-number">14.2.1. </span>objectifs du debugging<a class="headerlink" href="#objectifs-du-debugging" title="Lien vers cette rubrique">#</a></h3>
 <ul class="simple">
 <li><p>essayer d’obtenir un programme avec le moins d’erreurs possible (bug-free program)</p></li>
 <li><p>et non pas éliminer rapidement une erreur</p></li>
 <li><p>le debugging est très fortement associé à la validation</p></li>
 </ul>
 <p>Dans le développement d’applications, la partie debugging et validation représente la part la plus importante.</p>
-</div>
-<div class="section" id="demarche-du-debugging">
-<h3><span class="section-number">13.2.2. </span>démarche du debugging<a class="headerlink" href="#demarche-du-debugging" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="demarche-du-debugging">
+<h3><span class="section-number">14.2.2. </span>démarche du debugging<a class="headerlink" href="#demarche-du-debugging" title="Lien vers cette rubrique">#</a></h3>
 <ul class="simple">
 <li><p>démarche systématique basée sur la logique</p></li>
 <li><p>outils d’aide au debugging = debugger OK</p></li>
 <li><p>mais ce qui est le plus important est la méthode, plus que l’outil !</p></li>
 <li><p>outil simple et efficace= insertion de <strong>print</strong> dans le code</p></li>
 </ul>
-</div>
-<div class="section" id="methode">
-<h3><span class="section-number">13.2.3. </span>méthode<a class="headerlink" href="#methode" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="methode">
+<h3><span class="section-number">14.2.3. </span>méthode<a class="headerlink" href="#methode" title="Lien vers cette rubrique">#</a></h3>
 <ul class="simple">
 <li><p>recherche de bugs par dichotomie (binary search)</p></li>
 <li><p>avec pour objectif non pas de trouver pourquoi le programme ne donne pas le bon résultat, mais de comprendre pourquoi le programme fonctionne de cette façon pour ensuite le corriger.</p></li>
@@ -548,10 +508,10 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-</div>
-</div>
-<div class="section" id="exemple-de-debugging">
-<h2><span class="section-number">13.3. </span>Exemple de debugging<a class="headerlink" href="#exemple-de-debugging" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+</section>
+<section id="exemple-de-debugging">
+<h2><span class="section-number">14.3. </span>Exemple de debugging<a class="headerlink" href="#exemple-de-debugging" title="Lien vers cette rubrique">#</a></h2>
 <p>Voici un programme qui teste si la représentation base 2 d’un entier
 est un palindrome.</p>
 <p><strong>exemple:</strong></p>
@@ -559,8 +519,8 @@ est un palindrome.</p>
 <li><p>n=9  en base 2 s’écrit 1001 et est donc un palindrome</p></li>
 <li><p>n=12 en base 2 s’écrit 1100 et n’est pas un palindrome</p></li>
 </ul>
-<div class="section" id="principe-de-l-algorithme">
-<h3><span class="section-number">13.3.1. </span>principe de l’algorithme<a class="headerlink" href="#principe-de-l-algorithme" title="Lien permanent vers ce titre">¶</a></h3>
+<section id="principe-de-l-algorithme">
+<h3><span class="section-number">14.3.1. </span>principe de l’algorithme<a class="headerlink" href="#principe-de-l-algorithme" title="Lien vers cette rubrique">#</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>n entier positif
 conversion de n en base 2 sous forme d&#39;une liste de 0 et 1
    éléments de la liste = reste division successive de n par 2
@@ -568,15 +528,15 @@ test si la liste est un palindrome
    comparaison avec la liste inversée
 </pre></div>
 </div>
-</div>
-<div class="section" id="programme-avec-des-bugs">
-<h3><span class="section-number">13.3.2. </span>programme avec des bugs !!<a class="headerlink" href="#programme-avec-des-bugs" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="programme-avec-des-bugs">
+<h3><span class="section-number">14.3.2. </span>programme avec des bugs !!<a class="headerlink" href="#programme-avec-des-bugs" title="Lien vers cette rubrique">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># digit en base 2</span>
 <span class="n">digit</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;0&#39;</span><span class="p">,</span><span class="s1">&#39;1&#39;</span><span class="p">]</span>
 <span class="k">def</span> <span class="nf">base2</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;conversion base 2 d&#39;un nombre n&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;conversion base 2 d&#39;un nombre n&quot;&quot;&quot;</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">n</span>  
     <span class="k">while</span> <span class="n">x</span><span class="p">:</span>
       <span class="n">digits</span><span class="o">=</span><span class="p">[]</span>
@@ -585,7 +545,7 @@ test si la liste est un palindrome
     <span class="k">return</span> <span class="n">digit</span>
 
 <span class="k">def</span> <span class="nf">TestPalindrome2</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;test si la representation de n en base 2 est un palindrome&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;test si la representation de n en base 2 est un palindrome&quot;&quot;&quot;</span>
     <span class="n">L</span><span class="o">=</span><span class="n">base2</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
     <span class="n">tmp</span><span class="o">=</span><span class="n">L</span>
     <span class="n">L</span><span class="o">.</span><span class="n">reverse</span>
@@ -608,16 +568,16 @@ pour n=12 1100  palindrome faux : True
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="instrumentation-du-programme">
-<h3><span class="section-number">13.3.3. </span>instrumentation du programme<a class="headerlink" href="#instrumentation-du-programme" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="instrumentation-du-programme">
+<h3><span class="section-number">14.3.3. </span>instrumentation du programme<a class="headerlink" href="#instrumentation-du-programme" title="Lien vers cette rubrique">#</a></h3>
 <p>utilisation de print en utilisant une méthode de dichotomie pour rechercher les bogues</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># digit en base 2</span>
 <span class="n">digit</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;0&#39;</span><span class="p">,</span><span class="s1">&#39;1&#39;</span><span class="p">]</span>
 <span class="k">def</span> <span class="nf">base2</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;conversion base 2 d&#39;un nombre n&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;conversion base 2 d&#39;un nombre n&quot;&quot;&quot;</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">n</span>  
     <span class="k">while</span> <span class="n">x</span><span class="p">:</span>
       <span class="n">digits</span><span class="o">=</span><span class="p">[]</span>
@@ -627,7 +587,7 @@ pour n=12 1100  palindrome faux : True
     <span class="k">return</span> <span class="n">digit</span>
 
 <span class="k">def</span> <span class="nf">TestPalindrome2</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;test si la representation de n en base 2 est un palindrome&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;test si la representation de n en base 2 est un palindrome&quot;&quot;&quot;</span>
     <span class="n">L</span><span class="o">=</span><span class="n">base2</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
     <span class="c1">#print L</span>
     <span class="n">tmp</span><span class="o">=</span><span class="n">L</span>
@@ -654,15 +614,15 @@ pour n=12 1100  palindrome faux : True
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="programme-correcte">
-<h3><span class="section-number">13.3.4. </span>programme correcte<a class="headerlink" href="#programme-correcte" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="programme-correcte">
+<h3><span class="section-number">14.3.4. </span>programme correcte<a class="headerlink" href="#programme-correcte" title="Lien vers cette rubrique">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># digit en base 2</span>
 <span class="n">digit</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;0&#39;</span><span class="p">,</span><span class="s1">&#39;1&#39;</span><span class="p">]</span>
 <span class="k">def</span> <span class="nf">base2</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;conversion base 2 d&#39;un nombre n&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;conversion base 2 d&#39;un nombre n&quot;&quot;&quot;</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">n</span>
     <span class="n">digits</span><span class="o">=</span><span class="p">[]</span>
     <span class="k">while</span> <span class="n">x</span><span class="p">:</span>
@@ -672,7 +632,7 @@ pour n=12 1100  palindrome faux : True
     <span class="k">return</span> <span class="n">digits</span>
 
 <span class="k">def</span> <span class="nf">TestPalindrome2</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;test si la representation de n en base 2 est un palindrome&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;test si la representation de n en base 2 est un palindrome&quot;&quot;&quot;</span>
     <span class="n">L</span><span class="o">=</span><span class="n">base2</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
     <span class="n">tmp</span><span class="o">=</span><span class="n">L</span><span class="p">[:]</span>
     <span class="n">L</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
@@ -695,10 +655,10 @@ pour n=12 1100  palindrome faux : False
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="utilisation-de-assert">
-<h2><span class="section-number">13.4. </span>Utilisation de assert<a class="headerlink" href="#utilisation-de-assert" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+</section>
+<section id="utilisation-de-assert">
+<h2><span class="section-number">14.4. </span>Utilisation de assert<a class="headerlink" href="#utilisation-de-assert" title="Lien vers cette rubrique">#</a></h2>
 <p>L’instruction <strong>assert</strong> permet de vérifier si une condition cdt est vérifiée. Dans le cas contraire, génère une exception et affiche le message optionnel.</p>
 <p><strong>syntaxe</strong></p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>   assert cdt [, message ]
@@ -716,8 +676,8 @@ AssertionError                            Traceback (most recent call last)
 AssertionError: x doit etre negatif   
 </pre></div>
 </div>
-<div class="section" id="exemple-d-utilisation">
-<h3><span class="section-number">13.4.1. </span>exemple d’utilisation<a class="headerlink" href="#exemple-d-utilisation" title="Lien permanent vers ce titre">¶</a></h3>
+<section id="exemple-d-utilisation">
+<h3><span class="section-number">14.4.1. </span>exemple d’utilisation<a class="headerlink" href="#exemple-d-utilisation" title="Lien vers cette rubrique">#</a></h3>
 <p>test si l’argument d’une fonction est valide</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -773,12 +733,12 @@ AssertionError                            Traceback (most recent call last)
 AssertionError: x doit etre non nul
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="fin-de-la-lecon">
-<h2><span class="section-number">13.5. </span>FIN de la leçon<a class="headerlink" href="#fin-de-la-lecon" title="Lien permanent vers ce titre">¶</a></h2>
-</div>
-</div>
+</section>
+</section>
+<section id="fin-de-la-lecon">
+<h2><span class="section-number">14.5. </span>FIN de la leçon<a class="headerlink" href="#fin-de-la-lecon" title="Lien vers cette rubrique">#</a></h2>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -792,7 +752,7 @@ AssertionError: x doit etre non nul
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./CHAP12"
         },
         predefinedOutput: true
@@ -800,44 +760,121 @@ AssertionError: x doit etre non nul
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../CHAP11/Efficiency.html" title="précédent page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">précédent</p>
-            <p class="prev-next-title"><span class="section-number">12. </span>Efficacité / complexité</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../CHAP11/Efficiency.html"
+       title="page précédente">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">précédent</p>
+        <p class="prev-next-title"><span class="section-number">13. </span>Efficacité / complexité</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="../RAPPEL/COURS_RAPPEL.html" title="suivant page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="../RAPPEL/COURS_RAPPEL.html"
+       title="page suivante">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">suivant</p>
         <p class="prev-next-title">Rappel de maths et physique</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
+                </footer>
+              
+            </div>
             
-        </div>
-    </div>
-    <footer class="footer">
-  <p>
-    
-      Par Marc BUFFAT, dpt mécanique, Lyon 1<br/>
-    
-        &copy; droits d'auteur 2022.<br/>
-  </p>
-</footer>
-</main>
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-      </div>
-    </div>
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenu
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#historique">14.1. Historique</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methodologie">14.2. Méthodologie</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objectifs-du-debugging">14.2.1. objectifs du debugging</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#demarche-du-debugging">14.2.2. démarche du debugging</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#methode">14.2.3. méthode</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-de-debugging">14.3. Exemple de debugging</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#principe-de-l-algorithme">14.3.1. principe de l’algorithme</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#programme-avec-des-bugs">14.3.2. programme avec des bugs !!</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instrumentation-du-programme">14.3.3. instrumentation du programme</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#programme-correcte">14.3.4. programme correcte</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utilisation-de-assert">14.4. Utilisation de assert</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-d-utilisation">14.4.1. exemple d’utilisation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fin-de-la-lecon">14.5. FIN de la leçon</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <div class="footer-item">
+    
+<p class="component-author">
+Par Marc BUFFAT, dpt mécanique, Lyon 1
+</p>
 
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

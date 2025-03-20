@@ -4,7 +4,7 @@ livre du cours **INPROS** utilisant jupyter-book
 
 # version html
 
-- [https://mbuffat.github.io/INPROS/intro.html](https://mbuffat.github.io/INPROS/intro.html)
+- [https://mbuffat.github.io/INPROS/index.html](https://mbuffat.github.io/INPROS/index.html)
 
 ## création du livre (se placer en dessus du répertoire INPROS)
 
